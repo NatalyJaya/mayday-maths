@@ -1,0 +1,244 @@
+# Temas de cada bloque. Solo los temas «disponible» tienen páginas.
+# Para abrir un tema: estado: disponible y sus cinco lecciones en
+# src/content/lecciones/<tema>/ (ver docs/CONTENIDO.md).
+
+# ─── Números ───
+- id: numeros-reales
+  bloque: numeros
+  titulo: Números reales e intervalos
+  estado: proximamente
+  orden: 1
+  resumen: Racionales e irracionales, la recta real, valor absoluto, intervalos y aproximaciones con su error.
+  aprenderas: [Clasificar números, Trabajar con intervalos y valor absoluto, Acotar errores]
+
+- id: potencias-logaritmos
+  bloque: numeros
+  titulo: Potencias, radicales y logaritmos
+  estado: proximamente
+  orden: 2
+  resumen: Propiedades de las potencias y los radicales, racionalización y logaritmos con sus propiedades.
+  aprenderas: [Operar con radicales, Racionalizar, Usar las propiedades de los logaritmos]
+
+- id: complejos
+  bloque: numeros
+  titulo: Números complejos
+  estado: proximamente
+  orden: 3
+  resumen: La unidad imaginaria, formas binómica y polar, y operaciones con complejos.
+  aprenderas: [Operar en forma binómica, Pasar a forma polar, Resolver ecuaciones sin solución real]
+
+# ─── Álgebra ───
+- id: polinomios
+  bloque: algebra
+  titulo: Polinomios y fracciones algebraicas
+  estado: proximamente
+  orden: 1
+  resumen: Operaciones, regla de Ruffini, teorema del resto, factorización y fracciones algebraicas.
+  aprenderas: [Factorizar polinomios, Simplificar fracciones algebraicas]
+
+- id: ecuaciones
+  bloque: algebra
+  titulo: Ecuaciones
+  estado: proximamente
+  orden: 2
+  resumen: Ecuaciones de segundo grado, bicuadradas, racionales, irracionales, exponenciales y logarítmicas.
+  aprenderas: [Elegir el método según el tipo de ecuación, Comprobar las soluciones]
+
+- id: inecuaciones
+  bloque: algebra
+  titulo: Inecuaciones
+  estado: proximamente
+  orden: 3
+  resumen: Inecuaciones lineales, de segundo grado y racionales, y sistemas de inecuaciones.
+  aprenderas: [Resolver inecuaciones, Expresar la solución como intervalo]
+
+- id: sistemas
+  bloque: algebra
+  titulo: Sistemas de ecuaciones (método de Gauss)
+  estado: proximamente
+  orden: 4
+  resumen: Sistemas lineales de tres ecuaciones, método de Gauss y discusión de sistemas.
+  aprenderas: [Escalonar un sistema, Clasificar sistemas]
+
+# ─── Trigonometría ───
+- id: razones-trigonometricas
+  bloque: trigonometria
+  titulo: Ángulos y razones trigonométricas
+  estado: disponible
+  orden: 1
+  resumen: Grados y radianes, seno, coseno y tangente, la circunferencia goniométrica y la reducción al primer cuadrante.
+  esencia: En triángulos semejantes, el cociente entre dos lados no depende del tamaño, solo del ángulo. Ese número (el seno, el coseno o la tangente) permite pasar de ángulos a longitudes y al revés.
+  aprenderas:
+    - Medir ángulos en grados y en radianes y pasar de una unidad a otra
+    - Calcular las razones de un ángulo en un triángulo rectángulo
+    - Deducir los valores exactos de 30°, 45° y 60°
+    - Extender las razones a cualquier ángulo con la circunferencia goniométrica
+    - Reducir cualquier ángulo al primer cuadrante
+    - Reconocer las gráficas del seno, el coseno y la tangente
+  antes: |
+    Solo necesitas el **teorema de Pitágoras** y la idea de **triángulos semejantes** (mismos ángulos, lados proporcionales). Ten a mano una calculadora científica y comprueba que sabes ponerla en modo **grados (DEG)**.
+  portada:
+    tipo: circunferencia
+    angulos:
+      - { grados: 150, etiqueta: '150°' }
+    cuadrantes: true
+  mapa:
+    - { q: 'Conozco un ángulo y la hipotenusa', c: '\cy{\text{opuesto}} = \text{hip} \cdot \sin\alpha', d: 'usa seno o coseno según el cateto que busques' }
+    - { q: 'Conozco dos lados, busco el ángulo', c: '\alpha = \arctan\frac{\cy{\text{opuesto}}}{\cx{\text{contiguo}}}', d: 'la tecla es sin⁻¹, cos⁻¹ o tan⁻¹, no 1/sin' }
+    - { q: 'Sé una razón, busco las otras', c: '\sin^2\alpha + \cos^2\alpha = 1', d: 'el signo lo da el cuadrante' }
+    - { q: 'Razón de un ángulo mayor que 90°', c: '\sin(180^\circ - \alpha) = \sin\alpha', d: 'busca el ángulo de referencia y pon el signo del cuadrante' }
+    - { q: 'Pasar de grados a radianes', c: '180^\circ = \pi \text{ rad}', d: 'regla de tres; la calculadora, en el modo correcto' }
+
+- id: resolucion-triangulos
+  bloque: trigonometria
+  titulo: Resolución de triángulos
+  estado: disponible
+  orden: 2
+  resumen: Triángulos rectángulos, doble observación, teorema del seno (y su caso ambiguo), teorema del coseno y área de un triángulo.
+  esencia: Con tres datos de un triángulo (y al menos un lado) se pueden calcular los otros tres. El teorema del seno y el del coseno hacen para cualquier triángulo lo que las razones hacen para los rectángulos.
+  aprenderas:
+    - Resolver triángulos rectángulos y problemas de alturas y distancias
+    - Plantear problemas de doble observación con dos triángulos rectángulos
+    - Deducir y aplicar el teorema del seno, incluido el caso ambiguo
+    - Deducir y aplicar el teorema del coseno
+    - Calcular el área de cualquier triángulo
+    - Elegir el teorema adecuado según los datos
+  requisitos: [razones-trigonometricas]
+  antes: |
+    Necesitas manejar el **seno, el coseno y la tangente** en un triángulo rectángulo y saber obtener un ángulo con la calculadora (tecla **sin⁻¹**, **cos⁻¹** o **tan⁻¹**).
+  portada:
+    tipo: triangulo
+    a: 7
+    b: 5
+    c: 8
+    etiquetas: { a: 'a = 7', b: 'b = 5', c: 'c = 8', A: '60°', B: 'B = ?', C: 'C = ?' }
+  mapa:
+    - { q: 'Triángulo rectángulo', c: '\sin,\ \cos,\ \tan', d: 'no hace falta ningún teorema' }
+    - { q: 'Dos ángulos y un lado', c: '\frac{a}{\sin A} = \frac{b}{\sin B}', d: 'el tercer ángulo sale de A + B + C = 180°' }
+    - { q: 'Dos lados y el ángulo que NO forman', c: '\frac{a}{\sin A} = \frac{b}{\sin B}', d: 'caso ambiguo: puede haber 0, 1 o 2 triángulos' }
+    - { q: 'Dos lados y el ángulo que forman', c: 'a^2 = b^2 + c^2 - 2bc\cos A', d: 'teorema del coseno para el tercer lado' }
+    - { q: 'Los tres lados', c: '\cos A = \frac{b^2 + c^2 - a^2}{2bc}', d: 'el coseno no tiene caso ambiguo' }
+    - { q: 'Área', c: 'S = \tfrac{1}{2}\, b\, c \sin A', d: 'el ángulo debe ser el que forman los dos lados' }
+
+- id: identidades-ecuaciones
+  bloque: trigonometria
+  titulo: Identidades y ecuaciones trigonométricas
+  estado: disponible
+  orden: 3
+  resumen: Razones de la suma y la resta de ángulos, del ángulo doble y del ángulo mitad, demostración de identidades y resolución de ecuaciones trigonométricas.
+  esencia: El seno no se reparte. sin(α + β) no es sin α + sin β, y las fórmulas de este tema dicen qué es en realidad. Con ellas se simplifican expresiones, se demuestran identidades y se resuelven ecuaciones, que tienen infinitas soluciones porque las razones se repiten cada vuelta.
+  aprenderas:
+    - Deducir y usar las fórmulas de la suma, la resta, el ángulo doble y el ángulo mitad
+    - Calcular razones exactas de ángulos como 15°, 75° o 22,5°
+    - Distinguir una identidad de una ecuación
+    - Simplificar expresiones y demostrar identidades
+    - Resolver ecuaciones trigonométricas y encontrar TODAS sus soluciones
+    - Detectar las soluciones falsas al elevar al cuadrado o al dividir
+  requisitos: [razones-trigonometricas]
+  antes: |
+    Necesitas la **identidad fundamental**, los **valores exactos** de 30°, 45° y 60° y saber en qué cuadrantes es positiva cada razón. También resolver **ecuaciones de segundo grado** y **factorizar** sacando factor común.
+  portada:
+    tipo: funcion
+    dominio: [-360, 720]
+    paso: 180
+    curvas:
+      - { f: sin, etiqueta: 'y = sin x', color: y }
+    niveles:
+      - { y: 0.5, etiqueta: 'y = 1/2' }
+    puntos:
+      - { x: -330 }
+      - { x: -210 }
+      - { x: 30, etiqueta: '30°' }
+      - { x: 150, etiqueta: '150°' }
+      - { x: 390 }
+      - { x: 510 }
+  mapa:
+    - { q: 'Razón de 15°, 75°, 105°…', c: '\sin(\alpha \pm \beta)', d: 'escríbelo como suma o resta de 30°, 45° y 60°' }
+    - { q: 'En la ecuación aparecen x y 2x', c: '\cos 2x = 1 - 2\sin^2 x', d: 'elige la forma que deja una sola razón' }
+    - { q: 'Aparece x/2', c: '\cos^2\tfrac{x}{2} = \tfrac{1 + \cos x}{2}', d: 'con el cuadrado no hace falta la raíz' }
+    - { q: 'Ecuación de 2.º grado en sin o cos', c: 't = \sin x', d: 'descarta |t| > 1' }
+    - { q: 'Todo multiplicado por sin x o cos x', c: 'A \cdot B = 0', d: 'saca factor común: NO dividas' }
+    - { q: 'sin x + cos x = k', c: '(\sin x + \cos x)^2', d: 'al elevar al cuadrado, comprueba las soluciones' }
+
+# ─── Geometría ───
+- id: vectores
+  bloque: geometria
+  titulo: Vectores en el plano
+  estado: proximamente
+  orden: 1
+  resumen: Operaciones con vectores, producto escalar, módulo y ángulo entre vectores.
+  aprenderas: [Operar con vectores, Calcular ángulos con el producto escalar]
+
+- id: rectas
+  bloque: geometria
+  titulo: Rectas en el plano
+  estado: proximamente
+  orden: 2
+  resumen: Ecuaciones de la recta, posiciones relativas, distancias y ángulos.
+  aprenderas: [Pasar de una ecuación de la recta a otra, Calcular distancias]
+
+- id: conicas
+  bloque: geometria
+  titulo: Lugares geométricos y cónicas
+  estado: proximamente
+  orden: 3
+  resumen: Mediatriz y bisectriz, circunferencia, elipse, hipérbola y parábola.
+  aprenderas: [Reconocer una cónica por su ecuación]
+
+# ─── Análisis ───
+- id: funciones
+  bloque: analisis
+  titulo: Funciones elementales
+  estado: proximamente
+  orden: 1
+  resumen: Dominio y recorrido, transformaciones, funciones polinómicas, racionales, exponenciales, logarítmicas y trigonométricas.
+  aprenderas: [Reconocer las funciones elementales, Aplicar traslaciones y dilataciones]
+
+- id: limites
+  bloque: analisis
+  titulo: Límites y continuidad
+  estado: proximamente
+  orden: 2
+  resumen: Idea de límite, límites laterales, indeterminaciones, asíntotas y continuidad.
+  aprenderas: [Calcular límites, Encontrar asíntotas]
+
+- id: derivadas
+  bloque: analisis
+  titulo: Derivadas
+  estado: proximamente
+  orden: 3
+  resumen: Tasa de variación, derivada en un punto, reglas de derivación y recta tangente.
+  aprenderas: [Derivar funciones, Interpretar la derivada]
+
+- id: representacion
+  bloque: analisis
+  titulo: Representación de funciones
+  estado: proximamente
+  orden: 4
+  resumen: Crecimiento, extremos, curvatura y representación gráfica completa.
+  aprenderas: [Estudiar y dibujar una función]
+
+# ─── Estadística ───
+- id: bidimensional
+  bloque: estadistica
+  titulo: Estadística bidimensional
+  estado: proximamente
+  orden: 1
+  resumen: Nubes de puntos, covarianza, correlación y rectas de regresión.
+  aprenderas: [Interpretar la correlación, Hacer predicciones con la regresión]
+
+- id: probabilidad
+  bloque: estadistica
+  titulo: Probabilidad
+  estado: proximamente
+  orden: 2
+  resumen: Sucesos, regla de Laplace, probabilidad condicionada y teorema de Bayes.
+  aprenderas: [Usar diagramas de árbol, Aplicar la probabilidad total]
+
+- id: distribuciones
+  bloque: estadistica
+  titulo: Distribuciones binomial y normal
+  estado: proximamente
+  orden: 3
+  resumen: Variables aleatorias, la distribución binomial, la normal y la aproximación de la binomial por la normal.
+  aprenderas: [Calcular probabilidades con la binomial y la normal]

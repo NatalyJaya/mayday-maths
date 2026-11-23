@@ -1,0 +1,45 @@
+titulo: Cuánto avanza una rueda
+tema: razones-trigonometricas
+orden: 9
+procedencia: original
+dificultad: intermedio
+habilidades: [modelizacion, conceptual]
+resumen: La longitud de un arco es ángulo (en radianes) por radio.
+enunciado: |
+  Una rueda de $30\un{cm}$ de radio gira, sin deslizar, un ángulo de $2{,}5$ rad.
+
+  a) ¿Cuántos centímetros avanza?
+  b) ¿Cuántos grados ha girado?
+conceptos:
+  - 'Longitud de arco: $s = \theta\cdot r$, con $\theta$ en **radianes**.'
+  - 'Una rueda que gira sin deslizar avanza exactamente la longitud del arco que toca el suelo.'
+apartados:
+  - id: a
+    enunciado: Distancia que avanza.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 's'
+          etiqueta: avance
+          unidad: cm
+          valor: 75
+          trampas:
+            - { valor: 1.309, explicacion: 'Has tratado 2,5 como si fueran grados y los has pasado a radianes. El ángulo ya está en radianes: $s = 2{,}5 \cdot 30$.' }
+            - { valor: 4296.9, explicacion: 'Has usado el ángulo en grados ($143{,}2^\circ$). En $s = \theta r$ el ángulo va en radianes.' }
+    pistas:
+      - 'Un radián es el ángulo cuyo arco mide un radio. ¿Cuánto mide el arco de 2,5 radianes?'
+    pasos:
+      - titulo: Longitud de arco
+        desarrollo: '$$s = \theta\cdot r = 2{,}5\cdot 30 = 75\un{cm}$$'
+        porque: 'Por definición de radián: cada radián de giro corresponde a un arco de un radio.'
+    resultado: 'Avanza $75\un{cm}$.'
+  - id: b
+    enunciado: Ángulo girado en grados.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\theta', etiqueta: ángulo, unidad: '°', valor: 143.24 }
+    pasos:
+      - titulo: Conversión
+        desarrollo: '$$2{,}5\cdot\frac{180^\circ}{\pi} \approx 143{,}24^\circ$$'
+    resultado: 'Ha girado unos $143{,}24^\circ$, algo menos de media vuelta.'

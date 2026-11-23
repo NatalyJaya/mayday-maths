@@ -1,0 +1,72 @@
+---
+// Dibujo de un ejercicio o de una lección, generado A ESCALA a partir de los
+// datos (src/lib/figures.ts). Así el dibujo nunca contradice al enunciado.
+import { richInline } from '../../lib/rich-text';
+import type { Figure } from '../../lib/schemas';
+import { circleSvg, functionLegend, functionSvg, geometrySvg, triangleSvg } from '../../lib/figures';
+
+interface Props {
+	figura: Figure;
+	titulo?: string;
+	/** Descripción accesible; si falta, se usa el título de la figura o el del ejercicio. */
+	alt?: string;
+}
+const { figura: f, titulo = '', alt } = Astro.props;
+const uid = `fig-${Math.random().toString(36).slice(2, 8)}`;
+const caption = f.titulo;
+const desc = alt ?? f.titulo ?? titulo;
+
+const svg =
+	f.tipo === 'triangulo'
+		? triangleSvg(f)
+		: f.tipo === 'geometria'
+			? geometrySvg(f)
+			: f.tipo === 'circunferencia'
+				? circleSvg(f)
+				: f.tipo === 'funcion'
+					? functionSvg(f)
+					: null;
+const legend = f.tipo === 'funcion' ? functionLegend(f) : [];
+const flow =
+	f.tipo === 'flujo'
+		? await Promise.all(f.pasos.map(async (p) => ({ ...p, html: await richInline(p.texto), tit: await richInline(p.titulo) })))
+		: null;
+---
+
+{
+	svg && (
+		<figure class:list={['ex-fig', `fig-${f.tipo}`]}>
+			{caption && <figcaption>{caption}</figcaption>}
+			<svg class="mfig" viewBox={`0 0 ${svg.W} ${svg.H}`} role="img" aria-labelledby={uid} style={`max-width:${svg.W}px`}>
+				<title id={uid}>{desc}</title>
+				<Fragment set:html={svg.body} />
+			</svg>
+			{legend.length > 0 && (
+				<ul class="fig-legend">
+					{legend.map((l) => (
+						<li>
+							<i class:list={['sw', `sw-${l.color}`, { dash: l.discontinua }]} /> {l.etiqueta}
+						</li>
+					))}
+				</ul>
+			)}
+		</figure>
+	)
+}
+
+{
+	flow && f.tipo === 'flujo' && (
+		<figure class="ex-fig flow-fig">
+			{f.titulo && <figcaption>{f.titulo}</figcaption>}
+			<ol class="flow">
+				{flow.map((p, i) => (
+					<li class={`fl fl-${p.color}`}>
+						<span class="fl-axis">{p.etiqueta ?? `Paso ${i + 1}`}</span>
+						<strong set:html={p.tit} />
+						<span class="fl-text" set:html={p.html} />
+					</li>
+				))}
+			</ol>
+		</figure>
+	)
+}

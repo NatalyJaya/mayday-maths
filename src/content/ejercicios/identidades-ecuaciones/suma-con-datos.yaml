@@ -1,0 +1,29 @@
+titulo: Suma y resta de dos ángulos de cuadrantes distintos
+tema: identidades-ecuaciones
+orden: 10
+procedencia: original
+dificultad: avanzado
+habilidades: [calculo, multipaso]
+resumen: Completar las razones de cada ángulo con su signo y aplicar las fórmulas.
+enunciado: |
+  Sabiendo que $\sin\alpha = \dfrac35$ con $\alpha$ en el **segundo** cuadrante, y que $\cos\beta = \dfrac{5}{13}$ con $\beta$ en el **cuarto** cuadrante, calcula $\sin(\alpha + \beta)$ y $\cos(\alpha - \beta)$.
+apartados:
+  - id: a
+    enunciado: Escribe los dos valores (decimal).
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\sin(\alpha + \beta)', etiqueta: '', unidad: '', valor: 0.9692, tolerancia: 0.005, trampas: [{ valor: -0.5077, explicacion: 'Revisa los signos: $\cos\alpha$ es negativo (II cuadrante) y $\sin\beta$ también (IV cuadrante).' }] }
+        - { simbolo: '\cos(\alpha - \beta)', etiqueta: '', unidad: '', valor: -0.8615, tolerancia: 0.005 }
+    pistas:
+      - 'Calcula primero $\cos\alpha$ y $\sin\beta$, con el signo de su cuadrante.'
+      - '$\cos\alpha = -\frac45$ y $\sin\beta = -\frac{12}{13}$.'
+    pasos:
+      - titulo: Completar las razones
+        desarrollo: '$$\cos\alpha = -\sqrt{1 - \tfrac{9}{25}} = -\frac45 \qquad \sin\beta = -\sqrt{1 - \tfrac{25}{169}} = -\frac{12}{13}$$'
+        porque: 'II cuadrante: coseno negativo. IV cuadrante: seno negativo.'
+      - titulo: Seno de la suma
+        desarrollo: '$$\sin(\alpha + \beta) = \frac35\cdot\frac{5}{13} + \left(-\frac45\right)\left(-\frac{12}{13}\right) = \frac{15 + 48}{65} = \frac{63}{65} \approx 0{,}9692$$'
+      - titulo: Coseno de la resta
+        desarrollo: '$$\cos(\alpha - \beta) = \left(-\frac45\right)\frac{5}{13} + \frac35\left(-\frac{12}{13}\right) = \frac{-20 - 36}{65} = -\frac{56}{65} \approx -0{,}8615$$'
+    resultado: '$\sin(\alpha + \beta) = \frac{63}{65}$ y $\cos(\alpha - \beta) = -\frac{56}{65}$.'

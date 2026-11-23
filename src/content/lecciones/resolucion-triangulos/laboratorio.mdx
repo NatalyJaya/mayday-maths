@@ -1,0 +1,60 @@
+---
+tema: resolucion-triangulos
+etapa: laboratorio
+titulo: El laboratorio de triángulos
+descripcion: Deforma un triángulo arrastrando sus vértices y comprueba en vivo el teorema del seno, el del coseno y el área. Después, explora el caso ambiguo.
+minutos: 20
+---
+
+## Cómo usar el laboratorio
+
+- **Arrastra cualquier vértice.** Con «Ajustar a la cuadrícula» los vértices caen en medias unidades, para que los números sean manejables.
+- Cada lado tiene el **color de su ángulo opuesto**: $a$ y $A$ en azul, $b$ y $B$ en naranja, $c$ y $C$ en verde.
+- A la derecha verás los tres cocientes del teorema del seno, el teorema del coseno para el lado $a$ y el área calculada de dos formas.
+
+<TriangleLab lab />
+
+## Retos
+
+<Predict
+	pregunta="**Reto 1.** Deforma el triángulo como quieras. ¿Qué les pasa a los tres cocientes $\dfrac{a}{\sin A}$, $\dfrac{b}{\sin B}$ y $\dfrac{c}{\sin C}$?"
+	opciones={[
+		{ texto: 'Cambian, pero siempre en el mismo orden.', explicacion: 'Cambian al deformar el triángulo, sí, pero no solo mantienen el orden: son **iguales** entre sí en todo momento.' },
+		{ texto: 'Son siempre iguales entre sí, aunque el valor común cambia.', correcta: true, explicacion: 'Es el teorema del seno. El valor común es $2R$, el diámetro de la circunferencia circunscrita: activa la casilla y compruébalo.' },
+		{ texto: 'Valen siempre lo mismo, sea cual sea el triángulo.', explicacion: 'Haz el triángulo más grande: el valor común crece. Depende del triángulo (es su $2R$).' },
+	]}
+/>
+
+**Reto 2.** Pulsa «Rectángulo en A». ¿Cuánto vale el término $2bc\cos A$? ¿En qué se convierte el teorema del coseno?
+
+**Reto 3.** Mueve el vértice $A$ hasta que el ángulo $A$ sea **obtuso**. Compara $a^2$ con $b^2 + c^2$: ¿cuál es mayor? ¿Por qué?
+
+**Reto 4.** Coloca los tres vértices casi alineados. ¿Qué le pasa al área? ¿Y a $2R$?
+
+**Reto 5.** Busca un triángulo con los tres ángulos iguales. ¿Cuánto vale cada uno? ¿Cómo son sus lados?
+
+<Reveal titulo="Soluciones de los retos 2 a 5">
+
+- **Reto 2.** $\cos 90^\circ = 0$, así que el término vale 0 y queda $a^2 = b^2 + c^2$: Pitágoras.
+- **Reto 3.** Si $A > 90^\circ$, $\cos A < 0$ y el término $-2bc\cos A$ es **positivo**: $a^2 > b^2 + c^2$. El lado opuesto a un ángulo obtuso es más largo que en un triángulo rectángulo con los mismos lados $b$ y $c$.
+- **Reto 4.** El área tiende a 0 (un ángulo se acerca a $180^\circ$ y su seno a 0). El radio de la circunferencia circunscrita se dispara: tres puntos casi alineados solo caben en una circunferencia enorme.
+- **Reto 5.** $60^\circ$ cada uno (equilátero): los tres lados son iguales, porque los lados son proporcionales a los senos de sus ángulos opuestos.
+
+</Reveal>
+
+## El caso ambiguo, en directo
+
+Ahora el dato es el ángulo $A$, el lado $b$ y el lado $a$, opuesto a $A$. El vértice $B$ tiene que estar sobre la base y a distancia $a$ de $C$.
+
+<AmbiguousCase />
+
+**Reto 6.** Con $A = 35^\circ$ y $b = 7$, empieza con $a = 2$ y ve aumentando $a$ poco a poco. Anota para qué valores de $a$ hay 0, 1 y 2 triángulos. ¿Qué papel juega la altura $h = b\sin A \approx 4{,}0$?
+
+**Reto 7.** Pon $A = 120^\circ$. ¿Puede haber dos triángulos? ¿Por qué?
+
+<Reveal titulo="Soluciones de los retos 6 y 7">
+
+- **Reto 6.** $a < h \approx 4{,}02$: ninguno. $a = h$: uno (rectángulo en $B$). $4{,}02 < a < 7$: dos. $a \ge 7$: uno.
+- **Reto 7.** No. Si $A$ es obtuso, el triángulo ya tiene su único ángulo obtuso, así que $B$ debe ser agudo: el suplementario de $B$ no sirve. Además, solo hay triángulo si $a > b$.
+
+</Reveal>

@@ -1,0 +1,79 @@
+---
+tema: resolucion-triangulos
+etapa: idea
+titulo: Triangular el mundo
+descripcion: Cómo se mide la anchura de un río sin cruzarlo, la distancia a un barco desde la costa o la longitud de un túnel antes de excavarlo. Todos son triángulos que no son rectángulos.
+minutos: 12
+---
+
+## Tres problemas que no se pueden medir con cinta
+
+**El río.** Estás en una orilla y quieres saber cuánto mide el río hasta un árbol de la otra orilla. No puedes cruzar. Pero sí puedes caminar por tu orilla y medir ángulos.
+
+**El barco.** Desde dos puntos de la costa separados $10\un{km}$ se ve un barco. En cada punto se mide el ángulo entre la costa y la dirección del barco. ¿A qué distancia está?
+
+**El túnel.** Hay que excavar un túnel entre dos puntos $A$ y $B$ separados por una montaña. Desde un punto $C$ desde el que se ven los dos se puede medir la distancia a cada uno y el ángulo que forman. ¿Cuánto medirá el túnel?
+
+<Figura
+	figura={{
+		tipo: 'geometria',
+		puntos: [
+			{ id: 'A', x: 0, y: 0, lado: 's' },
+			{ id: 'B', x: 10, y: 0, lado: 's' },
+			{ id: 'S', x: 3.6, y: 5.8, etiqueta: 'barco', lado: 'n' },
+		],
+		segmentos: [
+			{ de: 'A', a: 'B', etiqueta: '10 km', lado: 'derecha' },
+			{ de: 'A', a: 'S', etiqueta: '?', color: 'g' },
+			{ de: 'B', a: 'S', etiqueta: '?', color: 'g', lado: 'derecha' },
+		],
+		angulos: [
+			{ vertice: 'A', desde: 'B', hasta: 'S', etiqueta: '58°', radio: 34 },
+			{ vertice: 'B', desde: 'S', hasta: 'A', etiqueta: '42°', radio: 34 },
+		],
+		suelo: { y: 0, desde: -1, hasta: 11 },
+		textos: [{ x: 5, y: -1.1, texto: 'costa' }],
+	}}
+	alt="Un barco visto desde dos puntos A y B de la costa separados 10 km, con ángulos de 58 y 42 grados. Las distancias al barco son desconocidas."
+	pie="Los tres problemas son triángulos de los que se conocen algunos elementos, y ninguno es rectángulo."
+/>
+
+Esta técnica se llama **triangulación** y durante siglos fue la forma de hacer mapas: se medía con muchísimo cuidado **una sola distancia** (la *base*) y, a partir de ella, solo ángulos. Con triángulos encadenados se cubrían países enteros.
+
+## ¿Cuántos datos hacen falta?
+
+Un triángulo tiene seis elementos: tres lados y tres ángulos. Pero no hace falta conocerlos todos para que quede fijado.
+
+<Predict
+	pregunta="Te dicen que un triángulo tiene ángulos de $50^\circ$, $60^\circ$ y $70^\circ$. ¿Puedes calcular sus lados?"
+	opciones={[
+		{ texto: 'Sí, con tres datos siempre se puede.', explicacion: 'Tres datos bastan **si al menos uno es un lado**. Con los tres ángulos se sabe la forma, pero no el tamaño.' },
+		{ texto: 'No: hay infinitos triángulos con esos ángulos, de todos los tamaños.', correcta: true, explicacion: 'Todos esos triángulos son **semejantes**: misma forma, distinto tamaño. Además, el tercer ángulo no es un dato nuevo, porque siempre suman $180^\\circ$. Hace falta al menos una longitud.' },
+		{ texto: 'No, porque los ángulos no suman 180°.', explicacion: '$50^\\circ + 60^\\circ + 70^\\circ = 180^\\circ$: sí suman lo que deben.' },
+	]}
+/>
+
+<Callout tipo="idea">
+	En general, un triángulo queda determinado por **tres de sus elementos, si al menos uno es un lado**. Son los mismos criterios de igualdad de triángulos que ya conoces de la ESO. **Resolver un triángulo** es calcular los otros tres elementos a partir de esos tres.
+</Callout>
+
+Hay una excepción interesante. Con dos lados y un ángulo que **no** está entre ellos, a veces hay **dos** triángulos distintos que cumplen los datos. Lo estudiaremos con calma: es el **caso ambiguo**.
+
+## La idea para resolver cualquier triángulo
+
+Para triángulos rectángulos ya tienes las herramientas: el seno, el coseno y la tangente. ¿Y si el triángulo no es rectángulo? El truco es **trazar una altura**: parte el triángulo en dos triángulos rectángulos.
+
+<Figura
+	figura={{ tipo: 'triangulo', a: 7, b: 6, c: 8, altura: { desde: 'C', etiqueta: 'h' }, etiquetas: { a: 'a', b: 'b', c: 'c', A: 'A', B: 'B' } }}
+	alt="Triángulo ABC con la altura h trazada desde C sobre el lado c, que lo divide en dos triángulos rectángulos."
+	pie="La altura h es un cateto en los dos triángulos rectángulos: h = b·sin A y también h = a·sin B."
+/>
+
+La altura aparece en los **dos** triángulos rectángulos, así que se puede escribir de dos maneras: $h = b\sin A$ y $h = a\sin B$. Igualando, sale uno de los dos grandes teoremas de este tema. En la etapa 3 lo deducirás paso a paso.
+
+## Lo que vas a aprender
+
+1. **Objetos**: la notación, los ángulos de elevación y de depresión y los cuatro casos de resolución.
+2. **Propiedades**: triángulos rectángulos y doble observación, el **teorema del seno** (y el caso ambiguo), el **teorema del coseno** y el área.
+3. **Laboratorio**: un triángulo que puedes deformar arrastrando sus vértices, con los dos teoremas comprobándose en vivo.
+4. **Ejemplos guiados** y **práctica**, incluido el Problema 31 de tus apuntes.

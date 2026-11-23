@@ -1,0 +1,53 @@
+titulo: '2 cos²x + cos 2x · cos x = 0'
+tema: identidades-ecuaciones
+orden: 108
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie A, apartado t)
+nota_fuente: 'La letra de este enunciado no se leía bien en la foto; se ha transcrito como 2 cos²x + cos 2x · cos x = 0.'
+coleccion: clase-serie-a
+dificultad: avanzado
+habilidades: [calculo, metodo, multipaso]
+resumen: Factor común, ángulo doble y una raíz de la ecuación de segundo grado que hay que descartar.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$2\cos^2 x + \cos 2x\cdot\cos x = 0$$
+conceptos:
+  - 'Factor común $\cos x$.'
+  - '$\cos 2x = 2\cos^2 x - 1$ (la forma con solo cosenos).'
+  - 'El coseno solo toma valores entre $-1$ y $1$.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$, con dos decimales si no son exactas.
+    respuesta:
+      tipo: conjunto
+      valores: [68.53, 90, 270, 291.47]
+      trampas:
+        - valores: [68.53, 291.47]
+          explicacion: 'Has dividido entre $\cos x$ y has perdido las soluciones de $\cos x = 0$: $90^\circ$ y $270^\circ$.'
+        - valores: [90, 270]
+          explicacion: 'Te falta el segundo factor: $2\cos x + \cos 2x = 0$.'
+    pistas:
+      - 'Los dos términos llevan $\cos x$. Sácalo factor común.'
+      - 'En el otro factor usa $\cos 2x = 2\cos^2 x - 1$.'
+      - 'Una de las raíces de la ecuación de segundo grado es menor que $-1$.'
+    pasos:
+      - titulo: Factor común
+        desarrollo: '$$\cos x\,(2\cos x + \cos 2x) = 0$$'
+      - titulo: Primer factor
+        desarrollo: '$\cos x = 0 \Rightarrow x = 90^\circ,\ 270^\circ$.'
+      - titulo: Segundo factor
+        desarrollo: |
+          $2\cos x + \cos 2x = 0$ con $\cos 2x = 2\cos^2 x - 1$:
+          $$2\cos^2 x + 2\cos x - 1 = 0 \;\Rightarrow\; t = \frac{-2 \pm\sqrt{4 + 8}}{4} = \frac{-1 \pm \sqrt3}{2}$$
+        porque: 'Se elige la forma de $\cos 2x$ que deja todo en cosenos.'
+      - titulo: Descartar y calcular los ángulos
+        desarrollo: |
+          - $t = \frac{-1 + \sqrt3}{2} \approx 0{,}366 \Rightarrow x = \arccos 0{,}366 \approx 68{,}53^\circ$ y $360^\circ - 68{,}53^\circ = 291{,}47^\circ$.
+          - $t = \frac{-1 - \sqrt3}{2} \approx -1{,}366 < -1$: **imposible**.
+    resultado: '$x \approx 68{,}53^\circ,\ 90^\circ,\ 270^\circ,\ 291{,}47^\circ$.'
+errores:
+  - error: 'Dividir entre $\cos x$'
+    explicacion: 'Se pierden $90^\circ$ y $270^\circ$.'
+  - error: 'Calcular $\arccos(-1{,}366)$'
+    explicacion: 'La calculadora da error porque no existe: ningún ángulo tiene un coseno menor que $-1$.'

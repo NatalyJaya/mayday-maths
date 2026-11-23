@@ -1,0 +1,32 @@
+titulo: El coseno y la tangente de 75°
+tema: identidades-ecuaciones
+orden: 1
+procedencia: original
+dificultad: basico
+habilidades: [calculo]
+resumen: Suma de ángulos notables.
+enunciado: Calcula el valor exacto de $\cos 75^\circ$ y de $\tan 75^\circ$.
+apartados:
+  - id: a
+    enunciado: Escribe los valores decimales (cuatro decimales).
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: '\cos 75^\circ'
+          etiqueta: ''
+          unidad: ''
+          valor: 0.2588
+          tolerancia: 0.005
+          trampas:
+            - { valor: 1.5731, explicacion: 'Has «repartido»: $\cos 45^\circ + \cos 30^\circ$. El coseno de una suma no es la suma de los cosenos.' }
+        - { simbolo: '\tan 75^\circ', etiqueta: '', unidad: '', valor: 3.7321, tolerancia: 0.005 }
+    pistas:
+      - '$75^\circ = 45^\circ + 30^\circ$.'
+      - 'En el coseno de la suma, el signo central es $-$.'
+    pasos:
+      - titulo: Coseno de la suma
+        desarrollo: '$$\cos 75^\circ = \cos 45^\circ\cos 30^\circ - \sin 45^\circ\sin 30^\circ = \frac{\sqrt6}{4} - \frac{\sqrt2}{4} = \frac{\sqrt6 - \sqrt2}{4} \approx 0{,}2588$$'
+      - titulo: Tangente de la suma
+        desarrollo: '$$\tan 75^\circ = \frac{1 + \frac{\sqrt3}{3}}{1 - \frac{\sqrt3}{3}} = \frac{3 + \sqrt3}{3 - \sqrt3} = 2 + \sqrt3 \approx 3{,}7321$$'
+        porque: 'Se racionaliza multiplicando por $3 + \sqrt3$ arriba y abajo.'
+    resultado: '$\cos 75^\circ = \frac{\sqrt6 - \sqrt2}{4}$ y $\tan 75^\circ = 2 + \sqrt3$.'

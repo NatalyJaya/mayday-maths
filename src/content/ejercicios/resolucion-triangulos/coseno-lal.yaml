@@ -1,0 +1,36 @@
+titulo: Dos lados y el ángulo que forman
+tema: resolucion-triangulos
+orden: 5
+procedencia: original
+dificultad: basico
+habilidades: [calculo, metodo]
+resumen: Teorema del coseno con un resultado exacto.
+enunciado: En un triángulo, $b = 8$, $c = 5$ y $A = 60^\circ$. Calcula el lado $a$.
+figura:
+  tipo: triangulo
+  a: 7
+  b: 8
+  c: 5
+  etiquetas: { b: '8', c: '5', a: 'a = ?', A: '60°' }
+  colores: { a: g }
+apartados:
+  - id: a
+    enunciado: Calcula $a$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'a'
+          etiqueta: lado
+          unidad: ''
+          valor: 7
+          trampas:
+            - { valor: 9.43, explicacion: 'Has usado Pitágoras: $\sqrt{8^2 + 5^2}$. El ángulo es de $60^\circ$, no de $90^\circ$.' }
+            - { valor: 11.36, explicacion: 'El término es $-2bc\cos A$, con signo menos. Lo has sumado.' }
+    pistas:
+      - '¿El ángulo conocido está entre los dos lados?'
+      - '$\cos 60^\circ = \frac12$.'
+    pasos:
+      - titulo: Teorema del coseno
+        desarrollo: '$$a^2 = 8^2 + 5^2 - 2\cdot 8\cdot 5\cdot\cos 60^\circ = 64 + 25 - 40 = 49 \;\Rightarrow\; a = 7$$'
+        porque: 'El ángulo $A$ está entre los lados $b$ y $c$ (caso LAL).'
+    resultado: '$a = 7$.'

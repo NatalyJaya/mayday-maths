@@ -1,0 +1,69 @@
+titulo: De grados a radianes y al revés
+tema: razones-trigonometricas
+orden: 1
+procedencia: original
+dificultad: basico
+habilidades: [calculo]
+resumen: Tres conversiones con la equivalencia 180° = π rad.
+enunciado: |
+  Expresa:
+
+  a) $135^\circ$ en radianes. &nbsp; b) $\dfrac{5\pi}{6}$ rad en grados. &nbsp; c) $2$ rad en grados.
+conceptos:
+  - '$180^\circ = \pi \text{ rad}$.'
+  - 'De grados a radianes: multiplica por $\dfrac{\pi}{180^\circ}$. De radianes a grados: multiplica por $\dfrac{180^\circ}{\pi}$.'
+apartados:
+  - id: a
+    enunciado: '$135^\circ$ en radianes (escribe el valor decimal).'
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: '135^\circ'
+          etiqueta: en radianes
+          unidad: rad
+          valor: 2.3562
+          tolerancia: 0.005
+          trampas:
+            - { valor: 7734.8, explicacion: 'Has multiplicado por $\frac{180}{\pi}$ en lugar de por $\frac{\pi}{180}$. Al pasar a radianes el número se hace más pequeño.' }
+    pistas:
+      - '$135^\circ \cdot \dfrac{\pi}{180^\circ}$. Simplifica la fracción $\frac{135}{180}$.'
+    pasos:
+      - titulo: Multiplicar por π/180
+        desarrollo: '$$135^\circ\cdot\frac{\pi}{180^\circ} = \frac{135\pi}{180} = \frac{3\pi}{4} \approx 2{,}356\un{rad}$$'
+        porque: '$\frac{135}{180} = \frac34$ (dividiendo entre 45).'
+    resultado: '$135^\circ = \dfrac{3\pi}{4}\un{rad} \approx 2{,}356\un{rad}$.'
+  - id: b
+    enunciado: '$\dfrac{5\pi}{6}$ rad en grados.'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\tfrac{5\pi}{6}', etiqueta: en grados, unidad: '°', valor: 150 }
+    pistas:
+      - 'Sustituye $\pi$ por $180^\circ$.'
+    pasos:
+      - titulo: Cambiar π por 180°
+        desarrollo: '$$\frac{5\pi}{6} = \frac{5\cdot 180^\circ}{6} = 150^\circ$$'
+        porque: 'Como $\pi \text{ rad} = 180^\circ$, en una expresión con $\pi$ basta con sustituirlo.'
+    resultado: '$\dfrac{5\pi}{6}\un{rad} = 150^\circ$.'
+  - id: c
+    enunciado: '$2$ rad en grados.'
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: '2\text{ rad}'
+          etiqueta: en grados
+          unidad: '°'
+          valor: 114.59
+          trampas:
+            - { valor: 360, explicacion: '$2$ rad no es lo mismo que $2\pi$ rad. Aquí no hay $\pi$: es un número de radios.' }
+            - { valor: 0.0349, explicacion: 'Has multiplicado por $\frac{\pi}{180}$: eso pasa de grados a radianes.' }
+    pistas:
+      - 'Aquí no aparece $\pi$: multiplica por $\dfrac{180^\circ}{\pi}$.'
+    pasos:
+      - titulo: Multiplicar por 180/π
+        desarrollo: '$$2\cdot\frac{180^\circ}{\pi} = \frac{360^\circ}{\pi} \approx 114{,}59^\circ$$'
+        porque: 'Un radián son unos $57{,}3^\circ$; dos radianes, el doble.'
+    resultado: '$2\un{rad} \approx 114{,}59^\circ$.'
+errores:
+  - error: 'Confundir «2 rad» con «2π rad»'
+    explicacion: 'Un ángulo en radianes no tiene por qué llevar $\pi$. $2\pi$ rad es una vuelta completa; $2$ rad es algo menos de un tercio de vuelta.'

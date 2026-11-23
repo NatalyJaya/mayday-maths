@@ -1,0 +1,148 @@
+---
+tema: razones-trigonometricas
+etapa: objetos
+titulo: Ángulos, grados, radianes y las tres razones
+descripcion: Qué es exactamente un ángulo, las dos formas de medirlo y la definición precisa de seno, coseno y tangente, con su notación y la calculadora.
+minutos: 20
+---
+
+## El ángulo como un giro
+
+En geometría un ángulo es la abertura entre dos semirrectas. En trigonometría lo pensamos como un **giro**: una semirrecta empieza sobre el semieje $X$ positivo (el **lado inicial**) y gira alrededor del origen hasta su posición final (el **lado terminal**).
+
+- Si gira **en sentido contrario a las agujas del reloj**, el ángulo es **positivo**.
+- Si gira **en el sentido de las agujas del reloj**, es **negativo**.
+- Puede dar **más de una vuelta**: $400^\circ$ es una vuelta completa ($360^\circ$) y $40^\circ$ más.
+
+<Figura
+	figura={{ tipo: 'circunferencia', angulos: [{ grados: 130, etiqueta: '130°' }, { grados: -50, etiqueta: '−50°' }], proyecciones: false, cuadrantes: true }}
+	alt="Circunferencia con un ángulo de 130 grados (positivo, en sentido antihorario) y otro de menos 50 grados (en sentido horario)."
+	pie="130° gira en sentido antihorario y llega al segundo cuadrante. −50° gira en sentido horario y llega al cuarto."
+/>
+
+Los ejes dividen el plano en cuatro **cuadrantes**, numerados en sentido antihorario: I (de $0^\circ$ a $90^\circ$), II (de $90^\circ$ a $180^\circ$), III (de $180^\circ$ a $270^\circ$) y IV (de $270^\circ$ a $360^\circ$).
+
+<Callout tipo="idea">
+	Dos ángulos que se diferencian en un número entero de vueltas (por ejemplo, $40^\circ$, $400^\circ$ y $-320^\circ$) acaban en el **mismo lado terminal**. Se llaman **ángulos coterminales** y, como veremos, tienen las mismas razones trigonométricas.
+</Callout>
+
+## Grados sexagesimales
+
+El **grado** ($^\circ$) es la 360.ª parte de una vuelta. Es una herencia de los babilonios, que contaban en base 60. Por eso las fracciones de grado también van de 60 en 60:
+
+$$
+1^\circ = 60' \ (\text{minutos}) \qquad 1' = 60'' \ (\text{segundos})
+$$
+
+Por ejemplo, $25{,}5^\circ = 25^\circ\,30'$, porque $0{,}5^\circ = 0{,}5 \cdot 60' = 30'$. La calculadora pasa de una forma a otra con la tecla <code>° ′ ″</code>.
+
+<Callout tipo="ojo">
+	$25^\circ\,30'$ **no** es $25{,}30^\circ$. Treinta minutos son media hora de grado: $25{,}5^\circ$. Igual que 2 h 30 min son 2,5 h, no 2,3 h.
+</Callout>
+
+## Radianes: medir el ángulo con el propio radio
+
+Hay otra forma de medir ángulos que no depende de un número elegido por costumbre (el 360). Se mide **cuántos radios** cabe en el arco.
+
+<Callout tipo="definicion">
+	Un **radián** es el ángulo central cuyo arco mide exactamente lo mismo que el radio. Un ángulo de $\theta$ radianes abarca un arco de longitud $s = \theta \cdot r$.
+</Callout>
+
+<RadianDemo />
+
+<Predict
+	pregunta="Ya sabes que en una vuelta completa caben $2\pi \approx 6{,}28$ radianes. ¿Cuántos grados mide, aproximadamente, **un radián**?"
+	opciones={[
+		{ texto: '1°', explicacion: 'Un grado es un ángulo muy pequeño: caben 360 en una vuelta. En una vuelta solo caben unos 6,28 radianes, así que un radián es mucho más grande.' },
+		{ texto: 'Unos 57,3°', correcta: true, explicacion: '$360^\\circ / (2\\pi) = 180^\\circ / \\pi \\approx 57{,}3^\\circ$. Es casi una sexta parte de vuelta.' },
+		{ texto: '180°', explicacion: '180° son $\\pi \\approx 3{,}14$ radianes, no uno.' },
+		{ texto: '3,14°', explicacion: 'Has confundido el número $\\pi$ con un ángulo en grados. $\\pi$ radianes son 180°.' },
+	]}
+/>
+
+Como la circunferencia completa mide $2\pi r$, en una vuelta caben $2\pi$ radianes:
+
+<Formula titulo="Equivalencia entre grados y radianes" usala="para pasar de una unidad a otra, con una regla de tres" nousar="sin mirar antes en qué modo está la calculadora (DEG o RAD)">
+	$$
+	360^\circ = 2\pi \text{ rad} \qquad\Longleftrightarrow\qquad 180^\circ = \pi \text{ rad}
+	$$
+	$$
+	\alpha_{\text{rad}} = \alpha_{\text{grados}} \cdot \frac{\pi}{180^\circ} \qquad\qquad \alpha_{\text{grados}} = \alpha_{\text{rad}} \cdot \frac{180^\circ}{\pi}
+	$$
+</Formula>
+
+Los ángulos más usados conviene conocerlos de memoria (o saber deducirlos a partir de $180^\circ = \pi$):
+
+| Grados | $0^\circ$ | $30^\circ$ | $45^\circ$ | $60^\circ$ | $90^\circ$ | $120^\circ$ | $180^\circ$ | $270^\circ$ | $360^\circ$ |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Radianes | $0$ | $\frac{\pi}{6}$ | $\frac{\pi}{4}$ | $\frac{\pi}{3}$ | $\frac{\pi}{2}$ | $\frac{2\pi}{3}$ | $\pi$ | $\frac{3\pi}{2}$ | $2\pi$ |
+
+¿Para qué sirven los radianes si ya tenemos los grados? Hacen más sencillas muchas fórmulas: la longitud de un arco es $s = \theta r$ y el área de un sector es $\frac12\theta r^2$, sin factores raros. En el bloque de Análisis verás que las derivadas del seno y del coseno solo son «limpias» en radianes.
+
+<Callout tipo="ojo" titulo="La calculadora: DEG o RAD">
+	La calculadora trabaja en el modo que tenga puesto. Si está en radianes (RAD), $\sin 30$ da $-0{,}988$ (el seno de 30 **radianes**) en lugar de $0{,}5$. Antes de un examen, comprueba que en la pantalla aparece **D** o **DEG**. Es el error más frecuente en trigonometría.
+</Callout>
+
+## Las razones trigonométricas de un ángulo agudo
+
+En un triángulo rectángulo, fijado uno de sus ángulos agudos $\alpha$, cada lado tiene un nombre **respecto de ese ángulo**:
+
+- la **hipotenusa** es el lado opuesto al ángulo recto (el más largo);
+- el **cateto opuesto** es el que está enfrente de $\alpha$;
+- el **cateto contiguo** (o adyacente) es el cateto que forma el ángulo $\alpha$ junto con la hipotenusa.
+
+<Figura
+	figura={{ tipo: 'triangulo', a: 3, b: 4, c: 5, base: 'b', nombres: { A: 'A', B: 'B', C: 'C' }, etiquetas: { a: 'cateto opuesto', b: 'cateto contiguo', c: 'hipotenusa', A: 'α' }, colores: { a: 'y', b: 'x' } }}
+	alt="Triángulo rectángulo con el ángulo α en el vértice A: el cateto opuesto en naranja, el contiguo en azul y la hipotenusa en negro."
+	pie="Los nombres «opuesto» y «contiguo» dependen del ángulo que mires: para el otro ángulo agudo se intercambian."
+/>
+
+<Callout tipo="definicion">
+	$$
+	\sin\alpha = \frac{\cy{\text{cateto opuesto}}}{\text{hipotenusa}} \qquad \cos\alpha = \frac{\cx{\text{cateto contiguo}}}{\text{hipotenusa}} \qquad \tan\alpha = \frac{\cy{\text{cateto opuesto}}}{\cx{\text{cateto contiguo}}}
+	$$
+</Callout>
+
+<VariableGrid>
+	<Variable simbolo="\sin\alpha" nombre="Seno de α" tipo="Número sin unidades" eje="y" mide="El cociente entre el cateto **opuesto** y la hipotenusa. Dice qué fracción de la hipotenusa «sube»." cambia="Si $\alpha$ crece de $0^\circ$ a $90^\circ$, el seno crece de 0 a 1." relacion="$\sin\alpha = \cos(90^\circ - \alpha)$" />
+	<Variable simbolo="\cos\alpha" nombre="Coseno de α" tipo="Número sin unidades" eje="x" mide="El cociente entre el cateto **contiguo** y la hipotenusa. Dice qué fracción de la hipotenusa «avanza»." cambia="Si $\alpha$ crece de $0^\circ$ a $90^\circ$, el coseno decrece de 1 a 0." relacion="$\sin^2\alpha + \cos^2\alpha = 1$" />
+	<Variable simbolo="\tan\alpha" nombre="Tangente de α" tipo="Número sin unidades" eje="g" mide="El cociente entre los dos catetos: cuánto sube por cada unidad que avanza. Es la **pendiente**." cambia="Crece de 0 hacia valores tan grandes como quieras cuando $\alpha$ se acerca a $90^\circ$." relacion="$\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}$" />
+</VariableGrid>
+
+En el triángulo de lados 3, 4 y 5: $\sin\alpha = \frac35 = 0{,}6$, $\cos\alpha = \frac45 = 0{,}8$ y $\tan\alpha = \frac34 = 0{,}75$.
+
+<Callout tipo="porque" titulo="¿Por qué «tangente»?">
+	En la circunferencia de radio 1, $\tan\alpha$ es la longitud de un segmento **tangente** a la circunferencia (lo verás en la etapa 3). Y es la **pendiente** de la recta que forma el ángulo $\alpha$ con el eje $X$: la tangente de $45^\circ$ es 1 porque esa recta sube lo mismo que avanza.
+</Callout>
+
+### Notación
+
+- $\sin^2\alpha$ significa $(\sin\alpha)^2$. No es lo mismo que $\sin(\alpha^2)$, que es el seno del ángulo $\alpha^2$.
+- $\sin\alpha$ es un número, no «$\sin$ por $\alpha$». **No** se puede simplificar $\frac{\sin\alpha}{\alpha}$ ni sacar factor común un «$\sin$».
+- En muchos libros en castellano el seno se escribe $\operatorname{sen}$ y la tangente $\operatorname{tg}$. Aquí usamos $\sin$, $\cos$ y $\tan$, como en la calculadora y en tus apuntes de clase. Significan exactamente lo mismo.
+
+### Las razones inversas
+
+A veces aparecen los inversos de las tres razones. No son nuevas: son las mismas «dadas la vuelta».
+
+$$
+\sec\alpha = \frac{1}{\cos\alpha} \qquad \operatorname{cosec}\alpha = \frac{1}{\sin\alpha} \qquad \cot\alpha = \frac{1}{\tan\alpha} = \frac{\cos\alpha}{\sin\alpha}
+$$
+
+Se llaman **secante**, **cosecante** y **cotangente**.
+
+## Del número al ángulo: las funciones inversas
+
+Si conoces el cociente y quieres el ángulo, la calculadora lo hace con las teclas $\sin^{-1}$, $\cos^{-1}$ y $\tan^{-1}$ (también se escriben $\arcsin$, $\arccos$ y $\arctan$). Por ejemplo:
+
+$$
+\tan\alpha = 0{,}75 \;\Rightarrow\; \alpha = \arctan 0{,}75 \approx 36{,}87^\circ
+$$
+
+<Callout tipo="ojo" titulo="sin⁻¹ no es 1/sin">
+	En la tecla $\sin^{-1}$, el $-1$ significa **función inversa** («¿qué ángulo tiene este seno?»), no «uno partido por». $\sin^{-1}(0{,}5) = 30^\circ$, mientras que $\frac{1}{\sin 30^\circ} = 2$.
+</Callout>
+
+<Callout tipo="limite">
+	La calculadora devuelve **un solo ángulo**: $\arcsin$ y $\arctan$ dan ángulos entre $-90^\circ$ y $90^\circ$, y $\arccos$ entre $0^\circ$ y $180^\circ$. Pero hay otros ángulos con el mismo seno, coseno o tangente. En un triángulo rectángulo esto no importa (el ángulo es agudo), pero en las ecuaciones del tema 3 será fundamental.
+</Callout>

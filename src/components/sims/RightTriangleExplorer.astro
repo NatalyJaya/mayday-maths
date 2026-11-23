@@ -1,0 +1,41 @@
+---
+// Triángulos rectángulos semejantes: los cocientes entre lados solo dependen del ángulo.
+---
+
+<right-triangle-explorer class="sim wide">
+	<div class="sim-head">
+		<h4>Mismo ángulo, distinto tamaño</h4>
+		<p class="muted">En gris, triángulos semejantes de otros tamaños.</p>
+	</div>
+	<svg class="sim-svg mfig" viewBox="0 0 560 330" role="img" aria-label="Triángulo rectángulo con el ángulo α, el cateto contiguo en azul, el opuesto en naranja y la hipotenusa en negro, y triángulos semejantes de otros tamaños en gris."></svg>
+	<table class="sim-table rt-ratios">
+		<thead><tr><th>Cociente</th><th>Valor</th><th>Nombre</th></tr></thead>
+		<tbody>
+			<tr><td><span class="q-y">opuesto</span> / hipotenusa</td><td class="y"><output data-out="sin"></output></td><td>seno de α</td></tr>
+			<tr><td><span class="q-x">contiguo</span> / hipotenusa</td><td class="x"><output data-out="cos"></output></td><td>coseno de α</td></tr>
+			<tr><td><span class="q-y">opuesto</span> / <span class="q-x">contiguo</span></td><td class="g"><output data-out="tan"></output></td><td>tangente de α</td></tr>
+		</tbody>
+	</table>
+	<div class="sim-controls">
+		<div class="param">
+			<label>Ángulo α: <output data-out="a"></output></label>
+			<input type="range" data-k="a" min="5" max="75" step="1" value="35" aria-label="Ángulo α (grados)" />
+		</div>
+		<div class="param">
+			<label>Hipotenusa: <output data-out="h"></output></label>
+			<input type="range" data-k="h" min="2" max="11" step="0.1" value="9" aria-label="Longitud de la hipotenusa (cm)" />
+		</div>
+		<label class="check"><input type="checkbox" data-k="ghost" checked /> Ver triángulos semejantes</label>
+	</div>
+	<p class="sim-note">Mueve <strong>solo la hipotenusa</strong>: los lados cambian, pero los tres cocientes no. Mueve el <strong>ángulo</strong>: los cocientes sí cambian.</p>
+</right-triangle-explorer>
+
+<style>
+	.rt-ratios {
+		margin-top: 0.5rem;
+	}
+</style>
+
+<script>
+	import '../../sims/right-triangle-explorer';
+</script>

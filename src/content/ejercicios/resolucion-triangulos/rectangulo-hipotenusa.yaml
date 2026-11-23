@@ -1,0 +1,36 @@
+titulo: Resolver un triángulo rectángulo (hipotenusa y ángulo)
+tema: resolucion-triangulos
+orden: 1
+procedencia: original
+dificultad: basico
+habilidades: [calculo, geometria]
+resumen: El otro ángulo por complemento y los catetos con seno y coseno.
+enunciado: |
+  Resuelve el triángulo rectángulo (ángulo recto en $C$) con hipotenusa $c = 12\un{cm}$ y ángulo $A = 35^\circ$.
+figura:
+  tipo: triangulo
+  a: 6.883
+  b: 9.830
+  c: 12
+  base: b
+  etiquetas: { c: '12 cm', a: 'a = ?', b: 'b = ?', A: '35°', B: 'B = ?' }
+  colores: { a: y, b: x }
+apartados:
+  - id: a
+    enunciado: Calcula el ángulo $B$ y los catetos $a$ y $b$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'B', etiqueta: ángulo, unidad: '°', valor: 55 }
+        - { simbolo: 'a', etiqueta: cateto opuesto a A, unidad: cm, valor: 6.88, trampas: [{ valor: 9.83, explicacion: 'Ese es el cateto contiguo a $A$. El lado $a$ está enfrente de $A$: $a = 12\sin 35^\circ$.' }] }
+        - { simbolo: 'b', etiqueta: cateto contiguo a A, unidad: cm, valor: 9.83, trampas: [{ valor: 6.88, explicacion: 'Ese es el cateto opuesto a $A$. El lado $b$ es el contiguo: $b = 12\cos 35^\circ$.' }] }
+    pistas:
+      - 'Los dos ángulos agudos suman $90^\circ$.'
+      - '$a$ es el cateto opuesto a $A$; $b$, el contiguo.'
+    pasos:
+      - titulo: Ángulo B
+        desarrollo: '$$B = 90^\circ - 35^\circ = 55^\circ$$'
+      - titulo: Catetos
+        desarrollo: '$$a = 12\sin 35^\circ \approx 6{,}88\un{cm} \qquad b = 12\cos 35^\circ \approx 9{,}83\un{cm}$$'
+        porque: 'Comprobación: $6{,}88^2 + 9{,}83^2 \approx 144 = 12^2$ ✔.'
+    resultado: '$B = 55^\circ$, $a \approx 6{,}88\un{cm}$, $b \approx 9{,}83\un{cm}$.'

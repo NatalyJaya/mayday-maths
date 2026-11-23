@@ -1,0 +1,35 @@
+# Colecciones de ejercicios de clase. Cada ejercicio indica la suya con
+# «coleccion: <id>». Las variantes («variante_de») se muestran agrupadas
+# bajo su ejercicio principal.
+
+- id: clase-identidades
+  titulo: 'Trigonometría 2: identidades'
+  corto: Identidades (clase)
+  tema: identidades-ecuaciones
+  descripcion: La simplificación de sin(a + b)·sin(a − b) / (cos a + cos b) y la demostración «per demà» con el ángulo doble y el ángulo mitad, tal como aparecen en tus apuntes.
+  fuente: apuntes-trigonometria-2
+  principales: [clase-simplifica-producto, clase-demuestra-tan-mitad]
+
+- id: clase-serie-a
+  titulo: 'Trigonometría 2: Serie A de ecuaciones'
+  corto: Serie A (clase)
+  tema: identidades-ecuaciones
+  descripcion: Las ocho ecuaciones de la foto de ecuaciones con ángulo doble y ángulo mitad. Hay que reducirlo todo a una sola razón antes de resolver.
+  fuente: apuntes-trigonometria-2
+  principales: [clase-a1, clase-a2, clase-a3, clase-a4, clase-a5, clase-a6, clase-a7, clase-a8]
+
+- id: clase-serie-b
+  titulo: 'Trigonometría 2: Serie B de ecuaciones (a–h)'
+  corto: Serie B (clase)
+  tema: identidades-ecuaciones
+  descripcion: La hoja de ecuaciones a–h, de las más directas (2 sin x − 1 = 0) a las que piden una identidad o factorizar.
+  fuente: apuntes-trigonometria-2
+  principales: [clase-b-a, clase-b-b, clase-b-c, clase-b-d, clase-b-e, clase-b-f, clase-b-g, clase-b-h]
+
+- id: clase-problema-31
+  titulo: 'Trigonometría 2: Problema 31'
+  corto: Problema 31 (clase)
+  tema: resolucion-triangulos
+  descripcion: Ángulos de depresión y teorema del coseno para hallar la distancia entre dos puntos vistos desde lo alto.
+  fuente: apuntes-trigonometria-2
+  principales: [clase-problema-31]

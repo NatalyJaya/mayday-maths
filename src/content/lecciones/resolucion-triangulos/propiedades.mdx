@@ -1,0 +1,200 @@
+---
+tema: resolucion-triangulos
+etapa: propiedades
+titulo: Los teoremas del seno y del coseno
+descripcion: La doble observación, la deducción de los dos teoremas a partir de una altura, el caso ambiguo, el área de un triángulo y cómo decidir qué usar.
+minutos: 35
+---
+
+## Doble observación: dos triángulos rectángulos
+
+Quieres la altura $h$ de una torre a cuyo pie no puedes llegar. Desde un punto la ves con un ángulo de elevación $\alpha$; te acercas una distancia $d$ y la ves con un ángulo mayor, $\beta$. No conoces la distancia $x$ que te queda hasta el pie.
+
+<Figura
+	figura={{
+		tipo: 'geometria',
+		puntos: [
+			{ id: 'A', x: 0, y: 0, lado: 's' },
+			{ id: 'B', x: 4, y: 0, lado: 's' },
+			{ id: 'P', x: 9.8, y: 0, etiqueta: '', marca: false },
+			{ id: 'T', x: 9.8, y: 5.2, etiqueta: 'T', lado: 'n' },
+		],
+		segmentos: [
+			{ de: 'A', a: 'B', etiqueta: 'd', color: 'x', lado: 'derecha' },
+			{ de: 'B', a: 'P', etiqueta: 'x', color: 'x', lado: 'derecha' },
+			{ de: 'P', a: 'T', etiqueta: 'h', color: 'y', lado: 'derecha' },
+			{ de: 'A', a: 'T', discontinuo: true },
+			{ de: 'B', a: 'T', discontinuo: true },
+		],
+		angulos: [
+			{ vertice: 'A', desde: 'P', hasta: 'T', etiqueta: 'α', color: 'g', radio: 40 },
+			{ vertice: 'B', desde: 'P', hasta: 'T', etiqueta: 'β', color: 'g', radio: 30 },
+			{ vertice: 'P', desde: 'B', hasta: 'T', recto: true },
+		],
+		suelo: { y: 0, desde: -0.5, hasta: 10.5 },
+	}}
+	alt="Doble observación: desde A se ve la cima T con ángulo α y desde B, más cerca, con ángulo β. Entre A y B hay una distancia d; desde B hasta el pie de la torre, una distancia x desconocida."
+/>
+
+Hay **dos incógnitas** ($h$ y $x$) y **dos triángulos rectángulos** (el grande, con $\alpha$, y el pequeño, con $\beta$). En cada uno, la tangente relaciona la altura con la distancia horizontal:
+
+$$
+\tan\beta = \frac{h}{x} \qquad\qquad \tan\alpha = \frac{h}{x + d}
+$$
+
+Despejando $h$ en las dos e igualando:
+
+$$
+x\tan\beta = (x + d)\tan\alpha \;\Rightarrow\; x(\tan\beta - \tan\alpha) = d\tan\alpha \;\Rightarrow\; x = \frac{d\tan\alpha}{\tan\beta - \tan\alpha} \qquad h = x\tan\beta
+$$
+
+<Callout tipo="idea">
+	No memorices la fórmula final: memoriza el **método**. Escribe una ecuación por cada triángulo rectángulo con la misma incógnita y resuelve el sistema. Funciona igual si los dos puntos de observación están a lados opuestos de la torre (entonces las distancias **suman**: $x + y = d$).
+</Callout>
+
+## El teorema del seno
+
+<Derivation titulo="Deducción con la altura">
+	<Paso titulo="Trazar la altura desde C" porque="Así el triángulo queda dividido en dos triángulos rectángulos, donde ya sabemos usar el seno.">
+		<Figura figura={{ tipo: 'triangulo', a: 7, b: 6, c: 8, altura: { desde: 'C', etiqueta: 'h' }, etiquetas: { a: 'a', b: 'b', A: 'A', B: 'B' }, colores: { a: 'x', b: 'y' } }} alt="Triángulo con la altura h desde C." />
+	</Paso>
+	<Paso titulo="Escribir la altura de dos formas" porque="En el triángulo de la izquierda, $h$ es el cateto opuesto a $A$ y la hipotenusa es $b$. En el de la derecha, $h$ es opuesto a $B$ y la hipotenusa es $a$.">
+		$$
+		\sin A = \frac{h}{b} \;\Rightarrow\; h = b\sin A \qquad\qquad \sin B = \frac{h}{a} \;\Rightarrow\; h = a\sin B
+		$$
+	</Paso>
+	<Paso titulo="Igualar y reordenar">
+		$$
+		b\sin A = a\sin B \quad\Longrightarrow\quad \frac{a}{\sin A} = \frac{b}{\sin B}
+		$$
+	</Paso>
+	<Paso titulo="Repetir con otra altura" porque="Con la altura desde $A$ se obtiene, del mismo modo, $\frac{b}{\sin B} = \frac{c}{\sin C}$.">
+		$$
+		\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}
+		$$
+	</Paso>
+</Derivation>
+
+<Formula titulo="Teorema del seno" usala="cuando conozcas un lado y su ángulo opuesto (una «pareja») y otro dato: casos ALA, AAL y LLA" nousar="con los tres lados (LLL) o con dos lados y el ángulo que forman (LAL): ninguna pareja está completa">
+	$$
+	\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R
+	$$
+</Formula>
+
+En palabras: **los lados son proporcionales a los senos de sus ángulos opuestos**. El ángulo más grande tiene el seno más grande… salvo cuando es obtuso, y por eso hay que tener cuidado.
+
+<Reveal titulo="Ampliación: ¿qué es ese 2R?">
+
+El cociente común es el **diámetro de la circunferencia circunscrita** al triángulo (la que pasa por los tres vértices). Si trazas el diámetro que pasa por $B$, el ángulo inscrito que abarca el lado $a$ es igual a $A$ (ángulos inscritos que abarcan el mismo arco), y en el triángulo rectángulo que se forma sale $\sin A = \frac{a}{2R}$. En el laboratorio puedes activar la circunferencia y comprobarlo.
+
+</Reveal>
+
+<Callout tipo="ojo" titulo="Si el triángulo es obtuso">
+	Si $A$ es obtuso, la altura desde $C$ cae **fuera** del triángulo, sobre la prolongación de $c$. La deducción sigue funcionando porque $\sin(180^\circ - A) = \sin A$. Por la misma razón, el seno no distingue un ángulo agudo $\theta$ de su suplementario $180^\circ - \theta$, y eso trae el caso ambiguo.
+</Callout>
+
+## El caso ambiguo (LLA)
+
+Conoces $a$, $b$ y el ángulo $A$, opuesto a $a$. Con el teorema del seno calculas $\sin B = \frac{b\sin A}{a}$. Pero **dos ángulos tienen ese seno**: $B$ y $180^\circ - B$. ¿Valen los dos?
+
+Construyámoslo: dibuja el ángulo $A$ y, sobre uno de sus lados, el lado $b$ hasta $C$. El vértice $B$ tiene que estar en el otro lado del ángulo y a distancia $a$ de $C$: es decir, donde la circunferencia de centro $C$ y radio $a$ corta esa recta.
+
+<AmbiguousCase />
+
+Llamando $h = b\sin A$ a la distancia de $C$ a la recta (la altura), si $A$ es agudo:
+
+| Situación | Lo que pasa | Triángulos |
+| --- | --- | --- |
+| $a < h$ | la circunferencia no llega a la recta ($\sin B > 1$) | **ninguno** |
+| $a = h$ | la toca en un punto ($\sin B = 1$, $B = 90^\circ$) | **uno**, rectángulo |
+| $h < a < b$ | la corta en dos puntos | **dos** |
+| $a \ge b$ | uno de los cortes queda detrás de $A$ | **uno** |
+
+Si $A$ es obtuso o recto, solo hay triángulo cuando $a > b$, y es único.
+
+<Callout tipo="idea" titulo="Cómo detectarlo en la práctica">
+	Cada vez que calcules un ángulo con $\arcsin$, prueba también su suplementario $180^\circ - B$: **vale si sumado al ángulo conocido da menos de $180^\circ$**. Si vale, hay dos triángulos y el problema tiene dos soluciones.
+</Callout>
+
+## El teorema del coseno
+
+Cuando no tienes ninguna pareja lado–ángulo opuesto completa (casos LLL y LAL), el teorema del seno no sirve. Hace falta una relación entre los **tres lados** y un ángulo.
+
+<Derivation titulo="Deducción con coordenadas">
+	<Paso titulo="Colocar el triángulo en unos ejes" porque="Con $A$ en el origen y $c$ sobre el eje $X$, las coordenadas salen directamente de la definición de seno y coseno (el punto $C$ está a distancia $b$ del origen, con ángulo $A$).">
+		$$
+		A = (0,\ 0) \qquad B = (c,\ 0) \qquad C = (b\cos A,\ b\sin A)
+		$$
+	</Paso>
+	<Paso titulo="Distancia de B a C" porque="El lado $a$ es la distancia entre $B$ y $C$ (Pitágoras con las diferencias de coordenadas).">
+		$$
+		a^2 = (b\cos A - c)^2 + (b\sin A)^2
+		$$
+	</Paso>
+	<Paso titulo="Desarrollar el cuadrado">
+		$$
+		a^2 = b^2\cos^2 A - 2bc\cos A + c^2 + b^2\sin^2 A
+		$$
+	</Paso>
+	<Paso titulo="Usar la identidad fundamental" porque="$b^2\cos^2 A + b^2\sin^2 A = b^2(\cos^2 A + \sin^2 A) = b^2$.">
+		$$
+		a^2 = b^2 + c^2 - 2bc\cos A
+		$$
+	</Paso>
+</Derivation>
+
+<Formula titulo="Teorema del coseno" usala="con los tres lados (para un ángulo) o con dos lados y el ángulo que forman (para el tercer lado)" nousar="si el ángulo que conoces no es el que forman los dos lados conocidos">
+	$$
+	a^2 = b^2 + c^2 - 2bc\cos A \qquad b^2 = a^2 + c^2 - 2ac\cos B \qquad c^2 = a^2 + b^2 - 2ab\cos C
+	$$
+	$$
+	\cos A = \frac{b^2 + c^2 - a^2}{2bc}
+	$$
+</Formula>
+
+<Callout tipo="porque" titulo="¿Por qué se llama «Pitágoras generalizado»?">
+	Si $A = 90^\circ$, entonces $\cos A = 0$ y queda $a^2 = b^2 + c^2$: el teorema de Pitágoras. El término $-2bc\cos A$ es la **corrección** cuando el ángulo no es recto: si $A$ es agudo ($\cos A > 0$), el lado $a$ es más corto que en el triángulo rectángulo; si es obtuso ($\cos A < 0$), más largo.
+</Callout>
+
+Una ventaja del coseno: en $(0^\circ,\ 180^\circ)$ cada valor del coseno corresponde a **un solo** ángulo. El $\arccos$ distingue agudos (coseno positivo) de obtusos (coseno negativo). Por eso, en el caso LLL, **calcula primero el ángulo mayor (el opuesto al lado mayor) con el coseno**, y así los otros dos son seguro agudos.
+
+<Callout tipo="contraejemplo">
+	Olvidar el término $-2bc\cos A$ y usar Pitágoras en un triángulo que no es rectángulo es el error más frecuente del tema. En el Problema 31 de clase, Pitágoras daría $6458\un{m}$ en lugar de $3383\un{m}$.
+</Callout>
+
+## El área de un triángulo
+
+El área es $\frac12\cdot\text{base}\cdot\text{altura}$. Con la base $c$, la altura desde $C$ es $h = b\sin A$, así que:
+
+<Formula titulo="Área con dos lados y el ángulo comprendido" usala="cuando conozcas dos lados y el ángulo que forman" nousar="con un ángulo que no esté entre los dos lados">
+	$$
+	S = \frac12\, b\, c\,\sin A = \frac12\, a\, c\,\sin B = \frac12\, a\, b\,\sin C
+	$$
+</Formula>
+
+<Reveal titulo="Ampliación: la fórmula de Herón (con los tres lados)">
+
+Si conoces los tres lados, con el semiperímetro $p = \frac{a + b + c}{2}$:
+
+$$
+S = \sqrt{p\,(p - a)(p - b)(p - c)}
+$$
+
+Por ejemplo, con lados 13, 14 y 15: $p = 21$ y $S = \sqrt{21\cdot 8\cdot 7\cdot 6} = \sqrt{7056} = 84$.
+
+</Reveal>
+
+## ¿Qué teorema uso?
+
+<Figura
+	figura={{
+		tipo: 'flujo',
+		titulo: 'Decidir el método',
+		pasos: [
+			{ etiqueta: 'Paso 1', titulo: '¿Es rectángulo?', texto: 'Sí: seno, coseno, tangente y Pitágoras. No hacen falta los teoremas.' },
+			{ etiqueta: 'Paso 2', titulo: '¿Tienes una pareja?', texto: 'Si conoces un lado **y su ángulo opuesto**: teorema del seno (en LLA, piensa en el caso ambiguo).', color: 'y' },
+			{ etiqueta: 'Paso 3', titulo: 'Si no hay pareja', texto: 'LLL o LAL: teorema del coseno. Después ya tendrás una pareja.', color: 'x' },
+			{ etiqueta: 'Paso 4', titulo: 'Comprueba', texto: 'A + B + C = 180° y al lado mayor, el ángulo mayor.', color: 'g' },
+		],
+	}}
+/>

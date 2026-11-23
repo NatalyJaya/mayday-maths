@@ -1,0 +1,65 @@
+titulo: La altura de un edificio
+tema: razones-trigonometricas
+rol: ejemplo
+orden: 3
+procedencia: original
+dificultad: basico
+habilidades: [planteamiento, modelizacion]
+resumen: Ángulo de elevación, tangente y no olvidar la altura de los ojos.
+enunciado: |
+  Una estudiante se coloca a $40\un{m}$ del pie de un edificio y mira la parte más alta con un ángulo de elevación de $32^\circ$. Sus ojos están a $1{,}6\un{m}$ del suelo. ¿Cuánto mide el edificio?
+figura:
+  tipo: geometria
+  puntos:
+    - { id: O, x: 0, y: 1.6, etiqueta: 'ojos', lado: o }
+    - { id: S, x: 0, y: 0, etiqueta: '', marca: false }
+    - { id: B, x: 40, y: 0, etiqueta: '', marca: false }
+    - { id: H, x: 40, y: 1.6, etiqueta: '', marca: false }
+    - { id: T, x: 40, y: 26.59, etiqueta: 'T', lado: e }
+  segmentos:
+    - { de: S, a: O, etiqueta: '1,6 m', lado: izquierda }
+    - { de: O, a: H, etiqueta: '40 m', color: x, discontinuo: true, lado: derecha }
+    - { de: H, a: T, etiqueta: 'x = ?', color: y, lado: derecha }
+    - { de: B, a: H, color: v }
+    - { de: O, a: T, color: v, discontinuo: true }
+  angulos:
+    - { vertice: O, desde: H, hasta: T, etiqueta: '32°', color: g, radio: 50 }
+    - { vertice: H, desde: O, hasta: T, recto: true }
+  suelo: { y: 0, desde: -4, hasta: 46 }
+datos:
+  - { simbolo: 'd', valor: '40\un{m}', significado: 'distancia horizontal al edificio' }
+  - { simbolo: '\alpha', valor: '32^\circ', significado: 'ángulo de elevación' }
+  - { simbolo: 'h_0', valor: '1{,}6\un{m}', significado: 'altura de los ojos' }
+incognitas:
+  - 'La altura total del edificio, $H$.'
+interpretacion: |
+  El **ángulo de elevación** se mide desde la horizontal de los ojos hacia arriba. Se forma un triángulo rectángulo cuyo cateto contiguo son los $40\un{m}$ y cuyo cateto opuesto es la parte del edificio que está **por encima de los ojos**. A eso hay que sumarle $1{,}6\un{m}$.
+apartados:
+  - id: a
+    enunciado: Calcula la altura del edificio.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'H'
+          etiqueta: altura del edificio
+          unidad: m
+          valor: 26.59
+          trampas:
+            - valor: 24.99
+              explicacion: 'Es la parte del edificio que está por encima de los ojos. Te falta sumar $1{,}6\un{m}$.'
+            - valor: 21.20
+              explicacion: 'Has usado el seno. Los $40\un{m}$ son el cateto contiguo, no la hipotenusa: la razón que une los dos catetos es la tangente.'
+    pasos:
+      - titulo: Elegir la razón
+        piensa: 'Conoces el cateto contiguo y buscas el opuesto. ¿Qué razón los relaciona?'
+        desarrollo: '$$\tan 32^\circ = \frac{\cy{x}}{\cx{40}}$$'
+        porque: 'La tangente es la razón entre los dos catetos.'
+      - titulo: Despejar
+        desarrollo: '$$x = 40\cdot\tan 32^\circ \approx 40\cdot 0{,}6249 \approx 24{,}99\un{m}$$'
+      - titulo: Sumar la altura de los ojos
+        desarrollo: '$$H = 24{,}99 + 1{,}6 \approx 26{,}59\un{m}$$'
+        porque: 'El triángulo empieza a la altura de los ojos, no en el suelo.'
+    resultado: 'El edificio mide unos $26{,}6\un{m}$.'
+errores:
+  - error: 'Olvidar la altura del observador'
+    explicacion: 'El ángulo se mide desde los ojos. Si el enunciado da esa altura, hay que sumarla.'

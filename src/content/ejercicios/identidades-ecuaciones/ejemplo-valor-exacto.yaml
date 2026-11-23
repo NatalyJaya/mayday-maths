@@ -1,0 +1,41 @@
+titulo: El coseno y la tangente de 15°
+tema: identidades-ecuaciones
+rol: ejemplo
+orden: 1
+procedencia: original
+dificultad: basico
+habilidades: [calculo]
+resumen: 15° = 45° − 30°, fórmulas de la resta y racionalizar.
+enunciado: Calcula el valor exacto de $\cos 15^\circ$ y de $\tan 15^\circ$.
+apartados:
+  - id: a
+    enunciado: '$\cos 15^\circ$ y $\tan 15^\circ$ (escribe los decimales).'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\cos 15^\circ', etiqueta: '', unidad: '', valor: 0.9659, tolerancia: 0.003 }
+        - { simbolo: '\tan 15^\circ', etiqueta: '', unidad: '', valor: 0.2679, tolerancia: 0.005 }
+    pasos:
+      - titulo: Escribir 15° con ángulos notables
+        piensa: ¿Con qué ángulos notables puedes formar 15°?
+        desarrollo: '$$15^\circ = 45^\circ - 30^\circ$$'
+        porque: 'Así podemos usar las razones exactas de $45^\circ$ y $30^\circ$. También valdría $60^\circ - 45^\circ$.'
+      - titulo: Coseno de la resta
+        desarrollo: |
+          $$\cos 15^\circ = \cos 45^\circ\cos 30^\circ + \sin 45^\circ\sin 30^\circ = \frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2} + \frac{\sqrt2}{2}\cdot\frac12 = \frac{\sqrt6 + \sqrt2}{4} \approx 0{,}9659$$
+        porque: 'En el coseno de la resta el signo central es $+$.'
+      - titulo: Tangente de la resta
+        piensa: '¿Usas la fórmula de la tangente o divides seno entre coseno?'
+        desarrollo: |
+          $$\tan 15^\circ = \frac{\tan 45^\circ - \tan 30^\circ}{1 + \tan 45^\circ\tan 30^\circ} = \frac{1 - \frac{\sqrt3}{3}}{1 + \frac{\sqrt3}{3}} = \frac{3 - \sqrt3}{3 + \sqrt3}$$
+      - titulo: Racionalizar
+        desarrollo: |
+          $$\frac{3 - \sqrt3}{3 + \sqrt3}\cdot\frac{3 - \sqrt3}{3 - \sqrt3} = \frac{9 - 6\sqrt3 + 3}{9 - 3} = \frac{12 - 6\sqrt3}{6} = 2 - \sqrt3 \approx 0{,}2679$$
+        porque: 'Se multiplica por el conjugado del denominador para quitar la raíz.'
+    resultado: '$\cos 15^\circ = \dfrac{\sqrt6 + \sqrt2}{4} \approx 0{,}9659$ y $\tan 15^\circ = 2 - \sqrt3 \approx 0{,}2679$.'
+errores:
+  - error: 'Escribir cos(45° − 30°) = cos 45° − cos 30°'
+    explicacion: 'Daría $\frac{\sqrt2 - \sqrt3}{2} < 0$: imposible, porque el coseno de un ángulo agudo es positivo.'
+alternativas:
+  - titulo: Con el ángulo mitad
+    desarrollo: '$15^\circ = \frac{30^\circ}{2}$, en el primer cuadrante: $\cos 15^\circ = \sqrt{\frac{1 + \cos 30^\circ}{2}} = \sqrt{\frac{2 + \sqrt3}{4}} = \frac{\sqrt{2 + \sqrt3}}{2} \approx 0{,}9659$. Es el mismo número escrito de otra forma.'

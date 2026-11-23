@@ -1,0 +1,25 @@
+titulo: ¿Existe ese ángulo?
+tema: razones-trigonometricas
+orden: 10
+procedencia: original
+dificultad: intermedio
+habilidades: [conceptual]
+resumen: La identidad fundamental como comprobación.
+enunciado: |
+  Un compañero dice que ha encontrado un ángulo con $\sin\alpha = 0{,}6$ y $\cos\alpha = 0{,}7$.
+apartados:
+  - id: a
+    enunciado: ¿Es posible?
+    respuesta:
+      tipo: opciones
+      opciones:
+        - { texto: 'Sí, porque los dos valores están entre −1 y 1.', explicacion: 'Estar entre $-1$ y $1$ es necesario, pero no suficiente. Además, seno y coseno tienen que cumplir la identidad fundamental.' }
+        - { texto: 'No, porque 0,6² + 0,7² no da 1.', correcta: true, explicacion: '$0{,}36 + 0{,}49 = 0{,}85 \ne 1$. Para cualquier ángulo, $\sin^2\alpha + \cos^2\alpha = 1$: el punto $(0{,}7;\ 0{,}6)$ no está en la circunferencia de radio 1.' }
+        - { texto: 'No, porque 0,6 + 0,7 no da 1.', explicacion: 'Que seno y coseno sumen 1 no es ninguna regla (para $45^\circ$ suman $\sqrt2$). Lo que suma 1 son sus cuadrados.' }
+        - { texto: 'Sí, es un ángulo de unos 40°.', explicacion: '$\sin 40^\circ \approx 0{,}64$ y $\cos 40^\circ \approx 0{,}77$. Ningún ángulo tiene a la vez esos dos valores.' }
+    pistas:
+      - 'Comprueba la identidad fundamental.'
+    pasos:
+      - titulo: Comprobar la identidad
+        desarrollo: '$$0{,}6^2 + 0{,}7^2 = 0{,}36 + 0{,}49 = 0{,}85 \ne 1$$'
+    resultado: 'No existe ningún ángulo así.'

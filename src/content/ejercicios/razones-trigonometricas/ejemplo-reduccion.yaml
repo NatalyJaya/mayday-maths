@@ -1,0 +1,60 @@
+titulo: Valores exactos sin calculadora
+tema: razones-trigonometricas
+rol: ejemplo
+orden: 2
+procedencia: original
+dificultad: intermedio
+habilidades: [calculo, graficas]
+resumen: Quitar vueltas, mirar el cuadrante y buscar el ángulo de referencia.
+enunciado: |
+  Calcula el valor exacto, sin calculadora, de:
+  $$\text{a) } \sin 240^\circ \qquad \text{b) } \cos 315^\circ \qquad \text{c) } \tan 870^\circ$$
+apartados:
+  - id: a
+    enunciado: '$\sin 240^\circ$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\sin 240^\circ', etiqueta: valor (decimal), unidad: '', valor: -0.8660, tolerancia: 0.005 }
+    pasos:
+      - titulo: Cuadrante y signo
+        piensa: ¿Dónde está el punto de 240°?
+        desarrollo: '$240^\circ$ está entre $180^\circ$ y $270^\circ$: **tercer cuadrante**, donde el seno es **negativo**.'
+      - titulo: Ángulo de referencia
+        desarrollo: '$240^\circ = 180^\circ + 60^\circ$, así que el ángulo de referencia es $60^\circ$.'
+        porque: 'Es el ángulo agudo con el eje $X$: lo que pasa de $180^\circ$.'
+      - titulo: Resultado
+        desarrollo: '$$\sin 240^\circ = -\sin 60^\circ = -\frac{\sqrt3}{2}$$'
+    resultado: '$\sin 240^\circ = -\dfrac{\sqrt3}{2} \approx -0{,}866$.'
+  - id: b
+    enunciado: '$\cos 315^\circ$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\cos 315^\circ', etiqueta: valor (decimal), unidad: '', valor: 0.7071, tolerancia: 0.005 }
+    pasos:
+      - titulo: Cuadrante, signo y referencia
+        piensa: ¿Cuánto le falta a 315° para la vuelta completa?
+        desarrollo: '$315^\circ$ está en el **cuarto cuadrante**: coseno **positivo**. $315^\circ = 360^\circ - 45^\circ$: referencia $45^\circ$.'
+      - titulo: Resultado
+        desarrollo: '$$\cos 315^\circ = \cos 45^\circ = \frac{\sqrt2}{2}$$'
+    resultado: '$\cos 315^\circ = \dfrac{\sqrt2}{2} \approx 0{,}707$.'
+  - id: c
+    enunciado: '$\tan 870^\circ$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\tan 870^\circ', etiqueta: valor (decimal), unidad: '', valor: -0.5774, tolerancia: 0.005 }
+    pasos:
+      - titulo: Quitar las vueltas completas
+        piensa: '870° es más de dos vueltas. ¿A qué ángulo de la primera vuelta equivale?'
+        desarrollo: '$870^\circ - 2\cdot 360^\circ = 150^\circ$, así que $\tan 870^\circ = \tan 150^\circ$.'
+        porque: 'Los ángulos coterminales tienen las mismas razones.'
+      - titulo: Cuadrante, signo y referencia
+        desarrollo: '$150^\circ$: **segundo cuadrante**, tangente **negativa**. Referencia: $180^\circ - 150^\circ = 30^\circ$.'
+      - titulo: Resultado
+        desarrollo: '$$\tan 870^\circ = -\tan 30^\circ = -\frac{\sqrt3}{3}$$'
+    resultado: '$\tan 870^\circ = -\dfrac{\sqrt3}{3} \approx -0{,}577$.'
+errores:
+  - error: 'Tomar el ángulo de referencia respecto al eje Y'
+    explicacion: 'Para $240^\circ$ la referencia es $60^\circ$ (con el eje $X$), no $30^\circ$. Si usas $30^\circ$ obtienes $-\frac12$, que es incorrecto.'

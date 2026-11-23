@@ -1,0 +1,25 @@
+titulo: ¿Por dónde empiezo?
+tema: resolucion-triangulos
+orden: 8
+procedencia: original
+dificultad: intermedio
+habilidades: [metodo, conceptual]
+resumen: Reconocer el caso a partir de los datos.
+enunciado: |
+  De un triángulo se conocen $a = 7$, $b = 9$ y $C = 40^\circ$.
+apartados:
+  - id: a
+    enunciado: ¿Cuál es el primer paso para resolverlo?
+    respuesta:
+      tipo: opciones
+      opciones:
+        - { texto: 'Teorema del seno para calcular A.', explicacion: 'Para usar el teorema del seno hace falta una pareja lado–ángulo opuesto completa. El ángulo $C$ es opuesto a $c$, que no conocemos.' }
+        - { texto: 'Teorema del coseno para calcular c.', correcta: true, explicacion: '$C$ está **entre** los lados $a$ y $b$ (caso LAL): $c^2 = a^2 + b^2 - 2ab\cos C$. Con $c$ ya habrá una pareja ($c$, $C$) y se puede seguir.' }
+        - { texto: 'Pitágoras para calcular c.', explicacion: 'Solo vale si $C = 90^\circ$.' }
+        - { texto: 'No se puede resolver: faltan datos.', explicacion: 'Tres datos con al menos un lado bastan. Aquí son dos lados y el ángulo que forman: el triángulo es único.' }
+    pistas:
+      - '¿Hay algún lado del que conozcas el ángulo opuesto?'
+    pasos:
+      - titulo: Identificar el caso
+        desarrollo: '$C$ es el ángulo formado por $a$ y $b$: caso **LAL**. Primero, el teorema del coseno para $c$; después, el seno o el coseno para otro ángulo.'
+    resultado: 'Teorema del coseno para el lado $c$.'

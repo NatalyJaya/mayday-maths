@@ -1,0 +1,32 @@
+---
+// Figura matemática dentro de una lección (la misma que en los ejercicios:
+// generada a escala a partir de los datos).
+import ExerciseFigure from '../exercises/ExerciseFigure.astro';
+import type { Figure } from '../../lib/schemas';
+import { figureSchema } from '../../lib/schemas';
+
+interface Props {
+	figura: unknown;
+	alt?: string;
+	/** Texto bajo la figura (Markdown no; texto plano). */
+	pie?: string;
+}
+const { figura, alt, pie } = Astro.props;
+const f: Figure = figureSchema.parse(figura);
+---
+
+<div class="lesson-fig">
+	<ExerciseFigure figura={f} alt={alt} />
+	{pie && <p class="pie">{pie}</p>}
+</div>
+
+<style>
+	.lesson-fig :global(.ex-fig) {
+		margin-bottom: 0.3rem;
+	}
+	.pie {
+		font-size: 0.9rem;
+		color: var(--ink-3);
+		margin: 0 0 1.4rem;
+	}
+</style>

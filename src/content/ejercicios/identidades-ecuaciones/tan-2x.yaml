@@ -1,0 +1,30 @@
+titulo: 'tan 2x = √3'
+tema: identidades-ecuaciones
+orden: 6
+procedencia: original
+dificultad: intermedio
+habilidades: [calculo, conceptual]
+resumen: 'Ángulo múltiple y tangente: el periodo de 180° se divide entre 2.'
+enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\tan 2x = \sqrt3$'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones.
+    respuesta:
+      tipo: conjunto
+      valores: [30, 120, 210, 300]
+      trampas:
+        - { valores: [30, 120], explicacion: 'Has buscado $2x$ solo en una vuelta. Como $x$ llega a $360^\circ$, $2x$ llega a $720^\circ$: hay dos soluciones más.' }
+        - { valores: [60, 240], explicacion: 'Esas son las soluciones de $\tan x = \sqrt3$. Falta trabajar con $2x$ y dividir entre 2.' }
+    pistas:
+      - '$\tan u = \sqrt3$ para $u = 60^\circ + 180^\circ k$.'
+      - 'Con $u = 2x \in [0^\circ,\ 720^\circ)$ hay cuatro valores de $u$.'
+    pasos:
+      - titulo: Ángulo u = 2x
+        desarrollo: '$$\tan u = \sqrt3 \;\Rightarrow\; u = 60^\circ + 180^\circ k$$'
+      - titulo: Valores de u en dos vueltas
+        desarrollo: '$u = 60^\circ,\ 240^\circ,\ 420^\circ,\ 600^\circ$ (todos en $[0^\circ,\ 720^\circ)$).'
+      - titulo: Dividir entre 2
+        desarrollo: '$x = 30^\circ,\ 120^\circ,\ 210^\circ,\ 300^\circ$.'
+        porque: 'Las soluciones están separadas $90^\circ$: el periodo de $\tan 2x$ es $180^\circ / 2$.'
+    resultado: '$x = 30^\circ,\ 120^\circ,\ 210^\circ,\ 300^\circ$.'
+laboratorio: { f: tan, n: 2, k: 1.732 }

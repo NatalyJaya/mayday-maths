@@ -1,0 +1,56 @@
+titulo: 'cos x − sin x = cos 2x'
+tema: identidades-ecuaciones
+orden: 107
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie A, apartado m)
+nota_fuente: 'En la foto parece poner «cos 3x», pero se ha leído como cos 2x, que encaja con el paso cos(2x − x) de los apuntes y da una factorización muy limpia.'
+coleccion: clase-serie-a
+dificultad: avanzado
+habilidades: [calculo, metodo, multipaso]
+resumen: Diferencia de cuadrados, factor común y una solución falsa que aparece al elevar al cuadrado.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$\cos x - \sin x = \cos 2x$$
+conceptos:
+  - '$\cos 2x = \cos^2 x - \sin^2 x = (\cos x - \sin x)(\cos x + \sin x)$.'
+  - 'Al elevar al cuadrado aparecen soluciones falsas: hay que comprobarlas.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    respuesta:
+      tipo: conjunto
+      valores: [0, 45, 90, 225]
+      trampas:
+        - valores: [45, 225]
+          explicacion: 'Esto sale si divides entre $\cos x - \sin x$. Al dividir se pierden las soluciones del otro factor, $\cos x + \sin x = 1$.'
+        - valores: [0, 45, 90, 180, 225, 270]
+          explicacion: 'Al resolver $\cos x + \sin x = 1$ elevando al cuadrado aparecen $180^\circ$ y $270^\circ$, que no cumplen la ecuación: $\cos 180^\circ + \sin 180^\circ = -1$. Comprueba siempre después de elevar al cuadrado.'
+    pistas:
+      - '$\cos 2x = \cos^2 x - \sin^2 x$ es una diferencia de cuadrados.'
+      - 'Al factorizar aparece $\cos x - \sin x$ en los dos lados: saca factor común (no dividas).'
+      - 'Para $\cos x + \sin x = 1$ puedes elevar al cuadrado, pero luego comprueba.'
+    pasos:
+      - titulo: Diferencia de cuadrados
+        desarrollo: '$$\cos x - \sin x = (\cos x - \sin x)(\cos x + \sin x)$$'
+        porque: '$\cos^2 x - \sin^2 x = (\cos x - \sin x)(\cos x + \sin x)$, como $a^2 - b^2 = (a - b)(a + b)$.'
+      - titulo: Factor común
+        desarrollo: '$$(\cos x - \sin x) - (\cos x - \sin x)(\cos x + \sin x) = 0 \;\Rightarrow\; (\cos x - \sin x)(1 - \cos x - \sin x) = 0$$'
+      - titulo: Primer factor
+        desarrollo: '$\cos x - \sin x = 0 \Rightarrow \tan x = 1 \Rightarrow x = 45^\circ,\ 225^\circ$.'
+        porque: 'Se puede dividir entre $\cos x$ porque si $\cos x = 0$ entonces $\sin x = \pm1$ y la resta no sería 0.'
+      - titulo: Segundo factor
+        desarrollo: |
+          $\cos x + \sin x = 1$. Elevando al cuadrado: $1 + 2\sin x\cos x = 1 \Rightarrow \sin 2x = 0 \Rightarrow x = 0^\circ,\ 90^\circ,\ 180^\circ,\ 270^\circ$.
+
+          Comprobación (obligatoria al elevar al cuadrado): $0^\circ$ ✔ ($1 + 0 = 1$), $90^\circ$ ✔ ($0 + 1 = 1$), $180^\circ$ ✘ ($-1 + 0$), $270^\circ$ ✘ ($0 - 1$).
+        porque: 'Al elevar al cuadrado, también se cuelan las soluciones de $\cos x + \sin x = -1$.'
+    resultado: '$x = 0^\circ,\ 45^\circ,\ 90^\circ,\ 225^\circ$.'
+errores:
+  - error: 'Dividir entre $\cos x - \sin x$'
+    explicacion: 'Se pierden $45^\circ$ y $225^\circ$, o se pierde el otro factor, según cómo se haga. Con factor común no se pierde nada.'
+  - error: 'No comprobar tras elevar al cuadrado'
+    explicacion: '$180^\circ$ y $270^\circ$ parecen soluciones, pero no lo son.'
+alternativas:
+  - titulo: 'Otra forma de resolver cos x + sin x = 1'
+    desarrollo: 'Como $\cos x + \sin x = \sqrt2\,\sin(x + 45^\circ)$, la ecuación es $\sin(x + 45^\circ) = \frac{\sqrt2}{2}$, de donde $x + 45^\circ = 45^\circ$ o $135^\circ$: $x = 0^\circ$ o $90^\circ$. Sin elevar al cuadrado, no hay soluciones falsas.'

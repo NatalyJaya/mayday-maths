@@ -1,0 +1,42 @@
+titulo: Conocida la tangente
+tema: razones-trigonometricas
+orden: 6
+procedencia: original
+dificultad: intermedio
+habilidades: [calculo, metodo]
+resumen: Cuando el dato es la tangente, la relación útil es 1 + tan²α = 1/cos²α.
+enunciado: |
+  Sabiendo que $\tan\alpha = -2$ y que $\alpha$ está en el **cuarto cuadrante**, calcula $\cos\alpha$ y $\sin\alpha$.
+conceptos:
+  - '$1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}$.'
+  - '$\sin\alpha = \tan\alpha\cdot\cos\alpha$.'
+  - 'En el cuarto cuadrante: coseno positivo y seno negativo.'
+apartados:
+  - id: a
+    enunciado: Calcula $\cos\alpha$ y $\sin\alpha$ (con cuatro decimales).
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\cos\alpha', etiqueta: coseno, unidad: '', valor: 0.4472, tolerancia: 0.005 }
+        - simbolo: '\sin\alpha'
+          etiqueta: seno
+          unidad: ''
+          valor: -0.8944
+          tolerancia: 0.005
+    pistas:
+      - 'Divide la identidad fundamental entre $\cos^2\alpha$: $1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}$.'
+      - '$\cos^2\alpha = \frac15$. En el cuarto cuadrante, ¿qué signo tiene el coseno?'
+      - 'Después, $\sin\alpha = \tan\alpha\cdot\cos\alpha$.'
+    pasos:
+      - titulo: Coseno a partir de la tangente
+        desarrollo: '$$1 + (-2)^2 = \frac{1}{\cos^2\alpha} \;\Rightarrow\; \cos^2\alpha = \frac15 \;\Rightarrow\; \cos\alpha = \pm\frac{1}{\sqrt5}$$'
+        porque: 'Esta relación conecta directamente la tangente con el coseno.'
+      - titulo: Signo
+        desarrollo: 'Cuarto cuadrante: coseno positivo. $\cos\alpha = \frac{1}{\sqrt5} = \frac{\sqrt5}{5} \approx 0{,}4472$.'
+      - titulo: Seno
+        desarrollo: '$$\sin\alpha = \tan\alpha\cdot\cos\alpha = -2\cdot\frac{\sqrt5}{5} = -\frac{2\sqrt5}{5} \approx -0{,}8944$$'
+        porque: 'Comprobación: negativo, como debe ser en el cuarto cuadrante, y $0{,}2 + 0{,}8 = 1$ ✔.'
+    resultado: '$\cos\alpha = \dfrac{\sqrt5}{5} \approx 0{,}4472$ y $\sin\alpha = -\dfrac{2\sqrt5}{5} \approx -0{,}8944$.'
+errores:
+  - error: 'Pensar que, como tan α = −2, el seno es −2 y el coseno 1'
+    explicacion: 'Solo se conoce el cociente. Además, el seno no puede valer $-2$: está entre $-1$ y $1$.'

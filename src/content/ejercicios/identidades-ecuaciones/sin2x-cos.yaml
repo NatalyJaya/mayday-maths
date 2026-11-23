@@ -1,0 +1,31 @@
+titulo: 'sin 2x = cos x'
+tema: identidades-ecuaciones
+orden: 9
+procedencia: original
+dificultad: intermedio
+habilidades: [calculo, metodo]
+resumen: Ángulo doble y factor común. Dividir entre cos x haría perder dos soluciones.
+enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\sin 2x = \cos x$'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones.
+    respuesta:
+      tipo: conjunto
+      valores: [30, 90, 150, 270]
+      trampas:
+        - { valores: [30, 150], explicacion: 'Has dividido entre $\cos x$ y has perdido las soluciones de $\cos x = 0$: $90^\circ$ y $270^\circ$.' }
+        - { valores: [90, 270], explicacion: 'Te falta el segundo factor: $2\sin x - 1 = 0$.' }
+    pistas:
+      - '$\sin 2x = 2\sin x\cos x$.'
+      - 'Pasa todo a un lado y saca $\cos x$ factor común.'
+    pasos:
+      - titulo: Ángulo doble
+        desarrollo: '$$2\sin x\cos x = \cos x \;\Rightarrow\; 2\sin x\cos x - \cos x = 0$$'
+      - titulo: Factor común
+        desarrollo: '$$\cos x\,(2\sin x - 1) = 0$$'
+        porque: 'No se divide entre $\cos x$: podría valer 0.'
+      - titulo: Los dos factores
+        desarrollo: |
+          - $\cos x = 0 \Rightarrow x = 90^\circ,\ 270^\circ$.
+          - $\sin x = \frac12 \Rightarrow x = 30^\circ,\ 150^\circ$.
+    resultado: '$x = 30^\circ,\ 90^\circ,\ 150^\circ,\ 270^\circ$.'

@@ -1,0 +1,72 @@
+titulo: Dos triángulos con los mismos datos
+tema: resolucion-triangulos
+orden: 9
+procedencia: original
+dificultad: avanzado
+habilidades: [calculo, conceptual, multipaso]
+resumen: El caso ambiguo con dos soluciones. El arcoseno da un ángulo; el suplementario, otro.
+enunciado: |
+  De un triángulo se sabe que $a = 7$, $b = 10$ y $A = 30^\circ$.
+
+  a) ¿Qué valores puede tener el ángulo $B$?
+  b) Para cada solución, calcula el lado $c$.
+figura:
+  tipo: geometria
+  titulo: Las dos posiciones posibles de B
+  puntos:
+    - { id: A, x: 0, y: 0, lado: so }
+    - { id: C, x: 8.660, y: 5, lado: n }
+    - { id: B2, x: 3.761, y: 0, etiqueta: 'B₂', lado: s }
+    - { id: B1, x: 13.559, y: 0, etiqueta: 'B₁', lado: s }
+  segmentos:
+    - { de: A, a: C, etiqueta: 'b = 10' }
+    - { de: C, a: B2, etiqueta: '7', color: x, lado: derecha }
+    - { de: C, a: B1, etiqueta: '7', color: x }
+    - { de: A, a: B1, discontinuo: true }
+  angulos:
+    - { vertice: A, desde: B2, hasta: C, etiqueta: '30°', radio: 30 }
+datos:
+  - { simbolo: 'a', valor: '7', significado: 'opuesto a A' }
+  - { simbolo: 'b', valor: '10', significado: '' }
+  - { simbolo: 'A', valor: '30^\circ', significado: 'ángulo NO comprendido entre a y b' }
+interpretacion: |
+  Es el caso **LLA**: el ángulo conocido está enfrente de uno de los lados conocidos. Como $b\sin A = 5 < a = 7 < b = 10$, la circunferencia de centro $C$ y radio 7 corta la base en **dos puntos**: hay dos triángulos.
+apartados:
+  - id: a
+    enunciado: Escribe todos los valores posibles de $B$.
+    respuesta:
+      tipo: conjunto
+      simbolo: 'B'
+      intervalo: '(0^\circ,\ 150^\circ)'
+      valores: [45.58, 134.42]
+      trampas:
+        - { valores: [45.58], explicacion: 'Es el ángulo que da la calculadora, pero el suplementario, $180^\circ - 45{,}58^\circ = 134{,}42^\circ$, tiene el mismo seno. Comprueba si cabe con $A = 30^\circ$: $30^\circ + 134{,}42^\circ < 180^\circ$, así que sí.' }
+    pistas:
+      - 'Teorema del seno: $\sin B = \dfrac{b\sin A}{a}$.'
+      - 'Dos ángulos entre $0^\circ$ y $180^\circ$ tienen ese seno. ¿Caben los dos en un triángulo con $A = 30^\circ$?'
+    pasos:
+      - titulo: Teorema del seno
+        desarrollo: '$$\sin B = \frac{10\sin 30^\circ}{7} = \frac{5}{7} \approx 0{,}7143$$'
+      - titulo: Los dos ángulos
+        desarrollo: '$$B_1 = \arcsin\frac57 \approx 45{,}58^\circ \qquad B_2 = 180^\circ - 45{,}58^\circ \approx 134{,}42^\circ$$'
+        porque: 'Los dos son posibles porque $30^\circ + 134{,}42^\circ = 164{,}42^\circ < 180^\circ$.'
+    resultado: '$B \approx 45{,}58^\circ$ o $B \approx 134{,}42^\circ$.'
+  - id: b
+    enunciado: Lado $c$ en cada triángulo (primero el que corresponde a $B_1 \approx 45{,}58^\circ$).
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'c_1', etiqueta: 'con B ≈ 45,58°', unidad: '', valor: 13.56 }
+        - { simbolo: 'c_2', etiqueta: 'con B ≈ 134,42°', unidad: '', valor: 3.76 }
+    pistas:
+      - 'Primero $C = 180^\circ - A - B$ en cada caso.'
+    pasos:
+      - titulo: Tercer ángulo en cada caso
+        desarrollo: '$$C_1 = 180^\circ - 30^\circ - 45{,}58^\circ = 104{,}42^\circ \qquad C_2 = 180^\circ - 30^\circ - 134{,}42^\circ = 15{,}58^\circ$$'
+      - titulo: Teorema del seno
+        desarrollo: '$$c_1 = \frac{7\sin 104{,}42^\circ}{\sin 30^\circ} \approx 13{,}56 \qquad c_2 = \frac{7\sin 15{,}58^\circ}{\sin 30^\circ} \approx 3{,}76$$'
+    resultado: 'Triángulo 1: $B \approx 45{,}58^\circ$, $C \approx 104{,}42^\circ$, $c \approx 13{,}56$. Triángulo 2: $B \approx 134{,}42^\circ$, $C \approx 15{,}58^\circ$, $c \approx 3{,}76$.'
+errores:
+  - error: 'Quedarse solo con el ángulo de la calculadora'
+    explicacion: 'El arcoseno siempre da un ángulo agudo. En el caso LLA hay que probar también el suplementario.'
+laboratorio: { a: 7, b: 10, c: 3.761 }

@@ -1,0 +1,107 @@
+---
+tema: razones-trigonometricas
+etapa: idea
+titulo: Medir lo que no se puede medir
+descripcion: Cómo calcular la altura de un edificio sin subir, o la anchura de un río sin cruzarlo. Antes de ninguna fórmula, descubrimos el número que lo hace posible.
+minutos: 12
+---
+
+## Un problema muy antiguo
+
+Quieres saber la altura de un edificio, de un árbol o de una montaña. No puedes subir con una cinta métrica. Lo que sí puedes medir son **distancias en el suelo** y **ángulos** (con un transportador, un teodolito o el móvil).
+
+Cuenta la tradición que, hace unos 2600 años, Tales de Mileto midió la altura de una pirámide de Egipto con su sombra. Esperó al momento del día en que la sombra de un palo era igual de larga que el palo. En ese mismo instante, la sombra de la pirámide también medía lo mismo que su altura.
+
+¿Por qué funciona? Porque el palo con su sombra y la pirámide con la suya forman dos triángulos con **los mismos ángulos**. El sol llega con la misma inclinación a los dos. Y los triángulos con los mismos ángulos tienen la misma forma, aunque uno sea mucho más grande.
+
+## La pregunta clave
+
+<Predict
+	pregunta="Dos rampas tienen la **misma inclinación**. Una mide 2 m de largo y la otra 10 m. Para cada una calculas el cociente $\dfrac{\text{altura que sube}}{\text{longitud de la rampa}}$. ¿Qué pasa?"
+	opciones={[
+		{ texto: 'La rampa larga tiene un cociente mayor, porque sube más.', explicacion: 'Sube más, sí, pero también es más larga, y en la misma proporción: 5 veces más larga, 5 veces más alta. El cociente no cambia.' },
+		{ texto: 'La rampa corta tiene un cociente mayor.', explicacion: 'Si fuera así, la rampa corta sería más empinada. Pero hemos dicho que tienen la misma inclinación.' },
+		{ texto: 'Las dos tienen el mismo cociente.', correcta: true, explicacion: 'Los dos triángulos tienen los mismos ángulos, así que son **semejantes**: todos sus lados son proporcionales. Al dividir dos lados, la proporción se cancela.' },
+		{ texto: 'Depende de la altura del suelo.', explicacion: 'Lo único que importa es la forma del triángulo, y esa la decide el ángulo.' },
+	]}
+	despues="Compruébalo: cambia la hipotenusa del triángulo de abajo y mira la tabla."
+/>
+
+<RightTriangleExplorer />
+
+Fíjate en dos cosas:
+
+- Si cambias **solo el tamaño**, los tres lados cambian, pero los tres **cocientes** se quedan exactamente igual.
+- Si cambias **el ángulo**, los cocientes sí cambian. Cada ángulo tiene sus propios cocientes.
+
+## Lo que no cambia: el cociente
+
+Aquí tienes dos triángulos rectángulos con el mismo ángulo $\alpha$. El de la derecha es el doble que el de la izquierda:
+
+<Figura
+	figura={{
+		tipo: 'geometria',
+		puntos: [
+			{ id: 'A', x: 0, y: 0, lado: 'so' },
+			{ id: 'C', x: 4, y: 0, etiqueta: '', marca: false },
+			{ id: 'B', x: 4, y: 3, etiqueta: '', marca: false },
+			{ id: "A'", x: 6, y: 0, lado: 'so' },
+			{ id: "C'", x: 14, y: 0, etiqueta: '', marca: false },
+			{ id: "B'", x: 14, y: 6, etiqueta: '', marca: false },
+		],
+		segmentos: [
+			{ de: 'A', a: 'C', etiqueta: '4', color: 'x', lado: 'derecha' },
+			{ de: 'C', a: 'B', etiqueta: '3', color: 'y', lado: 'derecha' },
+			{ de: 'A', a: 'B', etiqueta: '5' },
+			{ de: "A'", a: "C'", etiqueta: '8', color: 'x', lado: 'derecha' },
+			{ de: "C'", a: "B'", etiqueta: '6', color: 'y', lado: 'derecha' },
+			{ de: "A'", a: "B'", etiqueta: '10' },
+		],
+		angulos: [
+			{ vertice: 'A', desde: 'C', hasta: 'B', etiqueta: 'α', color: 'g', radio: 26 },
+			{ vertice: "A'", desde: "C'", hasta: "B'", etiqueta: 'α', color: 'g', radio: 34 },
+			{ vertice: 'C', desde: 'A', hasta: 'B', recto: true },
+			{ vertice: "C'", desde: "A'", hasta: "B'", recto: true },
+		],
+	}}
+	alt="Dos triángulos rectángulos semejantes con el mismo ángulo α: uno de lados 3, 4 y 5 y otro de lados 6, 8 y 10."
+	pie="El pequeño tiene lados 3, 4 y 5. El grande, 6, 8 y 10. Los cocientes son iguales: 3/5 = 6/10 = 0,6."
+/>
+
+| Cociente | Triángulo pequeño | Triángulo grande |
+| --- | --- | --- |
+| <span class="q-y">opuesto</span> / hipotenusa | $3/5 = 0{,}6$ | $6/10 = 0{,}6$ |
+| <span class="q-x">contiguo</span> / hipotenusa | $4/5 = 0{,}8$ | $8/10 = 0{,}8$ |
+| <span class="q-y">opuesto</span> / <span class="q-x">contiguo</span> | $3/4 = 0{,}75$ | $6/8 = 0{,}75$ |
+
+<Callout tipo="idea">
+	En un triángulo rectángulo, el cociente entre dos lados **solo depende del ángulo**, no del tamaño del triángulo. Por eso a cada ángulo le podemos asignar unos números fijos. Esos números son el **seno**, el **coseno** y la **tangente**, y en la etapa siguiente les pondremos nombre.
+</Callout>
+
+## De ángulos a longitudes (y al revés)
+
+Si alguien ya ha calculado esos cocientes para cada ángulo (hoy los da la calculadora), los problemas imposibles se vuelven fáciles:
+
+- **Del ángulo a la longitud.** Una rampa de $12\un{m}$ sube con una inclinación de $10^\circ$. Para $10^\circ$, el cociente $\frac{\text{opuesto}}{\text{hipotenusa}}$ vale $0{,}174$. Entonces la rampa sube $12 \cdot 0{,}174 \approx 2{,}08\un{m}$.
+- **De la longitud al ángulo.** Una escalera de $5\un{m}$ apoyada en una pared tiene el pie a $1{,}5\un{m}$ de la pared. El cociente $\frac{\text{contiguo}}{\text{hipotenusa}} = \frac{1{,}5}{5} = 0{,}3$, y la calculadora te dice qué ángulo tiene ese cociente: unos $72,5^\circ$ con el suelo.
+
+Esto es la **trigonometría** (del griego: «medida de los triángulos»): pasar de ángulos a longitudes y de longitudes a ángulos.
+
+## Y cuando no hay triángulo: algo que gira
+
+Los ángulos de un triángulo rectángulo son menores de $90^\circ$. Pero en la vida real muchos ángulos son mayores: una noria que gira, las agujas de un reloj, una rueda, un motor. Si sigues la **altura** de una cabina de una noria mientras gira, sube, baja y vuelve a empezar, y dibuja siempre la misma curva:
+
+<CircleWave />
+
+Esa curva es la gráfica del **seno**. Para llegar hasta ella necesitamos extender el seno, el coseno y la tangente a **cualquier ángulo**, no solo a los de un triángulo. Lo haremos en la etapa 3 con la *circunferencia goniométrica*.
+
+<Callout tipo="analogia">
+	Piensa en el seno como en una **máquina**: le das un ángulo y te devuelve un número. Para ángulos agudos, ese número es el cociente $\frac{\text{opuesto}}{\text{hipotenusa}}$ de cualquier triángulo rectángulo con ese ángulo. Para ángulos mayores, es la altura de un punto que gira.
+</Callout>
+
+## Lo que vas a aprender en este tema
+
+1. **Objetos**: cómo se miden los ángulos (grados y radianes) y la definición exacta de seno, coseno y tangente.
+2. **Propiedades**: de dónde salen la identidad fundamental, los valores exactos de $30^\circ$, $45^\circ$ y $60^\circ$, la circunferencia goniométrica y la reducción al primer cuadrante.
+3. **Laboratorio**: un punto que gira por la circunferencia y las gráficas que dibuja.
+4. **Ejemplos guiados** y **práctica**.

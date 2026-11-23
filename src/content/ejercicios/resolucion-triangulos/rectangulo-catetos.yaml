@@ -1,0 +1,32 @@
+titulo: Resolver un triángulo rectángulo (dos catetos)
+tema: resolucion-triangulos
+orden: 2
+procedencia: original
+dificultad: basico
+habilidades: [calculo]
+resumen: Pitágoras para la hipotenusa y arcotangente para los ángulos.
+enunciado: Resuelve el triángulo rectángulo cuyos catetos miden $7\un{m}$ y $24\un{m}$.
+figura:
+  tipo: triangulo
+  a: 7
+  b: 24
+  c: 25
+  base: b
+  etiquetas: { a: '7 m', b: '24 m', c: '?', A: '?', B: '?' }
+apartados:
+  - id: a
+    enunciado: Calcula la hipotenusa y los dos ángulos agudos ($A$, opuesto al cateto de 7 m, y $B$).
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'c', etiqueta: hipotenusa, unidad: m, valor: 25 }
+        - { simbolo: 'A', etiqueta: ángulo opuesto al cateto de 7 m, unidad: '°', valor: 16.26 }
+        - { simbolo: 'B', etiqueta: el otro ángulo agudo, unidad: '°', valor: 73.74 }
+    pistas:
+      - '$\tan A = \frac{7}{24}$.'
+    pasos:
+      - titulo: Hipotenusa
+        desarrollo: '$$c = \sqrt{7^2 + 24^2} = \sqrt{625} = 25\un{m}$$'
+      - titulo: Ángulos
+        desarrollo: '$$A = \arctan\frac{7}{24} \approx 16{,}26^\circ \qquad B = 90^\circ - A \approx 73{,}74^\circ$$'
+    resultado: '$c = 25\un{m}$, $A \approx 16{,}26^\circ$, $B \approx 73{,}74^\circ$.'

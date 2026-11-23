@@ -1,0 +1,50 @@
+---
+// Animación: de la circunferencia goniométrica a la gráfica del seno (o del coseno).
+import Icon from '../ui/Icon.astro';
+interface Props {
+	fn?: 'sin' | 'cos';
+	bare?: boolean;
+}
+const { fn = 'sin', bare = false } = Astro.props;
+const name = fn === 'sin' ? 'seno' : 'coseno';
+---
+
+<circle-wave class:list={[{ sim: !bare }]} data-fn={fn}>
+	{
+		!bare && (
+			<div class="sim-head">
+				<h4>De la circunferencia a la gráfica del {name}</h4>
+				<p class="muted">{fn === 'sin' ? 'La altura del punto es el seno.' : 'La abscisa del punto es el coseno.'}</p>
+			</div>
+		)
+	}
+	<svg class="sim-svg mfig" viewBox="0 0 600 250" role="img" aria-label={`Un punto gira por la circunferencia de radio 1 y su ${fn === 'sin' ? 'altura' : 'abscisa'} se dibuja a la derecha: así aparece la gráfica del ${name}.`}></svg>
+	<div class="cw-controls">
+		<button class="btn btn-sm btn-ghost play-btn" type="button" aria-label="Reproducir o pausar">
+			<span class="i-play"><Icon name="play" size={16} /></span><span class="i-pause"><Icon name="pause" size={16} /></span>
+		</button>
+		<input type="range" min="0" max="360" step="1" value="0" aria-label="Ángulo recorrido (grados)" />
+	</div>
+</circle-wave>
+
+<style>
+	.cw-controls {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin-top: 0.3rem;
+	}
+	.play-btn .i-pause {
+		display: none;
+	}
+	.play-btn[data-state='playing'] .i-pause {
+		display: inline-flex;
+	}
+	.play-btn[data-state='playing'] .i-play {
+		display: none;
+	}
+</style>
+
+<script>
+	import '../../sims/circle-wave';
+</script>

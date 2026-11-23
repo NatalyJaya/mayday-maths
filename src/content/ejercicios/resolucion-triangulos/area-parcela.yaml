@@ -1,0 +1,47 @@
+titulo: El área de una parcela triangular
+tema: resolucion-triangulos
+orden: 7
+procedencia: original
+dificultad: intermedio
+habilidades: [modelizacion, calculo]
+resumen: Área con dos lados y el ángulo comprendido, y la valla del tercer lado.
+enunciado: |
+  Una parcela triangular tiene dos lados de $40\un{m}$ y $55\un{m}$ que forman un ángulo de $72^\circ$.
+
+  a) ¿Qué área tiene?
+  b) ¿Cuántos metros de valla hacen falta para el tercer lado?
+figura:
+  tipo: triangulo
+  a: 57.143
+  b: 40
+  c: 55
+  etiquetas: { b: '40 m', c: '55 m', A: '72°', a: '?' }
+  colores: { a: g }
+apartados:
+  - id: a
+    enunciado: Área de la parcela.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'S'
+          etiqueta: área
+          unidad: m²
+          valor: 1046.16
+          trampas:
+            - { valor: 1100, explicacion: 'Eso sería si el ángulo fuera recto ($\frac12\cdot 40\cdot 55$). Falta multiplicar por $\sin 72^\circ$.' }
+            - { valor: 2092.32, explicacion: 'Te falta el $\frac12$ de la fórmula del área.' }
+    pasos:
+      - titulo: Fórmula del área
+        desarrollo: '$$S = \frac12\cdot 40\cdot 55\cdot\sin 72^\circ \approx 1046{,}16\un{m^2}$$'
+        porque: '$40\sin 72^\circ$ es la altura sobre el lado de $55\un{m}$.'
+    resultado: '$S \approx 1046{,}2\un{m^2}$.'
+  - id: b
+    enunciado: Longitud del tercer lado.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'a', etiqueta: tercer lado, unidad: m, valor: 57.14 }
+    pasos:
+      - titulo: Teorema del coseno
+        desarrollo: '$$a = \sqrt{40^2 + 55^2 - 2\cdot 40\cdot 55\cos 72^\circ} \approx 57{,}14\un{m}$$'
+    resultado: 'Hacen falta unos $57{,}1\un{m}$ de valla.'

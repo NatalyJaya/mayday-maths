@@ -1,0 +1,34 @@
+titulo: Un lado y dos ángulos
+tema: resolucion-triangulos
+orden: 4
+procedencia: original
+dificultad: basico
+habilidades: [calculo, metodo]
+resumen: Tercer ángulo y teorema del seno (caso AAL).
+enunciado: Resuelve el triángulo con $a = 10\un{cm}$, $A = 40^\circ$ y $B = 65^\circ$.
+figura:
+  tipo: triangulo
+  a: 10
+  b: 14.0996
+  c: 15.0271
+  etiquetas: { a: '10 cm', b: 'b = ?', c: 'c = ?', A: '40°', B: '65°', C: 'C = ?' }
+  colores: { a: x }
+apartados:
+  - id: a
+    enunciado: Calcula $C$, $b$ y $c$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'C', etiqueta: ángulo, unidad: '°', valor: 75 }
+        - { simbolo: 'b', etiqueta: lado, unidad: cm, valor: 14.10 }
+        - { simbolo: 'c', etiqueta: lado, unidad: cm, valor: 15.03 }
+    pistas:
+      - 'Tienes la pareja $a$ – $A$ completa.'
+      - '$\dfrac{b}{\sin 65^\circ} = \dfrac{10}{\sin 40^\circ}$.'
+    pasos:
+      - titulo: Tercer ángulo
+        desarrollo: '$$C = 180^\circ - 40^\circ - 65^\circ = 75^\circ$$'
+      - titulo: Teorema del seno
+        desarrollo: '$$b = \frac{10\sin 65^\circ}{\sin 40^\circ} \approx 14{,}10\un{cm} \qquad c = \frac{10\sin 75^\circ}{\sin 40^\circ} \approx 15{,}03\un{cm}$$'
+        porque: 'Comprobación: el lado mayor ($c$) está frente al ángulo mayor ($75^\circ$) ✔.'
+    resultado: '$C = 75^\circ$, $b \approx 14{,}10\un{cm}$, $c \approx 15{,}03\un{cm}$.'

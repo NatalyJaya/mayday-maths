@@ -1,0 +1,20 @@
+# Procedencia de todo el material de la plataforma.
+#   clase      → apuntes y ejercicios trabajados en clase (etiqueta «Ejercicio de clase»).
+#   externo    → recurso con licencia abierta del que se ADAPTA contenido (con atribución).
+#   referencia → recurso consultado solo para identificar tipos de problema y nivel.
+#   curriculo  → normativa usada para organizar el temario.
+
+- id: apuntes-trigonometria-2
+  tipo: clase
+  titulo: 'Trigonometría 2: apuntes y ejercicios del cuaderno de clase (pasados a limpio y explicados)'
+  autor: Apuntes de clase de 1.º de Bachillerato, transcritos de las fotos del cuaderno
+  licencia: Material privado de clase, usado con permiso
+  uso: Ejercicios marcados «Ejercicio de clase» (identidades, Serie A, Serie B y Problema 31) y las deducciones de las fórmulas de la suma, la resta, el ángulo doble y el ángulo mitad. Los enunciados se conservan como se leyeron en el cuaderno, con los avisos de lectura dudosa. Todas las soluciones se han vuelto a comprobar, y los errores detectados en los apuntes alimentan la sección «Errores frecuentes».
+
+- id: rd-243-2022
+  tipo: curriculo
+  titulo: Real Decreto 243/2022, de 5 de abril, por el que se establecen la ordenación y las enseñanzas mínimas del Bachillerato (Matemáticas I)
+  autor: Ministerio de Educación y Formación Profesional (BOE)
+  url: https://www.boe.es/buscar/act.php?id=BOE-A-2022-5521
+  licencia: Texto normativo
+  uso: Organización del temario en bloques y del contenido de trigonometría (sentido de la medida y sentido espacial). Conviene revisar la normativa vigente de cada comunidad, como el Decret 171/2022 en Cataluña.

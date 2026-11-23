@@ -1,0 +1,39 @@
+titulo: '3 tan²x − 1 = 0'
+tema: identidades-ecuaciones
+orden: 204
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie B, apartado d)
+coleccion: clase-serie-b
+dificultad: basico
+habilidades: [calculo]
+resumen: Una raíz cuadrada con su ± y la tangente, que se repite cada 180°.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$3\tan^2 x - 1 = 0$$
+conceptos:
+  - 'Si $t^2 = a$, entonces $t = \pm\sqrt a$.'
+  - '$\tan 30^\circ = \frac{\sqrt3}{3}$ y la tangente se repite cada $180^\circ$.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    respuesta:
+      tipo: conjunto
+      valores: [30, 150, 210, 330]
+      trampas:
+        - valores: [30, 210]
+          explicacion: 'Te has olvidado del signo $-$ de la raíz: también $\tan x = -\frac{\sqrt3}{3}$.'
+        - valores: [30, 150]
+          explicacion: 'La tangente se repite cada $180^\circ$: a cada solución súmale $180^\circ$.'
+    pistas:
+      - 'Despeja $\tan^2 x$ y haz la raíz con $\pm$.'
+      - '$\tan 30^\circ = \frac{\sqrt3}{3}$.'
+    pasos:
+      - titulo: Despejar
+        desarrollo: '$$\tan^2 x = \tfrac13 \;\Rightarrow\; \tan x = \pm\sqrt{\tfrac13} = \pm\tfrac{\sqrt3}{3}$$'
+      - titulo: Ángulos
+        desarrollo: |
+          - $\tan x = \frac{\sqrt3}{3} \Rightarrow x = 30^\circ,\ 210^\circ$.
+          - $\tan x = -\frac{\sqrt3}{3} \Rightarrow x = 150^\circ,\ 330^\circ$.
+        porque: 'La tangente es positiva en el 1.er y el 3.er cuadrante, y negativa en el 2.º y el 4.º.'
+    resultado: '$x = 30^\circ,\ 150^\circ,\ 210^\circ,\ 330^\circ$.'

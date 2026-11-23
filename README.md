@@ -1,46 +1,36 @@
-# Astro Starter Kit: Basics
+# Mayday Matemáticas
 
-```sh
-npm create astro@latest -- --template basics
-```
+Plataforma interactiva de **Matemáticas I (1.º de Bachillerato)** para entender las matemáticas, no para memorizarlas. Es hermana de [Mayday Física](https://natalyjaya.github.io/mayday-physics/) y sigue su misma metodología:
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> **Primero, la intuición. Después, la formalización. Por último, los problemas.**
 
-## 🚀 Project Structure
+Cada tema tiene seis etapas: **Idea**, **Objetos**, **Propiedades**, **Laboratorio**, **Ejemplos guiados** y **Práctica**.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Estado
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+- **Trigonometría** (disponible), con tres temas completos:
+  - Ángulos y razones trigonométricas
+  - Resolución de triángulos
+  - Identidades y ecuaciones trigonométricas
+- Números, Álgebra, Geometría analítica, Análisis y Estadística: en el temario, marcados como «Próximamente».
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+En total: 15 lecciones, 10 simulaciones, 9 ejemplos guiados, 19 **ejercicios de clase** (etiqueta «Ejercicio de clase») y 45 ejercicios de **práctica adicional** en cuatro niveles. Todas las soluciones se verifican automáticamente.
 
-## 🧞 Commands
+## Comandos
 
-All commands are run from the root of the project, from a terminal:
+| Comando | Qué hace |
+| --- | --- |
+| `npm install` | Instala las dependencias |
+| `npm run dev` | Servidor de desarrollo en `http://localhost:4321/mayday-maths/` (con agentes: `astro dev --background`) |
+| `npm test` | Tests: modelo matemático, corrección de respuestas y **verificación de todo el contenido** |
+| `npm run check` | Comprobación de tipos |
+| `npm run build` | Compila el sitio estático en `dist/` |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Se publica en GitHub Pages con GitHub Actions (`.github/workflows/deploy.yml`) en cada `push` a `main`.
 
-## 👀 Want to learn more?
+## Documentación
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [`docs/CONTENIDO.md`](docs/CONTENIDO.md): cómo añadir temas, lecciones, ejercicios y simulaciones.
+- [`docs/ARQUITECTURA.md`](docs/ARQUITECTURA.md): decisiones técnicas y mapa del código.
+- [`docs/INVESTIGACION.md`](docs/INVESTIGACION.md): currículo, fuentes y erratas detectadas en los apuntes de clase.
+- [`docs/PLAN-TRIGONOMETRIA.md`](docs/PLAN-TRIGONOMETRIA.md): plan del bloque de trigonometría.

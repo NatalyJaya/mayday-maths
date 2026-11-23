@@ -1,0 +1,58 @@
+titulo: 'sin 2x = cos 60°'
+tema: identidades-ecuaciones
+orden: 205
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie B, apartado e)
+coleccion: clase-serie-b
+dificultad: intermedio
+habilidades: [calculo, conceptual, graficas]
+resumen: Con 2x el ángulo da dos vueltas, así que hay el doble de soluciones.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$\sin 2x = \cos 60^\circ$$
+figura:
+  tipo: funcion
+  curvas:
+    - { f: sin, b: 2, etiqueta: 'y = sin 2x', color: y }
+  niveles:
+    - { y: 0.5, etiqueta: 'y = 1/2' }
+  puntos:
+    - { x: 15, etiqueta: '15°' }
+    - { x: 75, etiqueta: '75°' }
+    - { x: 195, etiqueta: '195°' }
+    - { x: 255, etiqueta: '255°' }
+conceptos:
+  - '$\cos 60^\circ = \frac12$.'
+  - 'Si $x \in [0^\circ,\ 360^\circ)$, entonces $2x \in [0^\circ,\ 720^\circ)$: dos vueltas.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    respuesta:
+      tipo: conjunto
+      valores: [15, 75, 195, 255]
+      trampas:
+        - valores: [15]
+          explicacion: 'Es la única solución que había en el cuaderno. Faltan tres: $\sin u = \frac12$ tiene dos soluciones por vuelta, y $u = 2x$ da dos vueltas.'
+        - valores: [15, 75]
+          explicacion: 'Has buscado $2x$ solo en una vuelta. Como $x$ llega hasta $360^\circ$, $2x$ llega hasta $720^\circ$: añade $360^\circ$ a $30^\circ$ y a $150^\circ$ antes de dividir.'
+        - valores: [30, 150]
+          explicacion: 'Esas son las soluciones de $\sin x = \frac12$, no de $\sin 2x = \frac12$. Te falta dividir entre 2 (y buscar en dos vueltas).'
+    pistas:
+      - '$\cos 60^\circ$ es un número. ¿Cuál?'
+      - 'Llama $u = 2x$. ¿Entre qué valores se mueve $u$?'
+      - 'Encuentra los $u$ entre $0^\circ$ y $720^\circ$ y luego divide entre 2.'
+    pasos:
+      - titulo: Calcular el número
+        desarrollo: '$$\sin 2x = \tfrac12$$'
+      - titulo: Soluciones para el ángulo 2x
+        piensa: 'Si $x$ va de $0^\circ$ a $360^\circ$, ¿hasta dónde llega $2x$?'
+        desarrollo: '$\sin u = \frac12$ con $u = 2x \in [0^\circ,\ 720^\circ)$: $u = 30^\circ,\ 150^\circ$ y, una vuelta después, $u = 390^\circ,\ 510^\circ$.'
+        porque: 'Al duplicar el ángulo, en una vuelta de $x$ el ángulo $2x$ da dos vueltas.'
+      - titulo: Dividir entre 2
+        desarrollo: '$$x = 15^\circ,\ 75^\circ,\ 195^\circ,\ 255^\circ$$'
+    resultado: '$x = 15^\circ,\ 75^\circ,\ 195^\circ,\ 255^\circ$.'
+errores:
+  - error: 'Dividir entre 2 antes de buscar todas las soluciones de 2x'
+    explicacion: 'Se pierden las dos soluciones de la segunda vuelta. Primero todas las de $2x$ en $[0^\circ,\ 720^\circ)$; después, dividir.'
+laboratorio: { f: sin, n: 2, k: 0.5 }

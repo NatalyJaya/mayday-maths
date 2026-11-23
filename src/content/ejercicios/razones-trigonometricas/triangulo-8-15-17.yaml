@@ -1,0 +1,57 @@
+titulo: Las tres razones en un triángulo
+tema: razones-trigonometricas
+orden: 2
+procedencia: original
+dificultad: basico
+habilidades: [calculo, geometria]
+resumen: Pitágoras para la hipotenusa y las definiciones de seno, coseno y tangente.
+enunciado: |
+  Un triángulo rectángulo tiene catetos de $8\un{cm}$ y $15\un{cm}$. Sea $\alpha$ el ángulo **opuesto** al cateto de $8\un{cm}$. Calcula $\sin\alpha$, $\cos\alpha$ y $\tan\alpha$, y el valor de $\alpha$.
+figura:
+  tipo: triangulo
+  a: 8
+  b: 15
+  c: 17
+  base: b
+  etiquetas: { a: '8 cm', b: '15 cm', c: '?', A: 'α' }
+  colores: { a: y, b: x }
+conceptos:
+  - 'Teorema de Pitágoras.'
+  - '$\sin\alpha = \frac{\text{opuesto}}{\text{hip.}}$, $\cos\alpha = \frac{\text{contiguo}}{\text{hip.}}$, $\tan\alpha = \frac{\text{opuesto}}{\text{contiguo}}$.'
+apartados:
+  - id: a
+    enunciado: Calcula las tres razones de $\alpha$ (con cuatro decimales).
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\sin\alpha', etiqueta: seno, unidad: '', valor: 0.4706, tolerancia: 0.005 }
+        - { simbolo: '\cos\alpha', etiqueta: coseno, unidad: '', valor: 0.8824, tolerancia: 0.005, trampas: [{ valor: 0.4706, explicacion: 'Ese es el seno. El coseno usa el cateto contiguo, el de 15 cm.' }] }
+        - { simbolo: '\tan\alpha', etiqueta: tangente, unidad: '', valor: 0.5333, tolerancia: 0.005, trampas: [{ valor: 1.875, explicacion: 'Lo has calculado al revés: la tangente es opuesto entre contiguo, $\frac{8}{15}$.' }] }
+    pistas:
+      - 'Primero la hipotenusa: $\sqrt{8^2 + 15^2}$.'
+      - 'El cateto opuesto a $\alpha$ mide 8 cm y el contiguo, 15 cm.'
+    pasos:
+      - titulo: Hipotenusa
+        desarrollo: '$$c = \sqrt{8^2 + 15^2} = \sqrt{64 + 225} = \sqrt{289} = 17\un{cm}$$'
+      - titulo: Las tres razones
+        desarrollo: '$$\sin\alpha = \frac{8}{17} \approx 0{,}4706 \qquad \cos\alpha = \frac{15}{17} \approx 0{,}8824 \qquad \tan\alpha = \frac{8}{15} \approx 0{,}5333$$'
+    resultado: '$\sin\alpha = \frac{8}{17}$, $\cos\alpha = \frac{15}{17}$, $\tan\alpha = \frac{8}{15}$.'
+  - id: b
+    enunciado: Calcula el ángulo $\alpha$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: '\alpha'
+          etiqueta: ángulo
+          unidad: '°'
+          valor: 28.07
+          trampas:
+            - { valor: 61.93, explicacion: 'Ese es el otro ángulo agudo, el opuesto al cateto de 15 cm.' }
+            - { valor: 0.49, explicacion: 'La calculadora está en radianes. Ponla en grados (DEG).' }
+    pistas:
+      - 'Usa cualquiera de las razones con la tecla inversa, por ejemplo $\tan^{-1}\frac{8}{15}$.'
+    pasos:
+      - titulo: Función inversa
+        desarrollo: '$$\alpha = \arctan\frac{8}{15} \approx 28{,}07^\circ$$'
+        porque: 'Con $\arcsin\frac{8}{17}$ o $\arccos\frac{15}{17}$ sale lo mismo: es una buena comprobación.'
+    resultado: '$\alpha \approx 28{,}07^\circ$.'

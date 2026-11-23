@@ -1,0 +1,56 @@
+# Bloques de Matemáticas I (1.º de Bachillerato). El orden es orientativo:
+# cada centro elige el suyo. Solo tiene página un bloque con algún tema disponible.
+
+- id: numeros
+  titulo: Números
+  lema: Con qué contamos
+  descripcion: Los números reales, sus aproximaciones y errores, las potencias, los radicales y los logaritmos, y una primera mirada a los números complejos.
+  nivel: nucleo
+  orden: 1
+  icono: numeros
+  curriculo: Sentido numérico (RD 243/2022 y Decret 171/2022).
+
+- id: algebra
+  titulo: Álgebra
+  lema: Lo desconocido, con letras
+  descripcion: Polinomios y fracciones algebraicas, ecuaciones e inecuaciones de todo tipo y sistemas de ecuaciones resueltos por el método de Gauss.
+  nivel: nucleo
+  orden: 2
+  icono: algebra
+  curriculo: Sentido algebraico (RD 243/2022 y Decret 171/2022).
+
+- id: trigonometria
+  titulo: Trigonometría
+  lema: Medir lo que no se puede medir
+  descripcion: Los ángulos y sus razones, la resolución de cualquier triángulo y las identidades y ecuaciones trigonométricas. Con la trigonometría se calculan alturas, distancias y ángulos sin necesidad de recorrerlos.
+  nivel: nucleo
+  orden: 3
+  icono: trigonometria
+  curriculo: Sentido de la medida y sentido espacial (RD 243/2022 y Decret 171/2022).
+
+- id: geometria
+  titulo: Geometría analítica
+  lema: El plano con coordenadas
+  descripcion: Vectores en el plano, ecuaciones de la recta, posiciones relativas, distancias y ángulos, lugares geométricos y cónicas.
+  nivel: nucleo
+  orden: 4
+  icono: geometria
+  curriculo: Sentido espacial (RD 243/2022 y Decret 171/2022).
+
+- id: analisis
+  titulo: Análisis
+  lema: Cómo cambian las cosas
+  descripcion: Funciones elementales, límites y continuidad, la derivada y su interpretación, y la representación gráfica de funciones.
+  nivel: nucleo
+  orden: 5
+  icono: analisis
+  curriculo: Sentido algebraico y sentido de la medida (RD 243/2022 y Decret 171/2022).
+
+- id: estadistica
+  titulo: Estadística y probabilidad
+  lema: Lo que dicen los datos
+  descripcion: Estadística bidimensional (correlación y regresión), cálculo de probabilidades y distribuciones binomial y normal.
+  nivel: nucleo
+  orden: 6
+  icono: estadistica
+  curriculo: Sentido estocástico (RD 243/2022 y Decret 171/2022).

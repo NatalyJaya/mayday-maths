@@ -1,0 +1,47 @@
+titulo: Las diagonales de un paralelogramo
+tema: resolucion-triangulos
+orden: 12
+procedencia: original
+dificultad: avanzado
+habilidades: [geometria, metodo, multipaso]
+resumen: Cada diagonal es el tercer lado de un triángulo. Los dos ángulos son suplementarios.
+enunciado: |
+  Un paralelogramo tiene lados de $6\un{cm}$ y $9\un{cm}$, y uno de sus ángulos mide $50^\circ$. Calcula la longitud de sus dos diagonales.
+figura:
+  tipo: geometria
+  puntos:
+    - { id: A, x: 0, y: 0, lado: so }
+    - { id: B, x: 9, y: 0, lado: se }
+    - { id: D, x: 3.857, y: 4.596, lado: no }
+    - { id: C, x: 12.857, y: 4.596, lado: ne }
+  segmentos:
+    - { de: A, a: B, etiqueta: '9 cm', lado: derecha }
+    - { de: A, a: D, etiqueta: '6 cm' }
+    - { de: D, a: C }
+    - { de: B, a: C }
+    - { de: B, a: D, etiqueta: 'd₁', color: x, discontinuo: true }
+    - { de: A, a: C, etiqueta: 'd₂', color: g, discontinuo: true, lado: derecha }
+  angulos:
+    - { vertice: A, desde: B, hasta: D, etiqueta: '50°', radio: 26 }
+    - { vertice: B, desde: C, hasta: A, etiqueta: '130°', radio: 22 }
+apartados:
+  - id: a
+    enunciado: Diagonal corta $d_1$ y diagonal larga $d_2$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'd_1', etiqueta: diagonal corta, unidad: cm, valor: 6.90 }
+        - { simbolo: 'd_2', etiqueta: diagonal larga, unidad: cm, valor: 13.65 }
+    pistas:
+      - 'La diagonal $BD$ es el tercer lado del triángulo $ABD$, con el ángulo de $50^\circ$ entre los lados de 6 y 9.'
+      - 'Los ángulos consecutivos de un paralelogramo son suplementarios: el otro ángulo mide $130^\circ$.'
+    pasos:
+      - titulo: Diagonal corta (ángulo de 50°)
+        desarrollo: '$$d_1^2 = 6^2 + 9^2 - 2\cdot 6\cdot 9\cos 50^\circ \approx 117 - 69{,}42 = 47{,}58 \;\Rightarrow\; d_1 \approx 6{,}90\un{cm}$$'
+      - titulo: Diagonal larga (ángulo de 130°)
+        desarrollo: '$$d_2^2 = 6^2 + 9^2 - 2\cdot 6\cdot 9\cos 130^\circ \approx 117 + 69{,}42 = 186{,}42 \;\Rightarrow\; d_2 \approx 13{,}65\un{cm}$$'
+        porque: '$\cos 130^\circ = -\cos 50^\circ$: el término cambia de signo y la diagonal opuesta al ángulo obtuso es más larga.'
+    resultado: '$d_1 \approx 6{,}90\un{cm}$ y $d_2 \approx 13{,}65\un{cm}$.'
+alternativas:
+  - titulo: Una comprobación elegante
+    desarrollo: 'Sumando las dos ecuaciones, los cosenos se cancelan: $d_1^2 + d_2^2 = 2(6^2 + 9^2) = 234$. Con los valores obtenidos: $47{,}58 + 186{,}42 = 234$ ✔ (ley del paralelogramo).'

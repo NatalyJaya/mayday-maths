@@ -1,0 +1,272 @@
+---
+tema: razones-trigonometricas
+etapa: propiedades
+titulo: De dónde salen las propiedades
+descripcion: La identidad fundamental, los valores exactos de 30°, 45° y 60°, la circunferencia goniométrica para cualquier ángulo, los signos, la reducción al primer cuadrante y las gráficas.
+minutos: 30
+---
+
+## Dos límites que ya puedes ver
+
+En un triángulo rectángulo la hipotenusa es el lado más largo. Por tanto, para un ángulo agudo:
+
+$$
+0 < \sin\alpha < 1 \qquad 0 < \cos\alpha < 1
+$$
+
+La tangente, en cambio, puede ser cualquier número positivo: si el cateto opuesto es más largo que el contiguo ($\alpha > 45^\circ$), la tangente es mayor que 1.
+
+## La identidad fundamental
+
+Es la propiedad más importante del tema. Sale directamente del teorema de Pitágoras.
+
+<Derivation titulo="Deducción de sin²α + cos²α = 1">
+	<Paso titulo="Pitágoras en el triángulo" porque="Es un triángulo rectángulo de catetos $a$ (opuesto) y $b$ (contiguo) e hipotenusa $c$.">
+		$$
+		\cy{a}^2 + \cx{b}^2 = c^2
+		$$
+	</Paso>
+	<Paso titulo="Dividir todo entre c²" porque="Se puede dividir porque $c \ne 0$. Así aparecen los cocientes que definen el seno y el coseno.">
+		$$
+		\frac{\cy{a}^2}{c^2} + \frac{\cx{b}^2}{c^2} = 1 \quad\Longrightarrow\quad \left(\frac{\cy{a}}{c}\right)^2 + \left(\frac{\cx{b}}{c}\right)^2 = 1
+		$$
+	</Paso>
+	<Paso titulo="Reconocer el seno y el coseno">
+		$$
+		\sin^2\alpha + \cos^2\alpha = 1
+		$$
+	</Paso>
+</Derivation>
+
+Y como la tangente es un cociente de catetos, dividiendo arriba y abajo entre la hipotenusa:
+
+$$
+\tan\alpha = \frac{a}{b} = \frac{a/c}{b/c} = \frac{\sin\alpha}{\cos\alpha}
+$$
+
+Si divides la identidad fundamental entre $\cos^2\alpha$ sale una tercera relación, útil cuando conoces la tangente:
+
+$$
+\frac{\sin^2\alpha}{\cos^2\alpha} + \frac{\cos^2\alpha}{\cos^2\alpha} = \frac{1}{\cos^2\alpha} \quad\Longrightarrow\quad 1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}
+$$
+
+<Formula titulo="Relaciones fundamentales" usala="para calcular todas las razones de un ángulo a partir de una sola" nousar="sin pensar en el signo: la raíz da dos valores y el cuadrante decide cuál vale">
+	$$
+	\sin^2\alpha + \cos^2\alpha = 1 \qquad \tan\alpha = \frac{\sin\alpha}{\cos\alpha} \qquad 1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}
+	$$
+</Formula>
+
+<Callout tipo="contraejemplo">
+	$\sin\alpha + \cos\alpha = 1$ es **falso**. Para $\alpha = 45^\circ$: $\sin 45^\circ + \cos 45^\circ = \frac{\sqrt2}{2} + \frac{\sqrt2}{2} = \sqrt2 \approx 1{,}41$. Lo que suma 1 son los **cuadrados**.
+</Callout>
+
+## Los ángulos notables: 30°, 45° y 60°
+
+Para estos tres ángulos las razones tienen un valor **exacto** que se deduce con geometría, sin calculadora.
+
+### 45°: la mitad de un cuadrado
+
+La diagonal de un cuadrado de lado 1 lo divide en dos triángulos rectángulos isósceles con ángulos de $45^\circ$. Por Pitágoras, la diagonal mide $\sqrt{1^2 + 1^2} = \sqrt2$.
+
+<Figura
+	figura={{
+		tipo: 'geometria',
+		puntos: [
+			{ id: 'O', x: 0, y: 0, etiqueta: '', marca: false },
+			{ id: 'P', x: 1, y: 0, etiqueta: '', marca: false },
+			{ id: 'Q', x: 1, y: 1, etiqueta: '', marca: false },
+			{ id: 'R', x: 0, y: 1, etiqueta: '', marca: false },
+		],
+		segmentos: [
+			{ de: 'O', a: 'P', etiqueta: '1', color: 'x', lado: 'derecha' },
+			{ de: 'P', a: 'Q', etiqueta: '1', color: 'y', lado: 'derecha' },
+			{ de: 'O', a: 'Q', etiqueta: '√2' },
+			{ de: 'Q', a: 'R', discontinuo: true },
+			{ de: 'R', a: 'O', discontinuo: true },
+		],
+		angulos: [
+			{ vertice: 'O', desde: 'P', hasta: 'Q', etiqueta: '45°', color: 'g', radio: 34 },
+			{ vertice: 'P', desde: 'O', hasta: 'Q', recto: true },
+		],
+	}}
+	alt="Cuadrado de lado 1 con su diagonal de longitud raíz de 2, que forma un ángulo de 45 grados con el lado."
+/>
+
+$$
+\sin 45^\circ = \frac{1}{\sqrt2} = \frac{\sqrt2}{2} \qquad \cos 45^\circ = \frac{\sqrt2}{2} \qquad \tan 45^\circ = \frac11 = 1
+$$
+
+### 30° y 60°: la mitad de un triángulo equilátero
+
+Un triángulo equilátero de lado 2 tiene los tres ángulos de $60^\circ$. Su altura lo parte en dos triángulos rectángulos con ángulos de $60^\circ$ y $30^\circ$, y la base queda partida en dos trozos de 1. La altura mide $\sqrt{2^2 - 1^2} = \sqrt3$.
+
+<Figura
+	figura={{
+		tipo: 'geometria',
+		puntos: [
+			{ id: 'A', x: 0, y: 0, etiqueta: '', marca: false },
+			{ id: 'M', x: 1, y: 0, etiqueta: '', marca: false },
+			{ id: 'B', x: 2, y: 0, etiqueta: '', marca: false },
+			{ id: 'C', x: 1, y: 1.7320508, etiqueta: '', marca: false },
+		],
+		segmentos: [
+			{ de: 'A', a: 'M', etiqueta: '1', color: 'x', lado: 'derecha' },
+			{ de: 'M', a: 'C', etiqueta: '√3', color: 'y', lado: 'derecha' },
+			{ de: 'A', a: 'C', etiqueta: '2' },
+			{ de: 'M', a: 'B', discontinuo: true },
+			{ de: 'B', a: 'C', discontinuo: true },
+		],
+		angulos: [
+			{ vertice: 'A', desde: 'M', hasta: 'C', etiqueta: '60°', color: 'g', radio: 28 },
+			{ vertice: 'C', desde: 'M', hasta: 'A', etiqueta: '30°', radio: 34 },
+			{ vertice: 'M', desde: 'A', hasta: 'C', recto: true },
+		],
+	}}
+	alt="Triángulo equilátero de lado 2 partido por su altura, de longitud raíz de 3, en dos triángulos rectángulos con ángulos de 30 y 60 grados."
+/>
+
+Mirando el ángulo de $60^\circ$ (opuesto: $\sqrt3$; contiguo: 1) y el de $30^\circ$ (opuesto: 1; contiguo: $\sqrt3$):
+
+$$
+\sin 60^\circ = \frac{\sqrt3}{2} \quad \cos 60^\circ = \frac12 \quad \tan 60^\circ = \sqrt3 \qquad\qquad \sin 30^\circ = \frac12 \quad \cos 30^\circ = \frac{\sqrt3}{2} \quad \tan 30^\circ = \frac{1}{\sqrt3} = \frac{\sqrt3}{3}
+$$
+
+| | $0^\circ$ | $30^\circ$ | $45^\circ$ | $60^\circ$ | $90^\circ$ |
+| --- | --- | --- | --- | --- | --- |
+| $\sin$ | $0$ | $\frac12$ | $\frac{\sqrt2}{2}$ | $\frac{\sqrt3}{2}$ | $1$ |
+| $\cos$ | $1$ | $\frac{\sqrt3}{2}$ | $\frac{\sqrt2}{2}$ | $\frac12$ | $0$ |
+| $\tan$ | $0$ | $\frac{\sqrt3}{3}$ | $1$ | $\sqrt3$ | no existe |
+
+<Callout tipo="analogia" titulo="Un truco para recordarla">
+	Los senos de $0^\circ$, $30^\circ$, $45^\circ$, $60^\circ$ y $90^\circ$ son $\frac{\sqrt0}{2}, \frac{\sqrt1}{2}, \frac{\sqrt2}{2}, \frac{\sqrt3}{2}, \frac{\sqrt4}{2}$. Los cosenos son los mismos al revés. Y la tangente es siempre seno entre coseno.
+</Callout>
+
+## Ángulos complementarios
+
+En un triángulo rectángulo, los dos ángulos agudos suman $90^\circ$. El cateto **opuesto** a uno es el **contiguo** al otro. Por eso:
+
+$$
+\sin(90^\circ - \alpha) = \cos\alpha \qquad \cos(90^\circ - \alpha) = \sin\alpha \qquad \tan(90^\circ - \alpha) = \frac{1}{\tan\alpha}
+$$
+
+De ahí viene el nombre: el **co**-seno de $\alpha$ es el seno de su **co**mplementario. En la tabla de arriba se ve: $\sin 30^\circ = \cos 60^\circ$.
+
+## Más allá de 90°: la circunferencia goniométrica
+
+En un triángulo rectángulo no caben ángulos de $120^\circ$, $200^\circ$ o $-30^\circ$. Para definir sus razones se usa una circunferencia de **radio 1** centrada en el origen: la **circunferencia goniométrica**.
+
+Dibuja el ángulo $\alpha$ como un giro desde el semieje $X$ positivo. El lado terminal corta la circunferencia en un punto $P$. Si $\alpha$ es agudo, se forma un triángulo rectángulo de hipotenusa 1, y sus catetos son $\cos\alpha$ (horizontal) y $\sin\alpha$ (vertical). Esta idea se toma como **definición** para cualquier ángulo:
+
+<Callout tipo="definicion">
+	Si el lado terminal del ángulo $\alpha$ corta la circunferencia de radio 1 en el punto $P = (x,\ y)$:
+	$$
+	\cx{\cos\alpha = x} \qquad \cy{\sin\alpha = y} \qquad \cg{\tan\alpha = \frac{y}{x}} \quad (x \ne 0)
+	$$
+	El coseno es la **abscisa** de $P$, y el seno, su **ordenada**.
+</Callout>
+
+<Figura
+	figura={{ tipo: 'circunferencia', angulos: [{ grados: 140, etiqueta: '140°' }], cuadrantes: true }}
+	alt="Circunferencia de radio 1 con un ángulo de 140 grados: el coseno (azul) es negativo, sobre el eje X a la izquierda, y el seno (naranja) es positivo."
+	pie="Para 140°, el punto P está en el segundo cuadrante: su abscisa (coseno) es negativa y su ordenada (seno) es positiva."
+/>
+
+La definición es coherente con la del triángulo: para ángulos agudos da lo mismo. Y tiene consecuencias inmediatas:
+
+- **Valores posibles.** $P$ está en una circunferencia de radio 1, así que $-1 \le \sin\alpha \le 1$ y $-1 \le \cos\alpha \le 1$ para cualquier ángulo.
+- **La identidad fundamental sigue valiendo.** $P$ está a distancia 1 del origen: $x^2 + y^2 = 1$, es decir, $\cos^2\alpha + \sin^2\alpha = 1$.
+- **Ángulos coterminales.** $\alpha$ y $\alpha + 360^\circ$ llevan al mismo punto, así que tienen las mismas razones.
+- **La tangente**, con el teorema de Tales, es la altura a la que el lado terminal (prolongado) corta la recta vertical $x = 1$. Cuando $\alpha = 90^\circ$ o $270^\circ$, el lado terminal es vertical y no corta esa recta: **la tangente no existe**.
+
+### Signos por cuadrantes
+
+El signo de cada razón es el signo de la coordenada correspondiente de $P$:
+
+| Cuadrante | Ángulos | $\cos$ (abscisa) | $\sin$ (ordenada) | $\tan$ |
+| --- | --- | --- | --- | --- |
+| I | $0^\circ$ a $90^\circ$ | $+$ | $+$ | $+$ |
+| II | $90^\circ$ a $180^\circ$ | $-$ | $+$ | $-$ |
+| III | $180^\circ$ a $270^\circ$ | $-$ | $-$ | $+$ |
+| IV | $270^\circ$ a $360^\circ$ | $+$ | $-$ | $-$ |
+
+<Callout tipo="idea">
+	No hace falta memorizar la tabla: basta con imaginar dónde está el punto $P$. A la derecha del eje $Y$, coseno positivo; por encima del eje $X$, seno positivo. La tangente es positiva cuando el seno y el coseno tienen el mismo signo.
+</Callout>
+
+## Reducción al primer cuadrante
+
+¿Cuánto vale $\sin 150^\circ$? El punto de $150^\circ$ es el **simétrico** del de $30^\circ$ respecto al eje $Y$: tiene la misma altura y la abscisa cambiada de signo. Así que $\sin 150^\circ = \sin 30^\circ = \frac12$ y $\cos 150^\circ = -\cos 30^\circ = -\frac{\sqrt3}{2}$.
+
+Cualquier ángulo tiene un «gemelo» en el primer cuadrante, su **ángulo de referencia**: el ángulo agudo que forma el lado terminal con el eje $X$. Sus razones valen lo mismo **salvo el signo**. Explóralo:
+
+<SymmetryExplorer />
+
+<Formula titulo="Ángulos relacionados (α en el primer cuadrante)" usala="para calcular razones de ángulos de cualquier cuadrante a partir de las de un ángulo agudo" nousar="sin comprobar el signo con el cuadrante del ángulo original">
+	| Ángulo | Simetría | $\sin$ | $\cos$ | $\tan$ |
+	| --- | --- | --- | --- | --- |
+	| $180^\circ - \alpha$ (II) | respecto al eje $Y$ | $\sin\alpha$ | $-\cos\alpha$ | $-\tan\alpha$ |
+	| $180^\circ + \alpha$ (III) | respecto al origen | $-\sin\alpha$ | $-\cos\alpha$ | $\tan\alpha$ |
+	| $360^\circ - \alpha = -\alpha$ (IV) | respecto al eje $X$ | $-\sin\alpha$ | $\cos\alpha$ | $-\tan\alpha$ |
+	| $90^\circ - \alpha$ | respecto a la recta $y = x$ | $\cos\alpha$ | $\sin\alpha$ | $\frac{1}{\tan\alpha}$ |
+</Formula>
+
+**Método** para calcular, por ejemplo, $\cos 1020^\circ$:
+
+1. **Quita las vueltas completas**: $1020^\circ - 2\cdot 360^\circ = 300^\circ$. Así que $\cos 1020^\circ = \cos 300^\circ$.
+2. **Cuadrante**: $300^\circ$ está en el IV cuadrante, donde el coseno es **positivo**.
+3. **Ángulo de referencia**: $360^\circ - 300^\circ = 60^\circ$.
+4. **Resultado**: $\cos 1020^\circ = +\cos 60^\circ = \frac12$.
+
+<Callout tipo="ojo">
+	El ángulo de referencia es siempre el ángulo con el **eje X** (horizontal), nunca con el eje $Y$. Para $120^\circ$ es $60^\circ$ (lo que le falta para $180^\circ$), no $30^\circ$.
+</Callout>
+
+## Las gráficas: funciones que se repiten
+
+Si para cada ángulo $x$ dibujas el punto $(x,\ \sin x)$, obtienes la gráfica de la **función seno**. Igual con el coseno y la tangente.
+
+<Figura
+	figura={{
+		tipo: 'funcion',
+		dominio: [-90, 450],
+		curvas: [
+			{ f: 'sin', etiqueta: 'y = sin x', color: 'y' },
+			{ f: 'cos', etiqueta: 'y = cos x', color: 'x' },
+		],
+	}}
+	alt="Gráficas del seno y del coseno entre menos 90 y 450 grados: dos ondas iguales, desplazadas 90 grados la una de la otra."
+	pie="El coseno es el seno desplazado 90° hacia la izquierda: cos x = sin(x + 90°)."
+/>
+
+<Figura
+	figura={{
+		tipo: 'funcion',
+		dominio: [-90, 450],
+		rango: [-4, 4],
+		curvas: [{ f: 'tan', etiqueta: 'y = tan x', color: 'g' }],
+	}}
+	alt="Gráfica de la tangente entre menos 90 y 450 grados: ramas crecientes separadas por asíntotas verticales en 90, 270 y 450 grados."
+	pie="La tangente tiene asíntotas verticales en 90° + 180°·k, donde el coseno vale 0."
+/>
+
+| | $y = \sin x$ | $y = \cos x$ | $y = \tan x$ |
+| --- | --- | --- | --- |
+| Dominio | todos los reales | todos los reales | $x \ne 90^\circ + 180^\circ k$ |
+| Recorrido | $[-1,\ 1]$ | $[-1,\ 1]$ | todos los reales |
+| Periodo | $360^\circ$ ($2\pi$) | $360^\circ$ ($2\pi$) | $180^\circ$ ($\pi$) |
+| Ceros | $0^\circ,\ 180^\circ,\ 360^\circ\ldots$ | $90^\circ,\ 270^\circ\ldots$ | $0^\circ,\ 180^\circ\ldots$ |
+| Simetría | impar: $\sin(-x) = -\sin x$ | par: $\cos(-x) = \cos x$ | impar |
+
+Una función es **periódica** si se repite: $\sin(x + 360^\circ) = \sin x$. El periodo es la longitud de un tramo que se repite. La tangente se repite antes, cada $180^\circ$, porque $P$ y su opuesto $-P$ dan la misma pendiente.
+
+## Una razón, todas las demás
+
+Con la identidad fundamental y el cuadrante, conocer **una** razón basta para calcular las otras dos. Por ejemplo, si $\cos\alpha = -\frac35$ y $\alpha$ está en el tercer cuadrante:
+
+$$
+\sin^2\alpha = 1 - \frac{9}{25} = \frac{16}{25} \;\Rightarrow\; \sin\alpha = \pm\frac45 \;\xrightarrow{\text{III cuadrante}}\; \sin\alpha = -\frac45 \qquad \tan\alpha = \frac{-4/5}{-3/5} = \frac43
+$$
+
+<Callout tipo="ojo">
+	La raíz cuadrada siempre da **dos** posibilidades, $\pm$. El enunciado debe decir el cuadrante (o algo equivalente, como «$\alpha$ es obtuso»); si no lo dice, hay dos soluciones.
+</Callout>

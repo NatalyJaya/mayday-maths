@@ -1,0 +1,241 @@
+---
+tema: identidades-ecuaciones
+etapa: propiedades
+titulo: De dónde salen las fórmulas
+descripcion: La demostración geométrica del seno y el coseno de la suma, y de ahí todas las demás (resta, ángulo doble y ángulo mitad, como en tus apuntes). Después, cómo demostrar identidades y cómo resolver ecuaciones sin perder soluciones.
+minutos: 40
+---
+
+## El punto de partida: la suma
+
+Todas las fórmulas del tema salen de dos: el seno y el coseno de la suma. En tus apuntes se aceptan sin demostrar; aquí tienes de dónde vienen.
+
+<SumFormula />
+
+<Derivation titulo="Seno y coseno de la suma (con el dibujo de arriba)">
+	<Paso titulo="Dos triángulos rectángulos encajados" porque="$P$ está a distancia 1 del origen y forma el ángulo $\alpha + \beta$, así que su altura es $\sin(\alpha + \beta)$ y su abscisa es $\cos(\alpha + \beta)$.">
+		En el triángulo $OQP$ (hipotenusa 1, ángulo $\beta$): $\;OQ = \cos\beta$, $\;QP = \sin\beta$.
+	</Paso>
+	<Paso titulo="Proyectar OQ" porque="En el triángulo $ORQ$ la hipotenusa es $OQ = \cos\beta$ y el ángulo en $O$ es $\alpha$.">
+		$$
+		QR = \cos\beta\sin\alpha \qquad OR = \cos\beta\cos\alpha
+		$$
+	</Paso>
+	<Paso titulo="Proyectar QP" porque="El ángulo $\widehat{TPQ}$ también mide $\alpha$: $PQ$ es perpendicular a $OQ$, y $PT$ es perpendicular al eje $X$, así que forman el mismo ángulo que $OQ$ y el eje $X$. La hipotenusa es $QP = \sin\beta$.">
+		$$
+		PT = \sin\beta\cos\alpha \qquad TQ = \sin\beta\sin\alpha
+		$$
+	</Paso>
+	<Paso titulo="Sumar y restar">
+		$$
+		\sin(\alpha + \beta) = PS = TS + PT = \sin\alpha\cos\beta + \cos\alpha\sin\beta
+		$$
+		$$
+		\cos(\alpha + \beta) = OS = OR - TQ = \cos\alpha\cos\beta - \sin\alpha\sin\beta
+		$$
+	</Paso>
+</Derivation>
+
+La demostración se ha hecho con ángulos agudos, pero las fórmulas valen para **cualquier** par de ángulos (se puede demostrar con la circunferencia goniométrica o con vectores).
+
+### Tangente de la suma
+
+Como en tus apuntes: se parte de $\tan = \frac{\sin}{\cos}$ y se **divide numerador y denominador entre** $\cos\alpha\cos\beta$:
+
+$$
+\tan(\alpha + \beta) = \frac{\sin\alpha\cos\beta + \cos\alpha\sin\beta}{\cos\alpha\cos\beta - \sin\alpha\sin\beta} = \frac{\dfrac{\sin\alpha\cos\beta}{\cos\alpha\cos\beta} + \dfrac{\cos\alpha\sin\beta}{\cos\alpha\cos\beta}}{\dfrac{\cos\alpha\cos\beta}{\cos\alpha\cos\beta} - \dfrac{\sin\alpha\sin\beta}{\cos\alpha\cos\beta}} = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}
+$$
+
+<Callout tipo="porque" titulo="¿Por qué dividir entre cos α · cos β?">
+	Porque cada término se convierte en algo conocido: $\frac{\sin\alpha}{\cos\alpha} = \tan\alpha$, $\frac{\sin\beta}{\cos\beta} = \tan\beta$ y $\frac{\cos\alpha\cos\beta}{\cos\alpha\cos\beta} = 1$. Así la fórmula queda solo con tangentes.
+</Callout>
+
+## La resta: α − β = α + (−β)
+
+**Truco de los apuntes:** escribir $\alpha - \beta = \alpha + (-\beta)$ y usar las fórmulas de la suma con la **paridad**: el coseno es par y el seno, impar.
+
+$$
+\cos(-\beta) = \cos\beta \qquad \sin(-\beta) = -\sin\beta \qquad \tan(-\beta) = -\tan\beta
+$$
+
+<Derivation titulo="Fórmulas de la resta">
+	<Paso titulo="Seno">
+		$$
+		\sin(\alpha - \beta) = \sin\alpha\cos(-\beta) + \cos\alpha\sin(-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta
+		$$
+	</Paso>
+	<Paso titulo="Coseno">
+		$$
+		\cos(\alpha - \beta) = \cos\alpha\cos(-\beta) - \sin\alpha\sin(-\beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta
+		$$
+	</Paso>
+	<Paso titulo="Tangente">
+		$$
+		\tan(\alpha - \beta) = \frac{\tan\alpha + \tan(-\beta)}{1 - \tan\alpha\tan(-\beta)} = \frac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}
+		$$
+	</Paso>
+</Derivation>
+
+<Callout tipo="clase" titulo="Regla para recordar (de tus apuntes)">
+	En la resta **cambian los signos** respecto a la suma. En el coseno y en la tangente cambia también el del denominador.
+</Callout>
+
+**Aplicación: valores exactos.** $\sin 75^\circ = \sin(45^\circ + 30^\circ) = \frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2} + \frac{\sqrt2}{2}\cdot\frac12 = \frac{\sqrt6 + \sqrt2}{4} \approx 0{,}9659$.
+
+## El ángulo doble: 2α = α + α
+
+**Truco:** tomar $\beta = \alpha$ en las fórmulas de la suma.
+
+<Derivation titulo="Fórmulas del ángulo doble">
+	<Paso titulo="Seno">
+		$$
+		\sin 2\alpha = \sin\alpha\cos\alpha + \cos\alpha\sin\alpha = 2\sin\alpha\cos\alpha
+		$$
+	</Paso>
+	<Paso titulo="Coseno">
+		$$
+		\cos 2\alpha = \cos\alpha\cos\alpha - \sin\alpha\sin\alpha = \cos^2\alpha - \sin^2\alpha
+		$$
+	</Paso>
+	<Paso titulo="Tangente">
+		$$
+		\tan 2\alpha = \frac{\tan\alpha + \tan\alpha}{1 - \tan\alpha\tan\alpha} = \frac{2\tan\alpha}{1 - \tan^2\alpha}
+		$$
+	</Paso>
+</Derivation>
+
+Con $\sin^2\alpha + \cos^2\alpha = 1$, el coseno del ángulo doble tiene **tres formas**. En las ecuaciones se elige la que deja una sola razón:
+
+$$
+\cos 2\alpha = \cos^2\alpha - \sin^2\alpha = \underbrace{2\cos^2\alpha - 1}_{\text{solo cosenos}} = \underbrace{1 - 2\sin^2\alpha}_{\text{solo senos}}
+$$
+
+## El ángulo mitad (la deducción de tus apuntes)
+
+Aquí se hace un **cambio de variable**: $\beta = \frac{\alpha}{2}$, es decir, $\alpha = 2\beta$. Se parte de dos igualdades que ya conocemos:
+
+$$
+[1]\quad \sin^2\beta + \cos^2\beta = 1 \qquad\qquad [2]\quad \cos^2\beta - \sin^2\beta = \cos 2\beta
+$$
+
+<Derivation titulo="Seno y coseno del ángulo mitad">
+	<Paso titulo="Seno: restar [1] − [2]" porque="Al restar, los $\cos^2\beta$ se cancelan y queda solo el seno. En los apuntes se hace sumando $[1]$ con $-[2]$, que es lo mismo.">
+		$$
+		2\sin^2\beta = 1 - \cos 2\beta \;\Rightarrow\; \sin^2\beta = \frac{1 - \cos 2\beta}{2}
+		$$
+	</Paso>
+	<Paso titulo="Coseno: sumar [1] + [2]" porque="Al sumar, los $\sin^2\beta$ se cancelan.">
+		$$
+		2\cos^2\beta = 1 + \cos 2\beta \;\Rightarrow\; \cos^2\beta = \frac{1 + \cos 2\beta}{2}
+		$$
+	</Paso>
+	<Paso titulo="Deshacer el cambio β = α/2" porque="$2\beta = \alpha$. Al hacer la raíz aparece el $\pm$.">
+		$$
+		\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}} \qquad \cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}
+		$$
+	</Paso>
+	<Paso titulo="Tangente: dividir" porque="Los «÷ 2» de dentro de las raíces se cancelan.">
+		$$
+		\tan\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{1 + \cos\alpha}}
+		$$
+	</Paso>
+</Derivation>
+
+<Callout tipo="ojo" titulo="¿Qué signo elegir?">
+	El $\pm$ **no** significa que haya dos respuestas: el signo lo decide el **cuadrante de** $\frac{\alpha}{2}$ (no el de $\alpha$). Por ejemplo, si $\alpha = 300^\circ$, entonces $\frac{\alpha}{2} = 150^\circ$, en el segundo cuadrante: seno positivo, coseno negativo.
+</Callout>
+
+<Callout tipo="idea" titulo="El ángulo mitad sin raíces">
+	Las fórmulas **antes de la raíz** son muy útiles en las ecuaciones: si aparece $\cos^2\frac{x}{2}$ o $\sin^2\frac{x}{2}$, se sustituye directamente, sin raíces ni $\pm$:
+	$$
+	\cos^2\frac{x}{2} = \frac{1 + \cos x}{2} \qquad \sin^2\frac{x}{2} = \frac{1 - \cos x}{2}
+	$$
+	En tus apuntes, el ejercicio $6\cos^2\frac{x}{2} + \cos x - 1 = 0$ se complicaba por usar la raíz.
+</Callout>
+
+Las fórmulas del ángulo mitad no se cumplen como identidades «sin el signo»: compruébalo con la última opción del comparador de identidades en el laboratorio ($\cos\frac{x}{2}$ frente a $\sqrt{\frac{1 + \cos x}{2}}$).
+
+<Reveal titulo="Ampliación: transformar sumas en productos">
+
+Sumando y restando las fórmulas del seno de la suma y de la resta:
+
+$$
+\sin(\alpha + \beta) + \sin(\alpha - \beta) = 2\sin\alpha\cos\beta
+$$
+
+Llamando $A = \alpha + \beta$ y $B = \alpha - \beta$ (así $\alpha = \frac{A + B}{2}$ y $\beta = \frac{A - B}{2}$) se obtienen las fórmulas de transformación, útiles en ecuaciones como $\sin 3x + \sin x = 0$:
+
+$$
+\sin A + \sin B = 2\sin\frac{A + B}{2}\cos\frac{A - B}{2} \qquad \sin A - \sin B = 2\cos\frac{A + B}{2}\sin\frac{A - B}{2}
+$$
+$$
+\cos A + \cos B = 2\cos\frac{A + B}{2}\cos\frac{A - B}{2} \qquad \cos A - \cos B = -2\sin\frac{A + B}{2}\sin\frac{A - B}{2}
+$$
+
+Según el centro, estas fórmulas se estudian en 1.º o no se piden. Si las necesitas, se deducen siempre igual.
+
+</Reveal>
+
+## Cómo demostrar una identidad
+
+Demostrar es **transformar un miembro** (normalmente el más complicado) **hasta llegar al otro**, con pasos que sean identidades conocidas.
+
+1. **Pasa todo a senos y cosenos** (la tangente como cociente).
+2. **Iguala los ángulos**: si hay $2x$ y $x$, usa el ángulo doble para que todo esté en $x$.
+3. **Busca la identidad fundamental**: $1$ puede escribirse como $\sin^2 x + \cos^2 x$; $1 - \cos^2 x$ es $\sin^2 x$.
+4. **Factoriza** (factor común, diferencia de cuadrados) y **simplifica** factores, nunca sumandos.
+5. **Comprueba** con un valor concreto que no te has equivocado por el camino.
+
+<Callout tipo="ojo">
+	En una demostración **no se pasan términos de un miembro al otro** como en una ecuación: todavía no sabes si la igualdad es cierta. Se trabaja con un solo miembro, o con los dos por separado hasta llegar a la misma expresión.
+</Callout>
+
+<Callout tipo="clase">
+	Los dos ejercicios de identidades de tus apuntes siguen exactamente estos pasos: en $\frac{\sin(a + b)\sin(a - b)}{\cos a + \cos b}$ se desarrolla, se pasa a cosenos y se **factoriza dos veces** (diferencia de cuadrados); en la demostración «per demà» se usa el ángulo doble **dos veces**, la segunda con $\frac{x}{2}$. Los tienes resueltos en la práctica.
+</Callout>
+
+## Cómo resolver una ecuación
+
+Este es el método general de tus apuntes, paso a paso:
+
+<Figura
+	figura={{
+		tipo: 'flujo',
+		titulo: 'Método general',
+		pasos: [
+			{ etiqueta: 'Paso 1', titulo: 'Una sola razón', texto: 'Con las identidades, deja la ecuación en una sola razón y un solo ángulo.' },
+			{ etiqueta: 'Paso 2', titulo: 'Cambio de variable', texto: 'Si sale de 2.º grado: $t = \\sin x$, $\\cos x$ o $\\tan x$. Si hay factor común, factoriza.', color: 'y' },
+			{ etiqueta: 'Paso 3', titulo: 'Deshacer el cambio', texto: 'Busca el ángulo con $\\arcsin$, $\\arccos$ o $\\arctan$. Descarta $|t| > 1$ en seno y coseno.', color: 'x' },
+			{ etiqueta: 'Paso 4', titulo: 'Todos los ángulos', texto: 'Dos por cada valor (uno si es ±1) en cada vuelta. Comprueba denominadores y soluciones.', color: 'g' },
+		],
+	}}
+/>
+
+| Si la ecuación… | Haz esto | Ejemplo |
+| --- | --- | --- |
+| tiene una sola razón de un solo ángulo | despeja | $2\sin x - 1 = 0$ |
+| es de 2.º grado en una razón | cambio de variable $t$ | $\tan^2 x - 3\tan x + 2 = 0$ |
+| mezcla $\sin^2 x$ y $\cos x$ (o al revés) | pasa el **cuadrado** a la otra razón | $2\sin^2 x + 3\cos x - 3 = 0$ |
+| tiene $2x$ y $x$ | ángulo doble; elige la forma de $\cos 2x$ que deje una razón | $\cos 2x = \sin x$ |
+| tiene $\frac{x}{2}$ al cuadrado | fórmula del ángulo mitad **sin raíz** | $6\cos^2\frac{x}{2} + \cos x - 1 = 0$ |
+| tiene un factor común | **factoriza**: no dividas | $\cos^2 x = \cos x$ |
+| tiene denominadores | multiplica, pero exige que no se anulen | $\frac{1}{\cos x + \sin x} = \ldots$ |
+| es $a\sin x + b\cos x = c$ | eleva al cuadrado y **comprueba** | $\cos x + \sin x = 1$ |
+
+### Los cuatro peligros
+
+<Callout tipo="limite" titulo="1. Dividir entre una expresión que puede ser cero">
+	En $\sin x = \tan x$ o en $\cos^2 x = \cos x$, si divides entre $\sin x$ o $\cos x$ **pierdes soluciones**: justo las que anulan aquello entre lo que has dividido. Saca factor común.
+</Callout>
+
+<Callout tipo="limite" titulo="2. Elevar al cuadrado">
+	Al elevar al cuadrado se cuelan **soluciones falsas**: las de la ecuación con el signo cambiado. En $\cos x + \sin x = 1$, al elevar aparecen $180^\circ$ y $270^\circ$, que dan $-1$. Después de elevar, **comprueba siempre** en la ecuación original.
+</Callout>
+
+<Callout tipo="limite" titulo="3. Quedarse con el ángulo de la calculadora">
+	La calculadora da un ángulo. El otro de la misma vuelta hay que buscarlo con la simetría ($180^\circ - \theta$ para el seno, $360^\circ - \theta$ para el coseno, $\theta + 180^\circ$ para la tangente).
+</Callout>
+
+<Callout tipo="limite" titulo="4. Ángulos múltiples">
+	Con $\sin 2x = k$, busca **todas** las soluciones de $2x$ en $[0^\circ,\ 720^\circ)$ **antes** de dividir entre 2. Si no, pierdes la mitad.
+</Callout>

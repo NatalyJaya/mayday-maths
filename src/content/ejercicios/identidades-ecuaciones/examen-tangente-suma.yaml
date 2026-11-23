@@ -1,0 +1,38 @@
+titulo: Dos ángulos que suman 45°
+tema: identidades-ecuaciones
+orden: 15
+procedencia: original
+dificultad: examen
+habilidades: [calculo, demostracion, conceptual]
+resumen: La tangente de la suma revela un ángulo exacto sin calcular los ángulos por separado.
+enunciado: |
+  Los ángulos agudos $\alpha$ y $\beta$ cumplen $\tan\alpha = \dfrac12$ y $\tan\beta = \dfrac13$.
+
+  a) Calcula $\tan(\alpha + \beta)$.
+  b) ¿Cuánto mide exactamente $\alpha + \beta$?
+apartados:
+  - id: a
+    enunciado: '$\tan(\alpha + \beta)$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\tan(\alpha + \beta)', etiqueta: '', unidad: '', valor: 1, trampas: [{ valor: 0.8333, explicacion: 'Has sumado las tangentes. La tangente de una suma no es la suma de las tangentes: falta dividir entre $1 - \tan\alpha\tan\beta$.' }] }
+    pistas:
+      - '$\tan(\alpha + \beta) = \dfrac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}$.'
+    pasos:
+      - titulo: Fórmula de la suma
+        desarrollo: '$$\tan(\alpha + \beta) = \frac{\frac12 + \frac13}{1 - \frac12\cdot\frac13} = \frac{\frac56}{\frac56} = 1$$'
+    resultado: '$\tan(\alpha + \beta) = 1$.'
+  - id: b
+    enunciado: '$\alpha + \beta$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\alpha + \beta', etiqueta: '', unidad: '°', valor: 45, trampas: [{ valor: 225, explicacion: '$\tan 225^\circ = 1$, pero $\alpha$ y $\beta$ son agudos, así que su suma es menor que $180^\circ$.' }] }
+    pistas:
+      - '¿Qué ángulos tienen tangente 1? ¿Entre qué valores está $\alpha + \beta$?'
+    pasos:
+      - titulo: El ángulo
+        desarrollo: 'Como $\alpha, \beta < 90^\circ$, su suma está entre $0^\circ$ y $180^\circ$. Con tangente 1, solo puede ser $45^\circ$.'
+        porque: 'Comprobación con la calculadora: $\arctan\frac12 + \arctan\frac13 \approx 26{,}57^\circ + 18{,}43^\circ = 45^\circ$ ✔.'
+    resultado: '$\alpha + \beta = 45^\circ$ exactamente.'

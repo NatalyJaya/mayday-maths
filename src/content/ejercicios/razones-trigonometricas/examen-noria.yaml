@@ -1,0 +1,52 @@
+titulo: La altura de una cabina de noria
+tema: razones-trigonometricas
+orden: 15
+procedencia: original
+dificultad: examen
+habilidades: [modelizacion, graficas, multipaso]
+resumen: Un modelo con el seno, una altura concreta y los ángulos para una altura dada.
+enunciado: |
+  Una noria tiene $18\un{m}$ de radio y su centro está a $20\un{m}$ del suelo. Medimos el ángulo de giro $\theta$ de una cabina desde la posición horizontal de la derecha, en sentido antihorario. Su altura sobre el suelo es
+  $$h(\theta) = 20 + 18\sin\theta$$
+
+  a) ¿A qué altura está la cabina cuando $\theta = 210^\circ$?
+  b) ¿Para qué ángulos de la primera vuelta ($0^\circ \le \theta < 360^\circ$) está a $29\un{m}$ de altura?
+figura:
+  tipo: funcion
+  rango: [0, 40]
+  curvas:
+    - { f: sin, a: 18, d: 20, etiqueta: 'h(θ) = 20 + 18 sin θ', color: y }
+  niveles:
+    - { y: 29, etiqueta: 'h = 29 m' }
+interpretacion: |
+  La cabina recorre una circunferencia de radio 18 alrededor de un centro a 20 m de altura. Su altura respecto al centro es $18\sin\theta$ (el seno es la ordenada en una circunferencia de radio 1; con radio 18 se multiplica por 18).
+apartados:
+  - id: a
+    enunciado: Altura para $\theta = 210^\circ$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'h(210^\circ)', etiqueta: altura, unidad: m, valor: 11, trampas: [{ valor: 29, explicacion: '$\sin 210^\circ$ es negativo (tercer cuadrante): la cabina está por debajo del centro.' }] }
+    pistas:
+      - '$\sin 210^\circ = -\sin 30^\circ$.'
+    pasos:
+      - titulo: Sustituir
+        desarrollo: '$$h(210^\circ) = 20 + 18\sin 210^\circ = 20 + 18\cdot\left(-\frac12\right) = 11\un{m}$$'
+    resultado: 'La cabina está a $11\un{m}$ del suelo.'
+  - id: b
+    enunciado: Ángulos para los que $h = 29\un{m}$.
+    respuesta:
+      tipo: conjunto
+      simbolo: '\theta'
+      valores: [30, 150]
+      trampas:
+        - { valores: [30], explicacion: 'La cabina pasa dos veces por esa altura en cada vuelta: una subiendo y otra bajando.' }
+    pistas:
+      - 'Plantea $20 + 18\sin\theta = 29$ y despeja el seno.'
+    pasos:
+      - titulo: Plantear y despejar
+        desarrollo: '$$20 + 18\sin\theta = 29 \;\Rightarrow\; \sin\theta = \frac{9}{18} = \frac12$$'
+      - titulo: Los dos ángulos
+        desarrollo: '$\theta = 30^\circ$ (subiendo) y $\theta = 150^\circ$ (bajando).'
+        porque: 'Una recta horizontal corta la circunferencia en dos puntos: los dos ángulos con el mismo seno.'
+    resultado: 'A $\theta = 30^\circ$ y a $\theta = 150^\circ$.'

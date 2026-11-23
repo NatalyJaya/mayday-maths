@@ -1,0 +1,32 @@
+titulo: ¿Cuántos triángulos hay?
+tema: resolucion-triangulos
+orden: 13
+procedencia: original
+dificultad: avanzado
+habilidades: [conceptual, metodo]
+resumen: Decidir sin resolver si hay 0, 1 o 2 triángulos en el caso LLA.
+enunciado: |
+  En los cuatro casos se conocen $A$, $b$ y $a$ (el lado opuesto a $A$). La altura desde $C$ es $h = b\sin A$.
+
+  1. $A = 30^\circ$, $b = 10$, $a = 4$
+  2. $A = 30^\circ$, $b = 10$, $a = 5$
+  3. $A = 30^\circ$, $b = 10$, $a = 8$
+  4. $A = 30^\circ$, $b = 10$, $a = 12$
+apartados:
+  - id: a
+    enunciado: ¿En cuál de los casos hay **dos** triángulos?
+    respuesta:
+      tipo: opciones
+      opciones:
+        - { texto: 'En el 1', explicacion: '$h = 10\sin 30^\circ = 5 > 4$: el lado $a$ no llega a la base. No hay ningún triángulo ($\sin B = 1{,}25 > 1$).' }
+        - { texto: 'En el 2', explicacion: '$a = h = 5$: un solo triángulo, rectángulo en $B$ ($\sin B = 1$).' }
+        - { texto: 'En el 3', correcta: true, explicacion: '$h = 5 < a = 8 < b = 10$: la circunferencia de radio 8 corta la base en dos puntos. $\sin B = 0{,}625$ da $B \approx 38{,}68^\circ$ o $141{,}32^\circ$, y los dos caben con $A = 30^\circ$.' }
+        - { texto: 'En el 4', explicacion: '$a = 12 \ge b = 10$: el suplementario no cabe ($30^\circ + 155{,}38^\circ > 180^\circ$). Un solo triángulo.' }
+    pistas:
+      - 'Calcula $h = b\sin A$ y compáralo con $a$ y con $b$.'
+    pasos:
+      - titulo: Calcular la altura
+        desarrollo: '$h = 10\sin 30^\circ = 5$.'
+      - titulo: Comparar
+        desarrollo: '$a < h$: ninguno. $a = h$: uno (rectángulo). $h < a < b$: dos. $a \ge b$: uno.'
+    resultado: 'Solo en el caso 3 ($a = 8$) hay dos triángulos.'

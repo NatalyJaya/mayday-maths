@@ -1,0 +1,47 @@
+titulo: Un barco visto desde un faro
+tema: resolucion-triangulos
+orden: 3
+procedencia: original
+dificultad: basico
+habilidades: [planteamiento, modelizacion]
+resumen: Ángulo de depresión y tangente.
+enunciado: |
+  Desde lo alto de un faro de $45\un{m}$ de altura sobre el nivel del mar se ve un barco con un ángulo de depresión de $12^\circ$. ¿A qué distancia horizontal del faro está el barco?
+figura:
+  tipo: geometria
+  puntos:
+    - { id: F, x: 0, y: 45, etiqueta: 'faro', lado: n }
+    - { id: O, x: 0, y: 0, etiqueta: '', marca: false }
+    - { id: S, x: 211.7, y: 0, etiqueta: 'barco', lado: s }
+    - { id: R, x: 211.7, y: 45, etiqueta: '', marca: false }
+  segmentos:
+    - { de: O, a: F, etiqueta: '45 m', color: y }
+    - { de: O, a: S, etiqueta: 'd = ?', color: x, lado: derecha }
+    - { de: F, a: S, color: g }
+    - { de: F, a: R, discontinuo: true }
+  angulos:
+    - { vertice: F, desde: R, hasta: S, etiqueta: '12°', color: g, radio: 60 }
+    - { vertice: O, desde: S, hasta: F, recto: true }
+  suelo: { y: 0, desde: -10, hasta: 225 }
+apartados:
+  - id: a
+    enunciado: Distancia horizontal del faro al barco.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'd'
+          etiqueta: distancia
+          unidad: m
+          valor: 211.71
+          trampas:
+            - { valor: 9.57, explicacion: 'Has puesto el ángulo de $12^\circ$ en lo alto del triángulo, en el faro. El ángulo de depresión se mide desde la horizontal: en el triángulo aparece en el barco, como ángulo de elevación.' }
+            - { valor: 216.44, explicacion: 'Esa es la distancia en línea recta desde lo alto del faro (la hipotenusa). Se pide la distancia horizontal.' }
+    pistas:
+      - 'El ángulo de depresión desde el faro es igual al ángulo de elevación desde el barco.'
+      - 'En el barco: cateto opuesto 45 m, contiguo $d$.'
+    pasos:
+      - titulo: Situar el ángulo
+        desarrollo: 'El ángulo de depresión desde el faro ($12^\circ$) es igual al de elevación desde el barco (alternos entre horizontales).'
+      - titulo: Tangente
+        desarrollo: '$$\tan 12^\circ = \frac{45}{d} \;\Rightarrow\; d = \frac{45}{\tan 12^\circ} \approx 211{,}71\un{m}$$'
+    resultado: 'El barco está a unos $211{,}7\un{m}$ del faro.'

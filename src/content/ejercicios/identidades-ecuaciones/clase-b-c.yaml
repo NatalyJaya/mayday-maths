@@ -1,0 +1,45 @@
+titulo: '2 sin x − 1 = 0'
+tema: identidades-ecuaciones
+orden: 203
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie B, apartado c)
+coleccion: clase-serie-b
+dificultad: basico
+habilidades: [calculo, graficas]
+resumen: La ecuación más directa. Pero hay dos ángulos con seno 1/2.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$2\sin x - 1 = 0$$
+figura:
+  tipo: circunferencia
+  angulos:
+    - { grados: 30, etiqueta: '30°' }
+    - { grados: 150, etiqueta: '150°' }
+  recta: { tipo: seno, valor: 0.5 }
+  proyecciones: false
+conceptos:
+  - '$\sin x = k$ tiene dos soluciones por vuelta: $\theta$ y $180^\circ - \theta$.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    respuesta:
+      tipo: conjunto
+      valores: [30, 150]
+      trampas:
+        - valores: [30]
+          explicacion: 'Es lo que da la calculadora (y lo que había en el cuaderno), pero falta otra: el seno también es positivo en el segundo cuadrante. La recta $y = \frac12$ corta la circunferencia en dos puntos.'
+    pistas:
+      - 'Despeja $\sin x$.'
+      - 'En la circunferencia, la recta horizontal $y = \frac12$ corta en dos puntos. ¿Cuáles son sus ángulos?'
+    pasos:
+      - titulo: Despejar
+        desarrollo: '$$2\sin x = 1 \;\Rightarrow\; \sin x = \tfrac12$$'
+      - titulo: Los dos ángulos
+        desarrollo: '$\arcsin\frac12 = 30^\circ$. El seno también es positivo en el segundo cuadrante: $180^\circ - 30^\circ = 150^\circ$.'
+        porque: '$30^\circ$ y $150^\circ$ son simétricos respecto al eje Y: tienen la misma altura.'
+    resultado: '$x = 30^\circ,\ 150^\circ$.'
+errores:
+  - error: 'Dar solo $30^\circ$ (como en el cuaderno)'
+    explicacion: 'La calculadora devuelve un solo ángulo. El otro, $150^\circ$, hay que buscarlo con la simetría.'
+laboratorio: { f: sin, n: 1, k: 0.5 }

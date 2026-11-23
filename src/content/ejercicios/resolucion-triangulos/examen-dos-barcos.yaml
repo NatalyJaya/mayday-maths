@@ -1,0 +1,58 @@
+titulo: Dos barcos salen del puerto
+tema: resolucion-triangulos
+orden: 14
+procedencia: original
+dificultad: examen
+habilidades: [modelizacion, planteamiento, multipaso, metodo]
+resumen: Velocidades y tiempo para los lados, coseno para la distancia y para un ángulo.
+enunciado: |
+  Dos barcos salen a la vez de un puerto $P$ con rumbos que forman un ángulo de $75^\circ$. El barco $A$ navega a $18\un{km/h}$ y el barco $B$, a $24\un{km/h}$.
+
+  a) ¿A qué distancia están uno del otro al cabo de 2 horas?
+  b) En ese momento, ¿qué ángulo forma, en el barco $A$, la dirección hacia el puerto con la dirección hacia el barco $B$?
+figura:
+  tipo: triangulo
+  a: 48
+  b: 36
+  c: 52.015
+  nombres: { A: P, B: A, C: B }
+  etiquetas: { b: '36 km', a: '48 km', A: '75°', c: 'd = ?', B: '?' }
+  colores: { c: g }
+interpretacion: |
+  En 2 horas, $A$ recorre $18\cdot 2 = 36\un{km}$ y $B$, $24\cdot 2 = 48\un{km}$. Se forma un triángulo con dos lados conocidos y el ángulo que forman en el puerto: caso **LAL**.
+apartados:
+  - id: a
+    enunciado: Distancia entre los barcos a las 2 horas.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'd'
+          etiqueta: distancia
+          unidad: km
+          valor: 52.01
+          trampas:
+            - { valor: 60, explicacion: 'Has aplicado Pitágoras ($\sqrt{36^2 + 48^2} = 60$). El ángulo en el puerto es de $75^\circ$, no de $90^\circ$.' }
+            - { valor: 25.57, explicacion: 'Has usado 18 y 24 km: son las distancias de **una** hora. En 2 horas se recorre el doble.' }
+    pistas:
+      - 'Primero, las distancias recorridas en 2 horas.'
+      - 'Teorema del coseno con el ángulo de $75^\circ$.'
+    pasos:
+      - titulo: Lados del triángulo
+        desarrollo: '$PA = 18\cdot 2 = 36\un{km}$ y $PB = 24\cdot 2 = 48\un{km}$.'
+      - titulo: Teorema del coseno
+        desarrollo: '$$d^2 = 36^2 + 48^2 - 2\cdot 36\cdot 48\cos 75^\circ \approx 3600 - 894{,}47 = 2705{,}53 \;\Rightarrow\; d \approx 52{,}01\un{km}$$'
+    resultado: 'Están a unos $52{,}0\un{km}$.'
+  - id: b
+    enunciado: Ángulo en el barco $A$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\widehat{PAB}', etiqueta: ángulo, unidad: '°', valor: 63.05 }
+    pistas:
+      - 'Ya conoces los tres lados. El ángulo en $A$ está enfrente del lado $PB = 48$.'
+    pasos:
+      - titulo: Coseno del ángulo
+        desarrollo: '$$\cos\widehat{A} = \frac{36^2 + 52{,}01^2 - 48^2}{2\cdot 36\cdot 52{,}01} \approx 0{,}4530 \;\Rightarrow\; \widehat{A} \approx 63{,}05^\circ$$'
+        porque: 'Con el coseno no hay ambigüedad. Con el seno saldría lo mismo, porque el ángulo es agudo.'
+    resultado: 'Unos $63{,}0^\circ$.'
+laboratorio: { a: 48, b: 36, c: 52.015 }

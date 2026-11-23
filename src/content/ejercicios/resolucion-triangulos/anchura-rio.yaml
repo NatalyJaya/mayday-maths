@@ -1,0 +1,54 @@
+titulo: La anchura de un río
+tema: resolucion-triangulos
+orden: 10
+procedencia: original
+dificultad: intermedio
+habilidades: [planteamiento, modelizacion, multipaso]
+resumen: Teorema del seno para una distancia y seno para la anchura.
+enunciado: |
+  Para medir la anchura de un río se marcan dos puntos $A$ y $B$ en una orilla, separados $60\un{m}$. Un árbol $T$ de la otra orilla se ve desde $A$ con un ángulo $\widehat{TAB} = 50^\circ$ y desde $B$ con un ángulo $\widehat{TBA} = 70^\circ$. ¿Cuál es la anchura del río (la distancia de $T$ a la orilla $AB$)?
+figura:
+  tipo: geometria
+  puntos:
+    - { id: A, x: 0, y: 0, lado: s }
+    - { id: B, x: 60, y: 0, lado: s }
+    - { id: T, x: 41.85, y: 49.87, lado: n }
+    - { id: H, x: 41.85, y: 0, etiqueta: '', marca: false }
+  segmentos:
+    - { de: A, a: B, etiqueta: '60 m', lado: derecha }
+    - { de: A, a: T }
+    - { de: B, a: T }
+    - { de: T, a: H, etiqueta: 'anchura = ?', color: g, discontinuo: true }
+  angulos:
+    - { vertice: A, desde: B, hasta: T, etiqueta: '50°', radio: 30 }
+    - { vertice: B, desde: T, hasta: A, etiqueta: '70°', radio: 26 }
+    - { vertice: H, desde: B, hasta: T, recto: true }
+  textos:
+    - { x: 20, y: 56, texto: 'otra orilla' }
+apartados:
+  - id: a
+    enunciado: Calcula la distancia $AT$ y la anchura del río.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'AT', etiqueta: distancia de A al árbol, unidad: m, valor: 65.10 }
+        - simbolo: 'h'
+          etiqueta: anchura del río
+          unidad: m
+          valor: 49.87
+          trampas:
+            - { valor: 65.10, explicacion: 'Esa es la distancia $AT$, que va en diagonal. La anchura es la distancia **perpendicular** a la orilla.' }
+    pistas:
+      - 'El ángulo en $T$ es $180^\circ - 50^\circ - 70^\circ = 60^\circ$, y está enfrente del lado de 60 m.'
+      - 'Con el teorema del seno, $AT = \dfrac{60\sin 70^\circ}{\sin 60^\circ}$.'
+      - 'La anchura es el cateto opuesto a $50^\circ$ en el triángulo rectángulo de hipotenusa $AT$.'
+    pasos:
+      - titulo: Ángulo en T
+        desarrollo: '$$T = 180^\circ - 50^\circ - 70^\circ = 60^\circ$$'
+      - titulo: Teorema del seno
+        desarrollo: '$$\frac{AT}{\sin 70^\circ} = \frac{60}{\sin 60^\circ} \;\Rightarrow\; AT \approx 65{,}10\un{m}$$'
+        porque: '$AT$ es opuesto al ángulo en $B$ ($70^\circ$) y los 60 m, al ángulo en $T$ ($60^\circ$).'
+      - titulo: Anchura
+        desarrollo: '$$h = AT\cdot\sin 50^\circ \approx 65{,}10\cdot 0{,}7660 \approx 49{,}87\un{m}$$'
+        porque: 'En el triángulo rectángulo $ATH$, la anchura es el cateto opuesto al ángulo de $50^\circ$.'
+    resultado: 'El río mide unos $49{,}9\un{m}$ de ancho.'

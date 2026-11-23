@@ -1,0 +1,50 @@
+titulo: La escalera apoyada en la pared
+tema: razones-trigonometricas
+orden: 8
+procedencia: original
+dificultad: basico
+habilidades: [planteamiento, modelizacion, geometria]
+resumen: Hipotenusa y ángulo conocidos; los dos catetos.
+enunciado: |
+  Una escalera de $6\un{m}$ está apoyada en una pared vertical y forma un ángulo de $70^\circ$ con el suelo. ¿A qué altura toca la pared? ¿A qué distancia de la pared está el pie de la escalera?
+figura:
+  tipo: geometria
+  puntos:
+    - { id: A, x: 2.052, y: 0, etiqueta: 'pie', lado: s }
+    - { id: O, x: 0, y: 0, etiqueta: '', marca: false }
+    - { id: T, x: 0, y: 5.638, etiqueta: '', marca: false }
+  segmentos:
+    - { de: A, a: T, etiqueta: '6 m', lado: derecha }
+    - { de: O, a: T, etiqueta: 'h = ?', color: y }
+    - { de: O, a: A, etiqueta: 'd = ?', color: x, lado: derecha }
+  angulos:
+    - { vertice: A, desde: T, hasta: O, etiqueta: '70°', color: g, radio: 30 }
+    - { vertice: O, desde: A, hasta: T, recto: true }
+  suelo: { y: 0, desde: -0.3, hasta: 3 }
+apartados:
+  - id: a
+    enunciado: Calcula la altura $h$ y la distancia $d$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'h'
+          etiqueta: altura en la pared
+          unidad: m
+          valor: 5.64
+          trampas:
+            - { valor: 2.05, explicacion: 'Has intercambiado seno y coseno. La altura es el cateto opuesto al ángulo de $70^\circ$: $h = 6\sin 70^\circ$.' }
+        - simbolo: 'd'
+          etiqueta: distancia del pie a la pared
+          unidad: m
+          valor: 2.05
+          trampas:
+            - { valor: 5.64, explicacion: 'Has intercambiado seno y coseno. La distancia al pie es el cateto contiguo: $d = 6\cos 70^\circ$.' }
+    pistas:
+      - 'La escalera es la hipotenusa. ¿Qué cateto es opuesto al ángulo de $70^\circ$?'
+    pasos:
+      - titulo: Altura (cateto opuesto)
+        desarrollo: '$$h = 6\cdot\sin 70^\circ \approx 6\cdot 0{,}9397 \approx 5{,}64\un{m}$$'
+      - titulo: Distancia (cateto contiguo)
+        desarrollo: '$$d = 6\cdot\cos 70^\circ \approx 6\cdot 0{,}3420 \approx 2{,}05\un{m}$$'
+        porque: 'Comprobación con Pitágoras: $5{,}64^2 + 2{,}05^2 \approx 36$ ✔.'
+    resultado: 'Toca la pared a unos $5{,}64\un{m}$ y el pie está a unos $2{,}05\un{m}$ de la pared.'

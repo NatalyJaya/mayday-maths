@@ -1,0 +1,56 @@
+---
+tema: identidades-ecuaciones
+etapa: laboratorio
+titulo: El laboratorio de ecuaciones
+descripcion: Resuelve ecuaciones del tipo f(n·x) = k viendo a la vez la gráfica y la circunferencia, y comprueba con tus ojos si una igualdad es una identidad.
+minutos: 20
+---
+
+## Ecuaciones: la gráfica y la circunferencia
+
+Elige la función, el argumento ($x$, $2x$, $3x$ o $\frac{x}{2}$) y el valor de $k$. A la izquierda, cada corte de la recta $y = k$ con la curva es una solución en $[0^\circ,\ 360^\circ)$. A la derecha, los ángulos básicos en la circunferencia.
+
+<EquationLab lab f="sin" n={1} k={0.5} />
+
+## Retos
+
+<Predict
+	pregunta="**Reto 1.** Con $\sin x = 0{,}5$ hay 2 soluciones. Si cambias a $\sin 2x = 0{,}5$, ¿cuántas habrá?"
+	opciones={[
+		{ texto: '2, las mismas divididas entre 2.', explicacion: 'Dividir entre 2 solo da las de la primera vuelta de $2x$. Como $2x$ da dos vueltas mientras $x$ da una, faltan las otras dos.' },
+		{ texto: '4.', correcta: true, explicacion: 'La curva $y = \\sin 2x$ hace dos ondas completas en $[0^\\circ,\\ 360^\\circ)$, y la recta corta cada onda dos veces: $15^\\circ$, $75^\\circ$, $195^\\circ$ y $255^\\circ$.' },
+		{ texto: '1.', explicacion: 'Al comprimir la gráfica hay **más** cortes, no menos.' },
+	]}
+/>
+
+**Reto 2.** Con $\sin x$, sube $k$ poco a poco desde $0{,}9$ hasta $1{,}1$. ¿Qué pasa con el número de soluciones en $k = 1$? ¿Y por encima?
+
+**Reto 3.** Cambia a $\cos x$ y pon $k = -0{,}5$. ¿En qué cuadrantes están las soluciones? Ahora pon $\tan x$ con $k = -0{,}5$: ¿cuántas soluciones hay y cuánto se separan?
+
+**Reto 4.** Con $\cos\frac{x}{2} = k$: ¿cuántas soluciones hay para $k = 0{,}5$? ¿Y para $k = -0{,}5$? ¿Por qué cambia?
+
+<Reveal titulo="Soluciones de los retos 2 a 4">
+
+- **Reto 2.** Para $k < 1$ hay dos soluciones. En $k = 1$, la recta toca la curva en un solo punto ($90^\circ$): una solución. Por encima de 1, la recta no toca la curva: ninguna.
+- **Reto 3.** $\cos x = -0{,}5$: $120^\circ$ y $240^\circ$, en el II y el III cuadrante (coseno negativo). $\tan x = -0{,}5$: dos soluciones, $153{,}43^\circ$ y $333{,}43^\circ$, separadas exactamente $180^\circ$.
+- **Reto 4.** Si $x \in [0^\circ,\ 360^\circ)$, el ángulo $\frac{x}{2}$ solo recorre $[0^\circ,\ 180^\circ)$, media vuelta. El coseno ahí toma cada valor **una sola vez**: $\cos\frac{x}{2} = 0{,}5 \Rightarrow \frac{x}{2} = 60^\circ \Rightarrow x = 120^\circ$; $\cos\frac{x}{2} = -0{,}5 \Rightarrow \frac{x}{2} = 120^\circ \Rightarrow x = 240^\circ$.
+
+</Reveal>
+
+Los ejercicios de clase de tipo $f(nx) = k$ tienen un enlace que abre este laboratorio con sus datos.
+
+## ¿Identidad o no? El comparador
+
+Una identidad es una igualdad de **funciones**: si dibujas los dos miembros, las curvas tienen que coincidir **en todos los puntos**. Si se separan aunque sea en uno, no es una identidad, y ese punto es un contraejemplo.
+
+<IdentityGrapher pair={0} />
+
+**Reto 5.** Recorre todas las igualdades del desplegable. Antes de mirar cada una, predice si es una identidad.
+
+**Reto 6.** Elige $\cos(x/2)$ frente a $\sqrt{(1 + \cos x)/2}$. ¿En qué intervalo coinciden las curvas y en cuál no? ¿Qué tiene que ver con el $\pm$ de la fórmula del ángulo mitad?
+
+<Reveal titulo="Solución del reto 6">
+
+Coinciden entre $0^\circ$ y $180^\circ$ y entre $540^\circ$ y $720^\circ$, donde $\cos\frac{x}{2} \ge 0$. Entre $180^\circ$ y $540^\circ$, $\frac{x}{2}$ está entre $90^\circ$ y $270^\circ$ y su coseno es negativo, mientras que una raíz cuadrada nunca lo es. Por eso la fórmula lleva $\pm$: el signo lo decide el cuadrante de $\frac{x}{2}$.
+
+</Reveal>

@@ -1,0 +1,261 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Estilos de las simulaciones. Son globales porque los elementos SVG los
+   crea el JavaScript en tiempo de ejecución. Las piezas de dibujo (seg,
+   t-x, lbl…) son las mismas que las de las figuras (figures.css): por eso
+   los SVG de las simulaciones llevan también la clase «mfig».
+   ───────────────────────────────────────────────────────────────────────── */
+circle-wave,
+unit-circle-lab,
+right-triangle-explorer,
+radian-demo,
+symmetry-explorer,
+triangle-lab,
+ambiguous-case,
+sum-formula,
+identity-grapher,
+equation-lab {
+	display: block;
+}
+input[type='range'] {
+	accent-color: var(--accent);
+	width: 100%;
+}
+.sim {
+	display: block;
+	margin: 1.75rem 0 2.25rem;
+	padding: 1rem 1.1rem 1.1rem;
+	border-radius: var(--radius-lg);
+	background: var(--surface);
+	border: 1px solid var(--line);
+	box-shadow: var(--shadow);
+	scroll-margin-top: 80px;
+}
+.sim-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.25rem 1rem;
+	margin-bottom: 0.4rem;
+}
+.sim-head h4 {
+	margin: 0;
+	font-size: 1.05rem;
+}
+.sim-head p {
+	margin: 0;
+	font-size: 0.88rem;
+}
+.sim-svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	user-select: none;
+	touch-action: none;
+}
+.sim-layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 1rem;
+	align-items: start;
+}
+.sim-layout.wide-left {
+	grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+}
+@media (max-width: 760px) {
+	.sim-layout,
+	.sim-layout.wide-left {
+		grid-template-columns: 1fr;
+	}
+}
+.sim-controls {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px 16px;
+	padding-top: 0.75rem;
+	margin-top: 0.4rem;
+	border-top: 1px solid var(--line);
+}
+.sim-controls .param {
+	flex: 1 1 200px;
+	margin: 0;
+}
+.param label,
+.param .k {
+	display: block;
+	font-weight: 700;
+	font-size: 0.93rem;
+}
+.param label output,
+.param .k output {
+	font-weight: 700;
+	color: var(--ink);
+}
+.param-row {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+.sim select,
+.sim input[type='number'] {
+	font: 600 0.95rem var(--font-body);
+	min-height: 40px;
+	padding: 0.3rem 0.55rem;
+	border: 1.5px solid var(--line-strong);
+	border-radius: 9px;
+	background: var(--surface);
+	color: var(--ink);
+}
+.sim input[type='number'] {
+	width: 6.5rem;
+}
+.sim .check {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.93rem;
+	font-weight: 600;
+	min-height: 40px;
+	cursor: pointer;
+}
+.sim .check input {
+	accent-color: var(--accent);
+	width: 18px;
+	height: 18px;
+}
+.sim-readout {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	margin-top: 0.75rem;
+}
+.sim-readout span {
+	background: var(--surface-2);
+	border-radius: 9px;
+	padding: 0.3rem 0.6rem;
+	font-size: 0.92rem;
+	font-variant-numeric: tabular-nums;
+}
+.sim-readout .r-x {
+	background: var(--q-x-soft);
+	color: var(--q-x-text);
+	font-weight: 700;
+}
+.sim-readout .r-y {
+	background: var(--q-y-soft);
+	color: var(--q-y-text);
+	font-weight: 700;
+}
+.sim-readout .r-g {
+	background: var(--q-g-soft);
+	color: var(--q-g-text);
+	font-weight: 700;
+}
+.sim-note {
+	margin: 0.75rem 0 0;
+	padding: 0.6rem 0.85rem;
+	border-radius: 10px;
+	background: var(--surface-2);
+	font-size: 0.94rem;
+	color: var(--ink-2);
+}
+.sim-note strong {
+	color: var(--ink);
+}
+.sim-note.ok {
+	background: var(--ok-soft);
+}
+.sim-note.bad {
+	background: var(--bad-soft);
+}
+.sim-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.93rem;
+	font-variant-numeric: tabular-nums;
+}
+.sim-table th,
+.sim-table td {
+	text-align: left;
+	padding: 0.38rem 0.45rem;
+	border-bottom: 1px solid var(--line);
+}
+.sim-table thead th {
+	font-size: 0.78rem;
+	color: var(--ink-3);
+	font-weight: 650;
+}
+.sim-table td.x {
+	color: var(--q-x-text);
+	font-weight: 700;
+}
+.sim-table td.y {
+	color: var(--q-y-text);
+	font-weight: 700;
+}
+.sim-table td.g {
+	color: var(--q-g-text);
+	font-weight: 700;
+}
+.sim-table tr.on td,
+.sim-table tr.on th {
+	background: var(--accent-soft);
+}
+/* Asa arrastrable */
+.mfig .handle {
+	fill: var(--accent);
+	stroke: var(--surface);
+	stroke-width: 3;
+	cursor: grab;
+}
+.mfig .handle:active {
+	cursor: grabbing;
+}
+.mfig .handle:focus-visible {
+	outline: none;
+	stroke: var(--accent);
+	stroke-width: 6;
+	stroke-opacity: 0.4;
+}
+.mfig .handle-ring {
+	fill: var(--accent);
+	opacity: 0.14;
+	pointer-events: none;
+}
+.mfig .cursor {
+	stroke: var(--accent);
+	stroke-width: 1.4;
+	stroke-dasharray: 3 3;
+}
+.mfig .fill-y {
+	fill: var(--q-y-soft);
+	stroke: none;
+}
+.mfig .fill-x {
+	fill: var(--q-x-soft);
+	stroke: none;
+}
+.mfig .fill-g {
+	fill: var(--q-g-soft);
+	stroke: none;
+}
+.mfig .fill-soft {
+	fill: color-mix(in srgb, var(--accent) 8%, transparent);
+	stroke: none;
+}
+.mfig .seg.t-v2 {
+	stroke: var(--ink-3);
+}
+.mfig .lbl.small {
+	font-size: 12px;
+}
+.mfig .lbl.big {
+	font-size: 16px;
+}
+.play-btn {
+	min-width: 44px;
+}
+.sim-svg.mfig {
+	overflow: hidden;
+}

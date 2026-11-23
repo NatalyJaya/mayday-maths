@@ -1,0 +1,60 @@
+titulo: 'Simplifica sin(a + b)·sin(a − b) / (cos a + cos b)'
+tema: identidades-ecuaciones
+orden: 1
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Identidades, ejercicio 3.1
+coleccion: clase-identidades
+dificultad: avanzado
+habilidades: [calculo, demostracion, multipaso]
+resumen: Suma y resta, diferencia de cuadrados dos veces y simplificar con el denominador.
+enunciado: |
+  Simplifica la expresión:
+  $$\frac{\sin(a + b)\cdot\sin(a - b)}{\cos a + \cos b}$$
+conceptos:
+  - '$\sin(a \pm b) = \sin a\cos b \pm \cos a\sin b$.'
+  - '$(X + Y)(X - Y) = X^2 - Y^2$.'
+  - '$\sin^2\theta = 1 - \cos^2\theta$.'
+interpretacion: |
+  El denominador solo tiene cosenos. La idea es desarrollar el numerador, pasarlo **todo a cosenos** y **factorizarlo** para que aparezca $\cos a + \cos b$ y se pueda simplificar.
+apartados:
+  - id: a
+    enunciado: ¿A qué es igual la expresión (cuando $\cos a + \cos b \ne 0$)?
+    respuesta:
+      tipo: opciones
+      opciones:
+        - texto: '$\cos b - \cos a$'
+          correcta: true
+          explicacion: 'El numerador vale $\cos^2 b - \cos^2 a = (\cos b + \cos a)(\cos b - \cos a)$, y el primer factor se simplifica con el denominador.'
+        - texto: '$\cos a - \cos b$'
+          explicacion: 'Casi: revisa el orden. Al pasar a cosenos, el numerador queda $\cos^2 b - \cos^2 a$, no $\cos^2 a - \cos^2 b$.'
+        - texto: '$\sin a - \sin b$'
+          explicacion: 'Con $a = 90^\circ$ y $b = 0^\circ$ la expresión vale $\frac{1\cdot 1}{0 + 1} = 1$, y $\sin a - \sin b = 1$; pero con $a = 60^\circ$, $b = 0^\circ$ vale $\frac{(\sqrt3/2)^2}{1{,}5} = 0{,}5$ y $\sin 60^\circ - \sin 0^\circ \approx 0{,}87$. No es una identidad.'
+        - texto: '$\sin(a - b)$'
+          explicacion: 'No se puede «tachar» $\sin(a + b)$ con $\cos a + \cos b$: no son iguales.'
+    pistas:
+      - 'Desarrolla $\sin(a + b)$ y $\sin(a - b)$. ¿Qué forma tiene su producto?'
+      - 'Es una suma por diferencia: $(X + Y)(X - Y) = X^2 - Y^2$ con $X = \sin a\cos b$ e $Y = \cos a\sin b$.'
+      - 'Pasa los senos al cuadrado a cosenos. Se cancela un término y queda otra diferencia de cuadrados.'
+    pasos:
+      - titulo: Desarrollar con la suma y la resta
+        desarrollo: |
+          $$\sin(a + b) = \sin a\cos b + \cos a\sin b \qquad \sin(a - b) = \sin a\cos b - \cos a\sin b$$
+      - titulo: Suma por diferencia
+        desarrollo: '$$\sin(a + b)\sin(a - b) = \sin^2 a\cos^2 b - \cos^2 a\sin^2 b$$'
+        porque: 'Es $(X + Y)(X - Y) = X^2 - Y^2$ con $X = \sin a\cos b$, $Y = \cos a\sin b$.'
+      - titulo: Pasar los senos a cosenos
+        desarrollo: '$$= (1 - \cos^2 a)\cos^2 b - (1 - \cos^2 b)\cos^2 a$$'
+        porque: 'El denominador solo tiene cosenos; así podremos compararlos.'
+      - titulo: Quitar paréntesis y cancelar
+        desarrollo: '$$= \cos^2 b - \cos^2 a\cos^2 b - \cos^2 a + \cos^2 a\cos^2 b = \cos^2 b - \cos^2 a$$'
+        porque: 'Los términos $\cos^2 a\cos^2 b$ y $-\cos^2 a\cos^2 b$ se anulan (en los apuntes aparecen tachados).'
+      - titulo: Factorizar y simplificar
+        desarrollo: '$$\frac{(\cos b + \cos a)(\cos b - \cos a)}{\cos a + \cos b} = \cos b - \cos a$$'
+        porque: '$\cos b + \cos a = \cos a + \cos b$: se puede simplificar siempre que no valga 0.'
+    resultado: '$$\frac{\sin(a + b)\sin(a - b)}{\cos a + \cos b} = \cos b - \cos a \qquad (\cos a + \cos b \ne 0)$$'
+errores:
+  - error: '«Simplificar» senos con cosenos'
+    explicacion: 'Solo se simplifican factores iguales. Por eso hay que transformar el numerador hasta que aparezca el factor $\cos a + \cos b$.'
+  - error: 'Escribir $(X + Y)(X - Y) = X^2 + Y^2$'
+    explicacion: 'Es $X^2 - Y^2$: los productos cruzados se anulan y el último lleva signo menos.'

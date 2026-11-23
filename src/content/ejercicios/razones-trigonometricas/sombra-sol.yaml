@@ -1,0 +1,57 @@
+titulo: La sombra que se acorta
+tema: razones-trigonometricas
+orden: 12
+procedencia: original
+dificultad: avanzado
+habilidades: [modelizacion, multipaso, planteamiento]
+resumen: Del triángulo al ángulo y del ángulo a una nueva longitud.
+enunciado: |
+  Un poste vertical de $5\un{m}$ proyecta una sombra de $7{,}2\un{m}$.
+
+  a) ¿Con qué ángulo de elevación llegan los rayos del sol?
+  b) Un rato después, el sol está $10^\circ$ más alto. ¿Cuántos metros se ha acortado la sombra?
+figura:
+  tipo: triangulo
+  a: 5
+  b: 7.2
+  c: 8.766
+  base: b
+  etiquetas: { a: '5 m', b: 'sombra: 7,2 m', A: 'α = ?' }
+  colores: { a: y, b: x }
+apartados:
+  - id: a
+    enunciado: Ángulo de elevación del sol.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\alpha', etiqueta: ángulo de elevación, unidad: '°', valor: 34.78, trampas: [{ valor: 55.22, explicacion: 'Ese es el ángulo en lo alto del poste. El ángulo de elevación se mide desde el suelo: la sombra es el cateto contiguo.' }] }
+    pistas:
+      - 'El poste es el cateto opuesto al ángulo de elevación y la sombra, el contiguo.'
+    pasos:
+      - titulo: Tangente
+        desarrollo: '$$\tan\alpha = \frac{5}{7{,}2} \;\Rightarrow\; \alpha = \arctan\frac{5}{7{,}2} \approx 34{,}78^\circ$$'
+    resultado: '$\alpha \approx 34{,}78^\circ$.'
+  - id: b
+    enunciado: ¿Cuánto se ha acortado la sombra?
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: '\Delta s'
+          etiqueta: acortamiento
+          unidad: m
+          valor: 2.16
+          trampas:
+            - { valor: 5.04, explicacion: 'Esa es la longitud de la sombra nueva. Se pide cuánto se ha acortado: réstala de 7,2 m.' }
+    pistas:
+      - 'El nuevo ángulo es $34{,}78^\circ + 10^\circ = 44{,}78^\circ$. El poste sigue midiendo 5 m.'
+      - 'Nueva sombra: $s = \dfrac{5}{\tan 44{,}78^\circ}$.'
+    pasos:
+      - titulo: Nueva sombra
+        desarrollo: '$$\tan 44{,}78^\circ = \frac{5}{s} \;\Rightarrow\; s = \frac{5}{\tan 44{,}78^\circ} \approx 5{,}04\un{m}$$'
+        porque: 'Lo que no cambia es la altura del poste; lo que cambia es el ángulo.'
+      - titulo: Diferencia
+        desarrollo: '$$7{,}2 - 5{,}04 \approx 2{,}16\un{m}$$'
+    resultado: 'La sombra se ha acortado unos $2{,}16\un{m}$.'
+errores:
+  - error: 'Pensar que si el ángulo aumenta 10°, la sombra disminuye en proporción'
+    explicacion: 'La longitud de la sombra depende de la tangente, que no es proporcional al ángulo. Hay que recalcularla.'

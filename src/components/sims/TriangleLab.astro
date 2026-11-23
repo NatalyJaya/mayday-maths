@@ -1,0 +1,93 @@
+---
+// Laboratorio de resolución de triángulos: vértices arrastrables y los dos teoremas en vivo.
+interface Props {
+	lab?: boolean;
+}
+const { lab = false } = Astro.props;
+const presets = [
+	['Acutángulo', { A: [1.5, 1], B: [12, 1], C: [4.5, 7.5] }],
+	['Rectángulo en A', { A: [2, 1], B: [10, 1], C: [2, 7] }],
+	['Obtusángulo', { A: [1, 1], B: [7, 1], C: [12, 5] }],
+] as const;
+---
+
+<triangle-lab class="sim wide" id={lab ? 'laboratorio' : undefined} data-url={lab ? '' : undefined}>
+	<div class="sim-head">
+		<h4>Arrastra los vértices</h4>
+		<p class="muted">Cada lado tiene el color de su ángulo opuesto. Una cuadrícula = 1 unidad.</p>
+	</div>
+	<div class="sim-layout wide-left">
+		<svg class="sim-svg mfig" viewBox="0 0 560 380" role="application" aria-label="Triángulo ABC con vértices arrastrables. Con el teclado: elige un vértice y muévelo con las flechas."></svg>
+		<div class="tl-panels">
+			<p class="sim-note bad tl-bad" hidden>Los tres puntos están alineados: no forman un triángulo.</p>
+			<section>
+				<p class="k">Teorema del seno</p>
+				<table class="sim-table">
+					<tbody>
+						<tr><th>a / sin A</th><td class="x"><output data-out="ra"></output></td></tr>
+						<tr><th>b / sin B</th><td class="y"><output data-out="rb"></output></td></tr>
+						<tr><th>c / sin C</th><td class="g"><output data-out="rc"></output></td></tr>
+					</tbody>
+				</table>
+				<p class="muted small">Los tres valen lo mismo: el diámetro de la circunferencia circunscrita, 2R = <output data-out="2r"></output>.</p>
+			</section>
+			<section>
+				<p class="k">Teorema del coseno (para el lado a)</p>
+				<p class="eq">a² = <output data-out="a2"></output></p>
+				<p class="eq muted">b² + c² − 2bc·cos A = <output data-out="cos"></output></p>
+			</section>
+			<section>
+				<p class="k">Área</p>
+				<p class="eq">½·b·c·sin A = <output data-out="area"></output> · Herón: <output data-out="heron"></output></p>
+				<p class="muted small">Triángulo <output data-out="kind"></output>. A + B + C = <output data-out="sum"></output></p>
+			</section>
+		</div>
+	</div>
+	<div class="sim-controls">
+		<div class="vsel" role="group" aria-label="Vértice que mueven las flechas del teclado">
+			<span class="k">Teclado:</span>
+			<button class="btn btn-sm" type="button" data-sel="A">A</button>
+			<button class="btn btn-sm" type="button" data-sel="B">B</button>
+			<button class="btn btn-sm" type="button" data-sel="C">C</button>
+		</div>
+		<label class="check"><input type="checkbox" data-k="snap" checked /> Ajustar a la cuadrícula</label>
+		<label class="check"><input type="checkbox" data-k="circ" /> Circunferencia circunscrita</label>
+		<div class="vsel">
+			{presets.map(([t, p]) => <button class="btn btn-sm btn-ghost" type="button" data-preset={JSON.stringify(p)}>{t}</button>)}
+		</div>
+	</div>
+</triangle-lab>
+
+<style>
+	.tl-panels {
+		display: grid;
+		gap: 0.7rem;
+		font-size: 0.93rem;
+	}
+	.tl-panels .k {
+		font-weight: 700;
+		margin: 0 0 0.2rem;
+	}
+	.eq {
+		margin: 0.1rem 0;
+		font-variant-numeric: tabular-nums;
+	}
+	.small {
+		font-size: 0.86rem;
+		margin: 0.3rem 0 0;
+	}
+	.vsel {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.35rem;
+	}
+	.vsel .k {
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+</style>
+
+<script>
+	import '../../sims/triangle-lab';
+</script>

@@ -1,0 +1,31 @@
+---
+// El caso ambiguo del teorema del seno, con la construcción del compás.
+---
+
+<ambiguous-case class="sim wide">
+	<div class="sim-head">
+		<h4>Dos lados y un ángulo no comprendido: ¿cuántos triángulos?</h4>
+		<p class="muted">B tiene que estar en la base y a distancia a de C.</p>
+	</div>
+	<svg class="sim-svg mfig" viewBox="0 0 560 320" role="img" aria-label="Construcción del caso ambiguo: lado b desde A con el ángulo A, y una circunferencia de centro C y radio a que corta la base en cero, uno o dos puntos B."></svg>
+	<p class="sim-note"><strong><output data-out="n"></output> solución(es).</strong> <output data-out="why"></output></p>
+	<div class="sim-readout"><span><output data-out="sols"></output></span></div>
+	<div class="sim-controls">
+		<div class="param">
+			<label>Ángulo A: <output data-out="A"></output></label>
+			<input type="range" data-k="A" min="10" max="150" step="1" value="35" aria-label="Ángulo A (grados)" />
+		</div>
+		<div class="param">
+			<label>Lado b: <output data-out="b"></output></label>
+			<input type="range" data-k="b" min="3" max="9" step="0.1" value="7" aria-label="Lado b" />
+		</div>
+		<div class="param">
+			<label>Lado a (opuesto a A): <output data-out="a"></output></label>
+			<input type="range" data-k="a" min="1" max="12" step="0.1" value="5" aria-label="Lado a" />
+		</div>
+	</div>
+</ambiguous-case>
+
+<script>
+	import '../../sims/ambiguous-case';
+</script>

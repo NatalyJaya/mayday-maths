@@ -1,0 +1,37 @@
+titulo: Grados, minutos y segundos
+tema: razones-trigonometricas
+orden: 5
+procedencia: original
+dificultad: basico
+habilidades: [calculo]
+resumen: Pasar un ángulo decimal a grados, minutos y segundos.
+enunciado: Expresa el ángulo $47{,}36^\circ$ en grados, minutos y segundos.
+conceptos:
+  - '$1^\circ = 60''$ y $1'' = 60''''$.'
+apartados:
+  - id: a
+    enunciado: Escribe los grados, los minutos y los segundos.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\text{grados}', etiqueta: grados, unidad: '°', valor: 47, tolerancia_abs: 0.01, tolerancia: 0.001 }
+        - simbolo: '\text{minutos}'
+          etiqueta: minutos
+          unidad: "′"
+          valor: 21
+          tolerancia: 0.001
+          trampas:
+            - { valor: 36, explicacion: 'Has tomado los decimales como si ya fueran minutos. $0{,}36^\circ$ no son 36 minutos: hay que multiplicar por 60.' }
+            - { valor: 21.6, tolerancia: 0.001, explicacion: '$21{,}6''$: los minutos tienen que ser enteros. Pasa los $0{,}6''$ a segundos.' }
+        - { simbolo: '\text{segundos}', etiqueta: segundos, unidad: "″", valor: 36, tolerancia: 0.001 }
+    pistas:
+      - 'La parte entera son los grados. Multiplica la parte decimal por 60.'
+      - '$0{,}36\cdot 60 = 21{,}6$: 21 minutos y $0{,}6$ de minuto.'
+    pasos:
+      - titulo: Grados
+        desarrollo: 'La parte entera: $47^\circ$.'
+      - titulo: Minutos
+        desarrollo: '$$0{,}36^\circ\cdot 60 = 21{,}6'' \;\Rightarrow\; 21''$$'
+      - titulo: Segundos
+        desarrollo: '$$0{,}6''\cdot 60 = 36''''$$'
+    resultado: '$47{,}36^\circ = 47^\circ\,21''\,36''''$.'

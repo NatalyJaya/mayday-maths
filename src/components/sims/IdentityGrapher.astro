@@ -1,0 +1,50 @@
+---
+// Comparador de identidades: dos expresiones dibujadas como funciones.
+interface Props {
+	pair?: number;
+}
+const { pair = 0 } = Astro.props;
+---
+
+<identity-grapher class="sim wide" data-pair={pair}>
+	<div class="sim-head">
+		<h4>¿Es una identidad?</h4>
+		<p class="muted">Una identidad se cumple para todos los valores de x.</p>
+	</div>
+	<label class="param-row k ig-sel">Igualdad: <select aria-label="Igualdad que quieres comprobar"></select></label>
+	<svg class="sim-svg mfig" viewBox="0 0 560 280" role="img" aria-label="Gráficas de los dos miembros de la igualdad: el izquierdo en azul continuo y el derecho en verde discontinuo."></svg>
+	<ul class="fig-legend">
+		<li><i class="sw sw-x"></i> y = <output data-out="l"></output></li>
+		<li><i class="sw sw-g dash"></i> y = <output data-out="r"></output></li>
+	</ul>
+	<p class="sim-note ig-verdict"><output data-out="verdict"></output></p>
+	<p class="muted ig-note"><output data-out="note"></output></p>
+	<div class="sim-controls">
+		<div class="param">
+			<label>Cursor: x = <output data-out="x"></output></label>
+			<input type="range" min="0" max="360" step="1" value="60" aria-label="Valor de x para comparar (grados)" />
+		</div>
+		<div class="sim-readout">
+			<span class="r-x">Izquierda: <output data-out="fx"></output></span>
+			<span class="r-g">Derecha: <output data-out="gx"></output></span>
+		</div>
+	</div>
+</identity-grapher>
+
+<style>
+	.ig-sel {
+		margin-bottom: 0.5rem;
+		flex-wrap: wrap;
+	}
+	.ig-sel select {
+		max-width: 100%;
+	}
+	.ig-note {
+		font-size: 0.92rem;
+		margin: 0.5rem 0 0;
+	}
+</style>
+
+<script>
+	import '../../sims/identity-grapher';
+</script>

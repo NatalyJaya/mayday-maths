@@ -1,0 +1,304 @@
+---
+import { getEntry } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../../components/layout/Breadcrumbs.astro';
+import MethodStrip from '../../../components/syllabus/MethodStrip.astro';
+import ExerciseFigure from '../../../components/exercises/ExerciseFigure.astro';
+import Icon from '../../../components/ui/Icon.astro';
+import { blockUrl, collectionUrl, getCollections, getExercises, getLessons, getTopics, isAvailable, stageUrl } from '../../../lib/content';
+import { DIFFICULTIES, DIFFICULTY_IDS } from '../../../lib/taxonomy';
+import { richText, tex } from '../../../lib/rich-text';
+
+export async function getStaticPaths() {
+	return (await getTopics())
+		.filter(isAvailable)
+		.map((topic) => ({ params: { bloque: topic.data.bloque.id, tema: topic.id }, props: { topic } }));
+}
+
+const { topic } = Astro.props;
+const block = await getEntry('bloques', topic.data.bloque.id);
+const lessons = await getLessons(topic.id);
+const practice = await getExercises(topic.id, 'practica');
+const allTopics = await getTopics();
+const cols = await Promise.all(
+	(await getCollections(topic.id)).map(async (c) => ({
+		...c,
+		n: (await getExercises(topic.id, 'practica')).filter((e) => e.data.coleccion === c.id).length,
+	})),
+);
+const reqs = topic.data.requisitos.map((r) => allTopics.find((t) => t.id === r.id)!).filter(Boolean);
+const byDifficulty = DIFFICULTY_IDS.map((d) => ({
+	id: d,
+	...DIFFICULTIES[d],
+	n: practice.filter((e) => e.data.dificultad === d).length,
+}));
+
+// Mapa rápido: cada pregunta típica y la herramienta que la resuelve.
+const map = await Promise.all(topic.data.mapa.map(async (m) => ({ q: m.q, c: await tex(m.c), d: m.d })));
+const antes = await richText(topic.data.antes);
+const classCount = practice.filter((e) => e.data.procedencia === 'clase').length;
+---
+
+<BaseLayout title={topic.data.titulo} description={topic.data.resumen}>
+	<section class="container head">
+		<Breadcrumbs items={[{ label: block?.data.titulo ?? '', href: blockUrl(topic.data.bloque.id) }, { label: topic.data.titulo }]} />
+		<div class="hero">
+			<div>
+				<p class="eyebrow">{block?.data.titulo} · Tema {topic.data.orden}</p>
+				<h1>{topic.data.titulo}</h1>
+				<p class="lead">{topic.data.esencia ?? topic.data.resumen}</p>
+				<div class="actions">
+					<a class="btn btn-primary" href={stageUrl(topic, 'idea')}>Empezar por la idea <Icon name="arrow-right" /></a>
+					<a class="btn" href={`${stageUrl(topic, 'laboratorio')}#laboratorio`}><Icon name="flask" /> Ir al laboratorio</a>
+					<a class="btn btn-ghost" href={stageUrl(topic, 'practica')}><Icon name="pencil" /> Practicar</a>
+				</div>
+			</div>
+			{topic.data.portada && (
+				<div class="card figure">
+					<ExerciseFigure figura={topic.data.portada} titulo={topic.data.titulo} />
+				</div>
+			)}
+		</div>
+	</section>
+
+	<section class="container section-tight">
+		<h2>Tu recorrido</h2>
+		<MethodStrip topic={topic} lessons={lessons} exerciseCount={practice.length} />
+	</section>
+
+	{
+		cols.length > 0 && (
+			<section class="container section-tight" id="colecciones">
+				<h2>Colecciones de clase y exámenes</h2>
+				<p class="muted cols-intro">Los ejercicios que habéis trabajado en clase, en el orden de tus apuntes, resueltos paso a paso.</p>
+				<div class="cols">
+					{cols.map((c) => (
+						<a class="col-card" href={collectionUrl(topic, c.id)}>
+							<Icon name={c.data.tipo === 'examen' ? 'clock' : 'layers'} size={26} />
+							<span>
+								<span class="col-k">{c.data.tipo === 'examen' ? `Examen de práctica${c.data.minutos ? ` · ${c.data.minutos} min` : ''}` : 'Ejercicios de clase'}</span>
+								<strong>{c.data.titulo}</strong>
+								<span class="col-d">
+									{c.data.tipo === 'examen'
+										? `${c.data.principales.length} ejercicios de nivel examen con pistas y solución explicada`
+										: `${c.n} ${c.n === 1 ? 'ejercicio de clase' : 'ejercicios de clase'} con pistas y solución explicada`}
+								</span>
+							</span>
+							<Icon name="arrow-right" />
+						</a>
+					))}
+				</div>
+			</section>
+		)
+	}
+
+	<section class="container section-tight two">
+		<div class="card box">
+			<h2 class="h3">Antes de empezar</h2>
+			<Fragment set:html={antes} />
+			{reqs.length > 0 && (
+				<ul class="reqs">
+					{reqs.map((r) => (
+						<li>
+							<strong>{r.data.titulo}</strong>: {r.data.resumen}
+							{isAvailable(r) && <a href={`../${r.id}/`}> Ir al tema</a>}
+						</li>
+					))}
+				</ul>
+			)}
+			<h3 class="h4">Qué ejercicios encontrarás</h3>
+			{classCount > 0 && <p class="muted"><strong>{classCount}</strong> son ejercicios de clase (llevan la etiqueta «Ejercicio de clase») y el resto, práctica adicional.</p>}
+			<ul class="levels">
+				{
+					byDifficulty.map((d) => (
+						<li>
+							<span class="lv" data-level={d.nivel}>{'●'.repeat(d.nivel)}<span class="off">{'●'.repeat(4 - d.nivel)}</span></span>
+							<span><strong>{d.label}</strong>: {d.n} {d.n === 1 ? 'ejercicio' : 'ejercicios'}</span>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div class="card box">
+			<h2 class="h3">Mapa rápido: cada pregunta, una herramienta</h2>
+			<p class="muted">Lo más difícil suele ser decidir qué usar. Esta tabla te orienta.</p>
+			<table class="map">
+				<thead><tr><th>Si te preguntan…</th><th>Usa</th><th>Ojo con…</th></tr></thead>
+				<tbody>
+					{
+						map.map((m) => (
+							<tr>
+								<td>{m.q}</td>
+								<td class="c" set:html={m.c} />
+								<td>{m.d}</td>
+							</tr>
+						))
+					}
+				</tbody>
+			</table>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.head {
+		padding-top: 1.75rem;
+	}
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: clamp(1.5rem, 1rem + 3vw, 3rem);
+		align-items: center;
+	}
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		margin-top: 1.5rem;
+	}
+	.figure {
+		padding: 1.1rem 1.25rem 1.25rem;
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow);
+	}
+	.section-tight {
+		padding-top: 3rem;
+	}
+	.cols-intro {
+		margin-top: -0.25rem;
+	}
+	.cols {
+		display: grid;
+		gap: 0.6rem;
+	}
+	.col-card {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1.1rem 1.3rem;
+		border-radius: var(--radius-lg);
+		background: var(--ink);
+		color: var(--bg);
+		text-decoration: none;
+	}
+	.col-card:hover {
+		color: var(--bg);
+		box-shadow: var(--shadow);
+	}
+	.col-card > span {
+		display: grid;
+		flex: 1;
+		gap: 0.15rem;
+	}
+	.col-k {
+		font: 650 0.72rem var(--font-display);
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		opacity: 0.7;
+	}
+	.col-card strong {
+		font-family: var(--font-display);
+		font-size: 1.2rem;
+	}
+	.col-d {
+		font-size: 0.92rem;
+		opacity: 0.8;
+	}
+	.two {
+		display: grid;
+		grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+		gap: 1rem;
+		align-items: start;
+	}
+	.box {
+		padding: 1.35rem 1.4rem;
+		border-radius: var(--radius-lg);
+	}
+	.h3 {
+		font-size: 1.25rem;
+	}
+	.h4 {
+		font-size: 1rem;
+		margin-top: 1.5rem;
+	}
+	.reqs,
+	.levels {
+		padding-left: 1.1em;
+		margin: 0 0 1rem;
+		display: grid;
+		gap: 0.5rem;
+	}
+	.reqs .tag {
+		margin-left: 0.35rem;
+	}
+	.levels {
+		list-style: none;
+		padding: 0;
+	}
+	.levels li {
+		display: flex;
+		gap: 0.75rem;
+		align-items: baseline;
+	}
+	.lv {
+		font-size: 0.7rem;
+		letter-spacing: 0.1em;
+		color: var(--accent);
+		width: 4.5em;
+		flex: none;
+	}
+	.lv .off {
+		color: var(--line-strong);
+	}
+	.map {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 0.95rem;
+	}
+	.map th,
+	.map td {
+		text-align: left;
+		padding: 0.6rem 0.5rem;
+		border-bottom: 1px solid var(--line);
+		vertical-align: top;
+	}
+	.map th {
+		font: 600 0.8rem var(--font-display);
+		color: var(--ink-3);
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+	}
+	.map td:first-child {
+		font-weight: 700;
+	}
+	.map .c {
+		white-space: nowrap;
+	}
+	.map td:last-child {
+		color: var(--ink-2);
+	}
+	@media (max-width: 980px) {
+		.hero,
+		.two {
+			grid-template-columns: 1fr;
+		}
+	}
+	@media (max-width: 560px) {
+		.map thead {
+			display: none;
+		}
+		.map tr {
+			display: grid;
+			grid-template-columns: 1fr auto;
+			border-bottom: 1px solid var(--line);
+			padding: 0.5rem 0;
+		}
+		.map td {
+			border: 0;
+			padding: 0.15rem 0;
+		}
+		.map td:last-child {
+			grid-column: 1 / -1;
+		}
+	}
+</style>

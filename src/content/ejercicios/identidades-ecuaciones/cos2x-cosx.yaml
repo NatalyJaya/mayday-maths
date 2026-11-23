@@ -1,0 +1,27 @@
+titulo: 'cos 2x + cos x = 0'
+tema: identidades-ecuaciones
+orden: 12
+procedencia: original
+dificultad: avanzado
+habilidades: [calculo, metodo]
+resumen: Ángulo doble en cosenos y ecuación de segundo grado con una solución doble por vuelta.
+enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\cos 2x + \cos x = 0$'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones.
+    respuesta:
+      tipo: conjunto
+      valores: [60, 180, 300]
+      trampas:
+        - { valores: [60, 300], explicacion: 'Te falta la solución de $\cos x = -1$.' }
+    pistas:
+      - 'Usa $\cos 2x = 2\cos^2 x - 1$.'
+      - '$2t^2 + t - 1 = 0$ tiene raíces $t = \frac12$ y $t = -1$.'
+    pasos:
+      - titulo: Una sola razón
+        desarrollo: '$$2\cos^2 x - 1 + \cos x = 0 \;\Rightarrow\; 2\cos^2 x + \cos x - 1 = 0$$'
+      - titulo: Cambio de variable
+        desarrollo: '$$t = \frac{-1 \pm\sqrt{1 + 8}}{4} = \frac{-1 \pm 3}{4} \;\Rightarrow\; t = \tfrac12 \ \text{ o } \ t = -1$$'
+      - titulo: Ángulos
+        desarrollo: '$\cos x = \frac12 \Rightarrow x = 60^\circ,\ 300^\circ$. $\quad\cos x = -1 \Rightarrow x = 180^\circ$ (una sola).'
+    resultado: '$x = 60^\circ,\ 180^\circ,\ 300^\circ$.'

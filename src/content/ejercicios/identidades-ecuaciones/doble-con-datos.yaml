@@ -1,0 +1,29 @@
+titulo: Razones del ángulo doble a partir de un seno
+tema: identidades-ecuaciones
+orden: 2
+procedencia: original
+dificultad: basico
+habilidades: [calculo]
+resumen: Primero el coseno con su signo; después, las fórmulas del ángulo doble.
+enunciado: |
+  Sabiendo que $\sin\alpha = \dfrac45$ y que $\alpha$ está en el primer cuadrante, calcula $\sin 2\alpha$, $\cos 2\alpha$ y $\tan 2\alpha$.
+apartados:
+  - id: a
+    enunciado: Escribe los tres valores.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\sin 2\alpha', etiqueta: '', unidad: '', valor: 0.96, trampas: [{ valor: 1.6, explicacion: '$\sin 2\alpha \ne 2\sin\alpha$. Además, ningún seno vale más de 1.' }] }
+        - { simbolo: '\cos 2\alpha', etiqueta: '', unidad: '', valor: -0.28 }
+        - { simbolo: '\tan 2\alpha', etiqueta: '', unidad: '', valor: -3.4286 }
+    pistas:
+      - 'Primero, $\cos\alpha$ con la identidad fundamental.'
+      - '$\sin 2\alpha = 2\sin\alpha\cos\alpha$ y $\cos 2\alpha = \cos^2\alpha - \sin^2\alpha$.'
+    pasos:
+      - titulo: Coseno
+        desarrollo: '$$\cos\alpha = +\sqrt{1 - \frac{16}{25}} = \frac35$$'
+        porque: 'Primer cuadrante: coseno positivo.'
+      - titulo: Ángulo doble
+        desarrollo: '$$\sin 2\alpha = 2\cdot\frac45\cdot\frac35 = \frac{24}{25} \qquad \cos 2\alpha = \frac{9}{25} - \frac{16}{25} = -\frac{7}{25} \qquad \tan 2\alpha = \frac{24/25}{-7/25} = -\frac{24}{7}$$'
+        porque: '$\cos 2\alpha < 0$ indica que $2\alpha$ está en el segundo cuadrante: $\alpha \approx 53{,}13^\circ$ y $2\alpha \approx 106{,}26^\circ$.'
+    resultado: '$\sin 2\alpha = \frac{24}{25}$, $\cos 2\alpha = -\frac{7}{25}$, $\tan 2\alpha = -\frac{24}{7} \approx -3{,}4286$.'

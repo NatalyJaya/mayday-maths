@@ -1,0 +1,56 @@
+titulo: La pendiente de una rampa
+tema: razones-trigonometricas
+orden: 3
+procedencia: original
+dificultad: basico
+habilidades: [modelizacion, planteamiento]
+resumen: Pendiente en tanto por ciento, tangente y ángulo.
+enunciado: |
+  Una rampa para sillas de ruedas sube $1{,}2\un{m}$ a lo largo de $10\un{m}$ de recorrido **horizontal**.
+
+  a) ¿Qué pendiente tiene, en tanto por ciento?
+  b) ¿Qué ángulo forma con el suelo?
+figura:
+  tipo: triangulo
+  a: 1.2
+  b: 10
+  c: 10.0717
+  base: b
+  etiquetas: { a: '1,2 m', b: '10 m (horizontal)', A: 'α = ?' }
+  colores: { a: y, b: x }
+conceptos:
+  - 'La pendiente es lo que sube por cada unidad horizontal: $\dfrac{\text{subida}}{\text{avance horizontal}}$, es decir, la tangente del ángulo.'
+  - 'Una pendiente del 12 % significa que sube 12 cm por cada metro horizontal.'
+apartados:
+  - id: a
+    enunciado: Pendiente en tanto por ciento.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'p', etiqueta: pendiente, unidad: '%', valor: 12 }
+    pasos:
+      - titulo: Cociente y porcentaje
+        desarrollo: '$$\frac{1{,}2}{10} = 0{,}12 = 12\,\%$$'
+    resultado: 'La pendiente es del $12\,\%$.'
+  - id: b
+    enunciado: Ángulo con el suelo.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: '\alpha'
+          etiqueta: ángulo
+          unidad: '°'
+          valor: 6.84
+          tolerancia: 0.004
+          trampas:
+            - { valor: 6.89, explicacion: 'Has usado el seno, como si los 10 m fueran la longitud de la rampa. Son el recorrido horizontal: es el cateto contiguo.' }
+            - { valor: 12, explicacion: 'Una pendiente del 12 % no es un ángulo de 12°. La pendiente es la tangente del ángulo.' }
+    pistas:
+      - '1,2 m es el cateto opuesto y 10 m el contiguo.'
+    pasos:
+      - titulo: La pendiente es la tangente
+        desarrollo: '$$\tan\alpha = 0{,}12 \;\Rightarrow\; \alpha = \arctan 0{,}12 \approx 6{,}84^\circ$$'
+    resultado: 'La rampa forma unos $6{,}84^\circ$ con el suelo.'
+errores:
+  - error: 'Pensar que una pendiente del 100 % es vertical'
+    explicacion: 'Una pendiente del 100 % sube lo mismo que avanza: $\tan\alpha = 1$, $\alpha = 45^\circ$. Una pared vertical tendría pendiente infinita.'

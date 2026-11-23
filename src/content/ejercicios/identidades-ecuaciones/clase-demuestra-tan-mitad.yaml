@@ -1,0 +1,54 @@
+titulo: 'Demuestra que sin 2x/(1 + cos 2x) · cos x/(1 + cos x) = tan(x/2)'
+tema: identidades-ecuaciones
+orden: 2
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Identidades, ejercicio 3.2 («per demà»)
+nota_fuente: 'En los apuntes se llegaba a sin x/(1 + cos x) y faltaba justificar el último paso; aquí está completo.'
+coleccion: clase-identidades
+dificultad: examen
+habilidades: [demostracion, calculo, multipaso]
+resumen: Ángulo doble para el primer factor y ángulo doble aplicado a x/2 para cerrar la demostración.
+enunciado: |
+  Demuestra la identidad:
+  $$\frac{\sin 2x}{1 + \cos 2x}\cdot\frac{\cos x}{1 + \cos x} = \tan\frac{x}{2}$$
+conceptos:
+  - '$\sin 2\alpha = 2\sin\alpha\cos\alpha$ y $\cos 2\alpha = \cos^2\alpha - \sin^2\alpha = 2\cos^2\alpha - 1$.'
+  - 'Para demostrar una identidad, se transforma un miembro hasta llegar al otro. No se «pasa» nada de un lado al otro.'
+interpretacion: |
+  El lado izquierdo tiene ángulos $2x$ y $x$; el derecho, $\frac{x}{2}$. Hay que bajar de $2x$ a $x$ con el ángulo doble y después de $x$ a $\frac{x}{2}$, otra vez con el ángulo doble, aplicado a $\alpha = \frac{x}{2}$.
+apartados:
+  - id: a
+    enunciado: Escribe la demostración en tu cuaderno y compárala con la solución.
+    respuesta:
+      tipo: abierta
+      criterio: 'Comprueba que cada igualdad está justificada con una fórmula y que llegas exactamente a tan(x/2).'
+    pistas:
+      - 'Empieza por el primer factor: usa el ángulo doble arriba y abajo. Escribe el 1 como $\sin^2 x + \cos^2 x$.'
+      - 'El primer factor vale $\tan x$. Multiplica por el segundo y simplifica $\cos x$.'
+      - 'Te queda $\frac{\sin x}{1 + \cos x}$. Ahora escribe $x = 2\cdot\frac{x}{2}$ y aplica el ángulo doble otra vez.'
+    pasos:
+      - titulo: Primer factor
+        desarrollo: |
+          $$\sin 2x = 2\sin x\cos x$$
+          $$1 + \cos 2x = (\sin^2 x + \cos^2 x) + (\cos^2 x - \sin^2 x) = 2\cos^2 x$$
+          $$\frac{\sin 2x}{1 + \cos 2x} = \frac{2\sin x\cos x}{2\cos^2 x} = \frac{\sin x}{\cos x} = \tan x$$
+        porque: 'Escribir el 1 como $\sin^2 x + \cos^2 x$ hace que los senos al cuadrado se cancelen.'
+      - titulo: Multiplicar por el segundo factor
+        desarrollo: '$$\tan x\cdot\frac{\cos x}{1 + \cos x} = \frac{\sin x}{\cos x}\cdot\frac{\cos x}{1 + \cos x} = \frac{\sin x}{1 + \cos x}$$'
+      - titulo: Último paso, con el ángulo doble aplicado a x/2
+        piensa: '¿Cómo pasarías de $x$ a $\frac{x}{2}$?'
+        desarrollo: |
+          Con $\alpha = \frac{x}{2}$ (es decir, $x = 2\alpha$):
+          $$\sin x = 2\sin\tfrac{x}{2}\cos\tfrac{x}{2} \qquad 1 + \cos x = 1 + \left(2\cos^2\tfrac{x}{2} - 1\right) = 2\cos^2\tfrac{x}{2}$$
+          $$\frac{\sin x}{1 + \cos x} = \frac{2\sin\frac{x}{2}\cos\frac{x}{2}}{2\cos^2\frac{x}{2}} = \frac{\sin\frac{x}{2}}{\cos\frac{x}{2}} = \tan\frac{x}{2} \quad ∎$$
+        porque: 'Las fórmulas del ángulo doble valen para cualquier ángulo, también para $\frac{x}{2}$.'
+    resultado: 'El primer miembro vale $\frac{\sin x}{1 + \cos x}$, que es $\tan\frac{x}{2}$. La identidad es cierta siempre que los denominadores no se anulen.'
+errores:
+  - error: 'Igualar sin x/(1 + cos x) a tan(x/2) sin justificarlo'
+    explicacion: 'En los apuntes se citaba la fórmula $\tan\frac{x}{2} = \pm\sqrt{\frac{1 - \cos x}{1 + \cos x}}$, pero hacía falta explicar por qué desaparece el $\pm$. El camino con el ángulo doble no tiene raíces ni signos dudosos.'
+alternativas:
+  - titulo: Con la fórmula del ángulo mitad (el camino de los apuntes, completado)
+    desarrollo: |
+      $$\tan\frac{x}{2} = \pm\sqrt{\frac{1 - \cos x}{1 + \cos x}} = \pm\sqrt{\frac{(1 - \cos x)(1 + \cos x)}{(1 + \cos x)^2}} = \pm\frac{|\sin x|}{1 + \cos x}$$
+      Se ha multiplicado dentro de la raíz por $1 + \cos x$ arriba y abajo, y $1 - \cos^2 x = \sin^2 x$. Como $\tan\frac{x}{2}$ y $\sin x$ **siempre tienen el mismo signo** (los dos positivos si $x \in (0^\circ,\ 180^\circ)$; los dos negativos si $x \in (180^\circ,\ 360^\circ)$), el $\pm$ y el valor absoluto se compensan: $\tan\frac{x}{2} = \frac{\sin x}{1 + \cos x}$.

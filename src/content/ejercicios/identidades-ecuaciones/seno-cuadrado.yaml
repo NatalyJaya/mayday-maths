@@ -1,0 +1,27 @@
+titulo: '4 sin²x − 3 = 0'
+tema: identidades-ecuaciones
+orden: 7
+procedencia: original
+dificultad: intermedio
+habilidades: [calculo]
+resumen: Raíz con ± y cuatro ángulos, uno en cada cuadrante.
+enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad 4\sin^2 x - 3 = 0$'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones.
+    respuesta:
+      tipo: conjunto
+      valores: [60, 120, 240, 300]
+      trampas:
+        - { valores: [60, 120], explicacion: 'Al hacer la raíz de $\sin^2 x = \frac34$ hay que poner $\pm$: también $\sin x = -\frac{\sqrt3}{2}$.' }
+        - { valores: [60], explicacion: 'Faltan tres: dos por el signo $\pm$ y, para cada signo, dos ángulos.' }
+    pistas:
+      - '$\sin^2 x = \frac34 \Rightarrow \sin x = \pm\frac{\sqrt3}{2}$.'
+    pasos:
+      - titulo: Despejar
+        desarrollo: '$$\sin^2 x = \frac34 \;\Rightarrow\; \sin x = \pm\frac{\sqrt3}{2}$$'
+      - titulo: Ángulos
+        desarrollo: |
+          - $\sin x = \frac{\sqrt3}{2} \Rightarrow x = 60^\circ,\ 120^\circ$.
+          - $\sin x = -\frac{\sqrt3}{2} \Rightarrow x = 240^\circ,\ 300^\circ$.
+    resultado: '$x = 60^\circ,\ 120^\circ,\ 240^\circ,\ 300^\circ$.'

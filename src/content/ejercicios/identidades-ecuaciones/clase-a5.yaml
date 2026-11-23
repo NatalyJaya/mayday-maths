@@ -1,0 +1,45 @@
+titulo: 'sin x = tan x'
+tema: identidades-ecuaciones
+orden: 105
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie A, apartado h)
+coleccion: clase-serie-a
+dificultad: intermedio
+habilidades: [calculo, conceptual]
+resumen: La tentación es dividir entre sin x. No lo hagas.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$\sin x = \tan x$$
+conceptos:
+  - '$\tan x = \dfrac{\sin x}{\cos x}$, que solo existe si $\cos x \ne 0$.'
+  - 'Sacar factor común en vez de dividir.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    respuesta:
+      tipo: conjunto
+      valores: [0, 180]
+      trampas:
+        - valores: [0]
+          explicacion: 'Esto sale si divides entre $\sin x$: te queda $\cos x = 1$ y pierdes $x = 180^\circ$, donde $\sin x = 0$. Saca factor común en lugar de dividir.'
+    pistas:
+      - 'Escribe la tangente como cociente.'
+      - 'Pasa todo a un lado y saca $\sin x$ factor común.'
+    pasos:
+      - titulo: Escribir la tangente como cociente
+        desarrollo: '$$\sin x = \frac{\sin x}{\cos x}, \qquad \cos x \ne 0$$'
+        porque: 'Así solo aparecen seno y coseno. La condición $\cos x \ne 0$ excluye $90^\circ$ y $270^\circ$, donde la tangente no existe.'
+      - titulo: Factor común (sin dividir)
+        piensa: ¿Por qué no se puede simplificar el $\sin x$ de los dos lados?
+        desarrollo: '$$\sin x - \frac{\sin x}{\cos x} = 0 \;\Rightarrow\; \sin x\left(1 - \frac{1}{\cos x}\right) = 0$$'
+        porque: 'Dividir entre $\sin x$ solo es válido si $\sin x \ne 0$, y justamente $\sin x = 0$ da soluciones.'
+      - titulo: Cada factor igual a cero
+        desarrollo: |
+          - $\sin x = 0 \Rightarrow x = 0^\circ,\ 180^\circ$.
+          - $1 - \dfrac{1}{\cos x} = 0 \Rightarrow \cos x = 1 \Rightarrow x = 0^\circ$ (ya la teníamos).
+        porque: 'Ninguna anula el coseno, así que todas son válidas.'
+    resultado: '$x = 0^\circ,\ 180^\circ$.'
+errores:
+  - error: 'Dividir entre $\sin x$'
+    explicacion: 'Se pierde $x = 180^\circ$. Dividir entre una expresión que puede valer cero hace desaparecer soluciones: saca factor común.'

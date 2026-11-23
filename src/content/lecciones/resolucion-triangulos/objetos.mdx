@@ -1,0 +1,93 @@
+---
+tema: resolucion-triangulos
+etapa: objetos
+titulo: Lados, ángulos y los cuatro casos
+descripcion: La notación que se usa en todo el tema, los ángulos de elevación y de depresión y los cuatro tipos de datos con los que se resuelve un triángulo.
+minutos: 15
+---
+
+## La notación
+
+Los vértices se nombran con mayúsculas $A$, $B$, $C$, y el **ángulo** de cada vértice con la misma letra. Cada **lado** se nombra con la minúscula del vértice **opuesto**: el lado $a$ está enfrente del ángulo $A$.
+
+<Figura
+	figura={{ tipo: 'triangulo', a: 7, b: 5, c: 8, etiquetas: { a: 'a', b: 'b', c: 'c', A: 'A', B: 'B', C: 'C' }, colores: { a: 'x', b: 'y', c: 'g' } }}
+	alt="Triángulo ABC: el lado a (azul) está enfrente del vértice A, el lado b (naranja) enfrente de B y el lado c (verde) enfrente de C."
+	pie="Cada lado tiene el color de su ángulo opuesto (en el laboratorio también)."
+/>
+
+Esta notación es útil porque los teoremas del tema emparejan cada lado con su ángulo opuesto.
+
+<VariableGrid>
+	<Variable simbolo="a,\ b,\ c" nombre="Lados" tipo="Longitudes" mide="Las longitudes de los lados. El lado $a$ es el opuesto al ángulo $A$." cambia="El lado más largo está enfrente del ángulo más grande." relacion="Desigualdad triangular: cada lado es menor que la suma de los otros dos." />
+	<Variable simbolo="A,\ B,\ C" nombre="Ángulos" tipo="Ángulos" unidad="grados" mide="Los ángulos interiores, en cada vértice." cambia="Si uno crece, los otros dos tienen que disminuir." relacion="$A + B + C = 180^\circ$" />
+	<Variable simbolo="h" nombre="Altura" tipo="Longitud" eje="g" mide="El segmento perpendicular desde un vértice al lado opuesto (o a su prolongación)." relacion="$h_c = b\sin A = a\sin B$" />
+	<Variable simbolo="S" nombre="Área" tipo="Superficie" unidad="unidades²" mide="La superficie del triángulo: $\frac12 \cdot \text{base}\cdot\text{altura}$." relacion="$S = \frac12\, b\, c\sin A$" />
+</VariableGrid>
+
+### Tres propiedades que sirven de comprobación
+
+1. $A + B + C = 180^\circ$. Si conoces dos ángulos, ya tienes el tercero.
+2. **Desigualdad triangular**: $a < b + c$ (y lo mismo con los otros lados). Con $2$, $3$ y $6$ no se puede construir ningún triángulo.
+3. **Al lado mayor se opone el ángulo mayor.** Si al terminar te sale el ángulo más grande enfrente del lado más corto, algo está mal.
+
+## Ángulos de elevación y de depresión
+
+En los problemas de alturas y distancias los ángulos se miden casi siempre respecto a la **horizontal**:
+
+- El **ángulo de elevación** es el que forma la visual con la horizontal cuando miras **hacia arriba**.
+- El **ángulo de depresión** es el que forma la visual con la horizontal cuando miras **hacia abajo**.
+
+<Figura
+	figura={{
+		tipo: 'geometria',
+		puntos: [
+			{ id: 'P', x: 0, y: 4, etiqueta: 'P (arriba)', lado: 'n' },
+			{ id: 'H', x: 0, y: 0, etiqueta: '', marca: false },
+			{ id: 'A', x: 9, y: 0, etiqueta: 'A (abajo)', lado: 's' },
+			{ id: 'R', x: 9, y: 4, etiqueta: '', marca: false },
+		],
+		segmentos: [
+			{ de: 'P', a: 'R', etiqueta: 'horizontal de P', discontinuo: true },
+			{ de: 'P', a: 'A', etiqueta: 'visual', color: 'g', lado: 'derecha' },
+			{ de: 'P', a: 'H', discontinuo: true },
+			{ de: 'H', a: 'A' },
+		],
+		angulos: [
+			{ vertice: 'P', desde: 'R', hasta: 'A', etiqueta: 'depresión', color: 'g', radio: 70 },
+			{ vertice: 'A', desde: 'H', hasta: 'P', etiqueta: 'elevación', radio: 70 },
+			{ vertice: 'H', desde: 'P', hasta: 'A', recto: true },
+		],
+		suelo: { y: 0, desde: -0.5, hasta: 10 },
+	}}
+	alt="Desde un punto alto P, la visual hacia A forma con la horizontal el ángulo de depresión. Desde A, la misma visual forma con el suelo el ángulo de elevación, que es igual."
+	pie="El ángulo de depresión desde P y el de elevación desde A son iguales: son ángulos alternos entre dos rectas paralelas (las dos horizontales)."
+/>
+
+<Callout tipo="ojo">
+	El ángulo de depresión se mide **desde la horizontal**, no desde la vertical. Por eso, en el triángulo rectángulo, el ángulo de depresión **no está** en el vértice de arriba del triángulo: lo encuentras abajo, como ángulo de elevación.
+</Callout>
+
+## Los cuatro casos de resolución
+
+Según qué tres datos conozcas (con al menos un lado), hay cuatro casos. Las letras indican el orden en que aparecen alrededor del triángulo: L = lado, A = ángulo.
+
+| Caso | Datos | Ejemplo | Herramienta principal | ¿Cuántas soluciones? |
+| --- | --- | --- | --- | --- |
+| **LLL** | los tres lados | $a$, $b$, $c$ | teorema del coseno | una (si cumplen la desigualdad triangular) |
+| **LAL** | dos lados y el ángulo **comprendido** | $b$, $c$ y $A$ | teorema del coseno | una |
+| **ALA / AAL** | un lado y dos ángulos | $a$, $A$ y $B$ | $A + B + C = 180^\circ$ y teorema del seno | una |
+| **LLA** | dos lados y un ángulo **no comprendido** | $a$, $b$ y $A$ | teorema del seno | **0, 1 o 2** (caso ambiguo) |
+
+<Callout tipo="idea">
+	Lo más importante para elegir método es fijarse en si el ángulo conocido está **entre** los dos lados conocidos (comprendido) o **enfrente** de uno de ellos. El teorema del seno empareja lados con sus ángulos **opuestos**; el del coseno relaciona los tres lados con **un** ángulo.
+</Callout>
+
+## Resolver un triángulo rectángulo
+
+Si el triángulo es rectángulo, ya conoces un ángulo ($90^\circ$) y basta con **dos datos más** (al menos un lado):
+
+- **Un lado y un ángulo agudo**: el otro ángulo es $90^\circ$ menos el conocido, y los lados salen con seno, coseno o tangente.
+- **Dos lados**: el tercero sale con Pitágoras, y los ángulos con la función inversa ($\arcsin$, $\arccos$ o $\arctan$).
+
+No hacen falta teoremas nuevos. Pero muchos problemas de alturas se resuelven con **dos** triángulos rectángulos que comparten un lado: es la **doble observación**, que verás en la etapa siguiente.

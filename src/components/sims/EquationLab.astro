@@ -1,0 +1,65 @@
+---
+// Laboratorio de ecuaciones trigonométricas f(n·x) = k.
+interface Props {
+	lab?: boolean;
+	f?: 'sin' | 'cos' | 'tan';
+	n?: number;
+	k?: number;
+}
+const { lab = false, f = 'sin', n = 1, k = 0.5 } = Astro.props;
+---
+
+<equation-lab class="sim wide" id={lab ? 'laboratorio' : undefined} data-url={lab ? '' : undefined} data-f={f} data-n={n} data-k={k}>
+	<div class="sim-head">
+		<h4>Resuelve <output data-out="eq"></output> en [0°, 360°)</h4>
+		<p class="muted">Cada corte de la recta con la curva es una solución.</p>
+	</div>
+	<div class="sim-layout wide-left">
+		<svg class="sim-svg mfig" viewBox="0 0 460 280" role="img" aria-label="Gráfica de la función entre 0 y 360 grados, con la recta y = k y los puntos de corte marcados."></svg>
+		<svg class="sim-svg mfig" viewBox="0 0 300 300" role="img" aria-label="Circunferencia goniométrica con la recta y = k (seno), x = k (coseno) o la recta tangente (tangente), y los ángulos básicos que cumplen la ecuación."></svg>
+	</div>
+	<p class="sim-note eq-note"><output data-out="steps"></output></p>
+	<div class="sim-readout">
+		<span><strong><output data-out="count"></output></strong> soluciones</span>
+		<span class="r-g">x = <output data-out="sols"></output></span>
+	</div>
+	<div class="sim-controls">
+		<label class="param-row k">Función
+			<select data-k="f" aria-label="Función">
+				<option value="sin">sin</option>
+				<option value="cos">cos</option>
+				<option value="tan">tan</option>
+			</select>
+		</label>
+		<label class="param-row k">Argumento
+			<select data-k="n" aria-label="Argumento">
+				<option value="1">x</option>
+				<option value="2">2x</option>
+				<option value="3">3x</option>
+				<option value="0.5">x/2</option>
+			</select>
+		</label>
+		<div class="param">
+			<label>k = <output data-out="k"></output></label>
+			<input type="range" data-k="k" min="-1.5" max="1.5" step="0.01" value="0.5" aria-label="Valor de k" />
+		</div>
+	</div>
+	<div class="eq-quick" role="group" aria-label="Valores notables de k"></div>
+</equation-lab>
+
+<style>
+	.eq-quick {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin-top: 0.6rem;
+	}
+	.eq-quick :global(.btn) {
+		min-height: 34px;
+		padding: 0.2rem 0.7rem;
+	}
+</style>
+
+<script>
+	import '../../sims/equation-lab';
+</script>

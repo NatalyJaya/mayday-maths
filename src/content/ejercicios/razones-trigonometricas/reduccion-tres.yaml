@@ -1,0 +1,52 @@
+titulo: Reducción al primer cuadrante
+tema: razones-trigonometricas
+orden: 7
+procedencia: original
+dificultad: intermedio
+habilidades: [calculo, graficas]
+resumen: Un ángulo de cada tipo, incluido uno negativo.
+enunciado: |
+  Calcula el valor exacto de: a) $\sin 330^\circ$ &nbsp; b) $\cos(-120^\circ)$ &nbsp; c) $\tan 225^\circ$
+apartados:
+  - id: a
+    enunciado: '$\sin 330^\circ$ (escribe el decimal).'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\sin 330^\circ', etiqueta: valor, unidad: '', valor: -0.5, trampas: [{ valor: -0.866, explicacion: 'El ángulo de referencia de $330^\circ$ es $30^\circ$ (con el eje $X$), no $60^\circ$.' }] }
+    pistas:
+      - '$330^\circ = 360^\circ - 30^\circ$. ¿Qué signo tiene el seno en el cuarto cuadrante?'
+    pasos:
+      - titulo: Referencia y signo
+        desarrollo: '$$\sin 330^\circ = \sin(360^\circ - 30^\circ) = -\sin 30^\circ = -\frac12$$'
+        porque: 'Cuarto cuadrante: el punto está por debajo del eje $X$, seno negativo.'
+    resultado: '$\sin 330^\circ = -\frac12$.'
+  - id: b
+    enunciado: '$\cos(-120^\circ)$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\cos(-120^\circ)', etiqueta: valor, unidad: '', valor: -0.5, trampas: [{ valor: 0.5, explicacion: 'El coseno es par, $\cos(-120^\circ) = \cos 120^\circ$, pero $120^\circ$ está en el segundo cuadrante, donde el coseno es negativo.' }] }
+    pistas:
+      - 'El coseno es par: $\cos(-x) = \cos x$.'
+      - '$-120^\circ$ lleva al mismo punto que $240^\circ$.'
+    pasos:
+      - titulo: Quitar el signo menos
+        desarrollo: '$$\cos(-120^\circ) = \cos 120^\circ$$'
+        porque: 'Girar $120^\circ$ en un sentido o en el otro da puntos simétricos respecto al eje $X$: misma abscisa.'
+      - titulo: Reducir
+        desarrollo: '$$\cos 120^\circ = \cos(180^\circ - 60^\circ) = -\cos 60^\circ = -\frac12$$'
+    resultado: '$\cos(-120^\circ) = -\frac12$.'
+  - id: c
+    enunciado: '$\tan 225^\circ$'
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\tan 225^\circ', etiqueta: valor, unidad: '', valor: 1, trampas: [{ valor: -1, explicacion: 'En el tercer cuadrante el seno y el coseno son negativos, así que su cociente es positivo.' }] }
+    pistas:
+      - '$225^\circ = 180^\circ + 45^\circ$.'
+    pasos:
+      - titulo: Referencia y signo
+        desarrollo: '$$\tan 225^\circ = \tan(180^\circ + 45^\circ) = \tan 45^\circ = 1$$'
+        porque: 'La tangente se repite cada $180^\circ$.'
+    resultado: '$\tan 225^\circ = 1$.'

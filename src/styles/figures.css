@@ -1,0 +1,292 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Figuras matemáticas (src/lib/figures.ts). Globales porque el SVG llega
+   como texto. Código de color: azul = coseno / cateto contiguo, naranja =
+   seno / cateto opuesto, verde = tangente o incógnita, tinta = el resto.
+   ───────────────────────────────────────────────────────────────────────── */
+.ex-fig {
+	margin: 1.25rem 0;
+	padding: 0.9rem 1rem 0.8rem;
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	background: var(--surface);
+}
+.ex-fig figcaption {
+	font: 650 0.8rem var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--ink-3);
+	margin-bottom: 0.4rem;
+}
+.mfig {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-inline: auto;
+	overflow: visible;
+}
+.mfig text {
+	font-family: var(--font-body);
+}
+.mfig .lbl {
+	font-size: 14px;
+	font-weight: 700;
+	fill: var(--ink-2);
+	paint-order: stroke;
+	stroke: var(--surface);
+	stroke-width: 4px;
+	stroke-linejoin: round;
+}
+.mfig .vname {
+	font-family: var(--font-display);
+	font-size: 15px;
+	fill: var(--ink);
+}
+.mfig .note {
+	font-size: 13px;
+	font-weight: 500;
+	font-style: italic;
+	fill: var(--ink-3);
+}
+.mfig .tick {
+	font-size: 12px;
+	font-weight: 500;
+	fill: var(--ink-3);
+}
+.mfig .axname {
+	font-size: 13px;
+	font-style: italic;
+	fill: var(--ink-3);
+}
+.mfig .quad {
+	font-family: var(--font-display);
+	font-size: 15px;
+	fill: var(--ink-3);
+	opacity: 0.75;
+}
+.mfig .l-x {
+	fill: var(--q-x-text);
+}
+.mfig .l-y {
+	fill: var(--q-y-text);
+}
+.mfig .l-g {
+	fill: var(--q-g-text);
+}
+.mfig .l-ang {
+	fill: var(--ink);
+}
+.mfig .l-ghost {
+	font-weight: 600;
+	fill: var(--ink-3);
+}
+.mfig .l-pt {
+	fill: var(--ink);
+	font-size: 13px;
+}
+.mfig .unk {
+	fill: var(--accent);
+	font-size: 16px;
+}
+.mfig .seg {
+	stroke: var(--ink);
+	stroke-width: 2;
+	stroke-linecap: round;
+	fill: none;
+}
+.mfig .side {
+	stroke-width: 2.6;
+}
+.mfig .thick {
+	stroke-width: 4;
+}
+.mfig .radius {
+	stroke: var(--ink);
+	stroke-width: 2.4;
+}
+.mfig .dash {
+	stroke-dasharray: 5 5;
+}
+.mfig .t-x {
+	stroke: var(--q-x);
+}
+.mfig .t-y {
+	stroke: var(--q-y);
+}
+.mfig .t-g {
+	stroke: var(--q-g);
+}
+.mfig .ghost {
+	stroke: var(--q-ghost);
+	stroke-width: 1.6;
+}
+.mfig .tline {
+	stroke: var(--q-g);
+	stroke-width: 1.2;
+	opacity: 0.5;
+}
+.mfig .arc {
+	fill: none;
+	stroke: var(--ink-2);
+	stroke-width: 1.6;
+}
+.mfig .arc.t-x {
+	stroke: var(--q-x);
+}
+.mfig .arc.t-y {
+	stroke: var(--q-y);
+}
+.mfig .arc.t-g {
+	stroke: var(--q-g);
+	stroke-width: 2.2;
+}
+.mfig .right {
+	fill: none;
+	stroke: var(--ink-2);
+	stroke-width: 1.4;
+}
+.mfig .dot {
+	fill: var(--ink);
+	stroke: var(--surface);
+	stroke-width: 2;
+}
+.mfig .main-dot {
+	fill: var(--accent);
+}
+.mfig .ghost-dot {
+	fill: var(--q-ghost);
+}
+.mfig .axis {
+	stroke: var(--line-strong);
+	stroke-width: 1.5;
+}
+.mfig .grid {
+	stroke: var(--grid);
+}
+.mfig .ucircle {
+	fill: none;
+	stroke: var(--ink-3);
+	stroke-width: 1.5;
+}
+.mfig .ground {
+	stroke: var(--ink-2);
+	stroke-width: 2;
+}
+.mfig .hatch {
+	stroke: var(--ink-3);
+	stroke-width: 1;
+}
+.mfig .curve {
+	fill: none;
+	stroke-width: 2.6;
+	stroke-linejoin: round;
+	stroke: var(--ink);
+}
+.mfig .curve.t-x {
+	stroke: var(--q-x);
+}
+.mfig .curve.t-y {
+	stroke: var(--q-y);
+}
+.mfig .curve.t-g {
+	stroke: var(--q-g);
+}
+.mfig .asym {
+	stroke: var(--ink-3);
+	stroke-width: 1;
+	stroke-dasharray: 2 4;
+}
+.fig-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem 1.1rem;
+	list-style: none;
+	margin: 0.4rem 0 0;
+	padding: 0;
+	font-size: 0.88rem;
+	color: var(--ink-2);
+}
+.fig-legend li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+.sw {
+	display: inline-block;
+	width: 22px;
+	height: 0;
+	border-top: 3px solid var(--ink);
+}
+.sw.dash {
+	border-top-style: dashed;
+}
+.sw-x {
+	border-color: var(--q-x);
+}
+.sw-y {
+	border-color: var(--q-y);
+}
+.sw-g {
+	border-color: var(--q-g);
+}
+
+/* Esquema del método */
+.flow {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: minmax(0, 1fr);
+	gap: 22px;
+}
+.fl {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+	padding: 0.6rem 0.75rem;
+	border-radius: 10px;
+	background: var(--surface-2);
+	border-top: 3px solid var(--c);
+	font-size: 0.9rem;
+	--c: var(--ink);
+}
+.fl + .fl::before {
+	content: '→';
+	position: absolute;
+	left: -18px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--ink-3);
+	font-weight: 700;
+}
+.fl-x {
+	--c: var(--q-x);
+}
+.fl-y {
+	--c: var(--q-y);
+}
+.fl-g {
+	--c: var(--q-g);
+}
+.fl-axis {
+	font: 650 0.7rem var(--font-display);
+	text-transform: uppercase;
+	letter-spacing: 0.07em;
+	color: var(--ink-3);
+}
+.fl-text {
+	color: var(--ink-2);
+}
+@media (max-width: 700px) {
+	.flow {
+		grid-auto-flow: row;
+		gap: 20px;
+	}
+	.fl + .fl::before {
+		content: '↓';
+		left: 50%;
+		top: -18px;
+		transform: translateX(-50%);
+	}
+}

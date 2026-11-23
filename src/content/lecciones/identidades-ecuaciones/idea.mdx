@@ -1,0 +1,83 @@
+---
+tema: identidades-ecuaciones
+etapa: idea
+titulo: El seno no se reparte
+descripcion: Por qué hacen falta fórmulas para el seno de una suma, y por qué una ecuación como sin x = 1/2 no tiene una solución, sino infinitas.
+minutos: 12
+---
+
+## Una tentación muy natural
+
+Sabes que $\sin 30^\circ = \frac12$ y que $\sin 45^\circ = \frac{\sqrt2}{2}$. ¿Cuánto vale $\sin 75^\circ$? Como $75^\circ = 30^\circ + 45^\circ$, la tentación es «repartir».
+
+<Predict
+	pregunta="¿Es cierto que $\sin(30^\circ + 60^\circ) = \sin 30^\circ + \sin 60^\circ$?"
+	opciones={[
+		{ texto: 'Sí: el seno se reparte, como un producto.', explicacion: 'Compruébalo: $\\sin 90^\\circ = 1$, pero $\\sin 30^\\circ + \\sin 60^\\circ = \\frac12 + \\frac{\\sqrt3}{2} \\approx 1{,}37$. Es imposible, porque ningún seno vale más de 1.' },
+		{ texto: 'No: el lado izquierdo vale 1 y el derecho, unos 1,37.', correcta: true, explicacion: '$\\sin 90^\\circ = 1$ y $\\frac12 + \\frac{\\sqrt3}{2} \\approx 1{,}366$. Basta **un** caso en que no se cumple para saber que la regla es falsa.' },
+		{ texto: 'Solo es cierto para ángulos pequeños.', explicacion: 'Tampoco: con $\\alpha = \\beta = 1^\\circ$, $\\sin 2^\\circ \\approx 0{,}0349$ y $2\\sin 1^\\circ \\approx 0{,}0349$ son muy parecidos, pero no iguales. Cerca de 0 la diferencia es pequeña, pero existe.' },
+	]}
+	despues="El seno es una función, no un número que multiplica: sin(α + β) no se puede «desarrollar» como a·(b + c)."
+/>
+
+Si dibujas los dos lados como funciones, la diferencia se ve de golpe:
+
+<IdentityGrapher pair={3} />
+
+<Callout tipo="contraejemplo">
+	$\sin(\alpha + \beta) \ne \sin\alpha + \sin\beta$, $\;\cos 2x \ne 2\cos x$, $\;\sin\frac{x}{2} \ne \frac12\sin x$. Ninguna de estas «reglas» es cierta en general. El seno y el coseno **no se reparten** ni dejan salir los números de dentro.
+</Callout>
+
+Entonces, ¿qué vale $\sin(\alpha + \beta)$? Lo deducirás en la etapa 3 con un dibujo:
+
+$$
+\sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta
+$$
+
+Con esta fórmula y sus parientes (la resta, el ángulo doble y el ángulo mitad) puedes calcular **valores exactos** de ángulos como $15^\circ$, $75^\circ$ o $22{,}5^\circ$, **simplificar** expresiones y **resolver ecuaciones**.
+
+## Identidad o ecuación
+
+Estas dos igualdades parecen del mismo tipo, pero son muy diferentes:
+
+$$
+\text{(1)}\quad \sin^2 x + \cos^2 x = 1 \qquad\qquad \text{(2)}\quad 2\sin x - 1 = 0
+$$
+
+- La (1) se cumple **para todos** los valores de $x$. Es una **identidad**. No hay nada que resolver: se usa para transformar expresiones.
+- La (2) solo se cumple **para algunos** valores. Es una **ecuación**. Lo que se pide es encontrar **todos** esos valores.
+
+## Una ecuación con infinitas soluciones
+
+<Predict
+	pregunta="¿Cuántas soluciones tiene la ecuación $\sin x = \frac12$?"
+	opciones={[
+		{ texto: 'Una: x = 30°.', explicacion: 'Es la que da la calculadora. Pero $\\sin 150^\\circ$ también vale $\\frac12$, y $\\sin 390^\\circ$, y…' },
+		{ texto: 'Dos: 30° y 150°.', explicacion: 'Son las dos de la **primera vuelta**. Pero el seno se repite cada $360^\\circ$: $390^\\circ$, $510^\\circ$, $-210^\\circ$… también son soluciones.' },
+		{ texto: 'Infinitas.', correcta: true, explicacion: 'Cada vuelta tiene dos (una subiendo y otra bajando), y hay infinitas vueltas, hacia delante y hacia atrás. Por eso los ejercicios suelen pedir las soluciones de un intervalo concreto, como $[0^\\circ,\\ 360^\\circ)$.' },
+	]}
+/>
+
+<Figura
+	figura={{
+		tipo: 'funcion',
+		dominio: [-360, 720],
+		paso: 180,
+		curvas: [{ f: 'sin', etiqueta: 'y = sin x', color: 'y' }],
+		niveles: [{ y: 0.5, etiqueta: 'y = 1/2' }],
+		puntos: [{ x: -330 }, { x: -210 }, { x: 30, etiqueta: '30°' }, { x: 150, etiqueta: '150°' }, { x: 390, etiqueta: '390°' }, { x: 510, etiqueta: '510°' }],
+	}}
+	alt="La recta y = 1/2 corta a la gráfica del seno en infinitos puntos: dos en cada vuelta."
+	pie="La recta y = 1/2 corta la onda dos veces en cada vuelta: en 30° y 150°, y en todos los ángulos que se diferencian de ellos en vueltas completas."
+/>
+
+<Callout tipo="idea">
+	Resolver una ecuación trigonométrica tiene **dos partes**: primero, con álgebra e identidades, llegar a algo como $\sin x = k$; después, encontrar **todos** los ángulos que tienen ese seno. Los errores de la segunda parte (soluciones que faltan) son tan frecuentes como los de la primera.
+</Callout>
+
+## Lo que vas a aprender
+
+1. **Objetos**: identidades y ecuaciones, la solución general y las fórmulas con las que trabajarás.
+2. **Propiedades**: de dónde salen las fórmulas de la suma, la resta, el ángulo doble y el ángulo mitad (con la deducción de tus apuntes), y estrategias para demostrar identidades y resolver ecuaciones.
+3. **Laboratorio**: ecuaciones en la gráfica y en la circunferencia, y un comparador de identidades.
+4. **Ejemplos guiados** y **práctica**, con los ejercicios de clase (Serie A, Serie B e identidades).

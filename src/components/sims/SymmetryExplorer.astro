@@ -1,0 +1,62 @@
+---
+// Ángulos relacionados en la circunferencia goniométrica.
+interface Props {
+	rel?: 'sup' | 'pi' | 'neg' | 'comp';
+}
+const { rel = 'sup' } = Astro.props;
+const opts = [
+	['sup', '180° − α'],
+	['pi', '180° + α'],
+	['neg', '360° − α'],
+	['comp', '90° − α'],
+];
+const name = `sym-${Math.random().toString(36).slice(2, 7)}`;
+---
+
+<symmetry-explorer class="sim wide" data-rel={rel}>
+	<div class="sim-head">
+		<h4>Ángulos relacionados</h4>
+		<p class="muted"><output data-out="axis"></output></p>
+	</div>
+	<div class="sim-layout">
+		<svg class="sim-svg mfig" viewBox="0 0 380 360" role="img" aria-label="Circunferencia goniométrica con el ángulo α y su ángulo relacionado, simétricos respecto a un eje o al origen."></svg>
+		<div>
+			<fieldset class="rels">
+				<legend class="k">Compara α con…</legend>
+				{opts.map(([v, t]) => <label class="check"><input type="radio" name={name} value={v} /> {t}</label>)}
+			</fieldset>
+			<table class="sim-table">
+				<thead><tr><th>Ángulo</th><th>cos</th><th>sin</th></tr></thead>
+				<tbody>
+					<tr><th>α = <output data-out="a"></output></th><td class="x"><output data-out="ca"></output></td><td class="y"><output data-out="sa"></output></td></tr>
+					<tr><th><output data-out="name"></output> = <output data-out="b"></output></th><td class="x"><output data-out="cb"></output></td><td class="y"><output data-out="sb"></output></td></tr>
+				</tbody>
+			</table>
+			<p class="sim-note"><output data-out="rule"></output></p>
+		</div>
+	</div>
+	<div class="sim-controls">
+		<div class="param">
+			<label>Ángulo α (primer cuadrante): <output data-out="a"></output></label>
+			<input type="range" min="1" max="89" step="1" value="30" aria-label="Ángulo α en grados" />
+		</div>
+	</div>
+</symmetry-explorer>
+
+<style>
+	.rels {
+		border: 0;
+		margin: 0 0 0.6rem;
+		padding: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0 1rem;
+	}
+	.rels legend {
+		margin-bottom: 0.2rem;
+	}
+</style>
+
+<script>
+	import '../../sims/symmetry-explorer';
+</script>

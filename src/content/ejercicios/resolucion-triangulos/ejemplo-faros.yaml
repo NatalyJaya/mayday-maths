@@ -1,0 +1,50 @@
+titulo: Un barco visto desde dos faros
+tema: resolucion-triangulos
+rol: ejemplo
+orden: 2
+procedencia: original
+dificultad: intermedio
+habilidades: [planteamiento, metodo, modelizacion]
+resumen: Un lado y los dos ángulos contiguos. Tercer ángulo y teorema del seno.
+enunciado: |
+  Dos faros $A$ y $B$ están en la costa, separados $10\un{km}$. Desde $A$, la dirección de un barco $S$ forma un ángulo de $52^\circ$ con la línea $AB$; desde $B$, forma un ángulo de $71^\circ$. ¿A qué distancia está el barco de cada faro?
+figura:
+  tipo: triangulo
+  a: 9.396
+  b: 11.274
+  c: 10
+  nombres: { A: A, B: B, C: S }
+  etiquetas: { c: '10 km', a: 'BS = ?', b: 'AS = ?', A: '52°', B: '71°' }
+  colores: { a: g, b: g }
+datos:
+  - { simbolo: 'c = AB', valor: '10\un{km}', significado: 'distancia entre los faros' }
+  - { simbolo: 'A', valor: '52^\circ', significado: 'ángulo en el faro A' }
+  - { simbolo: 'B', valor: '71^\circ', significado: 'ángulo en el faro B' }
+incognitas:
+  - 'Las distancias $AS$ y $BS$.'
+apartados:
+  - id: a
+    enunciado: Calcula las distancias del barco a cada faro.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'AS', etiqueta: distancia al faro A, unidad: km, valor: 11.27 }
+        - { simbolo: 'BS', etiqueta: distancia al faro B, unidad: km, valor: 9.40 }
+    pasos:
+      - titulo: El tercer ángulo
+        piensa: '¿Hay alguna pareja lado–ángulo opuesto completa?'
+        desarrollo: '$$S = 180^\circ - 52^\circ - 71^\circ = 57^\circ$$'
+        porque: 'El lado conocido, $AB$, está enfrente del ángulo $S$. Con $S$ ya tenemos una pareja completa: lado $10\un{km}$ y ángulo $57^\circ$.'
+      - titulo: Elegir el teorema
+        desarrollo: 'Tenemos la pareja ($c$, $S$) y los otros dos ángulos: **teorema del seno**.'
+      - titulo: Distancia al faro A
+        desarrollo: '$$\frac{AS}{\sin 71^\circ} = \frac{10}{\sin 57^\circ} \;\Rightarrow\; AS = \frac{10\sin 71^\circ}{\sin 57^\circ} \approx 11{,}27\un{km}$$'
+        porque: '$AS$ es el lado opuesto al ángulo en $B$ ($71^\circ$).'
+      - titulo: Distancia al faro B
+        desarrollo: '$$BS = \frac{10\sin 52^\circ}{\sin 57^\circ} \approx 9{,}40\un{km}$$'
+        porque: 'Comprobación: el lado mayor ($AS$) está enfrente del ángulo mayor ($71^\circ$) ✔.'
+    resultado: 'El barco está a unos $11{,}27\un{km}$ del faro $A$ y a unos $9{,}40\un{km}$ del faro $B$.'
+errores:
+  - error: 'Emparejar cada lado con un ángulo contiguo'
+    explicacion: 'En el teorema del seno, cada lado va con su ángulo **opuesto**. $AS$ va con el ángulo en $B$, no con el de $A$.'
+laboratorio: { a: 9.396, b: 11.274, c: 10 }

@@ -1,0 +1,52 @@
+titulo: De una razón a todas las demás
+tema: razones-trigonometricas
+rol: ejemplo
+orden: 1
+procedencia: original
+dificultad: basico
+habilidades: [calculo, conceptual]
+resumen: Identidad fundamental, raíz con su signo y el cuadrante para decidir.
+enunciado: |
+  Sabiendo que $\sin\alpha = \dfrac35$ y que $\alpha$ es un ángulo **obtuso** ($90^\circ < \alpha < 180^\circ$), calcula $\cos\alpha$ y $\tan\alpha$.
+figura:
+  tipo: circunferencia
+  angulos:
+    - { grados: 143.13, etiqueta: 'α' }
+  cuadrantes: true
+datos:
+  - { simbolo: '\sin\alpha', valor: '\tfrac35 = 0{,}6', significado: 'la ordenada del punto P' }
+  - { simbolo: '\alpha', valor: '\in (90^\circ,\ 180^\circ)', significado: 'segundo cuadrante' }
+incognitas:
+  - '$\cos\alpha$ y $\tan\alpha$, exactos.'
+interpretacion: |
+  En la circunferencia de radio 1, el punto $P$ está a altura $0{,}6$ y en el **segundo cuadrante**, a la izquierda del eje $Y$. Así que ya sabemos, antes de calcular nada, que el coseno será **negativo**.
+apartados:
+  - id: a
+    enunciado: Calcula $\cos\alpha$ y $\tan\alpha$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: '\cos\alpha', etiqueta: coseno, unidad: '', valor: -0.8 }
+        - { simbolo: '\tan\alpha', etiqueta: tangente, unidad: '', valor: -0.75 }
+    pasos:
+      - titulo: Identidad fundamental
+        piensa: ¿Qué relación une el seno con el coseno?
+        desarrollo: '$$\cos^2\alpha = 1 - \sin^2\alpha = 1 - \frac{9}{25} = \frac{16}{25}$$'
+        porque: '$\sin^2\alpha + \cos^2\alpha = 1$ vale para cualquier ángulo.'
+      - titulo: La raíz y su signo
+        piensa: 'La raíz de $\frac{16}{25}$ tiene dos valores. ¿Con cuál te quedas?'
+        desarrollo: '$$\cos\alpha = \pm\frac45 \;\xrightarrow{\ \alpha \text{ en el II cuadrante}\ }\; \cos\alpha = -\frac45$$'
+        porque: 'En el segundo cuadrante la abscisa de $P$ es negativa.'
+      - titulo: La tangente
+        desarrollo: '$$\tan\alpha = \frac{\sin\alpha}{\cos\alpha} = \frac{3/5}{-4/5} = -\frac34$$'
+        porque: 'Comprobación de signo: en el segundo cuadrante la tangente es negativa ✔.'
+    resultado: '$\cos\alpha = -\dfrac45 = -0{,}8$ y $\tan\alpha = -\dfrac34 = -0{,}75$.'
+errores:
+  - error: 'Quedarse con $\cos\alpha = +\frac45$'
+    explicacion: 'La raíz positiva es la del ángulo agudo ($\alpha \approx 36{,}87^\circ$). Si el ángulo es obtuso, el coseno es negativo.'
+  - error: 'Calcular α con la calculadora y luego el coseno'
+    explicacion: '$\arcsin 0{,}6 \approx 36{,}87^\circ$ es el ángulo agudo, no el obtuso. Además, se pide el valor exacto: con la identidad no hace falta el ángulo.'
+alternativas:
+  - titulo: Con un triángulo de apoyo
+    desarrollo: 'Dibuja un triángulo rectángulo con cateto opuesto 3 e hipotenusa 5: el otro cateto es 4 (terna 3, 4, 5). Para el ángulo agudo, $\cos = \frac45$; para el obtuso del segundo cuadrante, cambia el signo del coseno y de la tangente.'
+laboratorio: { ang: 143.13 }

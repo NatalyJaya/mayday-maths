@@ -1,0 +1,58 @@
+titulo: La longitud de un túnel
+tema: resolucion-triangulos
+rol: ejemplo
+orden: 3
+procedencia: original
+dificultad: intermedio
+habilidades: [metodo, modelizacion, calculo]
+resumen: Dos lados y el ángulo comprendido. Teorema del coseno y un ángulo con el arcocoseno.
+enunciado: |
+  Hay que excavar un túnel recto entre dos puntos $A$ y $B$ de una montaña. Desde un punto $C$, en el valle, se mide $CA = 380\un{m}$, $CB = 450\un{m}$ y el ángulo $\widehat{ACB} = 68^\circ$.
+
+  a) ¿Cuánto medirá el túnel?
+  b) ¿Qué ángulo forma el túnel con la dirección $AC$ en el punto $A$?
+figura:
+  tipo: triangulo
+  a: 450
+  b: 380
+  c: 467.74
+  etiquetas: { a: '450 m', b: '380 m', c: 'túnel = ?', C: '68°', A: '?' }
+  colores: { c: g }
+datos:
+  - { simbolo: 'b = CA', valor: '380\un{m}', significado: '' }
+  - { simbolo: 'a = CB', valor: '450\un{m}', significado: '' }
+  - { simbolo: 'C', valor: '68^\circ', significado: 'ángulo entre los dos lados conocidos' }
+apartados:
+  - id: a
+    enunciado: Longitud del túnel.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'c'
+          etiqueta: longitud del túnel
+          unidad: m
+          valor: 467.74
+          trampas:
+            - { valor: 588.98, explicacion: 'Has usado Pitágoras. El ángulo en $C$ es de $68^\circ$, no de $90^\circ$: falta el término $-2ab\cos C$.' }
+    pasos:
+      - titulo: Elegir el teorema
+        piensa: 'El ángulo conocido, ¿está entre los dos lados conocidos o enfrente de uno?'
+        desarrollo: 'Está **entre** ellos (caso LAL). No hay ninguna pareja lado–ángulo opuesto: **teorema del coseno**.'
+      - titulo: Teorema del coseno
+        desarrollo: '$$c^2 = 380^2 + 450^2 - 2\cdot 380\cdot 450\cdot\cos 68^\circ \approx 144\,400 + 202\,500 - 128\,116 \approx 218\,784$$'
+      - titulo: Raíz
+        desarrollo: '$$c \approx \sqrt{218\,784} \approx 467{,}74\un{m}$$'
+    resultado: 'El túnel medirá unos $467{,}7\un{m}$.'
+  - id: b
+    enunciado: Ángulo en $A$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - { simbolo: 'A', etiqueta: ángulo en A, unidad: '°', valor: 63.12 }
+    pasos:
+      - titulo: Teorema del coseno despejando el ángulo
+        piensa: 'Ya conoces los tres lados. ¿Qué método no tiene caso ambiguo?'
+        desarrollo: '$$\cos A = \frac{b^2 + c^2 - a^2}{2bc} = \frac{380^2 + 467{,}74^2 - 450^2}{2\cdot 380\cdot 467{,}74} \approx 0{,}4522 \;\Rightarrow\; A \approx 63{,}12^\circ$$'
+        porque: 'Con el coseno no hay ambigüedad: cada coseno corresponde a un único ángulo entre $0^\circ$ y $180^\circ$. Con el teorema del seno también sale, pero habría que comprobar el suplementario.'
+    resultado: 'El túnel forma unos $63{,}1^\circ$ con la dirección $AC$.'
+laboratorio: { a: 450, b: 380, c: 467.74 }

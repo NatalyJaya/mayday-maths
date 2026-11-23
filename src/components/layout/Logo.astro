@@ -1,0 +1,18 @@
+---
+// Marca: la circunferencia goniométrica con un punto P y sus dos
+// proyecciones, el coseno (azul) y el seno (naranja). Es la idea que une
+// los ángulos, las razones y las gráficas de la trigonometría.
+interface Props {
+	size?: number;
+}
+const { size = 30 } = Astro.props;
+---
+
+<svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true" class="logo">
+	<rect x="0.5" y="0.5" width="31" height="31" rx="9" fill="var(--ink)"></rect>
+	<circle cx="14" cy="18" r="9" fill="none" stroke="var(--bg)" stroke-opacity=".55" stroke-width="1.5"></circle>
+	<path d="M14 18H20.9" stroke="var(--q-x)" stroke-width="2.4" stroke-linecap="round"></path>
+	<path d="M20.9 18V12.2" stroke="var(--q-y)" stroke-width="2.4" stroke-linecap="round"></path>
+	<path d="M14 18L20.9 12.2" stroke="var(--bg)" stroke-width="2" stroke-linecap="round"></path>
+	<circle cx="20.9" cy="12.2" r="2.4" fill="var(--q-y)"></circle>
+</svg>

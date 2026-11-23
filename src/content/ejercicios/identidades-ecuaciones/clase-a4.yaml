@@ -1,0 +1,52 @@
+titulo: 'cos 2x = sin x'
+tema: identidades-ecuaciones
+orden: 104
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Serie A
+nota_fuente: 'La letra de este enunciado no se leía bien en la foto; se ha transcrito como cos 2x = sin x.'
+coleccion: clase-serie-a
+dificultad: intermedio
+habilidades: [calculo, metodo]
+resumen: Ángulo doble, todo a un lado y ecuación de segundo grado en el seno.
+enunciado: |
+  Resuelve en $[0^\circ,\ 360^\circ)$:
+  $$\cos 2x = \sin x$$
+conceptos:
+  - '$\cos 2x = 1 - 2\sin^2 x$.'
+  - 'Cambio de variable $t = \sin x$.'
+  - '$\sin x = -1$ solo tiene una solución por vuelta: $270^\circ$.'
+apartados:
+  - id: a
+    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    respuesta:
+      tipo: conjunto
+      valores: [30, 150, 270]
+      trampas:
+        - valores: [90, 210, 330]
+          explicacion: 'Has resuelto $2\sin^2 x - \sin x - 1 = 0$: hay un signo cambiado al pasar los términos de lado. Comprueba que $x = 90^\circ$ no cumple $\cos 2x = \sin x$: $\cos 180^\circ = -1$ y $\sin 90^\circ = 1$.'
+        - valores: [30, 150]
+          explicacion: 'Te falta la solución de $\sin x = -1$.'
+    pistas:
+      - 'Usa la forma de $\cos 2x$ que solo tiene senos.'
+      - 'Pasa todo al mismo lado con cuidado con los signos: queda $2\sin^2 x + \sin x - 1 = 0$.'
+    pasos:
+      - titulo: Ángulo doble
+        desarrollo: '$$1 - 2\sin^2 x = \sin x$$'
+        porque: 'Así toda la ecuación queda en función de $\sin x$.'
+      - titulo: Pasar todo a un lado
+        desarrollo: '$$0 = 2\sin^2 x + \sin x - 1 \quad\Longleftrightarrow\quad 2\sin^2 x + \sin x - 1 = 0$$'
+        porque: 'Si pasas todo al lado derecho, los términos de la izquierda cambian de signo: $-1$, $+2\sin^2 x$, y el $\sin x$ que ya estaba a la derecha sigue con $+$.'
+      - titulo: Cambio de variable
+        desarrollo: '$$2t^2 + t - 1 = 0 \;\Rightarrow\; t = \frac{-1 \pm \sqrt{1 + 8}}{4} = \frac{-1 \pm 3}{4} \;\Rightarrow\; t = \tfrac12 \ \text{ o } \ t = -1$$'
+      - titulo: Deshacer el cambio
+        desarrollo: |
+          - $\sin x = \tfrac12 \Rightarrow x = 30^\circ$ y $180^\circ - 30^\circ = 150^\circ$.
+          - $\sin x = -1 \Rightarrow x = 270^\circ$.
+      - titulo: Comprobar
+        desarrollo: 'Con $x = 270^\circ$: $\cos 540^\circ = \cos 180^\circ = -1$ y $\sin 270^\circ = -1$ ✔.'
+    resultado: '$x = 30^\circ,\ 150^\circ,\ 270^\circ$.'
+errores:
+  - error: 'Escribir $2\sin^2 x - \sin x + 1 = 0$ (error de los apuntes)'
+    explicacion: 'Los signos de $\sin x$ y del $1$ estaban cambiados. Esa ecuación no tiene soluciones reales (discriminante $1 - 8 < 0$), lo que ya es una pista de que algo falla, porque $x = 30^\circ$ sí cumple la ecuación original.'
+laboratorio: { f: sin, n: 1, k: 0.5 }

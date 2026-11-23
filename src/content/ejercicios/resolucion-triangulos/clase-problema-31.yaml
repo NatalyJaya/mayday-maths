@@ -1,0 +1,153 @@
+titulo: 'Problema 31: dos puntos vistos desde lo alto'
+tema: resolucion-triangulos
+orden: 100
+procedencia: clase
+fuente: apuntes-trigonometria-2
+referencia: Problema 31
+nota_fuente: 'En las fotos no estaba el enunciado: se ha reconstruido a partir del dibujo y de los cálculos del cuaderno. Si tu enunciado dice otra cosa, el método es el mismo.'
+coleccion: clase-problema-31
+dificultad: examen
+habilidades: [planteamiento, geometria, multipaso, modelizacion]
+resumen: Ángulos de depresión para dos distancias y teorema del coseno para la tercera.
+enunciado: |
+  Desde un punto $P$ situado a $1000\un{m}$ de altura sobre una llanura se ven dos puntos $A$ y $B$ de la llanura. La visual a $A$ forma un ángulo de depresión de $10^\circ$, la visual a $B$ uno de $20^\circ$, y el ángulo entre las dos visuales $PA$ y $PB$ es de $26^\circ$.
+
+  Calcula la distancia $x = AB$.
+figura:
+  tipo: geometria
+  titulo: El triángulo PAB, dibujado en su propio plano (inclinado)
+  puntos:
+    - { id: P, x: 0, y: 0, lado: o }
+    - { id: A, x: 5758.77, y: 0, lado: e }
+    - { id: B, x: 2627.9, y: 1281.71, lado: n }
+  segmentos:
+    - { de: P, a: A, etiqueta: 'PA', color: v, lado: derecha }
+    - { de: P, a: B, etiqueta: 'PB' }
+    - { de: B, a: A, etiqueta: 'x = ?', color: g }
+  angulos:
+    - { vertice: P, desde: A, hasta: B, etiqueta: '26°', radio: 44 }
+datos:
+  - { simbolo: 'h', valor: '1000\un{m}', significado: 'altura de P sobre la llanura' }
+  - { simbolo: '\alpha_A', valor: '10^\circ', significado: 'ángulo de depresión hacia A' }
+  - { simbolo: '\alpha_B', valor: '20^\circ', significado: 'ángulo de depresión hacia B' }
+  - { simbolo: '\widehat{APB}', valor: '26^\circ', significado: 'ángulo entre las dos visuales' }
+incognitas:
+  - 'La distancia $x = AB$.'
+interpretacion: |
+  Hay **tres triángulos**. Dos son rectángulos y verticales: el de la visual a $A$ y el de la visual a $B$, con la altura de $1000\un{m}$ como cateto. Con ellos se calculan $PA$ y $PB$. El tercero, $PAB$, está inclinado y **no es rectángulo**: se conocen dos lados y el ángulo que forman, así que se usa el **teorema del coseno**.
+visual:
+  - titulo: 'Triángulo vertical de la visual a A'
+    texto: 'El ángulo de depresión (desde la horizontal de $P$ hacia abajo) es igual al ángulo de elevación en $A$: son ángulos alternos. La altura es el cateto **opuesto** a ese ángulo y $PA$ es la hipotenusa.'
+    figura:
+      tipo: geometria
+      puntos:
+        - { id: P, x: 0, y: 1000, lado: n }
+        - { id: H, x: 0, y: 0, etiqueta: '', marca: false }
+        - { id: A, x: 5671.28, y: 0, lado: s }
+        - { id: R, x: 5671.28, y: 1000, etiqueta: '', marca: false }
+      segmentos:
+        - { de: P, a: H, etiqueta: '1000 m', color: y, lado: derecha }
+        - { de: H, a: A }
+        - { de: P, a: A, etiqueta: 'PA = ?', color: g }
+        - { de: P, a: R, discontinuo: true }
+      angulos:
+        - { vertice: P, desde: R, hasta: A, etiqueta: '10°', color: g, radio: 60 }
+        - { vertice: A, desde: H, hasta: P, etiqueta: '10°', radio: 60 }
+        - { vertice: H, desde: P, hasta: A, recto: true }
+      suelo: { y: 0, desde: -200, hasta: 5900 }
+  - titulo: 'Triángulo vertical de la visual a B'
+    texto: 'Lo mismo con $20^\circ$: $\sin 20^\circ = \frac{1000}{PB}$.'
+    figura:
+      tipo: geometria
+      puntos:
+        - { id: P, x: 0, y: 1000, lado: n }
+        - { id: H, x: 0, y: 0, etiqueta: '', marca: false }
+        - { id: B, x: 2747.48, y: 0, lado: s }
+        - { id: R, x: 2747.48, y: 1000, etiqueta: '', marca: false }
+      segmentos:
+        - { de: P, a: H, etiqueta: '1000 m', color: y, lado: derecha }
+        - { de: H, a: B }
+        - { de: P, a: B, etiqueta: 'PB = ?', color: g }
+        - { de: P, a: R, discontinuo: true }
+      angulos:
+        - { vertice: P, desde: R, hasta: B, etiqueta: '20°', color: g, radio: 50 }
+        - { vertice: H, desde: P, hasta: B, recto: true }
+      suelo: { y: 0, desde: -150, hasta: 2900 }
+  - titulo: 'El triángulo PAB: dos lados y el ángulo que forman'
+    texto: 'Ya conocemos $PA$ y $PB$, y el ángulo entre ellos. Eso es el caso LAL: teorema del coseno.'
+conceptos:
+  - 'Ángulo de depresión: el que forma la visual con la horizontal, hacia abajo. Es igual al ángulo de elevación desde el otro extremo.'
+  - '$\sin\alpha = \dfrac{\text{opuesto}}{\text{hipotenusa}}$.'
+  - 'Teorema del coseno: $x^2 = PA^2 + PB^2 - 2\cdot PA\cdot PB\cdot\cos\widehat{P}$.'
+apartados:
+  - id: a
+    enunciado: Calcula las distancias $PA$ y $PB$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'PA'
+          etiqueta: distancia de P a A
+          unidad: m
+          valor: 5758.77
+          tolerancia: 0.005
+          trampas:
+            - valor: -1838.16
+              explicacion: 'Un resultado negativo: tu calculadora está en radianes. Ponla en grados (DEG).'
+            - valor: 5671.28
+              explicacion: 'Eso es la distancia horizontal $1000/\tan 10^\circ$. La visual $PA$ es la hipotenusa: usa el seno.'
+            - valor: 1015.43
+              explicacion: 'Has usado el coseno. La altura es el cateto opuesto al ángulo de $10^\circ$: $\sin 10^\circ = \frac{1000}{PA}$.'
+        - simbolo: 'PB'
+          etiqueta: distancia de P a B
+          unidad: m
+          valor: 2923.80
+          tolerancia: 0.005
+          trampas:
+            - valor: 2423.80
+              explicacion: 'En el cuaderno se leía «2423,80», pero $1000/\sin 20^\circ = 2923{,}80$. Revisa la cuenta.'
+            - valor: 2747.48
+              explicacion: 'Esa es la distancia horizontal. $PB$ es la hipotenusa: $\sin 20^\circ = \frac{1000}{PB}$.'
+    pistas:
+      - 'En cada triángulo vertical, la altura es el cateto opuesto al ángulo y la visual es la hipotenusa.'
+      - '$PA = \dfrac{1000}{\sin 10^\circ}$.'
+    pasos:
+      - titulo: Distancia PA
+        desarrollo: '$$\sin 10^\circ = \frac{1000}{PA} \;\Rightarrow\; PA = \frac{1000}{\sin 10^\circ} \approx 5758{,}77\un{m}$$'
+        porque: 'El ángulo de depresión desde $P$ es igual al ángulo de elevación en $A$ (alternos), y la altura es su cateto opuesto.'
+      - titulo: Distancia PB
+        desarrollo: '$$\sin 20^\circ = \frac{1000}{PB} \;\Rightarrow\; PB = \frac{1000}{\sin 20^\circ} \approx 2923{,}80\un{m}$$'
+    resultado: '$PA \approx 5758{,}77\un{m}$ y $PB \approx 2923{,}80\un{m}$.'
+  - id: b
+    enunciado: Calcula la distancia $x = AB$.
+    respuesta:
+      tipo: numerica
+      campos:
+        - simbolo: 'x'
+          etiqueta: distancia AB
+          unidad: m
+          valor: 3383.07
+          tolerancia: 0.005
+          trampas:
+            - valor: 11445146.9
+              tolerancia: 0.01
+              explicacion: 'Eso es $x^2$. Te falta la raíz cuadrada (le pasaba lo mismo al cuaderno).'
+            - valor: 6458.49
+              explicacion: 'Has usado Pitágoras, pero el triángulo $PAB$ no es rectángulo. Usa el teorema del coseno con el ángulo de $26^\circ$.'
+    pistas:
+      - 'En el triángulo $PAB$ conoces dos lados y el ángulo que forman.'
+      - '$x^2 = PA^2 + PB^2 - 2\cdot PA\cdot PB\cdot\cos 26^\circ$. No olvides la raíz al final.'
+    pasos:
+      - titulo: Teorema del coseno
+        desarrollo: |
+          $$x^2 = 5758{,}77^2 + 2923{,}80^2 - 2\cdot 5758{,}77\cdot 2923{,}80\cdot\cos 26^\circ \approx 11\,445\,147\un{m^2}$$
+        porque: 'Dos lados y el ángulo comprendido (caso LAL): es el teorema del coseno.'
+      - titulo: Raíz cuadrada
+        desarrollo: '$$x = \sqrt{11\,445\,147} \approx 3383\un{m}$$'
+        porque: 'El teorema del coseno da $x^2$, no $x$.'
+    resultado: 'La distancia entre $A$ y $B$ es $x \approx 3383\un{m} \approx 3{,}38\un{km}$.'
+errores:
+  - error: 'Olvidar la raíz cuadrada (error de los apuntes)'
+    explicacion: 'En el cuaderno se escribía «$x = \ldots$» con el valor de $x^2$. Sin la raíz, la distancia saldría de más de 11 000 km.'
+  - error: 'Redondear PA y PB a unidades antes del teorema del coseno'
+    explicacion: 'Con $5758$ y $2923$ sale $x^2 \approx 11\,443\,946$ y $x \approx 3382{,}9\un{m}$: casi igual, pero conviene arrastrar dos decimales.'
+laboratorio: { a: 3383.07, b: 2923.80, c: 5758.77 }

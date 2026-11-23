@@ -1,0 +1,78 @@
+---
+// Circunferencia goniométrica con las gráficas de seno, coseno y tangente
+// sincronizadas. Con `lab`, es el laboratorio del tema (lee ?ang= de la URL).
+interface Props {
+	angle?: number;
+	tan?: boolean;
+	lab?: boolean;
+	titulo?: string;
+}
+const { angle = 30, tan = false, lab = false, titulo = 'La circunferencia goniométrica' } = Astro.props;
+const quick = [30, 45, 60, 120, 135, 150, 210, 240, 300, 330];
+---
+
+<unit-circle-lab class="sim wide" id={lab ? 'laboratorio' : undefined} data-angle={angle} data-tan={tan ? '' : undefined} data-url={lab ? '' : undefined}>
+	<div class="sim-head">
+		<h4>{titulo}</h4>
+		<p class="muted">Arrastra el punto <strong>P</strong> (o usa las flechas). Radio 1.</p>
+	</div>
+	<div class="sim-layout">
+		<svg class="sim-svg mfig" viewBox="0 0 380 380" role="slider" aria-label="Circunferencia goniométrica: arrastra el punto P para cambiar el ángulo"></svg>
+		<div>
+			<svg class="sim-svg mfig" viewBox="0 0 440 300" role="img" aria-label="Gráficas del coseno (azul), el seno (naranja) y la tangente (verde) entre 0 y 360 grados, con un cursor en el ángulo elegido"></svg>
+			<ul class="fig-legend">
+				<li><i class="sw sw-x"></i> y = cos x</li>
+				<li><i class="sw sw-y"></i> y = sin x</li>
+				<li><i class="sw sw-g"></i> y = tan x</li>
+			</ul>
+			<table class="sim-table uc-table">
+				<tbody>
+					<tr><th>Ángulo</th><td><output data-out="ang"></output> = <output data-out="rad"></output></td></tr>
+					<tr><th>Posición</th><td><output data-out="quad"></output> · ángulo de referencia <output data-out="ref"></output></td></tr>
+					<tr><th>cos</th><td class="x"><output data-out="cos"></output></td></tr>
+					<tr><th>sin</th><td class="y"><output data-out="sin"></output></td></tr>
+					<tr><th>tan</th><td class="g"><output data-out="tan"></output></td></tr>
+					<tr><th>Signos</th><td><output data-out="signs"></output></td></tr>
+					<tr><th>sin² + cos²</th><td><output data-out="check"></output></td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="sim-controls">
+		<div class="param">
+			<label for={`uc-range-${angle}`}>Ángulo (0° a 360°)</label>
+			<input id={`uc-range-${angle}`} type="range" min="0" max="360" step="1" value={angle} />
+		</div>
+		<label class="param-row k">Escribe el ángulo: <input type="number" step="1" min="-720" max="720" value={angle} aria-label="Ángulo en grados (admite negativos y más de una vuelta)" /> °</label>
+		<label class="check"><input type="checkbox" data-k="snap" checked /> Ajustar a ángulos notables</label>
+		<label class="check"><input type="checkbox" data-k="tan" /> Mostrar la tangente</label>
+	</div>
+	<div class="quick" role="group" aria-label="Ángulos notables">
+		{quick.map((q) => <button class="btn btn-sm" type="button" data-go={q}>{q}°</button>)}
+	</div>
+</unit-circle-lab>
+
+<style>
+	.uc-table {
+		margin-top: 0.4rem;
+	}
+	.uc-table th {
+		width: 7.5rem;
+		font-size: 0.88rem;
+		color: var(--ink-2);
+	}
+	.quick {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.35rem;
+		margin-top: 0.6rem;
+	}
+	.quick .btn {
+		min-height: 34px;
+		padding: 0.2rem 0.7rem;
+	}
+</style>
+
+<script>
+	import '../../sims/unit-circle-lab';
+</script>

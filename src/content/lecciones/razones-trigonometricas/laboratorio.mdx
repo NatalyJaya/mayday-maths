@@ -1,0 +1,65 @@
+---
+tema: razones-trigonometricas
+etapa: laboratorio
+titulo: El laboratorio de la circunferencia
+descripcion: Arrastra un punto por la circunferencia goniométrica y mira cómo cambian el seno, el coseno y la tangente, sus signos y sus gráficas. Con retos para comprobar lo que has deducido.
+minutos: 20
+---
+
+## Cómo usar el laboratorio
+
+- **Arrastra el punto P** (o haz clic en la circunferencia, o usa las flechas del teclado).
+- La tabla muestra el ángulo en grados y radianes, el cuadrante, el ángulo de referencia y las tres razones. En los ángulos notables también aparece el **valor exacto**.
+- A la derecha, un cursor recorre las gráficas: el punto azul es el coseno y el naranja, el seno.
+- Puedes **escribir el ángulo**, incluso negativo o mayor de $360^\circ$.
+
+<UnitCircleLab lab angle={30} />
+
+## Retos
+
+Intenta responder cada reto **antes** de mover nada. Luego compruébalo.
+
+<Predict
+	pregunta="**Reto 1.** ¿Cuántos ángulos entre $0^\circ$ y $360^\circ$ tienen seno igual a $0{,}5$?"
+	opciones={[
+		{ texto: 'Uno: 30°.', explicacion: 'Es el que da la calculadora, pero mira la circunferencia: la recta horizontal $y = 0{,}5$ la corta en dos puntos.' },
+		{ texto: 'Dos: 30° y 150°.', correcta: true, explicacion: 'Son simétricos respecto al eje $Y$: tienen la misma altura. Compruébalo con los botones 30° y 150°.' },
+		{ texto: 'Cuatro: 30°, 150°, 210° y 330°.', explicacion: 'En 210° y 330° el seno vale $-0{,}5$: el punto está por debajo del eje $X$.' },
+	]}
+/>
+
+<Predict
+	pregunta="**Reto 2.** Lleva el punto a $90^\circ$ con la tangente activada. ¿Qué le pasa a la tangente?"
+	opciones={[
+		{ texto: 'Vale 1.', explicacion: 'La tangente vale 1 en $45^\\circ$, donde el seno y el coseno son iguales.' },
+		{ texto: 'Vale 0.', explicacion: 'La tangente vale 0 cuando el seno vale 0 (en $0^\\circ$ y $180^\\circ$).' },
+		{ texto: 'No existe.', correcta: true, explicacion: 'En $90^\\circ$ el coseno es 0 y $\\tan = \\frac{\\sin}{\\cos}$ divide entre cero. En la figura, el radio es vertical y nunca corta la recta $x = 1$. Cerca de $90^\\circ$ la tangente se hace enorme.' },
+	]}
+/>
+
+**Reto 3.** Recorre los cuatro cuadrantes despacio y anota los signos de seno, coseno y tangente en cada uno. Compáralos con la tabla de la etapa anterior.
+
+**Reto 4.** Escribe $390^\circ$, luego $-330^\circ$ y luego $750^\circ$. ¿Qué tienen en común? ¿Por qué?
+
+**Reto 5.** Fíjate en la fila «$\sin^2 + \cos^2$» mientras mueves el punto. ¿Cambia alguna vez? ¿Qué teorema lo explica?
+
+**Reto 6.** Busca un ángulo del segundo cuadrante con coseno $-0{,}5$. Luego, uno del tercer cuadrante con el mismo coseno. ¿Cuál es el ángulo de referencia de los dos?
+
+<Reveal titulo="Soluciones de los retos 3 a 6">
+
+- **Reto 3.** I: todas positivas. II: solo el seno positivo. III: solo la tangente positiva. IV: solo el coseno positivo.
+- **Reto 4.** Los tres llegan al mismo punto que $30^\circ$: se diferencian en vueltas completas ($390^\circ = 30^\circ + 360^\circ$, $-330^\circ = 30^\circ - 360^\circ$, $750^\circ = 30^\circ + 2\cdot360^\circ$). Por eso tienen las mismas razones.
+- **Reto 5.** Siempre vale 1. Es el teorema de Pitágoras: el punto está a distancia 1 del origen.
+- **Reto 6.** $120^\circ$ y $240^\circ$. Los dos tienen ángulo de referencia $60^\circ$, y $\cos 60^\circ = 0{,}5$.
+
+</Reveal>
+
+## De la circunferencia a la gráfica
+
+Las gráficas del laboratorio no son dibujos aparte: son el **seno y el coseno «desenrollados»**. Mira cómo la abscisa del punto (el coseno) va dibujando su gráfica mientras gira:
+
+<CircleWave fn="cos" />
+
+<Callout tipo="idea">
+	El seno es la **altura** del punto que gira; el coseno, su **posición horizontal**. Por eso las dos gráficas son la misma onda, desplazada un cuarto de vuelta ($90^\circ$).
+</Callout>

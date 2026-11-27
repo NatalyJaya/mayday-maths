@@ -48,9 +48,9 @@ const classCount = practice.filter((e) => e.data.procedencia === 'clase').length
 				<h1>{topic.data.titulo}</h1>
 				<p class="lead">{topic.data.esencia ?? topic.data.resumen}</p>
 				<div class="actions">
-					<a class="btn btn-primary" href={stageUrl(topic, 'idea')}>Empezar por la idea <Icon name="arrow-right" /></a>
-					<a class="btn" href={`${stageUrl(topic, 'laboratorio')}#laboratorio`}><Icon name="flask" /> Ir al laboratorio</a>
-					<a class="btn btn-ghost" href={stageUrl(topic, 'practica')}><Icon name="pencil" /> Practicar</a>
+					<a class="btn btn-primary" href={stageUrl(topic, 'idea')}>Comença per la idea <Icon name="arrow-right" /></a>
+					<a class="btn" href={`${stageUrl(topic, 'laboratorio')}#laboratorio`}><Icon name="flask" /> Ves al laboratori</a>
+					<a class="btn btn-ghost" href={stageUrl(topic, 'practica')}><Icon name="pencil" /> Practica</a>
 				</div>
 			</div>
 			{topic.data.portada && (
@@ -62,26 +62,26 @@ const classCount = practice.filter((e) => e.data.procedencia === 'clase').length
 	</section>
 
 	<section class="container section-tight">
-		<h2>Tu recorrido</h2>
+		<h2>El teu recorregut</h2>
 		<MethodStrip topic={topic} lessons={lessons} exerciseCount={practice.length} />
 	</section>
 
 	{
 		cols.length > 0 && (
 			<section class="container section-tight" id="colecciones">
-				<h2>Colecciones de clase y exámenes</h2>
-				<p class="muted cols-intro">Los ejercicios que habéis trabajado en clase, en el orden de tus apuntes, resueltos paso a paso.</p>
+				<h2>Col·leccions de classe i exàmens</h2>
+				<p class="muted cols-intro">Els exercicis que heu treballat a classe, en l’ordre dels teus apunts, resolts pas a pas.</p>
 				<div class="cols">
 					{cols.map((c) => (
 						<a class="col-card" href={collectionUrl(topic, c.id)}>
 							<Icon name={c.data.tipo === 'examen' ? 'clock' : 'layers'} size={26} />
 							<span>
-								<span class="col-k">{c.data.tipo === 'examen' ? `Examen de práctica${c.data.minutos ? ` · ${c.data.minutos} min` : ''}` : 'Ejercicios de clase'}</span>
+								<span class="col-k">{c.data.tipo === 'examen' ? `Examen de pràctica${c.data.minutos ? ` · ${c.data.minutos} min` : ''}` : 'Exercicis de classe'}</span>
 								<strong>{c.data.titulo}</strong>
 								<span class="col-d">
 									{c.data.tipo === 'examen'
-										? `${c.data.principales.length} ejercicios de nivel examen con pistas y solución explicada`
-										: `${c.n} ${c.n === 1 ? 'ejercicio de clase' : 'ejercicios de clase'} con pistas y solución explicada`}
+										? `${c.data.principales.length} exercicis de nivell d’examen amb pistes i solució explicada`
+										: `${c.n} ${c.n === 1 ? 'exercici de classe' : 'exercicis de classe'} amb pistes i solució explicada`}
 								</span>
 							</span>
 							<Icon name="arrow-right" />
@@ -94,36 +94,36 @@ const classCount = practice.filter((e) => e.data.procedencia === 'clase').length
 
 	<section class="container section-tight two">
 		<div class="card box">
-			<h2 class="h3">Antes de empezar</h2>
+			<h2 class="h3">Abans de començar</h2>
 			<Fragment set:html={antes} />
 			{reqs.length > 0 && (
 				<ul class="reqs">
 					{reqs.map((r) => (
 						<li>
 							<strong>{r.data.titulo}</strong>: {r.data.resumen}
-							{isAvailable(r) && <a href={`../${r.id}/`}> Ir al tema</a>}
+							{isAvailable(r) && <a href={`../${r.id}/`}> Ves al tema</a>}
 						</li>
 					))}
 				</ul>
 			)}
-			<h3 class="h4">Qué ejercicios encontrarás</h3>
-			{classCount > 0 && <p class="muted"><strong>{classCount}</strong> son ejercicios de clase (llevan la etiqueta «Ejercicio de clase») y el resto, práctica adicional.</p>}
+			<h3 class="h4">Quins exercicis hi trobaràs</h3>
+			{classCount > 0 && <p class="muted"><strong>{classCount}</strong> són exercicis de classe (porten l’etiqueta «Exercici de classe») i la resta, pràctica addicional.</p>}
 			<ul class="levels">
 				{
 					byDifficulty.map((d) => (
 						<li>
 							<span class="lv" data-level={d.nivel}>{'●'.repeat(d.nivel)}<span class="off">{'●'.repeat(4 - d.nivel)}</span></span>
-							<span><strong>{d.label}</strong>: {d.n} {d.n === 1 ? 'ejercicio' : 'ejercicios'}</span>
+							<span><strong>{d.label}</strong>: {d.n} {d.n === 1 ? 'exercici' : 'exercicis'}</span>
 						</li>
 					))
 				}
 			</ul>
 		</div>
 		<div class="card box">
-			<h2 class="h3">Mapa rápido: cada pregunta, una herramienta</h2>
-			<p class="muted">Lo más difícil suele ser decidir qué usar. Esta tabla te orienta.</p>
+			<h2 class="h3">Mapa ràpid: cada pregunta, una eina</h2>
+			<p class="muted">El més difícil sol ser decidir què fer servir. Aquesta taula t’orienta.</p>
 			<table class="map">
-				<thead><tr><th>Si te preguntan…</th><th>Usa</th><th>Ojo con…</th></tr></thead>
+				<thead><tr><th>Si et pregunten…</th><th>Fes servir</th><th>Compte amb…</th></tr></thead>
 				<tbody>
 					{
 						map.map((m) => (

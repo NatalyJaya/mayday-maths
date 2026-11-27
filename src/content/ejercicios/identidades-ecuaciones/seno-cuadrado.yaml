@@ -4,23 +4,23 @@ orden: 7
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo]
-resumen: Raíz con ± y cuatro ángulos, uno en cada cuadrante.
-enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad 4\sin^2 x - 3 = 0$'
+resumen: Arrel amb ± i quatre angles, un a cada quadrant.
+enunciado: 'Resol a $[0^\circ,\ 360^\circ)$: $\quad 4\sin^2 x - 3 = 0$'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [60, 120, 240, 300]
       trampas:
-        - { valores: [60, 120], explicacion: 'Al hacer la raíz de $\sin^2 x = \frac34$ hay que poner $\pm$: también $\sin x = -\frac{\sqrt3}{2}$.' }
-        - { valores: [60], explicacion: 'Faltan tres: dos por el signo $\pm$ y, para cada signo, dos ángulos.' }
+        - { valores: [60, 120], explicacion: 'En fer l’arrel de $\sin^2 x = \frac34$ cal posar-hi $\pm$: també $\sin x = -\frac{\sqrt3}{2}$.' }
+        - { valores: [60], explicacion: 'En falten tres: dues pel signe $\pm$ i, per a cada signe, dos angles.' }
     pistas:
       - '$\sin^2 x = \frac34 \Rightarrow \sin x = \pm\frac{\sqrt3}{2}$.'
     pasos:
-      - titulo: Despejar
+      - titulo: Aïllar
         desarrollo: '$$\sin^2 x = \frac34 \;\Rightarrow\; \sin x = \pm\frac{\sqrt3}{2}$$'
-      - titulo: Ángulos
+      - titulo: Angles
         desarrollo: |
           - $\sin x = \frac{\sqrt3}{2} \Rightarrow x = 60^\circ,\ 120^\circ$.
           - $\sin x = -\frac{\sqrt3}{2} \Rightarrow x = 240^\circ,\ 300^\circ$.

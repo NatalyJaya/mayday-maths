@@ -1,34 +1,34 @@
-titulo: Simplifica con las relaciones fundamentales
+titulo: Simplifica amb les relacions fonamentals
 tema: razones-trigonometricas
 orden: 11
 procedencia: original
 dificultad: avanzado
 habilidades: [calculo, demostracion]
-resumen: Reconocer 1 − cos²α y escribirlo todo con senos y cosenos.
+resumen: Reconèixer 1 − cos²α i escriure-ho tot amb sinus i cosinus.
 enunciado: |
-  Simplifica la expresión (para los ángulos en que tiene sentido):
+  Simplifica l’expressió (per als angles en què té sentit):
   $$\frac{1 - \cos^2\alpha}{\sin\alpha\cdot\cos\alpha}$$
 apartados:
   - id: a
-    enunciado: ¿A qué es igual?
+    enunciado: A què és igual?
     respuesta:
       tipo: opciones
       opciones:
-        - { texto: '$\tan\alpha$', correcta: true, explicacion: '$1 - \cos^2\alpha = \sin^2\alpha$, y $\frac{\sin^2\alpha}{\sin\alpha\cos\alpha} = \frac{\sin\alpha}{\cos\alpha}$.' }
-        - { texto: '$\sin\alpha$', explicacion: 'Al simplificar queda $\frac{\sin\alpha}{\cos\alpha}$: el coseno del denominador no desaparece.' }
-        - { texto: '$\dfrac{1}{\tan\alpha}$', explicacion: 'Revisa qué queda arriba: $\sin^2\alpha$. Al simplificar un seno, el otro sigue en el numerador.' }
-        - { texto: '$1 - \cos\alpha$', explicacion: 'No se puede «tachar» el coseno de $\cos^2\alpha$ con el del denominador: arriba hay una resta, no un producto.' }
+        - { texto: '$\tan\alpha$', correcta: true, explicacion: '$1 - \cos^2\alpha = \sin^2\alpha$, i $\frac{\sin^2\alpha}{\sin\alpha\cos\alpha} = \frac{\sin\alpha}{\cos\alpha}$.' }
+        - { texto: '$\sin\alpha$', explicacion: 'En simplificar queda $\frac{\sin\alpha}{\cos\alpha}$: el cosinus del denominador no desapareix.' }
+        - { texto: '$\dfrac{1}{\tan\alpha}$', explicacion: 'Revisa què queda a dalt: $\sin^2\alpha$. En simplificar un sinus, l’altre continua al numerador.' }
+        - { texto: '$1 - \cos\alpha$', explicacion: 'No es pot «ratllar» el cosinus de $\cos^2\alpha$ amb el del denominador: a dalt hi ha una resta, no un producte.' }
     pistas:
-      - '¿A qué es igual $1 - \cos^2\alpha$?'
-      - 'Escribe $\sin^2\alpha = \sin\alpha\cdot\sin\alpha$ y simplifica.'
+      - 'A què és igual $1 - \cos^2\alpha$?'
+      - 'Escriu $\sin^2\alpha = \sin\alpha\cdot\sin\alpha$ i simplifica.'
     pasos:
-      - titulo: Identidad fundamental
+      - titulo: Identitat fonamental
         desarrollo: '$$\frac{1 - \cos^2\alpha}{\sin\alpha\cos\alpha} = \frac{\sin^2\alpha}{\sin\alpha\cos\alpha}$$'
-        porque: 'De $\sin^2\alpha + \cos^2\alpha = 1$ se despeja $\sin^2\alpha = 1 - \cos^2\alpha$.'
+        porque: 'De $\sin^2\alpha + \cos^2\alpha = 1$ s’aïlla $\sin^2\alpha = 1 - \cos^2\alpha$.'
       - titulo: Simplificar
         desarrollo: '$$\frac{\sin\alpha\cdot\sin\alpha}{\sin\alpha\cdot\cos\alpha} = \frac{\sin\alpha}{\cos\alpha} = \tan\alpha$$'
-        porque: 'Ahora sí son productos: se puede simplificar el factor $\sin\alpha$ (si $\sin\alpha \ne 0$).'
+        porque: 'Ara sí que són productes: es pot simplificar el factor $\sin\alpha$ (si $\sin\alpha \ne 0$).'
     resultado: '$\dfrac{1 - \cos^2\alpha}{\sin\alpha\cos\alpha} = \tan\alpha$.'
 errores:
-  - error: 'Simplificar términos de una suma o una resta'
-    explicacion: 'Solo se simplifican **factores**. Por eso primero hay que convertir $1 - \cos^2\alpha$ en un producto ($\sin\alpha\cdot\sin\alpha$).'
+  - error: 'Simplificar termes d’una suma o d’una resta'
+    explicacion: 'Només se simplifiquen **factors**. Per això primer cal convertir $1 - \cos^2\alpha$ en un producte ($\sin\alpha\cdot\sin\alpha$).'

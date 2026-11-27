@@ -4,29 +4,29 @@ orden: 11
 procedencia: original
 dificultad: avanzado
 habilidades: [calculo, metodo, multipaso]
-resumen: Seno y coseno sin cuadrados. Elevar al cuadrado (y comprobar) o escribirlo como un solo seno.
-enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\sqrt3\sin x + \cos x = 1$'
+resumen: Sinus i cosinus sense quadrats. Elevar al quadrat (i comprovar) o escriure-ho com un sol sinus.
+enunciado: 'Resol a $[0^\circ,\ 360^\circ)$: $\quad\sqrt3\sin x + \cos x = 1$'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [0, 120]
       trampas:
-        - { valores: [0, 120, 180, 300], explicacion: 'Al elevar al cuadrado se han colado $180^\circ$ y $300^\circ$: en los dos, $\sqrt3\sin x + \cos x$ vale $-1$, no $1$. Comprueba siempre después de elevar.' }
+        - { valores: [0, 120, 180, 300], explicacion: 'En elevar al quadrat s’hi han colat $180^\circ$ i $300^\circ$: en tots dos, $\sqrt3\sin x + \cos x$ val $-1$, no $1$. Comprova sempre després d’elevar.' }
     pistas:
-      - 'Aísla $\cos x$: $\cos x = 1 - \sqrt3\sin x$, y eleva al cuadrado.'
-      - 'Usa $\cos^2 x = 1 - \sin^2 x$ y saca factor común $\sin x$.'
-      - 'Comprueba cada candidato en la ecuación original.'
+      - 'Aïlla $\cos x$: $\cos x = 1 - \sqrt3\sin x$, i eleva al quadrat.'
+      - 'Fes servir $\cos^2 x = 1 - \sin^2 x$ i treu factor comú $\sin x$.'
+      - 'Comprova cada candidat a l’equació original.'
     pasos:
-      - titulo: Aislar y elevar
+      - titulo: Aïllar i elevar
         desarrollo: '$$\cos x = 1 - \sqrt3\sin x \;\Rightarrow\; 1 - \sin^2 x = 1 - 2\sqrt3\sin x + 3\sin^2 x$$'
-        porque: 'Al elevar, la ecuación nueva tiene las soluciones de la original y, quizá, alguna más.'
-      - titulo: Factorizar
+        porque: 'En elevar, l’equació nova té les solucions de l’original i, potser, alguna més.'
+      - titulo: Factoritzar
         desarrollo: '$$4\sin^2 x - 2\sqrt3\sin x = 0 \;\Rightarrow\; 2\sin x\,(2\sin x - \sqrt3) = 0$$'
-      - titulo: Candidatos
+      - titulo: Candidats
         desarrollo: '$\sin x = 0 \Rightarrow x = 0^\circ,\ 180^\circ$. $\quad\sin x = \frac{\sqrt3}{2} \Rightarrow x = 60^\circ,\ 120^\circ$.'
-      - titulo: Comprobar
+      - titulo: Comprovar
         desarrollo: |
           - $0^\circ$: $0 + 1 = 1$ ✔
           - $180^\circ$: $0 - 1 = -1$ ✘
@@ -34,5 +34,5 @@ apartados:
           - $120^\circ$: $\frac32 - \frac12 = 1$ ✔
     resultado: '$x = 0^\circ,\ 120^\circ$.'
 alternativas:
-  - titulo: Como un solo seno
-    desarrollo: '$\sqrt3\sin x + \cos x = 2\left(\frac{\sqrt3}{2}\sin x + \frac12\cos x\right) = 2\sin(x + 30^\circ)$. La ecuación es $\sin(x + 30^\circ) = \frac12$. Con $x + 30^\circ \in [30^\circ,\ 390^\circ)$: $x + 30^\circ = 30^\circ$ o $150^\circ$, de donde $x = 0^\circ$ o $120^\circ$. Sin elevar al cuadrado, no aparece ninguna solución falsa.'
+  - titulo: Com un sol sinus
+    desarrollo: '$\sqrt3\sin x + \cos x = 2\left(\frac{\sqrt3}{2}\sin x + \frac12\cos x\right) = 2\sin(x + 30^\circ)$. L’equació és $\sin(x + 30^\circ) = \frac12$. Amb $x + 30^\circ \in [30^\circ,\ 390^\circ)$: $x + 30^\circ = 30^\circ$ o $150^\circ$, d’on $x = 0^\circ$ o $120^\circ$. Sense elevar al quadrat, no apareix cap solució falsa.'

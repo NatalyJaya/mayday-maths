@@ -4,27 +4,27 @@ orden: 9
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo, metodo]
-resumen: Ángulo doble y factor común. Dividir entre cos x haría perder dos soluciones.
-enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\sin 2x = \cos x$'
+resumen: Angle doble i factor comú. Dividir entre cos x faria perdre dues solucions.
+enunciado: 'Resol a $[0^\circ,\ 360^\circ)$: $\quad\sin 2x = \cos x$'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [30, 90, 150, 270]
       trampas:
-        - { valores: [30, 150], explicacion: 'Has dividido entre $\cos x$ y has perdido las soluciones de $\cos x = 0$: $90^\circ$ y $270^\circ$.' }
-        - { valores: [90, 270], explicacion: 'Te falta el segundo factor: $2\sin x - 1 = 0$.' }
+        - { valores: [30, 150], explicacion: 'Has dividit entre $\cos x$ i has perdut les solucions de $\cos x = 0$: $90^\circ$ i $270^\circ$.' }
+        - { valores: [90, 270], explicacion: 'Et falta el segon factor: $2\sin x - 1 = 0$.' }
     pistas:
       - '$\sin 2x = 2\sin x\cos x$.'
-      - 'Pasa todo a un lado y saca $\cos x$ factor común.'
+      - 'Passa-ho tot a un costat i treu $\cos x$ factor comú.'
     pasos:
-      - titulo: Ángulo doble
+      - titulo: Angle doble
         desarrollo: '$$2\sin x\cos x = \cos x \;\Rightarrow\; 2\sin x\cos x - \cos x = 0$$'
-      - titulo: Factor común
+      - titulo: Factor comú
         desarrollo: '$$\cos x\,(2\sin x - 1) = 0$$'
-        porque: 'No se divide entre $\cos x$: podría valer 0.'
-      - titulo: Los dos factores
+        porque: 'No es divideix entre $\cos x$: podria valer 0.'
+      - titulo: Els dos factors
         desarrollo: |
           - $\cos x = 0 \Rightarrow x = 90^\circ,\ 270^\circ$.
           - $\sin x = \frac12 \Rightarrow x = 30^\circ,\ 150^\circ$.

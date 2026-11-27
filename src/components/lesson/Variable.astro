@@ -19,9 +19,9 @@ interface Props {
 const { simbolo, nombre, unidad, eje = 'v', tipo, mide, cambia, relacion } = Astro.props;
 const symbolHtml = await tex(eje === 'v' ? simbolo : `\\c${eje}{${simbolo}}`);
 const rows = [
-	{ k: 'Qué es', v: await richInline(mide) },
-	cambia && { k: 'Si cambia', v: await richInline(cambia) },
-	relacion && { k: 'Se relaciona con', v: await richInline(relacion) },
+	{ k: 'Què és', v: await richInline(mide) },
+	cambia && { k: 'Si canvia', v: await richInline(cambia) },
+	relacion && { k: 'Es relaciona amb', v: await richInline(relacion) },
 ].filter(Boolean) as { k: string; v: string }[];
 ---
 
@@ -33,7 +33,7 @@ const rows = [
 			<p class="meta">
 				{tipo && <span>{tipo}</span>}
 				{tipo && unidad && ' · '}
-				{unidad && <span>se mide en <strong>{unidad}</strong></span>}
+				{unidad && <span>es mesura en <strong>{unidad}</strong></span>}
 			</p>
 		</div>
 	</header>

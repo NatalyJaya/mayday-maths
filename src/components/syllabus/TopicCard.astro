@@ -25,29 +25,29 @@ const Tag = open ? 'a' : 'article';
 					<span class="tag tag-ok">Disponible</span>
 				) : (
 					<span class="tag tag-locked">
-						<Icon name="lock" size={13} /> Próximamente
+						<Icon name="lock" size={13} /> Properament
 					</span>
 				)
 			}
 		</div>
 		<h3 id={`t-${topic.id}`}>{topic.data.titulo}</h3>
 		<p class="summary">{topic.data.resumen}</p>
-		<p class="list-title">{open ? 'Aprenderás' : 'Lo que verás'}</p>
+		<p class="list-title">{open ? 'Aprendràs' : 'El que veuràs'}</p>
 		<ul>
 			{topic.data.aprenderas.map((a) => <li>{a}</li>)}
 		</ul>
 		{
 			req.length > 0 && (
 				<p class="req">
-					<Icon name="layers" size={15} /> Se apoya en: {req.map((r) => r.data.sigla ?? r.data.titulo).join(', ')}
-					{open && req.some((r) => !isAvailable(r)) && <span> (incluye un repaso exprés)</span>}
+					<Icon name="layers" size={15} /> Es basa en: {req.map((r) => r.data.sigla ?? r.data.titulo).join(', ')}
+					{open && req.some((r) => !isAvailable(r)) && <span> (inclou un repàs exprés)</span>}
 				</p>
 			)
 		}
 		{
 			open && (
 				<span class="go">
-					Entrar <Icon name="arrow-right" />
+					Entra <Icon name="arrow-right" />
 				</span>
 			)
 		}

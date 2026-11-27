@@ -1,20 +1,20 @@
-titulo: Todo a partir de sin 25°
+titulo: Tot a partir de sin 25°
 tema: razones-trigonometricas
 orden: 14
 procedencia: original
 dificultad: examen
 habilidades: [metodo, conceptual, calculo]
-resumen: Elegir en cada caso la relación entre ángulos que lleva a 25°.
+resumen: Triar en cada cas la relació entre angles que porta a 25°.
 enunciado: |
-  Sabiendo que $\sin 25^\circ \approx 0{,}4226$ y **sin usar las teclas trigonométricas de la calculadora**, calcula:
+  Sabent que $\sin 25^\circ \approx 0{,}4226$ i **sense fer servir les tecles trigonomètriques de la calculadora**, calcula:
   $$\text{a) } \sin 155^\circ \qquad \text{b) } \cos 65^\circ \qquad \text{c) } \cos 115^\circ \qquad \text{d) } \sin 205^\circ$$
 conceptos:
-  - 'Suplementarios: $\sin(180^\circ - \alpha) = \sin\alpha$.'
-  - 'Complementarios: $\cos(90^\circ - \alpha) = \sin\alpha$.'
-  - 'Diferencia de $180^\circ$: $\sin(180^\circ + \alpha) = -\sin\alpha$.'
+  - 'Suplementaris: $\sin(180^\circ - \alpha) = \sin\alpha$.'
+  - 'Complementaris: $\cos(90^\circ - \alpha) = \sin\alpha$.'
+  - 'Diferència de $180^\circ$: $\sin(180^\circ + \alpha) = -\sin\alpha$.'
 apartados:
   - id: a
-    enunciado: Calcula los cuatro valores.
+    enunciado: Calcula els quatre valors.
     respuesta:
       tipo: numerica
       campos:
@@ -24,19 +24,19 @@ apartados:
         - { simbolo: '\sin 205^\circ', etiqueta: '', unidad: '', valor: -0.4226, tolerancia: 0.005 }
     pistas:
       - '$155^\circ = 180^\circ - 25^\circ$, $65^\circ = 90^\circ - 25^\circ$.'
-      - '$115^\circ = 90^\circ + 25^\circ$: el punto está en el segundo cuadrante, coseno negativo.'
-      - '$205^\circ = 180^\circ + 25^\circ$: tercer cuadrante, seno negativo.'
+      - '$115^\circ = 90^\circ + 25^\circ$: el punt és al segon quadrant, cosinus negatiu.'
+      - '$205^\circ = 180^\circ + 25^\circ$: tercer quadrant, sinus negatiu.'
     pasos:
       - titulo: sin 155°
         desarrollo: '$\sin 155^\circ = \sin(180^\circ - 25^\circ) = \sin 25^\circ \approx 0{,}4226$.'
-        porque: 'Simetría respecto al eje $Y$: misma altura.'
+        porque: 'Simetria respecte de l’eix $Y$: mateixa altura.'
       - titulo: cos 65°
         desarrollo: '$\cos 65^\circ = \cos(90^\circ - 25^\circ) = \sin 25^\circ \approx 0{,}4226$.'
-        porque: 'El coseno de un ángulo es el seno de su complementario.'
+        porque: 'El cosinus d’un angle és el sinus del seu complementari.'
       - titulo: cos 115°
         desarrollo: '$\cos 115^\circ = -\cos 65^\circ = -\sin 25^\circ \approx -0{,}4226$.'
-        porque: '$115^\circ$ y $65^\circ$ son suplementarios: el coseno cambia de signo.'
+        porque: '$115^\circ$ i $65^\circ$ són suplementaris: el cosinus canvia de signe.'
       - titulo: sin 205°
         desarrollo: '$\sin 205^\circ = \sin(180^\circ + 25^\circ) = -\sin 25^\circ \approx -0{,}4226$.'
-        porque: 'Simetría respecto al origen: las dos coordenadas cambian de signo.'
+        porque: 'Simetria respecte de l’origen: les dues coordenades canvien de signe.'
     resultado: '$0{,}4226$; $0{,}4226$; $-0{,}4226$; $-0{,}4226$.'

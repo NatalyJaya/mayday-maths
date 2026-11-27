@@ -1,39 +1,39 @@
-titulo: Primero la identidad, después la ecuación
+titulo: Primer la identitat, després l’equació
 tema: identidades-ecuaciones
 orden: 13
 procedencia: original
 dificultad: examen
 habilidades: [demostracion, calculo, multipaso]
-resumen: Demostrar una identidad y usarla para resolver una ecuación con su dominio.
+resumen: Demostrar una identitat i fer-la servir per resoldre una equació amb el seu domini.
 enunciado: |
-  a) Demuestra que $\dfrac{1 - \cos 2x}{\sin 2x} = \tan x$ (donde los dos miembros existen).
+  a) Demostra que $\dfrac{1 - \cos 2x}{\sin 2x} = \tan x$ (on existeixen els dos membres).
 
-  b) Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\dfrac{1 - \cos 2x}{\sin 2x} = \sqrt3$
+  b) Resol a $[0^\circ,\ 360^\circ)$: $\quad\dfrac{1 - \cos 2x}{\sin 2x} = \sqrt3$
 apartados:
   - id: a
-    enunciado: Demostración.
+    enunciado: Demostració.
     respuesta:
       tipo: abierta
     pistas:
-      - 'Usa $\cos 2x = 1 - 2\sin^2 x$ en el numerador.'
+      - 'Fes servir $\cos 2x = 1 - 2\sin^2 x$ al numerador.'
     pasos:
-      - titulo: Ángulo doble
+      - titulo: Angle doble
         desarrollo: '$$\frac{1 - \cos 2x}{\sin 2x} = \frac{1 - (1 - 2\sin^2 x)}{2\sin x\cos x} = \frac{2\sin^2 x}{2\sin x\cos x} = \frac{\sin x}{\cos x} = \tan x \quad ∎$$'
-        porque: 'Se simplifica $2\sin x$, que no es cero donde el primer miembro existe ($\sin 2x \ne 0$).'
-    resultado: 'Identidad demostrada, para $\sin 2x \ne 0$.'
+        porque: 'Se simplifica $2\sin x$, que no és zero on el primer membre existeix ($\sin 2x \ne 0$).'
+    resultado: 'Identitat demostrada, per a $\sin 2x \ne 0$.'
   - id: b
-    enunciado: Soluciones de la ecuación.
+    enunciado: Solucions de l’equació.
     respuesta:
       tipo: conjunto
       valores: [60, 240]
       trampas:
-        - { valores: [60], explicacion: 'La tangente se repite cada $180^\circ$: falta $240^\circ$.' }
+        - { valores: [60], explicacion: 'La tangent es repeteix cada $180^\circ$: falta $240^\circ$.' }
     pistas:
-      - 'Por el apartado a), la ecuación es $\tan x = \sqrt3$.'
-      - 'Comprueba que las soluciones no anulan $\sin 2x$.'
+      - 'Per l’apartat a), l’equació és $\tan x = \sqrt3$.'
+      - 'Comprova que les solucions no anul·len $\sin 2x$.'
     pasos:
-      - titulo: Usar la identidad
+      - titulo: Fer servir la identitat
         desarrollo: '$$\tan x = \sqrt3 \;\Rightarrow\; x = 60^\circ,\ 240^\circ$$'
-      - titulo: Dominio
-        desarrollo: '$\sin 2x = 0$ en $0^\circ,\ 90^\circ,\ 180^\circ,\ 270^\circ$. Ninguna solución es de esas: las dos valen.'
+      - titulo: Domini
+        desarrollo: '$\sin 2x = 0$ a $0^\circ,\ 90^\circ,\ 180^\circ,\ 270^\circ$. Cap solució no és d’aquestes: totes dues valen.'
     resultado: '$x = 60^\circ,\ 240^\circ$.'

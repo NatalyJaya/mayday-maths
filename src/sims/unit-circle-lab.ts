@@ -143,7 +143,7 @@ class UnitCircleLab extends HTMLElement {
 		el('circle', { cx: P[0], cy: P[1], r: 16, class: 'handle-ring' }, svg);
 		el('circle', { cx: P[0], cy: P[1], r: 9, class: 'handle' }, svg);
 		lbl(P[0] + 18 * cosD(a), P[1] - 18 * sinD(a) - 4, 'P', 'vname', cosD(a) >= 0 ? 'start' : 'end');
-		svg.setAttribute('aria-valuetext', `Ángulo ${degText(a)}`);
+		svg.setAttribute('aria-valuetext', `Angle ${degText(a)}`);
 	}
 
 	private drawGraph() {
@@ -208,14 +208,14 @@ class UnitCircleLab extends HTMLElement {
 		const val = (f: 'sin' | 'cos' | 'tan') => {
 			const ex = exactTrig(a, f);
 			const v = f === 'sin' ? sinD(a) : f === 'cos' ? cosD(a) : tanD(a);
-			if (ex === 'no existe') return 'no existe';
+			if (ex === 'no existeix') return 'no existeix';
 			const num = fmt(v, 4);
 			return ex && ex !== num.replace(/,?0+$/, '') ? `${ex} ≈ ${num}` : num;
 		};
 		const q = quadrant(a);
 		out('ang', degText(a, 1));
 		out('rad', radText(a));
-		out('quad', q ? `${['I', 'II', 'III', 'IV'][q - 1]} cuadrante` : 'sobre un eje');
+		out('quad', q ? `quadrant ${['I', 'II', 'III', 'IV'][q - 1]}` : 'sobre un eix');
 		out('ref', degText(referenceAngle(a), 1));
 		out('cos', val('cos'));
 		out('sin', val('sin'));

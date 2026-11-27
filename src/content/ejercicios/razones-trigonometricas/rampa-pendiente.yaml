@@ -1,56 +1,56 @@
-titulo: La pendiente de una rampa
+titulo: El pendent d’una rampa
 tema: razones-trigonometricas
 orden: 3
 procedencia: original
 dificultad: basico
 habilidades: [modelizacion, planteamiento]
-resumen: Pendiente en tanto por ciento, tangente y ángulo.
+resumen: Pendent en tant per cent, tangent i angle.
 enunciado: |
-  Una rampa para sillas de ruedas sube $1{,}2\un{m}$ a lo largo de $10\un{m}$ de recorrido **horizontal**.
+  Una rampa per a cadires de rodes puja $1{,}2\un{m}$ al llarg de $10\un{m}$ de recorregut **horitzontal**.
 
-  a) ¿Qué pendiente tiene, en tanto por ciento?
-  b) ¿Qué ángulo forma con el suelo?
+  a) Quin pendent té, en tant per cent?
+  b) Quin angle forma amb el terra?
 figura:
   tipo: triangulo
   a: 1.2
   b: 10
   c: 10.0717
   base: b
-  etiquetas: { a: '1,2 m', b: '10 m (horizontal)', A: 'α = ?' }
+  etiquetas: { a: '1,2 m', b: '10 m (horitzontal)', A: 'α = ?' }
   colores: { a: y, b: x }
 conceptos:
-  - 'La pendiente es lo que sube por cada unidad horizontal: $\dfrac{\text{subida}}{\text{avance horizontal}}$, es decir, la tangente del ángulo.'
-  - 'Una pendiente del 12 % significa que sube 12 cm por cada metro horizontal.'
+  - 'El pendent és el que puja per cada unitat horitzontal: $\dfrac{\text{pujada}}{\text{avanç horitzontal}}$, és a dir, la tangent de l’angle.'
+  - 'Un pendent del 12 % vol dir que puja 12 cm per cada metre horitzontal.'
 apartados:
   - id: a
-    enunciado: Pendiente en tanto por ciento.
+    enunciado: Pendent en tant per cent.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'p', etiqueta: pendiente, unidad: '%', valor: 12 }
+        - { simbolo: 'p', etiqueta: pendent, unidad: '%', valor: 12 }
     pasos:
-      - titulo: Cociente y porcentaje
+      - titulo: Quocient i percentatge
         desarrollo: '$$\frac{1{,}2}{10} = 0{,}12 = 12\,\%$$'
-    resultado: 'La pendiente es del $12\,\%$.'
+    resultado: 'El pendent és del $12\,\%$.'
   - id: b
-    enunciado: Ángulo con el suelo.
+    enunciado: Angle amb el terra.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: '\alpha'
-          etiqueta: ángulo
+          etiqueta: angle
           unidad: '°'
           valor: 6.84
           tolerancia: 0.004
           trampas:
-            - { valor: 6.89, explicacion: 'Has usado el seno, como si los 10 m fueran la longitud de la rampa. Son el recorrido horizontal: es el cateto contiguo.' }
-            - { valor: 12, explicacion: 'Una pendiente del 12 % no es un ángulo de 12°. La pendiente es la tangente del ángulo.' }
+            - { valor: 6.89, explicacion: 'Has fet servir el sinus, com si els 10 m fossin la longitud de la rampa. Són el recorregut horitzontal: és el catet contigu.' }
+            - { valor: 12, explicacion: 'Un pendent del 12 % no és un angle de 12°. El pendent és la tangent de l’angle.' }
     pistas:
-      - '1,2 m es el cateto opuesto y 10 m el contiguo.'
+      - '1,2 m és el catet oposat i 10 m el contigu.'
     pasos:
-      - titulo: La pendiente es la tangente
+      - titulo: El pendent és la tangent
         desarrollo: '$$\tan\alpha = 0{,}12 \;\Rightarrow\; \alpha = \arctan 0{,}12 \approx 6{,}84^\circ$$'
-    resultado: 'La rampa forma unos $6{,}84^\circ$ con el suelo.'
+    resultado: 'La rampa forma uns $6{,}84^\circ$ amb el terra.'
 errores:
-  - error: 'Pensar que una pendiente del 100 % es vertical'
-    explicacion: 'Una pendiente del 100 % sube lo mismo que avanza: $\tan\alpha = 1$, $\alpha = 45^\circ$. Una pared vertical tendría pendiente infinita.'
+  - error: 'Pensar que un pendent del 100 % és vertical'
+    explicacion: 'Un pendent del 100 % puja el mateix que avança: $\tan\alpha = 1$, $\alpha = 45^\circ$. Una paret vertical tindria un pendent infinit.'

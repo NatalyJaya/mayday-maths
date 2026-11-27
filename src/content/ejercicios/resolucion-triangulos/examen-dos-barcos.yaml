@@ -1,15 +1,15 @@
-titulo: Dos barcos salen del puerto
+titulo: Dos vaixells surten del port
 tema: resolucion-triangulos
 orden: 14
 procedencia: original
 dificultad: examen
 habilidades: [modelizacion, planteamiento, multipaso, metodo]
-resumen: Velocidades y tiempo para los lados, coseno para la distancia y para un ángulo.
+resumen: Velocitats i temps per als costats, cosinus per a la distància i per a un angle.
 enunciado: |
-  Dos barcos salen a la vez de un puerto $P$ con rumbos que forman un ángulo de $75^\circ$. El barco $A$ navega a $18\un{km/h}$ y el barco $B$, a $24\un{km/h}$.
+  Dos vaixells surten alhora d’un port $P$ amb rumbs que formen un angle de $75^\circ$. El vaixell $A$ navega a $18\un{km/h}$ i el vaixell $B$, a $24\un{km/h}$.
 
-  a) ¿A qué distancia están uno del otro al cabo de 2 horas?
-  b) En ese momento, ¿qué ángulo forma, en el barco $A$, la dirección hacia el puerto con la dirección hacia el barco $B$?
+  a) A quina distància són l’un de l’altre al cap de 2 hores?
+  b) En aquell moment, quin angle forma, al vaixell $A$, la direcció cap al port amb la direcció cap al vaixell $B$?
 figura:
   tipo: triangulo
   a: 48
@@ -19,40 +19,40 @@ figura:
   etiquetas: { b: '36 km', a: '48 km', A: '75°', c: 'd = ?', B: '?' }
   colores: { c: g }
 interpretacion: |
-  En 2 horas, $A$ recorre $18\cdot 2 = 36\un{km}$ y $B$, $24\cdot 2 = 48\un{km}$. Se forma un triángulo con dos lados conocidos y el ángulo que forman en el puerto: caso **LAL**.
+  En 2 hores, $A$ recorre $18\cdot 2 = 36\un{km}$ i $B$, $24\cdot 2 = 48\un{km}$. Es forma un triangle amb dos costats coneguts i l’angle que formen al port: cas **CAC**.
 apartados:
   - id: a
-    enunciado: Distancia entre los barcos a las 2 horas.
+    enunciado: Distància entre els vaixells a les 2 hores.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'd'
-          etiqueta: distancia
+          etiqueta: distància
           unidad: km
           valor: 52.01
           trampas:
-            - { valor: 60, explicacion: 'Has aplicado Pitágoras ($\sqrt{36^2 + 48^2} = 60$). El ángulo en el puerto es de $75^\circ$, no de $90^\circ$.' }
-            - { valor: 25.57, explicacion: 'Has usado 18 y 24 km: son las distancias de **una** hora. En 2 horas se recorre el doble.' }
+            - { valor: 60, explicacion: 'Has aplicat Pitàgores ($\sqrt{36^2 + 48^2} = 60$). L’angle al port és de $75^\circ$, no de $90^\circ$.' }
+            - { valor: 25.57, explicacion: 'Has fet servir 18 i 24 km: són les distàncies d’**una** hora. En 2 hores es recorre el doble.' }
     pistas:
-      - 'Primero, las distancias recorridas en 2 horas.'
-      - 'Teorema del coseno con el ángulo de $75^\circ$.'
+      - 'Primer, les distàncies recorregudes en 2 hores.'
+      - 'Teorema del cosinus amb l’angle de $75^\circ$.'
     pasos:
-      - titulo: Lados del triángulo
-        desarrollo: '$PA = 18\cdot 2 = 36\un{km}$ y $PB = 24\cdot 2 = 48\un{km}$.'
-      - titulo: Teorema del coseno
+      - titulo: Costats del triangle
+        desarrollo: '$PA = 18\cdot 2 = 36\un{km}$ i $PB = 24\cdot 2 = 48\un{km}$.'
+      - titulo: Teorema del cosinus
         desarrollo: '$$d^2 = 36^2 + 48^2 - 2\cdot 36\cdot 48\cos 75^\circ \approx 3600 - 894{,}47 = 2705{,}53 \;\Rightarrow\; d \approx 52{,}01\un{km}$$'
-    resultado: 'Están a unos $52{,}0\un{km}$.'
+    resultado: 'Són a uns $52{,}0\un{km}$.'
   - id: b
-    enunciado: Ángulo en el barco $A$.
+    enunciado: Angle al vaixell $A$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\widehat{PAB}', etiqueta: ángulo, unidad: '°', valor: 63.05 }
+        - { simbolo: '\widehat{PAB}', etiqueta: angle, unidad: '°', valor: 63.05 }
     pistas:
-      - 'Ya conoces los tres lados. El ángulo en $A$ está enfrente del lado $PB = 48$.'
+      - 'Ja coneixes els tres costats. L’angle a $A$ és davant del costat $PB = 48$.'
     pasos:
-      - titulo: Coseno del ángulo
+      - titulo: Cosinus de l’angle
         desarrollo: '$$\cos\widehat{A} = \frac{36^2 + 52{,}01^2 - 48^2}{2\cdot 36\cdot 52{,}01} \approx 0{,}4530 \;\Rightarrow\; \widehat{A} \approx 63{,}05^\circ$$'
-        porque: 'Con el coseno no hay ambigüedad. Con el seno saldría lo mismo, porque el ángulo es agudo.'
-    resultado: 'Unos $63{,}0^\circ$.'
+        porque: 'Amb el cosinus no hi ha ambigüitat. Amb el sinus sortiria el mateix, perquè l’angle és agut.'
+    resultado: 'Uns $63{,}0^\circ$.'
 laboratorio: { a: 48, b: 36, c: 52.015 }

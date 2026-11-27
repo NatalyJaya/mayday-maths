@@ -1,15 +1,15 @@
-titulo: Tangente positiva, seno negativo
+titulo: Tangent positiva, sinus negatiu
 tema: razones-trigonometricas
 orden: 13
 procedencia: original
 dificultad: avanzado
 habilidades: [calculo, conceptual, multipaso]
-resumen: Deducir el cuadrante a partir de los signos y calcular una expresión.
+resumen: Deduir el quadrant a partir dels signes i calcular una expressió.
 enunciado: |
-  Sabiendo que $\tan\alpha = \dfrac34$ y que $\sin\alpha < 0$, calcula el valor exacto de $\sin\alpha + \cos\alpha$.
+  Sabent que $\tan\alpha = \dfrac34$ i que $\sin\alpha < 0$, calcula el valor exacte de $\sin\alpha + \cos\alpha$.
 apartados:
   - id: a
-    enunciado: '$\sin\alpha + \cos\alpha$ (escribe el decimal).'
+    enunciado: '$\sin\alpha + \cos\alpha$ (escriu el decimal).'
     respuesta:
       tipo: numerica
       campos:
@@ -18,16 +18,16 @@ apartados:
           unidad: ''
           valor: -1.4
           trampas:
-            - { valor: 1.4, explicacion: 'Esos son los valores del primer cuadrante. Con la tangente positiva y el seno negativo, $\alpha$ está en el tercer cuadrante: seno y coseno negativos.' }
-            - { valor: -0.2, explicacion: 'Has puesto el seno negativo pero el coseno positivo. Si la tangente es positiva, el seno y el coseno tienen el mismo signo.' }
+            - { valor: 1.4, explicacion: 'Aquests són els valors del primer quadrant. Amb la tangent positiva i el sinus negatiu, $\alpha$ és al tercer quadrant: sinus i cosinus negatius.' }
+            - { valor: -0.2, explicacion: 'Has posat el sinus negatiu però el cosinus positiu. Si la tangent és positiva, el sinus i el cosinus tenen el mateix signe.' }
     pistas:
-      - '¿En qué cuadrante está $\alpha$?'
-      - 'Con $1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}$ sale $\cos^2\alpha = \frac{16}{25}$.'
+      - 'A quin quadrant és $\alpha$?'
+      - 'Amb $1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}$ surt $\cos^2\alpha = \frac{16}{25}$.'
     pasos:
-      - titulo: Cuadrante
-        desarrollo: '$\tan\alpha > 0$ y $\sin\alpha < 0$: $\cos\alpha < 0$ también. Tercer cuadrante.'
-      - titulo: Coseno
+      - titulo: Quadrant
+        desarrollo: '$\tan\alpha > 0$ i $\sin\alpha < 0$: $\cos\alpha < 0$ també. Tercer quadrant.'
+      - titulo: Cosinus
         desarrollo: '$$1 + \frac{9}{16} = \frac{1}{\cos^2\alpha} \;\Rightarrow\; \cos^2\alpha = \frac{16}{25} \;\Rightarrow\; \cos\alpha = -\frac45$$'
-      - titulo: Seno y suma
+      - titulo: Sinus i suma
         desarrollo: '$$\sin\alpha = \tan\alpha\cdot\cos\alpha = \frac34\cdot\left(-\frac45\right) = -\frac35 \qquad \sin\alpha + \cos\alpha = -\frac35 - \frac45 = -\frac75$$'
     resultado: '$\sin\alpha + \cos\alpha = -\dfrac75 = -1{,}4$.'

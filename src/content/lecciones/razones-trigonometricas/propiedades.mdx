@@ -1,72 +1,72 @@
 ---
 tema: razones-trigonometricas
 etapa: propiedades
-titulo: De dónde salen las propiedades
-descripcion: La identidad fundamental, los valores exactos de 30°, 45° y 60°, la circunferencia goniométrica para cualquier ángulo, los signos, la reducción al primer cuadrante y las gráficas.
+titulo: D’on surten les propietats
+descripcion: La identitat fonamental, els valors exactes de 30°, 45° i 60°, la circumferència goniomètrica per a qualsevol angle, els signes, la reducció al primer quadrant i les gràfiques.
 minutos: 30
 ---
 
-## Dos límites que ya puedes ver
+## Dos límits que ja pots veure
 
-En un triángulo rectángulo la hipotenusa es el lado más largo. Por tanto, para un ángulo agudo:
+En un triangle rectangle la hipotenusa és el costat més llarg. Per tant, per a un angle agut:
 
 $$
 0 < \sin\alpha < 1 \qquad 0 < \cos\alpha < 1
 $$
 
-La tangente, en cambio, puede ser cualquier número positivo: si el cateto opuesto es más largo que el contiguo ($\alpha > 45^\circ$), la tangente es mayor que 1.
+La tangent, en canvi, pot ser qualsevol nombre positiu: si el catet oposat és més llarg que el contigu ($\alpha > 45^\circ$), la tangent és més gran que 1.
 
-## La identidad fundamental
+## La identitat fonamental
 
-Es la propiedad más importante del tema. Sale directamente del teorema de Pitágoras.
+És la propietat més important del tema. Surt directament del teorema de Pitàgores.
 
-<Derivation titulo="Deducción de sin²α + cos²α = 1">
-	<Paso titulo="Pitágoras en el triángulo" porque="Es un triángulo rectángulo de catetos $a$ (opuesto) y $b$ (contiguo) e hipotenusa $c$.">
+<Derivation titulo="Deducció de sin²α + cos²α = 1">
+	<Paso titulo="Pitàgores en el triangle" porque="És un triangle rectangle de catets $a$ (oposat) i $b$ (contigu) i hipotenusa $c$.">
 		$$
 		\cy{a}^2 + \cx{b}^2 = c^2
 		$$
 	</Paso>
-	<Paso titulo="Dividir todo entre c²" porque="Se puede dividir porque $c \ne 0$. Así aparecen los cocientes que definen el seno y el coseno.">
+	<Paso titulo="Dividir-ho tot entre c²" porque="Es pot dividir perquè $c \ne 0$. Així apareixen els quocients que defineixen el sinus i el cosinus.">
 		$$
 		\frac{\cy{a}^2}{c^2} + \frac{\cx{b}^2}{c^2} = 1 \quad\Longrightarrow\quad \left(\frac{\cy{a}}{c}\right)^2 + \left(\frac{\cx{b}}{c}\right)^2 = 1
 		$$
 	</Paso>
-	<Paso titulo="Reconocer el seno y el coseno">
+	<Paso titulo="Reconèixer el sinus i el cosinus">
 		$$
 		\sin^2\alpha + \cos^2\alpha = 1
 		$$
 	</Paso>
 </Derivation>
 
-Y como la tangente es un cociente de catetos, dividiendo arriba y abajo entre la hipotenusa:
+I com que la tangent és un quocient de catets, dividint a dalt i a baix entre la hipotenusa:
 
 $$
 \tan\alpha = \frac{a}{b} = \frac{a/c}{b/c} = \frac{\sin\alpha}{\cos\alpha}
 $$
 
-Si divides la identidad fundamental entre $\cos^2\alpha$ sale una tercera relación, útil cuando conoces la tangente:
+Si divideixes la identitat fonamental entre $\cos^2\alpha$ surt una tercera relació, útil quan coneixes la tangent:
 
 $$
 \frac{\sin^2\alpha}{\cos^2\alpha} + \frac{\cos^2\alpha}{\cos^2\alpha} = \frac{1}{\cos^2\alpha} \quad\Longrightarrow\quad 1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}
 $$
 
-<Formula titulo="Relaciones fundamentales" usala="para calcular todas las razones de un ángulo a partir de una sola" nousar="sin pensar en el signo: la raíz da dos valores y el cuadrante decide cuál vale">
+<Formula titulo="Relacions fonamentals" usala="per calcular totes les raons d’un angle a partir d’una de sola" nousar="sense pensar en el signe: l’arrel dona dos valors i el quadrant decideix quin val">
 	$$
 	\sin^2\alpha + \cos^2\alpha = 1 \qquad \tan\alpha = \frac{\sin\alpha}{\cos\alpha} \qquad 1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}
 	$$
 </Formula>
 
 <Callout tipo="contraejemplo">
-	$\sin\alpha + \cos\alpha = 1$ es **falso**. Para $\alpha = 45^\circ$: $\sin 45^\circ + \cos 45^\circ = \frac{\sqrt2}{2} + \frac{\sqrt2}{2} = \sqrt2 \approx 1{,}41$. Lo que suma 1 son los **cuadrados**.
+	$\sin\alpha + \cos\alpha = 1$ és **fals**. Per a $\alpha = 45^\circ$: $\sin 45^\circ + \cos 45^\circ = \frac{\sqrt2}{2} + \frac{\sqrt2}{2} = \sqrt2 \approx 1{,}41$. El que suma 1 són els **quadrats**.
 </Callout>
 
-## Los ángulos notables: 30°, 45° y 60°
+## Els angles notables: 30°, 45° i 60°
 
-Para estos tres ángulos las razones tienen un valor **exacto** que se deduce con geometría, sin calculadora.
+Per a aquests tres angles les raons tenen un valor **exacte** que es dedueix amb geometria, sense calculadora.
 
-### 45°: la mitad de un cuadrado
+### 45°: la meitat d’un quadrat
 
-La diagonal de un cuadrado de lado 1 lo divide en dos triángulos rectángulos isósceles con ángulos de $45^\circ$. Por Pitágoras, la diagonal mide $\sqrt{1^2 + 1^2} = \sqrt2$.
+La diagonal d’un quadrat de costat 1 el divideix en dos triangles rectangles isòsceles amb angles de $45^\circ$. Per Pitàgores, la diagonal mesura $\sqrt{1^2 + 1^2} = \sqrt2$.
 
 <Figura
 	figura={{
@@ -89,16 +89,16 @@ La diagonal de un cuadrado de lado 1 lo divide en dos triángulos rectángulos i
 			{ vertice: 'P', desde: 'O', hasta: 'Q', recto: true },
 		],
 	}}
-	alt="Cuadrado de lado 1 con su diagonal de longitud raíz de 2, que forma un ángulo de 45 grados con el lado."
+	alt="Quadrat de costat 1 amb la seva diagonal de longitud arrel de 2, que forma un angle de 45 graus amb el costat."
 />
 
 $$
 \sin 45^\circ = \frac{1}{\sqrt2} = \frac{\sqrt2}{2} \qquad \cos 45^\circ = \frac{\sqrt2}{2} \qquad \tan 45^\circ = \frac11 = 1
 $$
 
-### 30° y 60°: la mitad de un triángulo equilátero
+### 30° i 60°: la meitat d’un triangle equilàter
 
-Un triángulo equilátero de lado 2 tiene los tres ángulos de $60^\circ$. Su altura lo parte en dos triángulos rectángulos con ángulos de $60^\circ$ y $30^\circ$, y la base queda partida en dos trozos de 1. La altura mide $\sqrt{2^2 - 1^2} = \sqrt3$.
+Un triangle equilàter de costat 2 té els tres angles de $60^\circ$. La seva altura el divideix en dos triangles rectangles amb angles de $60^\circ$ i $30^\circ$, i la base queda partida en dos trossos d’1. L’altura mesura $\sqrt{2^2 - 1^2} = \sqrt3$.
 
 <Figura
 	figura={{
@@ -122,10 +122,10 @@ Un triángulo equilátero de lado 2 tiene los tres ángulos de $60^\circ$. Su al
 			{ vertice: 'M', desde: 'A', hasta: 'C', recto: true },
 		],
 	}}
-	alt="Triángulo equilátero de lado 2 partido por su altura, de longitud raíz de 3, en dos triángulos rectángulos con ángulos de 30 y 60 grados."
+	alt="Triangle equilàter de costat 2 partit per la seva altura, de longitud arrel de 3, en dos triangles rectangles amb angles de 30 i 60 graus."
 />
 
-Mirando el ángulo de $60^\circ$ (opuesto: $\sqrt3$; contiguo: 1) y el de $30^\circ$ (opuesto: 1; contiguo: $\sqrt3$):
+Mirant l’angle de $60^\circ$ (oposat: $\sqrt3$; contigu: 1) i el de $30^\circ$ (oposat: 1; contigu: $\sqrt3$):
 
 $$
 \sin 60^\circ = \frac{\sqrt3}{2} \quad \cos 60^\circ = \frac12 \quad \tan 60^\circ = \sqrt3 \qquad\qquad \sin 30^\circ = \frac12 \quad \cos 30^\circ = \frac{\sqrt3}{2} \quad \tan 30^\circ = \frac{1}{\sqrt3} = \frac{\sqrt3}{3}
@@ -135,95 +135,95 @@ $$
 | --- | --- | --- | --- | --- | --- |
 | $\sin$ | $0$ | $\frac12$ | $\frac{\sqrt2}{2}$ | $\frac{\sqrt3}{2}$ | $1$ |
 | $\cos$ | $1$ | $\frac{\sqrt3}{2}$ | $\frac{\sqrt2}{2}$ | $\frac12$ | $0$ |
-| $\tan$ | $0$ | $\frac{\sqrt3}{3}$ | $1$ | $\sqrt3$ | no existe |
+| $\tan$ | $0$ | $\frac{\sqrt3}{3}$ | $1$ | $\sqrt3$ | no existeix |
 
-<Callout tipo="analogia" titulo="Un truco para recordarla">
-	Los senos de $0^\circ$, $30^\circ$, $45^\circ$, $60^\circ$ y $90^\circ$ son $\frac{\sqrt0}{2}, \frac{\sqrt1}{2}, \frac{\sqrt2}{2}, \frac{\sqrt3}{2}, \frac{\sqrt4}{2}$. Los cosenos son los mismos al revés. Y la tangente es siempre seno entre coseno.
+<Callout tipo="analogia" titulo="Un truc per recordar-la">
+	Els sinus de $0^\circ$, $30^\circ$, $45^\circ$, $60^\circ$ i $90^\circ$ són $\frac{\sqrt0}{2}, \frac{\sqrt1}{2}, \frac{\sqrt2}{2}, \frac{\sqrt3}{2}, \frac{\sqrt4}{2}$. Els cosinus són els mateixos al revés. I la tangent és sempre sinus entre cosinus.
 </Callout>
 
-## Ángulos complementarios
+## Angles complementaris
 
-En un triángulo rectángulo, los dos ángulos agudos suman $90^\circ$. El cateto **opuesto** a uno es el **contiguo** al otro. Por eso:
+En un triangle rectangle, els dos angles aguts sumen $90^\circ$. El catet **oposat** a un és el **contigu** a l’altre. Per això:
 
 $$
 \sin(90^\circ - \alpha) = \cos\alpha \qquad \cos(90^\circ - \alpha) = \sin\alpha \qquad \tan(90^\circ - \alpha) = \frac{1}{\tan\alpha}
 $$
 
-De ahí viene el nombre: el **co**-seno de $\alpha$ es el seno de su **co**mplementario. En la tabla de arriba se ve: $\sin 30^\circ = \cos 60^\circ$.
+D’aquí ve el nom: el **co**-sinus de $\alpha$ és el sinus del seu **co**mplementari. A la taula de dalt es veu: $\sin 30^\circ = \cos 60^\circ$.
 
-## Más allá de 90°: la circunferencia goniométrica
+## Més enllà de 90°: la circumferència goniomètrica
 
-En un triángulo rectángulo no caben ángulos de $120^\circ$, $200^\circ$ o $-30^\circ$. Para definir sus razones se usa una circunferencia de **radio 1** centrada en el origen: la **circunferencia goniométrica**.
+En un triangle rectangle no hi caben angles de $120^\circ$, $200^\circ$ o $-30^\circ$. Per definir-ne les raons es fa servir una circumferència de **radi 1** centrada a l’origen: la **circumferència goniomètrica**.
 
-Dibuja el ángulo $\alpha$ como un giro desde el semieje $X$ positivo. El lado terminal corta la circunferencia en un punto $P$. Si $\alpha$ es agudo, se forma un triángulo rectángulo de hipotenusa 1, y sus catetos son $\cos\alpha$ (horizontal) y $\sin\alpha$ (vertical). Esta idea se toma como **definición** para cualquier ángulo:
+Dibuixa l’angle $\alpha$ com un gir des del semieix $X$ positiu. El costat final talla la circumferència en un punt $P$. Si $\alpha$ és agut, es forma un triangle rectangle d’hipotenusa 1, i els seus catets són $\cos\alpha$ (horitzontal) i $\sin\alpha$ (vertical). Aquesta idea es pren com a **definició** per a qualsevol angle:
 
 <Callout tipo="definicion">
-	Si el lado terminal del ángulo $\alpha$ corta la circunferencia de radio 1 en el punto $P = (x,\ y)$:
+	Si el costat final de l’angle $\alpha$ talla la circumferència de radi 1 en el punt $P = (x,\ y)$:
 	$$
 	\cx{\cos\alpha = x} \qquad \cy{\sin\alpha = y} \qquad \cg{\tan\alpha = \frac{y}{x}} \quad (x \ne 0)
 	$$
-	El coseno es la **abscisa** de $P$, y el seno, su **ordenada**.
+	El cosinus és l’**abscissa** de $P$, i el sinus, la seva **ordenada**.
 </Callout>
 
 <Figura
 	figura={{ tipo: 'circunferencia', angulos: [{ grados: 140, etiqueta: '140°' }], cuadrantes: true }}
-	alt="Circunferencia de radio 1 con un ángulo de 140 grados: el coseno (azul) es negativo, sobre el eje X a la izquierda, y el seno (naranja) es positivo."
-	pie="Para 140°, el punto P está en el segundo cuadrante: su abscisa (coseno) es negativa y su ordenada (seno) es positiva."
+	alt="Circumferència de radi 1 amb un angle de 140 graus: el cosinus (blau) és negatiu, sobre l’eix X a l’esquerra, i el sinus (taronja) és positiu."
+	pie="Per a 140°, el punt P és al segon quadrant: la seva abscissa (cosinus) és negativa i la seva ordenada (sinus), positiva."
 />
 
-La definición es coherente con la del triángulo: para ángulos agudos da lo mismo. Y tiene consecuencias inmediatas:
+La definició és coherent amb la del triangle: per a angles aguts dona el mateix. I té conseqüències immediates:
 
-- **Valores posibles.** $P$ está en una circunferencia de radio 1, así que $-1 \le \sin\alpha \le 1$ y $-1 \le \cos\alpha \le 1$ para cualquier ángulo.
-- **La identidad fundamental sigue valiendo.** $P$ está a distancia 1 del origen: $x^2 + y^2 = 1$, es decir, $\cos^2\alpha + \sin^2\alpha = 1$.
-- **Ángulos coterminales.** $\alpha$ y $\alpha + 360^\circ$ llevan al mismo punto, así que tienen las mismas razones.
-- **La tangente**, con el teorema de Tales, es la altura a la que el lado terminal (prolongado) corta la recta vertical $x = 1$. Cuando $\alpha = 90^\circ$ o $270^\circ$, el lado terminal es vertical y no corta esa recta: **la tangente no existe**.
+- **Valors possibles.** $P$ és en una circumferència de radi 1, així que $-1 \le \sin\alpha \le 1$ i $-1 \le \cos\alpha \le 1$ per a qualsevol angle.
+- **La identitat fonamental continua valent.** $P$ és a distància 1 de l’origen: $x^2 + y^2 = 1$, és a dir, $\cos^2\alpha + \sin^2\alpha = 1$.
+- **Angles coterminals.** $\alpha$ i $\alpha + 360^\circ$ porten al mateix punt, així que tenen les mateixes raons.
+- **La tangent**, pel teorema de Tales, és l’altura a què el costat final (prolongat) talla la recta vertical $x = 1$. Quan $\alpha = 90^\circ$ o $270^\circ$, el costat final és vertical i no talla aquesta recta: **la tangent no existeix**.
 
-### Signos por cuadrantes
+### Signes per quadrants
 
-El signo de cada razón es el signo de la coordenada correspondiente de $P$:
+El signe de cada raó és el signe de la coordenada corresponent de $P$:
 
-| Cuadrante | Ángulos | $\cos$ (abscisa) | $\sin$ (ordenada) | $\tan$ |
+| Quadrant | Angles | $\cos$ (abscissa) | $\sin$ (ordenada) | $\tan$ |
 | --- | --- | --- | --- | --- |
-| I | $0^\circ$ a $90^\circ$ | $+$ | $+$ | $+$ |
-| II | $90^\circ$ a $180^\circ$ | $-$ | $+$ | $-$ |
-| III | $180^\circ$ a $270^\circ$ | $-$ | $-$ | $+$ |
-| IV | $270^\circ$ a $360^\circ$ | $+$ | $-$ | $-$ |
+| I | de $0^\circ$ a $90^\circ$ | $+$ | $+$ | $+$ |
+| II | de $90^\circ$ a $180^\circ$ | $-$ | $+$ | $-$ |
+| III | de $180^\circ$ a $270^\circ$ | $-$ | $-$ | $+$ |
+| IV | de $270^\circ$ a $360^\circ$ | $+$ | $-$ | $-$ |
 
 <Callout tipo="idea">
-	No hace falta memorizar la tabla: basta con imaginar dónde está el punto $P$. A la derecha del eje $Y$, coseno positivo; por encima del eje $X$, seno positivo. La tangente es positiva cuando el seno y el coseno tienen el mismo signo.
+	No cal memoritzar la taula: n’hi ha prou d’imaginar on és el punt $P$. A la dreta de l’eix $Y$, cosinus positiu; per sobre de l’eix $X$, sinus positiu. La tangent és positiva quan el sinus i el cosinus tenen el mateix signe.
 </Callout>
 
-## Reducción al primer cuadrante
+## Reducció al primer quadrant
 
-¿Cuánto vale $\sin 150^\circ$? El punto de $150^\circ$ es el **simétrico** del de $30^\circ$ respecto al eje $Y$: tiene la misma altura y la abscisa cambiada de signo. Así que $\sin 150^\circ = \sin 30^\circ = \frac12$ y $\cos 150^\circ = -\cos 30^\circ = -\frac{\sqrt3}{2}$.
+Quant val $\sin 150^\circ$? El punt de $150^\circ$ és el **simètric** del de $30^\circ$ respecte de l’eix $Y$: té la mateixa altura i l’abscissa canviada de signe. Així que $\sin 150^\circ = \sin 30^\circ = \frac12$ i $\cos 150^\circ = -\cos 30^\circ = -\frac{\sqrt3}{2}$.
 
-Cualquier ángulo tiene un «gemelo» en el primer cuadrante, su **ángulo de referencia**: el ángulo agudo que forma el lado terminal con el eje $X$. Sus razones valen lo mismo **salvo el signo**. Explóralo:
+Qualsevol angle té un «bessó» al primer quadrant, el seu **angle de referència**: l’angle agut que forma el costat final amb l’eix $X$. Les seves raons valen el mateix **excepte el signe**. Explora-ho:
 
 <SymmetryExplorer />
 
-<Formula titulo="Ángulos relacionados (α en el primer cuadrante)" usala="para calcular razones de ángulos de cualquier cuadrante a partir de las de un ángulo agudo" nousar="sin comprobar el signo con el cuadrante del ángulo original">
-	| Ángulo | Simetría | $\sin$ | $\cos$ | $\tan$ |
+<Formula titulo="Angles relacionats (α al primer quadrant)" usala="per calcular raons d’angles de qualsevol quadrant a partir de les d’un angle agut" nousar="sense comprovar el signe amb el quadrant de l’angle original">
+	| Angle | Simetria | $\sin$ | $\cos$ | $\tan$ |
 	| --- | --- | --- | --- | --- |
-	| $180^\circ - \alpha$ (II) | respecto al eje $Y$ | $\sin\alpha$ | $-\cos\alpha$ | $-\tan\alpha$ |
-	| $180^\circ + \alpha$ (III) | respecto al origen | $-\sin\alpha$ | $-\cos\alpha$ | $\tan\alpha$ |
-	| $360^\circ - \alpha = -\alpha$ (IV) | respecto al eje $X$ | $-\sin\alpha$ | $\cos\alpha$ | $-\tan\alpha$ |
-	| $90^\circ - \alpha$ | respecto a la recta $y = x$ | $\cos\alpha$ | $\sin\alpha$ | $\frac{1}{\tan\alpha}$ |
+	| $180^\circ - \alpha$ (II) | respecte de l’eix $Y$ | $\sin\alpha$ | $-\cos\alpha$ | $-\tan\alpha$ |
+	| $180^\circ + \alpha$ (III) | respecte de l’origen | $-\sin\alpha$ | $-\cos\alpha$ | $\tan\alpha$ |
+	| $360^\circ - \alpha = -\alpha$ (IV) | respecte de l’eix $X$ | $-\sin\alpha$ | $\cos\alpha$ | $-\tan\alpha$ |
+	| $90^\circ - \alpha$ | respecte de la recta $y = x$ | $\cos\alpha$ | $\sin\alpha$ | $\frac{1}{\tan\alpha}$ |
 </Formula>
 
-**Método** para calcular, por ejemplo, $\cos 1020^\circ$:
+**Mètode** per calcular, per exemple, $\cos 1020^\circ$:
 
-1. **Quita las vueltas completas**: $1020^\circ - 2\cdot 360^\circ = 300^\circ$. Así que $\cos 1020^\circ = \cos 300^\circ$.
-2. **Cuadrante**: $300^\circ$ está en el IV cuadrante, donde el coseno es **positivo**.
-3. **Ángulo de referencia**: $360^\circ - 300^\circ = 60^\circ$.
-4. **Resultado**: $\cos 1020^\circ = +\cos 60^\circ = \frac12$.
+1. **Treu les voltes completes**: $1020^\circ - 2\cdot 360^\circ = 300^\circ$. Així que $\cos 1020^\circ = \cos 300^\circ$.
+2. **Quadrant**: $300^\circ$ és al quadrant IV, on el cosinus és **positiu**.
+3. **Angle de referència**: $360^\circ - 300^\circ = 60^\circ$.
+4. **Resultat**: $\cos 1020^\circ = +\cos 60^\circ = \frac12$.
 
 <Callout tipo="ojo">
-	El ángulo de referencia es siempre el ángulo con el **eje X** (horizontal), nunca con el eje $Y$. Para $120^\circ$ es $60^\circ$ (lo que le falta para $180^\circ$), no $30^\circ$.
+	L’angle de referència és sempre l’angle amb l’**eix X** (horitzontal), mai amb l’eix $Y$. Per a $120^\circ$ és $60^\circ$ (el que li falta per a $180^\circ$), no $30^\circ$.
 </Callout>
 
-## Las gráficas: funciones que se repiten
+## Les gràfiques: funcions que es repeteixen
 
-Si para cada ángulo $x$ dibujas el punto $(x,\ \sin x)$, obtienes la gráfica de la **función seno**. Igual con el coseno y la tangente.
+Si per a cada angle $x$ dibuixes el punt $(x,\ \sin x)$, obtens la gràfica de la **funció sinus**. Igual amb el cosinus i la tangent.
 
 <Figura
 	figura={{
@@ -234,8 +234,8 @@ Si para cada ángulo $x$ dibujas el punto $(x,\ \sin x)$, obtienes la gráfica d
 			{ f: 'cos', etiqueta: 'y = cos x', color: 'x' },
 		],
 	}}
-	alt="Gráficas del seno y del coseno entre menos 90 y 450 grados: dos ondas iguales, desplazadas 90 grados la una de la otra."
-	pie="El coseno es el seno desplazado 90° hacia la izquierda: cos x = sin(x + 90°)."
+	alt="Gràfiques del sinus i del cosinus entre menys 90 i 450 graus: dues ones iguals, desplaçades 90 graus l’una de l’altra."
+	pie="El cosinus és el sinus desplaçat 90° cap a l’esquerra: cos x = sin(x + 90°)."
 />
 
 <Figura
@@ -245,28 +245,28 @@ Si para cada ángulo $x$ dibujas el punto $(x,\ \sin x)$, obtienes la gráfica d
 		rango: [-4, 4],
 		curvas: [{ f: 'tan', etiqueta: 'y = tan x', color: 'g' }],
 	}}
-	alt="Gráfica de la tangente entre menos 90 y 450 grados: ramas crecientes separadas por asíntotas verticales en 90, 270 y 450 grados."
-	pie="La tangente tiene asíntotas verticales en 90° + 180°·k, donde el coseno vale 0."
+	alt="Gràfica de la tangent entre menys 90 i 450 graus: branques creixents separades per asímptotes verticals a 90, 270 i 450 graus."
+	pie="La tangent té asímptotes verticals a 90° + 180°·k, on el cosinus val 0."
 />
 
 | | $y = \sin x$ | $y = \cos x$ | $y = \tan x$ |
 | --- | --- | --- | --- |
-| Dominio | todos los reales | todos los reales | $x \ne 90^\circ + 180^\circ k$ |
-| Recorrido | $[-1,\ 1]$ | $[-1,\ 1]$ | todos los reales |
-| Periodo | $360^\circ$ ($2\pi$) | $360^\circ$ ($2\pi$) | $180^\circ$ ($\pi$) |
-| Ceros | $0^\circ,\ 180^\circ,\ 360^\circ\ldots$ | $90^\circ,\ 270^\circ\ldots$ | $0^\circ,\ 180^\circ\ldots$ |
-| Simetría | impar: $\sin(-x) = -\sin x$ | par: $\cos(-x) = \cos x$ | impar |
+| Domini | tots els reals | tots els reals | $x \ne 90^\circ + 180^\circ k$ |
+| Recorregut | $[-1,\ 1]$ | $[-1,\ 1]$ | tots els reals |
+| Període | $360^\circ$ ($2\pi$) | $360^\circ$ ($2\pi$) | $180^\circ$ ($\pi$) |
+| Zeros | $0^\circ,\ 180^\circ,\ 360^\circ\ldots$ | $90^\circ,\ 270^\circ\ldots$ | $0^\circ,\ 180^\circ\ldots$ |
+| Simetria | senar: $\sin(-x) = -\sin x$ | parella: $\cos(-x) = \cos x$ | senar |
 
-Una función es **periódica** si se repite: $\sin(x + 360^\circ) = \sin x$. El periodo es la longitud de un tramo que se repite. La tangente se repite antes, cada $180^\circ$, porque $P$ y su opuesto $-P$ dan la misma pendiente.
+Una funció és **periòdica** si es repeteix: $\sin(x + 360^\circ) = \sin x$. El període és la longitud d’un tram que es repeteix. La tangent es repeteix abans, cada $180^\circ$, perquè $P$ i el seu oposat $-P$ donen el mateix pendent.
 
-## Una razón, todas las demás
+## Una raó, totes les altres
 
-Con la identidad fundamental y el cuadrante, conocer **una** razón basta para calcular las otras dos. Por ejemplo, si $\cos\alpha = -\frac35$ y $\alpha$ está en el tercer cuadrante:
+Amb la identitat fonamental i el quadrant, conèixer **una** raó n’hi ha prou per calcular les altres dues. Per exemple, si $\cos\alpha = -\frac35$ i $\alpha$ és al tercer quadrant:
 
 $$
-\sin^2\alpha = 1 - \frac{9}{25} = \frac{16}{25} \;\Rightarrow\; \sin\alpha = \pm\frac45 \;\xrightarrow{\text{III cuadrante}}\; \sin\alpha = -\frac45 \qquad \tan\alpha = \frac{-4/5}{-3/5} = \frac43
+\sin^2\alpha = 1 - \frac{9}{25} = \frac{16}{25} \;\Rightarrow\; \sin\alpha = \pm\frac45 \;\xrightarrow{\text{III quadrant}}\; \sin\alpha = -\frac45 \qquad \tan\alpha = \frac{-4/5}{-3/5} = \frac43
 $$
 
 <Callout tipo="ojo">
-	La raíz cuadrada siempre da **dos** posibilidades, $\pm$. El enunciado debe decir el cuadrante (o algo equivalente, como «$\alpha$ es obtuso»); si no lo dice, hay dos soluciones.
+	L’arrel quadrada sempre dona **dues** possibilitats, $\pm$. L’enunciat ha de dir el quadrant (o alguna cosa equivalent, com «$\alpha$ és obtús»); si no ho diu, hi ha dues solucions.
 </Callout>

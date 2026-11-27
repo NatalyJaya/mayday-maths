@@ -19,16 +19,16 @@ const inspired = (await Promise.all(ex.inspirado_en.map((id) => getEntry('fuente
 		{
 			ex.procedencia === 'clase' && (
 				<p>
-					<strong>Ejercicio de clase.</strong> {ex.referencia && <>En tus apuntes: {ex.referencia}. </>}{ex.nota_fuente ?? 'Ejercicio de los apuntes de clase.'}
+					<strong>Exercici de classe.</strong> {ex.referencia && <>Als teus apunts: {ex.referencia}. </>}{ex.nota_fuente ?? 'Exercici dels apunts de classe.'}
 				</p>
 			)
 		}
 		{
 			ex.procedencia === 'externo' && src && (
 				<p>
-					<strong>Adaptado de:</strong>{' '}
+					<strong>Adaptat de:</strong>{' '}
 					{src.data.url ? <a href={src.data.url} rel="noopener">{src.data.titulo}</a> : src.data.titulo}, de {src.data.autor}.
-					Licencia{' '}
+					Llicència{' '}
 					{src.data.licencia_url ? <a href={src.data.licencia_url} rel="license noopener">{src.data.licencia}</a> : src.data.licencia}.
 					{ex.nota_fuente && <> {ex.nota_fuente}</>}
 				</p>
@@ -37,18 +37,18 @@ const inspired = (await Promise.all(ex.inspirado_en.map((id) => getEntry('fuente
 		{
 			ex.procedencia === 'original' && (
 				<p>
-					<strong>Ejercicio original</strong>{ex.nota_fuente ? <>. {ex.nota_fuente}</> : ' creado para esta plataforma.'}
+					<strong>Exercici original</strong>{ex.nota_fuente ? <>. {ex.nota_fuente}</> : ' creat per a aquesta plataforma.'}
 					{inspired.length > 0 && (
 						<>
 							{' '}
-							Sigue un tipo de problema habitual en 1.º de Bachillerato (ver{' '}
+							Segueix un tipus de problema habitual a 1r de Batxillerat (vegeu{' '}
 							{inspired.map((s, i) => (
 								<>
 									{i > 0 && ', '}
 									<a href={withBase('/fuentes/#referencias')}>{s!.data.autor}</a>
 								</>
 							))}
-							); el enunciado y los datos son nuevos.
+							); l’enunciat i les dades són nous.
 						</>
 					)}
 				</p>

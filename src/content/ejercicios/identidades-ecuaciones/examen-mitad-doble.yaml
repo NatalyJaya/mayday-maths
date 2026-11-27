@@ -1,32 +1,32 @@
-titulo: 'Ángulo mitad y ángulo doble a la vez: 2 sin²(x/2) + cos 2x = 0'
+titulo: 'Angle meitat i angle doble alhora: 2 sin²(x/2) + cos 2x = 0'
 tema: identidades-ecuaciones
 orden: 14
 procedencia: original
 dificultad: examen
 habilidades: [calculo, metodo, multipaso]
-resumen: Bajar x/2 y subir 2x hasta x, y factorizar sin dividir.
-enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad 2\sin^2\dfrac{x}{2} + \cos 2x = 0$'
+resumen: Baixar x/2 i pujar 2x fins a x, i factoritzar sense dividir.
+enunciado: 'Resol a $[0^\circ,\ 360^\circ)$: $\quad 2\sin^2\dfrac{x}{2} + \cos 2x = 0$'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [60, 90, 270, 300]
       trampas:
-        - { valores: [60, 300], explicacion: 'Has dividido entre $\cos x$: se pierden $90^\circ$ y $270^\circ$.' }
-        - { valores: [90, 270], explicacion: 'Te falta el factor $2\cos x - 1 = 0$.' }
+        - { valores: [60, 300], explicacion: 'Has dividit entre $\cos x$: es perden $90^\circ$ i $270^\circ$.' }
+        - { valores: [90, 270], explicacion: 'Et falta el factor $2\cos x - 1 = 0$.' }
     pistas:
-      - '$2\sin^2\frac{x}{2} = 1 - \cos x$ (ángulo mitad sin raíz).'
+      - '$2\sin^2\frac{x}{2} = 1 - \cos x$ (angle meitat sense arrel).'
       - '$\cos 2x = 2\cos^2 x - 1$.'
-      - 'Queda $2\cos^2 x - \cos x = 0$: factor común.'
+      - 'Queda $2\cos^2 x - \cos x = 0$: factor comú.'
     pasos:
-      - titulo: Todo en el ángulo x
+      - titulo: Tot en l’angle x
         desarrollo: '$$2\sin^2\frac{x}{2} = 1 - \cos x \qquad \cos 2x = 2\cos^2 x - 1$$'
-        porque: 'Hay tres ángulos ($\frac{x}{2}$, $x$ y $2x$). Se lleva todo a $x$, el ángulo intermedio.'
-      - titulo: Sustituir y simplificar
+        porque: 'Hi ha tres angles ($\frac{x}{2}$, $x$ i $2x$). Es porta tot a $x$, l’angle intermedi.'
+      - titulo: Substituir i simplificar
         desarrollo: '$$1 - \cos x + 2\cos^2 x - 1 = 0 \;\Rightarrow\; 2\cos^2 x - \cos x = 0$$'
-      - titulo: Factor común
+      - titulo: Factor comú
         desarrollo: '$$\cos x\,(2\cos x - 1) = 0$$'
-      - titulo: Ángulos
+      - titulo: Angles
         desarrollo: '$\cos x = 0 \Rightarrow 90^\circ,\ 270^\circ$. $\quad\cos x = \frac12 \Rightarrow 60^\circ,\ 300^\circ$.'
     resultado: '$x = 60^\circ,\ 90^\circ,\ 270^\circ,\ 300^\circ$.'

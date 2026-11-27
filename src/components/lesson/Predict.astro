@@ -1,5 +1,5 @@
 ---
-// «Predice antes de mirar»: el alumno elige una respuesta y recibe una
+// «Prediu abans de mirar»: el alumno elige una respuesta y recibe una
 // explicación específica para su elección. Activar una idea previa (aunque
 // sea errónea) antes de ver el resultado hace que se recuerde mucho mejor.
 import Icon from '../ui/Icon.astro';
@@ -25,7 +25,7 @@ const name = `p-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
 <predict-question class="predict">
-	<p class="label"><Icon name="target" size={17} /> Predice antes de mirar</p>
+	<p class="label"><Icon name="target" size={17} /> Prediu abans de mirar</p>
 	<fieldset>
 		<legend set:html={qHtml} />
 		<div class="ops">
@@ -45,7 +45,7 @@ const name = `p-${Math.random().toString(36).slice(2, 8)}`;
 				<div class="fb" data-i={i} hidden>
 					<p class:list={['verdict', o.correcta ? 'ok' : 'bad']}>
 						<Icon name={o.correcta ? 'check' : 'x'} size={17} />
-						{o.correcta ? 'Bien pensado.' : 'Es lo que piensa mucha gente, pero no.'}
+						{o.correcta ? 'Ben pensat.' : 'És el que pensa molta gent, però no.'}
 					</p>
 					<p set:html={o.e} />
 				</div>

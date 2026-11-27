@@ -1,18 +1,18 @@
-titulo: Un barco visto desde un faro
+titulo: Un vaixell vist des d’un far
 tema: resolucion-triangulos
 orden: 3
 procedencia: original
 dificultad: basico
 habilidades: [planteamiento, modelizacion]
-resumen: Ángulo de depresión y tangente.
+resumen: Angle de depressió i tangent.
 enunciado: |
-  Desde lo alto de un faro de $45\un{m}$ de altura sobre el nivel del mar se ve un barco con un ángulo de depresión de $12^\circ$. ¿A qué distancia horizontal del faro está el barco?
+  Des de dalt d’un far de $45\un{m}$ d’altura sobre el nivell del mar es veu un vaixell amb un angle de depressió de $12^\circ$. A quina distància horitzontal del far és el vaixell?
 figura:
   tipo: geometria
   puntos:
-    - { id: F, x: 0, y: 45, etiqueta: 'faro', lado: n }
+    - { id: F, x: 0, y: 45, etiqueta: 'far', lado: n }
     - { id: O, x: 0, y: 0, etiqueta: '', marca: false }
-    - { id: S, x: 211.7, y: 0, etiqueta: 'barco', lado: s }
+    - { id: S, x: 211.7, y: 0, etiqueta: 'vaixell', lado: s }
     - { id: R, x: 211.7, y: 45, etiqueta: '', marca: false }
   segmentos:
     - { de: O, a: F, etiqueta: '45 m', color: y }
@@ -25,23 +25,23 @@ figura:
   suelo: { y: 0, desde: -10, hasta: 225 }
 apartados:
   - id: a
-    enunciado: Distancia horizontal del faro al barco.
+    enunciado: Distància horitzontal del far al vaixell.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'd'
-          etiqueta: distancia
+          etiqueta: distància
           unidad: m
           valor: 211.71
           trampas:
-            - { valor: 9.57, explicacion: 'Has puesto el ángulo de $12^\circ$ en lo alto del triángulo, en el faro. El ángulo de depresión se mide desde la horizontal: en el triángulo aparece en el barco, como ángulo de elevación.' }
-            - { valor: 216.44, explicacion: 'Esa es la distancia en línea recta desde lo alto del faro (la hipotenusa). Se pide la distancia horizontal.' }
+            - { valor: 9.57, explicacion: 'Has posat l’angle de $12^\circ$ a dalt del triangle, al far. L’angle de depressió es mesura des de l’horitzontal: al triangle apareix al vaixell, com a angle d’elevació.' }
+            - { valor: 216.44, explicacion: 'Aquesta és la distància en línia recta des de dalt del far (la hipotenusa). Es demana la distància horitzontal.' }
     pistas:
-      - 'El ángulo de depresión desde el faro es igual al ángulo de elevación desde el barco.'
-      - 'En el barco: cateto opuesto 45 m, contiguo $d$.'
+      - 'L’angle de depressió des del far és igual a l’angle d’elevació des del vaixell.'
+      - 'Al vaixell: catet oposat 45 m, contigu $d$.'
     pasos:
-      - titulo: Situar el ángulo
-        desarrollo: 'El ángulo de depresión desde el faro ($12^\circ$) es igual al de elevación desde el barco (alternos entre horizontales).'
-      - titulo: Tangente
+      - titulo: Situar l’angle
+        desarrollo: 'L’angle de depressió des del far ($12^\circ$) és igual al d’elevació des del vaixell (alterns entre horitzontals).'
+      - titulo: Tangent
         desarrollo: '$$\tan 12^\circ = \frac{45}{d} \;\Rightarrow\; d = \frac{45}{\tan 12^\circ} \approx 211{,}71\un{m}$$'
-    resultado: 'El barco está a unos $211{,}7\un{m}$ del faro.'
+    resultado: 'El vaixell és a uns $211{,}7\un{m}$ del far.'

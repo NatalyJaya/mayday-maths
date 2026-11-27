@@ -1,27 +1,27 @@
-titulo: ¿En qué cuadrante está?
+titulo: A quin quadrant és?
 tema: razones-trigonometricas
 orden: 4
 procedencia: original
 dificultad: basico
 habilidades: [conceptual, graficas]
-resumen: Deducir el cuadrante a partir de los signos.
-enunciado: Un ángulo $\alpha$ cumple $\sin\alpha < 0$ y $\tan\alpha > 0$.
+resumen: Deduir el quadrant a partir dels signes.
+enunciado: Un angle $\alpha$ compleix $\sin\alpha < 0$ i $\tan\alpha > 0$.
 apartados:
   - id: a
-    enunciado: ¿En qué cuadrante está $\alpha$?
+    enunciado: A quin quadrant és $\alpha$?
     respuesta:
       tipo: opciones
       opciones:
-        - { texto: 'Primero', explicacion: 'En el primer cuadrante el seno es positivo.' }
-        - { texto: 'Segundo', explicacion: 'En el segundo cuadrante el seno es positivo y la tangente negativa: justo al revés.' }
-        - { texto: 'Tercero', correcta: true, explicacion: 'Seno negativo: tercer o cuarto cuadrante. Tangente positiva: seno y coseno con el mismo signo, así que el coseno también es negativo. Eso es el tercer cuadrante.' }
-        - { texto: 'Cuarto', explicacion: 'En el cuarto cuadrante el seno es negativo, pero el coseno es positivo, así que la tangente sería negativa.' }
+        - { texto: 'Primer', explicacion: 'Al primer quadrant el sinus és positiu.' }
+        - { texto: 'Segon', explicacion: 'Al segon quadrant el sinus és positiu i la tangent negativa: just al revés.' }
+        - { texto: 'Tercer', correcta: true, explicacion: 'Sinus negatiu: tercer o quart quadrant. Tangent positiva: sinus i cosinus amb el mateix signe, així que el cosinus també és negatiu. Això és el tercer quadrant.' }
+        - { texto: 'Quart', explicacion: 'Al quart quadrant el sinus és negatiu, però el cosinus és positiu, així que la tangent seria negativa.' }
     pistas:
-      - '¿Dónde está el punto $P$ si su ordenada es negativa?'
-      - 'Si $\tan\alpha = \frac{\sin\alpha}{\cos\alpha} > 0$, ¿qué signo tiene $\cos\alpha$?'
+      - 'On és el punt $P$ si la seva ordenada és negativa?'
+      - 'Si $\tan\alpha = \frac{\sin\alpha}{\cos\alpha} > 0$, quin signe té $\cos\alpha$?'
     pasos:
-      - titulo: Signo del seno
-        desarrollo: '$\sin\alpha < 0$: el punto $P$ está por debajo del eje $X$, en el III o el IV cuadrante.'
-      - titulo: Signo de la tangente
-        desarrollo: '$\tan\alpha > 0$ y $\sin\alpha < 0$, así que $\cos\alpha < 0$: $P$ está a la izquierda del eje $Y$.'
-    resultado: '$\alpha$ está en el **tercer cuadrante**.'
+      - titulo: Signe del sinus
+        desarrollo: '$\sin\alpha < 0$: el punt $P$ és per sota de l’eix $X$, al quadrant III o IV.'
+      - titulo: Signe de la tangent
+        desarrollo: '$\tan\alpha > 0$ i $\sin\alpha < 0$, així que $\cos\alpha < 0$: $P$ és a l’esquerra de l’eix $Y$.'
+    resultado: '$\alpha$ és al **tercer quadrant**.'

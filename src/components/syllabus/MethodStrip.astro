@@ -18,7 +18,7 @@ const minutes = (id: string) => lessons.find((l) => l.data.etapa === id)?.data.m
 		STAGES.map((s, i) => {
 			const href = topic ? stageUrl(topic, s.id) : undefined;
 			const m = minutes(s.id);
-			const meta = s.id === 'practica' && exerciseCount ? `${exerciseCount} ejercicios` : m ? `${m} min` : undefined;
+			const meta = s.id === 'practica' && exerciseCount ? `${exerciseCount} exercicis` : m ? `${m} min` : undefined;
 			const Tag = href ? 'a' : 'div';
 			return (
 				<li data-stage={s.id}>
@@ -30,7 +30,7 @@ const minutes = (id: string) => lessons.find((l) => l.data.etapa === id)?.data.m
 						{meta && <span class="meta">{meta}</span>}
 						{topic && (
 							<span class="seen" hidden>
-								Visto
+								Vist
 							</span>
 						)}
 					</Tag>

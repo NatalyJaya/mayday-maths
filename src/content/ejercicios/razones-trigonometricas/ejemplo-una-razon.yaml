@@ -1,52 +1,52 @@
-titulo: De una razón a todas las demás
+titulo: D’una raó a totes les altres
 tema: razones-trigonometricas
 rol: ejemplo
 orden: 1
 procedencia: original
 dificultad: basico
 habilidades: [calculo, conceptual]
-resumen: Identidad fundamental, raíz con su signo y el cuadrante para decidir.
+resumen: Identitat fonamental, arrel amb el seu signe i el quadrant per decidir.
 enunciado: |
-  Sabiendo que $\sin\alpha = \dfrac35$ y que $\alpha$ es un ángulo **obtuso** ($90^\circ < \alpha < 180^\circ$), calcula $\cos\alpha$ y $\tan\alpha$.
+  Sabent que $\sin\alpha = \dfrac35$ i que $\alpha$ és un angle **obtús** ($90^\circ < \alpha < 180^\circ$), calcula $\cos\alpha$ i $\tan\alpha$.
 figura:
   tipo: circunferencia
   angulos:
     - { grados: 143.13, etiqueta: 'α' }
   cuadrantes: true
 datos:
-  - { simbolo: '\sin\alpha', valor: '\tfrac35 = 0{,}6', significado: 'la ordenada del punto P' }
-  - { simbolo: '\alpha', valor: '\in (90^\circ,\ 180^\circ)', significado: 'segundo cuadrante' }
+  - { simbolo: '\sin\alpha', valor: '\tfrac35 = 0{,}6', significado: 'l’ordenada del punt P' }
+  - { simbolo: '\alpha', valor: '\in (90^\circ,\ 180^\circ)', significado: 'segon quadrant' }
 incognitas:
-  - '$\cos\alpha$ y $\tan\alpha$, exactos.'
+  - '$\cos\alpha$ i $\tan\alpha$, exactes.'
 interpretacion: |
-  En la circunferencia de radio 1, el punto $P$ está a altura $0{,}6$ y en el **segundo cuadrante**, a la izquierda del eje $Y$. Así que ya sabemos, antes de calcular nada, que el coseno será **negativo**.
+  A la circumferència de radi 1, el punt $P$ és a altura $0{,}6$ i al **segon quadrant**, a l’esquerra de l’eix $Y$. Així que ja sabem, abans de calcular res, que el cosinus serà **negatiu**.
 apartados:
   - id: a
-    enunciado: Calcula $\cos\alpha$ y $\tan\alpha$.
+    enunciado: Calcula $\cos\alpha$ i $\tan\alpha$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\cos\alpha', etiqueta: coseno, unidad: '', valor: -0.8 }
-        - { simbolo: '\tan\alpha', etiqueta: tangente, unidad: '', valor: -0.75 }
+        - { simbolo: '\cos\alpha', etiqueta: cosinus, unidad: '', valor: -0.8 }
+        - { simbolo: '\tan\alpha', etiqueta: tangent, unidad: '', valor: -0.75 }
     pasos:
-      - titulo: Identidad fundamental
-        piensa: ¿Qué relación une el seno con el coseno?
+      - titulo: Identitat fonamental
+        piensa: Quina relació uneix el sinus amb el cosinus?
         desarrollo: '$$\cos^2\alpha = 1 - \sin^2\alpha = 1 - \frac{9}{25} = \frac{16}{25}$$'
-        porque: '$\sin^2\alpha + \cos^2\alpha = 1$ vale para cualquier ángulo.'
-      - titulo: La raíz y su signo
-        piensa: 'La raíz de $\frac{16}{25}$ tiene dos valores. ¿Con cuál te quedas?'
-        desarrollo: '$$\cos\alpha = \pm\frac45 \;\xrightarrow{\ \alpha \text{ en el II cuadrante}\ }\; \cos\alpha = -\frac45$$'
-        porque: 'En el segundo cuadrante la abscisa de $P$ es negativa.'
-      - titulo: La tangente
+        porque: '$\sin^2\alpha + \cos^2\alpha = 1$ val per a qualsevol angle.'
+      - titulo: L’arrel i el seu signe
+        piensa: 'L’arrel de $\frac{16}{25}$ té dos valors. Amb quin et quedes?'
+        desarrollo: '$$\cos\alpha = \pm\frac45 \;\xrightarrow{\ \alpha \text{ al II quadrant}\ }\; \cos\alpha = -\frac45$$'
+        porque: 'Al segon quadrant l’abscissa de $P$ és negativa.'
+      - titulo: La tangent
         desarrollo: '$$\tan\alpha = \frac{\sin\alpha}{\cos\alpha} = \frac{3/5}{-4/5} = -\frac34$$'
-        porque: 'Comprobación de signo: en el segundo cuadrante la tangente es negativa ✔.'
-    resultado: '$\cos\alpha = -\dfrac45 = -0{,}8$ y $\tan\alpha = -\dfrac34 = -0{,}75$.'
+        porque: 'Comprovació de signe: al segon quadrant la tangent és negativa ✔.'
+    resultado: '$\cos\alpha = -\dfrac45 = -0{,}8$ i $\tan\alpha = -\dfrac34 = -0{,}75$.'
 errores:
-  - error: 'Quedarse con $\cos\alpha = +\frac45$'
-    explicacion: 'La raíz positiva es la del ángulo agudo ($\alpha \approx 36{,}87^\circ$). Si el ángulo es obtuso, el coseno es negativo.'
-  - error: 'Calcular α con la calculadora y luego el coseno'
-    explicacion: '$\arcsin 0{,}6 \approx 36{,}87^\circ$ es el ángulo agudo, no el obtuso. Además, se pide el valor exacto: con la identidad no hace falta el ángulo.'
+  - error: 'Quedar-se amb $\cos\alpha = +\frac45$'
+    explicacion: 'L’arrel positiva és la de l’angle agut ($\alpha \approx 36{,}87^\circ$). Si l’angle és obtús, el cosinus és negatiu.'
+  - error: 'Calcular α amb la calculadora i després el cosinus'
+    explicacion: '$\arcsin 0{,}6 \approx 36{,}87^\circ$ és l’angle agut, no l’obtús. A més, es demana el valor exacte: amb la identitat no cal l’angle.'
 alternativas:
-  - titulo: Con un triángulo de apoyo
-    desarrollo: 'Dibuja un triángulo rectángulo con cateto opuesto 3 e hipotenusa 5: el otro cateto es 4 (terna 3, 4, 5). Para el ángulo agudo, $\cos = \frac45$; para el obtuso del segundo cuadrante, cambia el signo del coseno y de la tangente.'
+  - titulo: Amb un triangle de suport
+    desarrollo: 'Dibuixa un triangle rectangle amb catet oposat 3 i hipotenusa 5: l’altre catet és 4 (terna 3, 4, 5). Per a l’angle agut, $\cos = \frac45$; per a l’obtús del segon quadrant, canvia el signe del cosinus i de la tangent.'
 laboratorio: { ang: 143.13 }

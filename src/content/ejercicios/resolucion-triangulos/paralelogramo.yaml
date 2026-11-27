@@ -1,12 +1,12 @@
-titulo: Las diagonales de un paralelogramo
+titulo: Les diagonals d’un paral·lelogram
 tema: resolucion-triangulos
 orden: 12
 procedencia: original
 dificultad: avanzado
 habilidades: [geometria, metodo, multipaso]
-resumen: Cada diagonal es el tercer lado de un triángulo. Los dos ángulos son suplementarios.
+resumen: Cada diagonal és el tercer costat d’un triangle. Els dos angles són suplementaris.
 enunciado: |
-  Un paralelogramo tiene lados de $6\un{cm}$ y $9\un{cm}$, y uno de sus ángulos mide $50^\circ$. Calcula la longitud de sus dos diagonales.
+  Un paral·lelogram té costats de $6\un{cm}$ i $9\un{cm}$, i un dels seus angles mesura $50^\circ$. Calcula la longitud de les seves dues diagonals.
 figura:
   tipo: geometria
   puntos:
@@ -26,22 +26,22 @@ figura:
     - { vertice: B, desde: C, hasta: A, etiqueta: '130°', radio: 22 }
 apartados:
   - id: a
-    enunciado: Diagonal corta $d_1$ y diagonal larga $d_2$.
+    enunciado: Diagonal curta $d_1$ i diagonal llarga $d_2$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'd_1', etiqueta: diagonal corta, unidad: cm, valor: 6.90 }
-        - { simbolo: 'd_2', etiqueta: diagonal larga, unidad: cm, valor: 13.65 }
+        - { simbolo: 'd_1', etiqueta: diagonal curta, unidad: cm, valor: 6.90 }
+        - { simbolo: 'd_2', etiqueta: diagonal llarga, unidad: cm, valor: 13.65 }
     pistas:
-      - 'La diagonal $BD$ es el tercer lado del triángulo $ABD$, con el ángulo de $50^\circ$ entre los lados de 6 y 9.'
-      - 'Los ángulos consecutivos de un paralelogramo son suplementarios: el otro ángulo mide $130^\circ$.'
+      - 'La diagonal $BD$ és el tercer costat del triangle $ABD$, amb l’angle de $50^\circ$ entre els costats de 6 i 9.'
+      - 'Els angles consecutius d’un paral·lelogram són suplementaris: l’altre angle fa $130^\circ$.'
     pasos:
-      - titulo: Diagonal corta (ángulo de 50°)
+      - titulo: Diagonal curta (angle de 50°)
         desarrollo: '$$d_1^2 = 6^2 + 9^2 - 2\cdot 6\cdot 9\cos 50^\circ \approx 117 - 69{,}42 = 47{,}58 \;\Rightarrow\; d_1 \approx 6{,}90\un{cm}$$'
-      - titulo: Diagonal larga (ángulo de 130°)
+      - titulo: Diagonal llarga (angle de 130°)
         desarrollo: '$$d_2^2 = 6^2 + 9^2 - 2\cdot 6\cdot 9\cos 130^\circ \approx 117 + 69{,}42 = 186{,}42 \;\Rightarrow\; d_2 \approx 13{,}65\un{cm}$$'
-        porque: '$\cos 130^\circ = -\cos 50^\circ$: el término cambia de signo y la diagonal opuesta al ángulo obtuso es más larga.'
-    resultado: '$d_1 \approx 6{,}90\un{cm}$ y $d_2 \approx 13{,}65\un{cm}$.'
+        porque: '$\cos 130^\circ = -\cos 50^\circ$: el terme canvia de signe i la diagonal oposada a l’angle obtús és més llarga.'
+    resultado: '$d_1 \approx 6{,}90\un{cm}$ i $d_2 \approx 13{,}65\un{cm}$.'
 alternativas:
-  - titulo: Una comprobación elegante
-    desarrollo: 'Sumando las dos ecuaciones, los cosenos se cancelan: $d_1^2 + d_2^2 = 2(6^2 + 9^2) = 234$. Con los valores obtenidos: $47{,}58 + 186{,}42 = 234$ ✔ (ley del paralelogramo).'
+  - titulo: Una comprovació elegant
+    desarrollo: 'Sumant les dues equacions, els cosinus es cancel·len: $d_1^2 + d_2^2 = 2(6^2 + 9^2) = 234$. Amb els valors obtinguts: $47{,}58 + 186{,}42 = 234$ ✔ (llei del paral·lelogram).'

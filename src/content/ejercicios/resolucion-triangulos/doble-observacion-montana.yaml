@@ -1,19 +1,19 @@
-titulo: La altura de una montaña
+titulo: L’altura d’una muntanya
 tema: resolucion-triangulos
 orden: 11
 procedencia: original
 dificultad: avanzado
 habilidades: [planteamiento, calculo, multipaso]
-resumen: Doble observación con ángulos que no son notables.
+resumen: Doble observació amb angles que no són notables.
 enunciado: |
-  Desde un punto de una llanura se ve la cima de una montaña con un ángulo de elevación de $25^\circ$. Después de avanzar $800\un{m}$ hacia la montaña, el ángulo es de $38^\circ$. ¿Qué altura tiene la montaña sobre la llanura?
+  Des d’un punt d’una plana es veu el cim d’una muntanya amb un angle d’elevació de $25^\circ$. Després d’avançar $800\un{m}$ cap a la muntanya, l’angle és de $38^\circ$. Quina altura té la muntanya sobre la plana?
 figura:
   tipo: geometria
   puntos:
     - { id: A, x: 0, y: 0, lado: s }
     - { id: B, x: 800, y: 0, lado: s }
     - { id: P, x: 1984.36, y: 0, etiqueta: '', marca: false }
-    - { id: T, x: 1984.36, y: 925.32, etiqueta: 'cima', lado: n }
+    - { id: T, x: 1984.36, y: 925.32, etiqueta: 'cim', lado: n }
   segmentos:
     - { de: A, a: B, etiqueta: '800 m', color: x, lado: derecha }
     - { de: B, a: P, etiqueta: 'x', color: x, lado: derecha }
@@ -27,7 +27,7 @@ figura:
   suelo: { y: 0, desde: -50, hasta: 2050 }
 apartados:
   - id: a
-    enunciado: Altura de la montaña.
+    enunciado: Altura de la muntanya.
     respuesta:
       tipo: numerica
       campos:
@@ -36,19 +36,19 @@ apartados:
           unidad: m
           valor: 925.32
           trampas:
-            - { valor: 373.05, explicacion: 'Has usado $800\tan 25^\circ$, como si los 800 m fueran la distancia hasta el pie. Son la distancia entre las dos observaciones.' }
+            - { valor: 373.05, explicacion: 'Has fet servir $800\tan 25^\circ$, com si els 800 m fossin la distància fins al peu. Són la distància entre les dues observacions.' }
     pistas:
-      - 'Llama $x$ a la distancia desde el segundo punto hasta la vertical de la cima.'
-      - '$h = x\tan 38^\circ$ y $h = (x + 800)\tan 25^\circ$.'
+      - 'Anomena $x$ la distància des del segon punt fins a la vertical del cim.'
+      - '$h = x\tan 38^\circ$ i $h = (x + 800)\tan 25^\circ$.'
     pasos:
-      - titulo: Dos ecuaciones
+      - titulo: Dues equacions
         desarrollo: '$$h = x\tan 38^\circ \qquad h = (x + 800)\tan 25^\circ$$'
-      - titulo: Resolver
+      - titulo: Resoldre
         desarrollo: '$$x = \frac{800\tan 25^\circ}{\tan 38^\circ - \tan 25^\circ} \approx \frac{373{,}05}{0{,}31498} \approx 1184{,}36\un{m}$$'
       - titulo: Altura
         desarrollo: '$$h = 1184{,}36\cdot\tan 38^\circ \approx 925{,}32\un{m}$$'
-        porque: 'Comprobación: $(1184{,}36 + 800)\tan 25^\circ \approx 925{,}3$ ✔.'
-    resultado: 'La montaña mide unos $925\un{m}$ sobre la llanura.'
+        porque: 'Comprovació: $(1184{,}36 + 800)\tan 25^\circ \approx 925{,}3$ ✔.'
+    resultado: 'La muntanya fa uns $925\un{m}$ sobre la plana.'
 errores:
-  - error: 'Redondear mucho las tangentes'
-    explicacion: 'En $\tan 38^\circ - \tan 25^\circ$ se restan dos números parecidos: si se redondean a dos decimales, el error se nota mucho. Trabaja con cuatro decimales o guarda los valores en la memoria de la calculadora.'
+  - error: 'Arrodonir massa les tangents'
+    explicacion: 'A $\tan 38^\circ - \tan 25^\circ$ es resten dos nombres semblants: si s’arrodoneixen a dos decimals, l’error es nota molt. Treballa amb quatre decimals o desa els valors a la memòria de la calculadora.'

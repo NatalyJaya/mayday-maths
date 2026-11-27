@@ -7,45 +7,45 @@
 export const STAGES = [
 	{
 		id: 'idea',
-		titulo: 'Entiende la idea',
+		titulo: 'Entén la idea',
 		corto: 'Idea',
-		pregunta: '¿Qué problema resuelve?',
-		descripcion: 'Una situación real o visual que necesita esta herramienta. Todavía sin notación formal.',
+		pregunta: 'Quin problema resol?',
+		descripcion: 'Una situació real o visual que necessita aquesta eina. Encara sense notació formal.',
 	},
 	{
 		id: 'objetos',
-		titulo: 'Conoce los objetos',
-		corto: 'Objetos',
-		pregunta: '¿Con qué trabajamos?',
-		descripcion: 'Definiciones y notación: qué representa cada símbolo y qué pasa si lo cambias.',
+		titulo: 'Coneix els objectes',
+		corto: 'Objectes',
+		pregunta: 'Amb què treballem?',
+		descripcion: 'Definicions i notació: què representa cada símbol i què passa si el canvies.',
 	},
 	{
 		id: 'propiedades',
-		titulo: 'Comprende las propiedades',
-		corto: 'Propiedades',
-		pregunta: '¿De dónde sale?',
-		descripcion: 'Cómo se deducen las fórmulas y los teoremas, cuándo usarlos y, sobre todo, cuándo no.',
+		titulo: 'Comprèn les propietats',
+		corto: 'Propietats',
+		pregunta: 'D’on surt?',
+		descripcion: 'Com es dedueixen les fórmules i els teoremes, quan fer-los servir i, sobretot, quan no.',
 	},
 	{
 		id: 'laboratorio',
-		titulo: 'Laboratorio',
-		corto: 'Laboratorio',
-		pregunta: '¿Qué pasa si…?',
-		descripcion: 'Mueve, arrastra y cambia los datos para comprobar con tus ojos lo que has deducido.',
+		titulo: 'Laboratori',
+		corto: 'Laboratori',
+		pregunta: 'Què passa si…?',
+		descripcion: 'Mou, arrossega i canvia les dades per comprovar amb els teus ulls el que has deduït.',
 	},
 	{
 		id: 'ejemplos',
-		titulo: 'Ejemplos guiados',
-		corto: 'Ejemplos',
-		pregunta: '¿Cómo se plantea?',
-		descripcion: 'Problemas típicos resueltos paso a paso, explicando el porqué de cada paso.',
+		titulo: 'Exemples guiats',
+		corto: 'Exemples',
+		pregunta: 'Com es planteja?',
+		descripcion: 'Problemes típics resolts pas a pas, explicant el perquè de cada pas.',
 	},
 	{
 		id: 'practica',
-		titulo: 'Practica por tu cuenta',
-		corto: 'Práctica',
-		pregunta: '¿Sé hacerlo solo?',
-		descripcion: 'Ejercicios de clase y de práctica adicional, con pistas, corrección y solución explicada.',
+		titulo: 'Practica pel teu compte',
+		corto: 'Pràctica',
+		pregunta: 'Ho sé fer sense ajuda?',
+		descripcion: 'Exercicis de classe i de pràctica addicional, amb pistes, correcció i solució explicada.',
 	},
 ] as const;
 
@@ -54,24 +54,24 @@ export const STAGE_IDS = STAGES.map((s) => s.id) as [StageId, ...StageId[]];
 export const LESSON_STAGE_IDS = STAGE_IDS.filter((s) => s !== 'practica') as [StageId, ...StageId[]];
 
 export const DIFFICULTIES = {
-	basico: { label: 'Básico', nivel: 1, descripcion: 'Entender el concepto y aplicar una fórmula de forma directa.' },
-	intermedio: { label: 'Intermedio', nivel: 2, descripcion: 'Combinar dos ideas o elegir entre varias fórmulas.' },
-	avanzado: { label: 'Avanzado', nivel: 3, descripcion: 'Problemas de varios pasos que exigen razonar el planteamiento.' },
-	examen: { label: 'Tipo examen', nivel: 4, descripcion: 'Problemas completos como los de los exámenes de 1.º de Bachillerato.' },
+	basico: { label: 'Bàsic', nivel: 1, descripcion: 'Entendre el concepte i aplicar una fórmula de manera directa.' },
+	intermedio: { label: 'Intermedi', nivel: 2, descripcion: 'Combinar dues idees o triar entre diverses fórmules.' },
+	avanzado: { label: 'Avançat', nivel: 3, descripcion: 'Problemes de diversos passos que exigeixen raonar el plantejament.' },
+	examen: { label: 'Tipus examen', nivel: 4, descripcion: 'Problemes complets com els dels exàmens de 1r de Batxillerat.' },
 } as const;
 export type DifficultyId = keyof typeof DIFFICULTIES;
 export const DIFFICULTY_IDS = Object.keys(DIFFICULTIES) as [DifficultyId, ...DifficultyId[]];
 
 export const SKILLS = {
-	conceptual: { label: 'Comprensión conceptual', corto: 'Conceptos' },
-	calculo: { label: 'Cálculo y manipulación algebraica', corto: 'Cálculo' },
-	geometria: { label: 'Razonamiento geométrico', corto: 'Geometría' },
-	graficas: { label: 'Gráficas y circunferencia', corto: 'Gráficas' },
-	metodo: { label: 'Elegir el método', corto: 'Método' },
-	planteamiento: { label: 'Traducir el enunciado', corto: 'Planteamiento' },
-	demostracion: { label: 'Demostrar y justificar', corto: 'Demostración' },
-	multipaso: { label: 'Razonamiento en varios pasos', corto: 'Varios pasos' },
-	modelizacion: { label: 'Problemas de contexto real', corto: 'Contexto real' },
+	conceptual: { label: 'Comprensió conceptual', corto: 'Conceptes' },
+	calculo: { label: 'Càlcul i manipulació algebraica', corto: 'Càlcul' },
+	geometria: { label: 'Raonament geomètric', corto: 'Geometria' },
+	graficas: { label: 'Gràfiques i circumferència', corto: 'Gràfiques' },
+	metodo: { label: 'Triar el mètode', corto: 'Mètode' },
+	planteamiento: { label: 'Traduir l’enunciat', corto: 'Plantejament' },
+	demostracion: { label: 'Demostrar i justificar', corto: 'Demostració' },
+	multipaso: { label: 'Raonament en diversos passos', corto: 'Diversos passos' },
+	modelizacion: { label: 'Problemes de context real', corto: 'Context real' },
 } as const;
 export type SkillId = keyof typeof SKILLS;
 export const SKILL_IDS = Object.keys(SKILLS) as [SkillId, ...SkillId[]];
@@ -81,15 +81,15 @@ export const SKILL_IDS = Object.keys(SKILLS) as [SkillId, ...SkillId[]];
  * «Ejercicio de clase» para que el alumno los reconozca de un vistazo.
  */
 export const ORIGINS = {
-	clase: { label: 'Ejercicio de clase', descripcion: 'Ejercicio trabajado en clase (de los apuntes del cuaderno).' },
-	original: { label: 'Práctica adicional', descripcion: 'Ejercicio nuevo creado para esta plataforma.' },
-	externo: { label: 'Fuente externa', descripcion: 'Adaptado de un recurso con licencia abierta.' },
+	clase: { label: 'Exercici de classe', descripcion: 'Exercici treballat a classe (dels apunts de la llibreta).' },
+	original: { label: 'Pràctica addicional', descripcion: 'Exercici nou creat per a aquesta plataforma.' },
+	externo: { label: 'Font externa', descripcion: 'Adaptat d’un recurs amb llicència oberta.' },
 } as const;
 export type OriginId = keyof typeof ORIGINS;
 export const ORIGIN_IDS = Object.keys(ORIGINS) as [OriginId, ...OriginId[]];
 
 export const TOPIC_STATUS = {
 	disponible: { label: 'Disponible' },
-	proximamente: { label: 'Próximamente' },
+	proximamente: { label: 'Properament' },
 } as const;
 export type TopicStatus = keyof typeof TOPIC_STATUS;

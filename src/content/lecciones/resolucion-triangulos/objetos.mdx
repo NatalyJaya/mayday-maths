@@ -1,93 +1,93 @@
 ---
 tema: resolucion-triangulos
 etapa: objetos
-titulo: Lados, ángulos y los cuatro casos
-descripcion: La notación que se usa en todo el tema, los ángulos de elevación y de depresión y los cuatro tipos de datos con los que se resuelve un triángulo.
+titulo: Costats, angles i els quatre casos
+descripcion: La notació que es fa servir en tot el tema, els angles d’elevació i de depressió i els quatre tipus de dades amb què es resol un triangle.
 minutos: 15
 ---
 
-## La notación
+## La notació
 
-Los vértices se nombran con mayúsculas $A$, $B$, $C$, y el **ángulo** de cada vértice con la misma letra. Cada **lado** se nombra con la minúscula del vértice **opuesto**: el lado $a$ está enfrente del ángulo $A$.
+Els vèrtexs s’anomenen amb majúscules $A$, $B$, $C$, i l’**angle** de cada vèrtex amb la mateixa lletra. Cada **costat** s’anomena amb la minúscula del vèrtex **oposat**: el costat $a$ és davant de l’angle $A$.
 
 <Figura
 	figura={{ tipo: 'triangulo', a: 7, b: 5, c: 8, etiquetas: { a: 'a', b: 'b', c: 'c', A: 'A', B: 'B', C: 'C' }, colores: { a: 'x', b: 'y', c: 'g' } }}
-	alt="Triángulo ABC: el lado a (azul) está enfrente del vértice A, el lado b (naranja) enfrente de B y el lado c (verde) enfrente de C."
-	pie="Cada lado tiene el color de su ángulo opuesto (en el laboratorio también)."
+	alt="Triangle ABC: el costat a (blau) és davant del vèrtex A, el costat b (taronja) davant de B i el costat c (verd) davant de C."
+	pie="Cada costat té el color del seu angle oposat (també al laboratori)."
 />
 
-Esta notación es útil porque los teoremas del tema emparejan cada lado con su ángulo opuesto.
+Aquesta notació és útil perquè els teoremes del tema aparellen cada costat amb el seu angle oposat.
 
 <VariableGrid>
-	<Variable simbolo="a,\ b,\ c" nombre="Lados" tipo="Longitudes" mide="Las longitudes de los lados. El lado $a$ es el opuesto al ángulo $A$." cambia="El lado más largo está enfrente del ángulo más grande." relacion="Desigualdad triangular: cada lado es menor que la suma de los otros dos." />
-	<Variable simbolo="A,\ B,\ C" nombre="Ángulos" tipo="Ángulos" unidad="grados" mide="Los ángulos interiores, en cada vértice." cambia="Si uno crece, los otros dos tienen que disminuir." relacion="$A + B + C = 180^\circ$" />
-	<Variable simbolo="h" nombre="Altura" tipo="Longitud" eje="g" mide="El segmento perpendicular desde un vértice al lado opuesto (o a su prolongación)." relacion="$h_c = b\sin A = a\sin B$" />
-	<Variable simbolo="S" nombre="Área" tipo="Superficie" unidad="unidades²" mide="La superficie del triángulo: $\frac12 \cdot \text{base}\cdot\text{altura}$." relacion="$S = \frac12\, b\, c\sin A$" />
+	<Variable simbolo="a,\ b,\ c" nombre="Costats" tipo="Longituds" mide="Les longituds dels costats. El costat $a$ és l’oposat a l’angle $A$." cambia="El costat més llarg és davant de l’angle més gran." relacion="Desigualtat triangular: cada costat és més petit que la suma dels altres dos." />
+	<Variable simbolo="A,\ B,\ C" nombre="Angles" tipo="Angles" unidad="graus" mide="Els angles interiors, a cada vèrtex." cambia="Si un creix, els altres dos han de disminuir." relacion="$A + B + C = 180^\circ$" />
+	<Variable simbolo="h" nombre="Altura" tipo="Longitud" eje="g" mide="El segment perpendicular des d’un vèrtex al costat oposat (o a la seva prolongació)." relacion="$h_c = b\sin A = a\sin B$" />
+	<Variable simbolo="S" nombre="Àrea" tipo="Superfície" unidad="unitats²" mide="La superfície del triangle: $\frac12 \cdot \text{base}\cdot\text{altura}$." relacion="$S = \frac12\, b\, c\sin A$" />
 </VariableGrid>
 
-### Tres propiedades que sirven de comprobación
+### Tres propietats que serveixen de comprovació
 
-1. $A + B + C = 180^\circ$. Si conoces dos ángulos, ya tienes el tercero.
-2. **Desigualdad triangular**: $a < b + c$ (y lo mismo con los otros lados). Con $2$, $3$ y $6$ no se puede construir ningún triángulo.
-3. **Al lado mayor se opone el ángulo mayor.** Si al terminar te sale el ángulo más grande enfrente del lado más corto, algo está mal.
+1. $A + B + C = 180^\circ$. Si coneixes dos angles, ja tens el tercer.
+2. **Desigualtat triangular**: $a < b + c$ (i el mateix amb els altres costats). Amb $2$, $3$ i $6$ no es pot construir cap triangle.
+3. **Al costat més gran s’oposa l’angle més gran.** Si en acabar et surt l’angle més gran davant del costat més curt, alguna cosa està malament.
 
-## Ángulos de elevación y de depresión
+## Angles d’elevació i de depressió
 
-En los problemas de alturas y distancias los ángulos se miden casi siempre respecto a la **horizontal**:
+En els problemes d’altures i distàncies els angles es mesuren gairebé sempre respecte de l’**horitzontal**:
 
-- El **ángulo de elevación** es el que forma la visual con la horizontal cuando miras **hacia arriba**.
-- El **ángulo de depresión** es el que forma la visual con la horizontal cuando miras **hacia abajo**.
+- L’**angle d’elevació** és el que forma la visual amb l’horitzontal quan mires **cap amunt**.
+- L’**angle de depressió** és el que forma la visual amb l’horitzontal quan mires **cap avall**.
 
 <Figura
 	figura={{
 		tipo: 'geometria',
 		puntos: [
-			{ id: 'P', x: 0, y: 4, etiqueta: 'P (arriba)', lado: 'n' },
+			{ id: 'P', x: 0, y: 4, etiqueta: 'P (dalt)', lado: 'n' },
 			{ id: 'H', x: 0, y: 0, etiqueta: '', marca: false },
-			{ id: 'A', x: 9, y: 0, etiqueta: 'A (abajo)', lado: 's' },
+			{ id: 'A', x: 9, y: 0, etiqueta: 'A (baix)', lado: 's' },
 			{ id: 'R', x: 9, y: 4, etiqueta: '', marca: false },
 		],
 		segmentos: [
-			{ de: 'P', a: 'R', etiqueta: 'horizontal de P', discontinuo: true },
+			{ de: 'P', a: 'R', etiqueta: 'horitzontal de P', discontinuo: true },
 			{ de: 'P', a: 'A', etiqueta: 'visual', color: 'g', lado: 'derecha' },
 			{ de: 'P', a: 'H', discontinuo: true },
 			{ de: 'H', a: 'A' },
 		],
 		angulos: [
-			{ vertice: 'P', desde: 'R', hasta: 'A', etiqueta: 'depresión', color: 'g', radio: 70 },
-			{ vertice: 'A', desde: 'H', hasta: 'P', etiqueta: 'elevación', radio: 70 },
+			{ vertice: 'P', desde: 'R', hasta: 'A', etiqueta: 'depressió', color: 'g', radio: 70 },
+			{ vertice: 'A', desde: 'H', hasta: 'P', etiqueta: 'elevació', radio: 70 },
 			{ vertice: 'H', desde: 'P', hasta: 'A', recto: true },
 		],
 		suelo: { y: 0, desde: -0.5, hasta: 10 },
 	}}
-	alt="Desde un punto alto P, la visual hacia A forma con la horizontal el ángulo de depresión. Desde A, la misma visual forma con el suelo el ángulo de elevación, que es igual."
-	pie="El ángulo de depresión desde P y el de elevación desde A son iguales: son ángulos alternos entre dos rectas paralelas (las dos horizontales)."
+	alt="Des d’un punt alt P, la visual cap a A forma amb l’horitzontal l’angle de depressió. Des d’A, la mateixa visual forma amb el terra l’angle d’elevació, que és igual."
+	pie="L’angle de depressió des de P i el d’elevació des d’A són iguals: són angles alterns entre dues rectes paral·leles (les dues horitzontals)."
 />
 
 <Callout tipo="ojo">
-	El ángulo de depresión se mide **desde la horizontal**, no desde la vertical. Por eso, en el triángulo rectángulo, el ángulo de depresión **no está** en el vértice de arriba del triángulo: lo encuentras abajo, como ángulo de elevación.
+	L’angle de depressió es mesura **des de l’horitzontal**, no des de la vertical. Per això, en el triangle rectangle, l’angle de depressió **no és** al vèrtex de dalt del triangle: el trobes a baix, com a angle d’elevació.
 </Callout>
 
-## Los cuatro casos de resolución
+## Els quatre casos de resolució
 
-Según qué tres datos conozcas (con al menos un lado), hay cuatro casos. Las letras indican el orden en que aparecen alrededor del triángulo: L = lado, A = ángulo.
+Segons quines tres dades coneguis (amb almenys un costat), hi ha quatre casos. Les lletres indiquen l’ordre en què apareixen al voltant del triangle: C = costat, A = angle.
 
-| Caso | Datos | Ejemplo | Herramienta principal | ¿Cuántas soluciones? |
+| Cas | Dades | Exemple | Eina principal | Quantes solucions? |
 | --- | --- | --- | --- | --- |
-| **LLL** | los tres lados | $a$, $b$, $c$ | teorema del coseno | una (si cumplen la desigualdad triangular) |
-| **LAL** | dos lados y el ángulo **comprendido** | $b$, $c$ y $A$ | teorema del coseno | una |
-| **ALA / AAL** | un lado y dos ángulos | $a$, $A$ y $B$ | $A + B + C = 180^\circ$ y teorema del seno | una |
-| **LLA** | dos lados y un ángulo **no comprendido** | $a$, $b$ y $A$ | teorema del seno | **0, 1 o 2** (caso ambiguo) |
+| **CCC** | els tres costats | $a$, $b$, $c$ | teorema del cosinus | una (si compleixen la desigualtat triangular) |
+| **CAC** | dos costats i l’angle **comprès** | $b$, $c$ i $A$ | teorema del cosinus | una |
+| **ACA / AAC** | un costat i dos angles | $a$, $A$ i $B$ | $A + B + C = 180^\circ$ i teorema del sinus | una |
+| **CCA** | dos costats i un angle **no comprès** | $a$, $b$ i $A$ | teorema del sinus | **0, 1 o 2** (cas ambigu) |
 
 <Callout tipo="idea">
-	Lo más importante para elegir método es fijarse en si el ángulo conocido está **entre** los dos lados conocidos (comprendido) o **enfrente** de uno de ellos. El teorema del seno empareja lados con sus ángulos **opuestos**; el del coseno relaciona los tres lados con **un** ángulo.
+	El més important per triar el mètode és fixar-se si l’angle conegut és **entre** els dos costats coneguts (comprès) o **davant** d’un d’ells. El teorema del sinus aparella costats amb els seus angles **oposats**; el del cosinus relaciona els tres costats amb **un** angle.
 </Callout>
 
-## Resolver un triángulo rectángulo
+## Resoldre un triangle rectangle
 
-Si el triángulo es rectángulo, ya conoces un ángulo ($90^\circ$) y basta con **dos datos más** (al menos un lado):
+Si el triangle és rectangle, ja coneixes un angle ($90^\circ$) i n’hi ha prou amb **dues dades més** (almenys un costat):
 
-- **Un lado y un ángulo agudo**: el otro ángulo es $90^\circ$ menos el conocido, y los lados salen con seno, coseno o tangente.
-- **Dos lados**: el tercero sale con Pitágoras, y los ángulos con la función inversa ($\arcsin$, $\arccos$ o $\arctan$).
+- **Un costat i un angle agut**: l’altre angle és $90^\circ$ menys el conegut, i els costats surten amb sinus, cosinus o tangent.
+- **Dos costats**: el tercer surt amb Pitàgores, i els angles amb la funció inversa ($\arcsin$, $\arccos$ o $\arctan$).
 
-No hacen falta teoremas nuevos. Pero muchos problemas de alturas se resuelven con **dos** triángulos rectángulos que comparten un lado: es la **doble observación**, que verás en la etapa siguiente.
+No calen teoremes nous. Però molts problemes d’altures es resolen amb **dos** triangles rectangles que comparteixen un costat: és la **doble observació**, que veuràs a l’etapa següent.

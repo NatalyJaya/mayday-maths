@@ -56,8 +56,8 @@ const block = await getEntry('bloques', topic.data.bloque.id);
 		</article>
 		{
 			toc.length > 1 && (
-				<aside class="toc" aria-label="En esta etapa">
-					<p>En esta etapa</p>
+				<aside class="toc" aria-label="En aquesta etapa">
+					<p>En aquesta etapa</p>
 					<ol>
 						{toc.map((h) => (
 							<li>
@@ -70,7 +70,7 @@ const block = await getEntry('bloques', topic.data.bloque.id);
 		}
 	</div>
 
-	<nav class="container pager" aria-label="Etapas anterior y siguiente">
+	<nav class="container pager" aria-label="Etapes anterior i següent">
 		{
 			prev ? (
 				<a class="pg prev" href={stageUrl(topic, prev.id)}>
@@ -84,7 +84,7 @@ const block = await getEntry('bloques', topic.data.bloque.id);
 			) : (
 				<a class="pg prev" href={topicUrl(topic)}>
 					<span class="k">
-						<Icon name="arrow-left" size={16} /> Volver
+						<Icon name="arrow-left" size={16} /> Torna
 					</span>
 					<span class="v">Portada del tema</span>
 				</a>
@@ -94,7 +94,7 @@ const block = await getEntry('bloques', topic.data.bloque.id);
 			next && (
 				<a class="pg next" href={stageUrl(topic, next.id)}>
 					<span class="k">
-						Siguiente <Icon name="arrow-right" size={16} />
+						Següent <Icon name="arrow-right" size={16} />
 					</span>
 					<span class="v">
 						{stageIdx + 2}. {next.titulo}

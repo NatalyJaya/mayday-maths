@@ -110,7 +110,7 @@ describe('valores exactos', () => {
 		expect(exactTrig(150, 'cos')).toBe('−√3/2');
 		expect(exactTrig(225, 'tan')).toBe('1');
 		expect(exactTrig(300, 'sin')).toBe('−√3/2');
-		expect(exactTrig(270, 'tan')).toBe('no existe');
+		expect(exactTrig(270, 'tan')).toBe('no existeix');
 		expect(exactTrig(180, 'cos')).toBe('−1');
 		expect(exactTrig(20, 'sin')).toBeNull();
 	});

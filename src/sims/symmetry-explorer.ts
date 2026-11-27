@@ -1,4 +1,4 @@
-// Ángulos relacionados: α y el ángulo simétrico (180° − α, 180° + α, −α o
+// Angles relacionats: α y el ángulo simétrico (180° − α, 180° + α, −α o
 // 90° − α) tienen las mismas razones salvo el signo (o intercambiadas).
 import { cosD, normalize, sinD } from '../lib/math/trig';
 import { fmt } from '../lib/format';
@@ -11,10 +11,10 @@ const W = 380,
 
 type Rel = 'sup' | 'pi' | 'neg' | 'comp';
 const RELS: Record<Rel, { ang: (a: number) => number; name: string; axis: string; rule: string }> = {
-	sup: { ang: (a) => 180 - a, name: '180° − α', axis: 'Simetría respecto al eje Y', rule: 'sin(180° − α) = sin α · cos(180° − α) = −cos α · tan(180° − α) = −tan α' },
-	pi: { ang: (a) => 180 + a, name: '180° + α', axis: 'Simetría respecto al origen', rule: 'sin(180° + α) = −sin α · cos(180° + α) = −cos α · tan(180° + α) = tan α' },
-	neg: { ang: (a) => 360 - a, name: '360° − α (= −α)', axis: 'Simetría respecto al eje X', rule: 'sin(−α) = −sin α · cos(−α) = cos α · tan(−α) = −tan α' },
-	comp: { ang: (a) => 90 - a, name: '90° − α', axis: 'Simetría respecto a la recta y = x', rule: 'sin(90° − α) = cos α · cos(90° − α) = sin α: se intercambian' },
+	sup: { ang: (a) => 180 - a, name: '180° − α', axis: 'Simetria respecte de l’eix Y', rule: 'sin(180° − α) = sin α · cos(180° − α) = −cos α · tan(180° − α) = −tan α' },
+	pi: { ang: (a) => 180 + a, name: '180° + α', axis: 'Simetria respecte de l’origen', rule: 'sin(180° + α) = −sin α · cos(180° + α) = −cos α · tan(180° + α) = tan α' },
+	neg: { ang: (a) => 360 - a, name: '360° − α (= −α)', axis: 'Simetria respecte de l’eix X', rule: 'sin(−α) = −sin α · cos(−α) = cos α · tan(−α) = −tan α' },
+	comp: { ang: (a) => 90 - a, name: '90° − α', axis: 'Simetria respecte de la recta y = x', rule: 'sin(90° − α) = cos α · cos(90° − α) = sin α: s’intercanvien' },
 };
 
 class SymmetryExplorer extends HTMLElement {

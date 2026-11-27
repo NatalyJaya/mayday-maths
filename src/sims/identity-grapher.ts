@@ -1,4 +1,4 @@
-// ¿Es una identidad? Dibuja los dos miembros como funciones: si las curvas
+// És una identitat? Dibuja los dos miembros como funciones: si las curvas
 // coinciden en TODOS los puntos, es una identidad; si se separan aunque sea
 // en un punto, no lo es (y ese punto es un contraejemplo).
 import { cosD, sinD, tanD } from '../lib/math/trig';
@@ -15,15 +15,15 @@ interface Pair {
 }
 
 const PAIRS: Pair[] = [
-	{ l: 'sin 2x', r: '2·sin x', f: (x) => sinD(2 * x), g: (x) => 2 * sinD(x), dom: [0, 360], note: 'El 2 no «sale fuera» del seno. Lo correcto es sin 2x = 2·sin x·cos x.' },
-	{ l: 'sin 2x', r: '2·sin x·cos x', f: (x) => sinD(2 * x), g: (x) => 2 * sinD(x) * cosD(x), dom: [0, 360], note: 'Fórmula del ángulo doble.' },
-	{ l: 'cos 2x', r: 'cos²x − sin²x', f: (x) => cosD(2 * x), g: (x) => cosD(x) ** 2 - sinD(x) ** 2, dom: [0, 360], note: 'Fórmula del ángulo doble. Con sin²x + cos²x = 1 también vale 1 − 2·sin²x y 2·cos²x − 1.' },
-	{ l: 'sin(x + 30°)', r: 'sin x + sin 30°', f: (x) => sinD(x + 30), g: (x) => sinD(x) + 0.5, dom: [0, 360], note: 'El seno no se reparte en una suma.' },
-	{ l: 'sin(x + 30°)', r: 'sin x·cos 30° + cos x·sin 30°', f: (x) => sinD(x + 30), g: (x) => sinD(x) * cosD(30) + cosD(x) * 0.5, dom: [0, 360], note: 'Fórmula del seno de la suma.' },
-	{ l: 'sin²x + cos²x', r: '1', f: (x) => sinD(x) ** 2 + cosD(x) ** 2, g: () => 1, dom: [0, 360], note: 'Identidad fundamental: es el teorema de Pitágoras en la circunferencia de radio 1.' },
-	{ l: '1 + tan²x', r: '1 / cos²x', f: (x) => 1 + tanD(x) ** 2, g: (x) => 1 / cosD(x) ** 2, dom: [0, 360], note: 'Se obtiene dividiendo la identidad fundamental entre cos²x. Fuera de 90° y 270°, donde ninguno de los dos lados existe.' },
-	{ l: 'cos(x/2)', r: '√((1 + cos x)/2)', f: (x) => cosD(x / 2), g: (x) => Math.sqrt((1 + cosD(x)) / 2), dom: [0, 720], note: 'Solo coinciden cuando cos(x/2) ≥ 0. Por eso la fórmula del ángulo mitad lleva ±: el signo depende del cuadrante de x/2.' },
-	{ l: 'sin x / (1 + cos x)', r: 'tan(x/2)', f: (x) => sinD(x) / (1 + cosD(x)), g: (x) => tanD(x / 2), dom: [0, 360], note: 'Es la identidad «per demà» de clase. Coinciden en todo su dominio (x ≠ 180°).' },
+	{ l: 'sin 2x', r: '2·sin x', f: (x) => sinD(2 * x), g: (x) => 2 * sinD(x), dom: [0, 360], note: 'El 2 no «surt fora» del sinus. El correcte és sin 2x = 2·sin x·cos x.' },
+	{ l: 'sin 2x', r: '2·sin x·cos x', f: (x) => sinD(2 * x), g: (x) => 2 * sinD(x) * cosD(x), dom: [0, 360], note: 'Fórmula de l’angle doble.' },
+	{ l: 'cos 2x', r: 'cos²x − sin²x', f: (x) => cosD(2 * x), g: (x) => cosD(x) ** 2 - sinD(x) ** 2, dom: [0, 360], note: 'Fórmula de l’angle doble. Amb sin²x + cos²x = 1 també val 1 − 2·sin²x i 2·cos²x − 1.' },
+	{ l: 'sin(x + 30°)', r: 'sin x + sin 30°', f: (x) => sinD(x + 30), g: (x) => sinD(x) + 0.5, dom: [0, 360], note: 'El sinus no es reparteix en una suma.' },
+	{ l: 'sin(x + 30°)', r: 'sin x·cos 30° + cos x·sin 30°', f: (x) => sinD(x + 30), g: (x) => sinD(x) * cosD(30) + cosD(x) * 0.5, dom: [0, 360], note: 'Fórmula del sinus de la suma.' },
+	{ l: 'sin²x + cos²x', r: '1', f: (x) => sinD(x) ** 2 + cosD(x) ** 2, g: () => 1, dom: [0, 360], note: 'Identitat fonamental: és el teorema de Pitàgores a la circumferència de radi 1.' },
+	{ l: '1 + tan²x', r: '1 / cos²x', f: (x) => 1 + tanD(x) ** 2, g: (x) => 1 / cosD(x) ** 2, dom: [0, 360], note: 'S’obté dividint la identitat fonamental entre cos²x. Fora de 90° i 270°, on cap dels dos membres no existeix.' },
+	{ l: 'cos(x/2)', r: '√((1 + cos x)/2)', f: (x) => cosD(x / 2), g: (x) => Math.sqrt((1 + cosD(x)) / 2), dom: [0, 720], note: 'Només coincideixen quan cos(x/2) ≥ 0. Per això la fórmula de l’angle meitat porta ±: el signe depèn del quadrant de x/2.' },
+	{ l: 'sin x / (1 + cos x)', r: 'tan(x/2)', f: (x) => sinD(x) / (1 + cosD(x)), g: (x) => tanD(x / 2), dom: [0, 360], note: 'És la identitat «per demà» de classe. Coincideixen en tot el seu domini (x ≠ 180°).' },
 ];
 
 const W = 560,
@@ -147,7 +147,7 @@ class IdentityGrapher extends HTMLElement {
 		out('l', p.l);
 		out('r', p.r);
 		out('x', `${cx}°`);
-		const show = (v: number) => (Number.isFinite(v) && Math.abs(v) < 1e6 ? fmt(v, 4) : 'no existe');
+		const show = (v: number) => (Number.isFinite(v) && Math.abs(v) < 1e6 ? fmt(v, 4) : 'no existeix');
 		out('fx', show(p.f(cx)));
 		out('gx', show(p.g(cx)));
 		const verdict = this.querySelector('.ig-verdict')!;
@@ -155,8 +155,8 @@ class IdentityGrapher extends HTMLElement {
 		out(
 			'verdict',
 			same
-				? 'Las dos curvas coinciden en todos los puntos: es una identidad.'
-				: `No es una identidad: por ejemplo, en x = ${fmt(wx, 0)}° el lado izquierdo vale ${show(p.f(wx))} y el derecho ${show(p.g(wx))}.`,
+				? 'Les dues corbes coincideixen en tots els punts: és una identitat.'
+				: `No és una identitat: per exemple, a x = ${fmt(wx, 0)}° el membre esquerre val ${show(p.f(wx))} i el dret ${show(p.g(wx))}.`,
 		);
 		out('note', p.note);
 	}

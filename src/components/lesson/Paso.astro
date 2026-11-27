@@ -14,7 +14,7 @@ const tituloHtml = await richInline(titulo);
 <li class="paso">
 	<p class="t" set:html={tituloHtml} />
 	<div class="c"><slot /></div>
-	{porqueHtml && <p class="why"><strong>Por qué:</strong> <span set:html={porqueHtml} /></p>}
+	{porqueHtml && <p class="why"><strong>Per què:</strong> <span set:html={porqueHtml} /></p>}
 </li>
 
 <style>

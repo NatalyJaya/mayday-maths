@@ -33,48 +33,48 @@ const cols = (await getCollections(topic.id)).map((c) => ({
 }));
 const classGroups = [
 	...cols.map((c) => ({ id: c.id, titulo: c.data.titulo, descripcion: c.data.descripcion, items: classEx.filter((e) => e.data.coleccion === c.id) })),
-	{ id: 'sin-coleccion', titulo: 'Otros ejercicios de clase', descripcion: '', items: classEx.filter((e) => !e.data.coleccion) },
+	{ id: 'sin-coleccion', titulo: 'Altres exercicis de classe', descripcion: '', items: classEx.filter((e) => !e.data.coleccion) },
 ].filter((g) => g.items.length);
 ---
 
-<BaseLayout title={`Práctica · ${topic.data.titulo}`} description={`Ejercicios de ${topic.data.titulo} con pistas y solución explicada.`}>
+<BaseLayout title={`Pràctica · ${topic.data.titulo}`} description={`Exercicis de ${topic.data.titulo} amb pistes i solució explicada.`}>
 	<div class="container head">
 		<Breadcrumbs
 			items={[
 				{ label: block?.data.titulo ?? '', href: blockUrl(topic.data.bloque.id) },
 				{ label: topic.data.titulo, href: topicUrl(topic) },
-				{ label: '6. Práctica' },
+				{ label: '6. Pràctica' },
 			]}
 		/>
 		<StageNav topic={topic} current="practica" />
 		<p class="eyebrow">Etapa 6 de 6 · {stage.titulo}</p>
-		<h1>Practica por tu cuenta</h1>
+		<h1>Practica pel teu compte</h1>
 		<p class="lead">
-			{classEx.length > 0 && <><strong>{classEx.length}</strong> ejercicios de clase y </>}<strong>{extraEx.length}</strong> de práctica adicional,
-			ordenados de menos a más difícil. Inténtalo primero en tu cuaderno; si te atascas, pide una pista, y cuando quieras,
-			compara tu resolución con la explicada paso a paso.
+			{classEx.length > 0 && <><strong>{classEx.length}</strong> exercicis de classe i </>}<strong>{extraEx.length}</strong> de pràctica addicional,
+			ordenats de menys a més difícil. Intenta-ho primer a la llibreta; si t’encalles, demana una pista, i quan vulguis,
+			compara la teva resolució amb l’explicada pas a pas.
 		</p>
-		<ol class="howto" aria-label="Cómo trabajar cada ejercicio">
-			<li><Icon name="pencil" size={18} /> <span><strong>Plantea</strong>: dibujo, datos con signo, condición</span></li>
-			<li><Icon name="bulb" size={18} /> <span><strong>Pista</strong> si te atascas</span></li>
-			<li><Icon name="check" size={18} /> <span><strong>Comprueba</strong> tu resultado</span></li>
-			<li><Icon name="eye" size={18} /> <span><strong>Compara</strong> con la solución explicada</span></li>
+		<ol class="howto" aria-label="Com treballar cada exercici">
+			<li><Icon name="pencil" size={18} /> <span><strong>Planteja</strong>: dibuix, dades i què et demanen</span></li>
+			<li><Icon name="bulb" size={18} /> <span><strong>Pista</strong> si t’encalles</span></li>
+			<li><Icon name="check" size={18} /> <span><strong>Comprova</strong> el teu resultat</span></li>
+			<li><Icon name="eye" size={18} /> <span><strong>Compara</strong> amb la solució explicada</span></li>
 		</ol>
 	</div>
 
 	{
 		cols.length > 0 && (
-			<section class="container cols" aria-label="Colecciones de clase y exámenes">
+			<section class="container cols" aria-label="Col·leccions de classe i exàmens">
 				{cols.map((c) => (
 					<a class="col-card" href={collectionUrl(topic, c.id)}>
 						<Icon name={c.data.tipo === 'examen' ? 'clock' : 'layers'} size={22} />
 						<span>
-							<span class="col-k">{c.data.tipo === 'examen' ? 'Examen de práctica' : 'Ejercicios de clase'}</span>
+							<span class="col-k">{c.data.tipo === 'examen' ? 'Examen de pràctica' : 'Exercicis de classe'}</span>
 							<strong>{c.data.titulo}</strong>
 							<span class="col-d">
 								{c.data.tipo === 'examen'
-									? `${c.n} ejercicios de nivel examen${c.data.minutos ? `, ${c.data.minutos} min` : ''}`
-									: `${c.n} ${c.n === 1 ? 'ejercicio de clase' : 'ejercicios de clase'}, en el orden de tus apuntes`}
+									? `${c.n} exercicis de nivell d’examen${c.data.minutos ? `, ${c.data.minutos} min` : ''}`
+									: `${c.n} ${c.n === 1 ? 'exercici de classe' : 'exercicis de classe'}, en l’ordre dels teus apunts`}
 							</span>
 						</span>
 						<Icon name="arrow-right" />
@@ -84,33 +84,33 @@ const classGroups = [
 		)
 	}
 
-	<section class="container" aria-label="Ejercicios">
+	<section class="container" aria-label="Exercicis">
 		<exercise-filters class="filters card">
 			<div class="f-row">
-				<span class="f-k" id="f-diff">Dificultad</span>
+				<span class="f-k" id="f-diff">Dificultat</span>
 				<div class="seg" role="group" aria-labelledby="f-diff">
-					<button type="button" data-diff="" aria-pressed="true">Todas</button>
+					<button type="button" data-diff="" aria-pressed="true">Totes</button>
 					{groups.map((g) => <button type="button" data-diff={g.id} aria-pressed="false">{g.label}</button>)}
 				</div>
 			</div>
 			<div class="f-row">
-				<span class="f-k" id="f-skill">Habilidad</span>
+				<span class="f-k" id="f-skill">Habilitat</span>
 				<div class="chips-f" role="group" aria-labelledby="f-skill">
 					{usedSkills.map((s) => <button type="button" data-skill={s} aria-pressed="false">{SKILLS[s].label}</button>)}
 				</div>
 			</div>
 			<div class="f-row">
-				<span class="f-k" id="f-orig">Procedencia</span>
+				<span class="f-k" id="f-orig">Procedència</span>
 				<div class="seg" role="group" aria-labelledby="f-orig">
-					<button type="button" data-origin="" aria-pressed="true">Todas</button>
+					<button type="button" data-origin="" aria-pressed="true">Totes</button>
 					{usedOrigins.map(([k, o]) => <button type="button" data-origin={k} aria-pressed="false">{o.label}</button>)}
 				</div>
 			</div>
 			{cols.length > 0 && (
 				<div class="f-row">
-					<span class="f-k" id="f-col">Colección</span>
+					<span class="f-k" id="f-col">Col·lecció</span>
 					<div class="seg" role="group" aria-labelledby="f-col">
-						<button type="button" data-col="" aria-pressed="true">Todas</button>
+						<button type="button" data-col="" aria-pressed="true">Totes</button>
 						{cols.map((c) => <button type="button" data-col={c.id} aria-pressed="false">{c.data.corto}</button>)}
 					</div>
 				</div>
@@ -122,9 +122,9 @@ const classGroups = [
 			classGroups.length > 0 && (
 				<section class="kind kind-class" aria-labelledby="h-clase">
 					<header class="kind-head">
-						<span class="tag o-clase"><Icon name="book" size={13} /> Ejercicio de clase</span>
-						<h2 id="h-clase">Ejercicios de clase</h2>
-						<p class="muted">Los que habéis trabajado en clase, con el enunciado de tus apuntes y en el mismo orden. Cada uno tiene la solución explicada y los errores que aparecían en el cuaderno.</p>
+						<span class="tag o-clase"><Icon name="book" size={13} /> Exercici de classe</span>
+						<h2 id="h-clase">Exercicis de classe</h2>
+						<p class="muted">Els que heu treballat a classe, amb l’enunciat dels teus apunts i en el mateix ordre. Cadascun té la solució explicada i els errors que apareixien a la llibreta.</p>
 					</header>
 					{classGroups.map((g) => (
 						<section class="group" data-group={g.id}>
@@ -143,7 +143,7 @@ const classGroups = [
 											>
 												<a class:list={['ex-card', { 'is-class': e.data.procedencia === 'clase' }]} href={exerciseUrl(topic, e)} data-solved-id={e.id}>
 													<span class="solved-mark" aria-hidden="true">
-														<Icon name="check" size={14} /> Resuelto
+														<Icon name="check" size={14} /> Resolt
 													</span>
 													<h3>{e.data.titulo}</h3>
 													<p>{e.data.resumen}</p>
@@ -160,9 +160,9 @@ const classGroups = [
 
 		<section class="kind kind-extra" aria-labelledby="h-extra">
 			<header class="kind-head">
-				<span class="tag o-original">Práctica adicional</span>
-				<h2 id="h-extra">Práctica adicional</h2>
-				<p class="muted">Ejercicios nuevos para seguir practicando, distintos de los de clase: aplicación directa, razonamiento geométrico, problemas de varios pasos y de elegir el método. De menos a más difícil.</p>
+				<span class="tag o-original">Pràctica addicional</span>
+				<h2 id="h-extra">Pràctica addicional</h2>
+				<p class="muted">Exercicis nous per continuar practicant, diferents dels de classe: aplicació directa, raonament geomètric, problemes de diversos passos i de triar el mètode. De menys a més difícil.</p>
 			</header>
 			{
 				groups.map((g) => (
@@ -186,7 +186,7 @@ const classGroups = [
 								>
 									<a class:list={['ex-card', { 'is-class': e.data.procedencia === 'clase' }]} href={exerciseUrl(topic, e)} data-solved-id={e.id}>
 										<span class="solved-mark" aria-hidden="true">
-											<Icon name="check" size={14} /> Resuelto
+											<Icon name="check" size={14} /> Resolt
 										</span>
 										<h3>{e.data.titulo}</h3>
 										<p>{e.data.resumen}</p>
@@ -199,8 +199,8 @@ const classGroups = [
 				))
 			}
 		</section>
-		<p class="empty" hidden>Ningún ejercicio cumple esos filtros. Prueba a quitar alguno.</p>
-		<p class="back"><a href={stageUrl(topic, 'ejemplos')}><Icon name="arrow-left" size={16} /> Volver a los ejemplos guiados</a></p>
+		<p class="empty" hidden>Cap exercici no compleix aquests filtres. Prova de treure’n algun.</p>
+		<p class="back"><a href={stageUrl(topic, 'ejemplos')}><Icon name="arrow-left" size={16} /> Torna als exemples guiats</a></p>
 	</section>
 </BaseLayout>
 
@@ -266,7 +266,7 @@ const classGroups = [
 				g.hidden = !g.querySelector('.ex-item:not([hidden])');
 			});
 			document.querySelector<HTMLElement>('.empty')!.hidden = n > 0;
-			this.querySelector('.f-count')!.textContent = `Mostrando ${n} de ${items.length} ejercicios`;
+			this.querySelector('.f-count')!.textContent = `Es mostren ${n} de ${items.length} exercicis`;
 		}
 	}
 	customElements.define('exercise-filters', ExerciseFilters);

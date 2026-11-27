@@ -1,60 +1,60 @@
 ---
 tema: identidades-ecuaciones
 etapa: idea
-titulo: El seno no se reparte
-descripcion: Por qué hacen falta fórmulas para el seno de una suma, y por qué una ecuación como sin x = 1/2 no tiene una solución, sino infinitas.
+titulo: El sinus no es reparteix
+descripcion: Per què calen fórmules per al sinus d’una suma, i per què una equació com sin x = 1/2 no té una solució, sinó infinites.
 minutos: 12
 ---
 
-## Una tentación muy natural
+## Una temptació molt natural
 
-Sabes que $\sin 30^\circ = \frac12$ y que $\sin 45^\circ = \frac{\sqrt2}{2}$. ¿Cuánto vale $\sin 75^\circ$? Como $75^\circ = 30^\circ + 45^\circ$, la tentación es «repartir».
+Saps que $\sin 30^\circ = \frac12$ i que $\sin 45^\circ = \frac{\sqrt2}{2}$. Quant val $\sin 75^\circ$? Com que $75^\circ = 30^\circ + 45^\circ$, la temptació és «repartir».
 
 <Predict
-	pregunta="¿Es cierto que $\sin(30^\circ + 60^\circ) = \sin 30^\circ + \sin 60^\circ$?"
+	pregunta="És cert que $\sin(30^\circ + 60^\circ) = \sin 30^\circ + \sin 60^\circ$?"
 	opciones={[
-		{ texto: 'Sí: el seno se reparte, como un producto.', explicacion: 'Compruébalo: $\\sin 90^\\circ = 1$, pero $\\sin 30^\\circ + \\sin 60^\\circ = \\frac12 + \\frac{\\sqrt3}{2} \\approx 1{,}37$. Es imposible, porque ningún seno vale más de 1.' },
-		{ texto: 'No: el lado izquierdo vale 1 y el derecho, unos 1,37.', correcta: true, explicacion: '$\\sin 90^\\circ = 1$ y $\\frac12 + \\frac{\\sqrt3}{2} \\approx 1{,}366$. Basta **un** caso en que no se cumple para saber que la regla es falsa.' },
-		{ texto: 'Solo es cierto para ángulos pequeños.', explicacion: 'Tampoco: con $\\alpha = \\beta = 1^\\circ$, $\\sin 2^\\circ \\approx 0{,}0349$ y $2\\sin 1^\\circ \\approx 0{,}0349$ son muy parecidos, pero no iguales. Cerca de 0 la diferencia es pequeña, pero existe.' },
+		{ texto: 'Sí: el sinus es reparteix, com un producte.', explicacion: 'Comprova-ho: $\\sin 90^\\circ = 1$, però $\\sin 30^\\circ + \\sin 60^\\circ = \\frac12 + \\frac{\\sqrt3}{2} \\approx 1{,}37$. És impossible, perquè cap sinus no val més d’1.' },
+		{ texto: 'No: el membre esquerre val 1 i el dret, uns 1,37.', correcta: true, explicacion: '$\\sin 90^\\circ = 1$ i $\\frac12 + \\frac{\\sqrt3}{2} \\approx 1{,}366$. N’hi ha prou amb **un** cas en què no es compleix per saber que la regla és falsa.' },
+		{ texto: 'Només és cert per a angles petits.', explicacion: 'Tampoc: amb $\\alpha = \\beta = 1^\\circ$, $\\sin 2^\\circ \\approx 0{,}0349$ i $2\\sin 1^\\circ \\approx 0{,}0349$ són molt semblants, però no iguals. A prop de 0 la diferència és petita, però existeix.' },
 	]}
-	despues="El seno es una función, no un número que multiplica: sin(α + β) no se puede «desarrollar» como a·(b + c)."
+	despues="El sinus és una funció, no un nombre que multiplica: sin(α + β) no es pot «desenvolupar» com a·(b + c)."
 />
 
-Si dibujas los dos lados como funciones, la diferencia se ve de golpe:
+Si dibuixes els dos membres com a funcions, la diferència es veu de seguida:
 
 <IdentityGrapher pair={3} />
 
 <Callout tipo="contraejemplo">
-	$\sin(\alpha + \beta) \ne \sin\alpha + \sin\beta$, $\;\cos 2x \ne 2\cos x$, $\;\sin\frac{x}{2} \ne \frac12\sin x$. Ninguna de estas «reglas» es cierta en general. El seno y el coseno **no se reparten** ni dejan salir los números de dentro.
+	$\sin(\alpha + \beta) \ne \sin\alpha + \sin\beta$, $\;\cos 2x \ne 2\cos x$, $\;\sin\frac{x}{2} \ne \frac12\sin x$. Cap d’aquestes «regles» no és certa en general. El sinus i el cosinus **no es reparteixen** ni deixen sortir els nombres de dins.
 </Callout>
 
-Entonces, ¿qué vale $\sin(\alpha + \beta)$? Lo deducirás en la etapa 3 con un dibujo:
+Aleshores, què val $\sin(\alpha + \beta)$? Ho deduiràs a l’etapa 3 amb un dibuix:
 
 $$
 \sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta
 $$
 
-Con esta fórmula y sus parientes (la resta, el ángulo doble y el ángulo mitad) puedes calcular **valores exactos** de ángulos como $15^\circ$, $75^\circ$ o $22{,}5^\circ$, **simplificar** expresiones y **resolver ecuaciones**.
+Amb aquesta fórmula i les seves parentes (la resta, l’angle doble i l’angle meitat) pots calcular **valors exactes** d’angles com $15^\circ$, $75^\circ$ o $22{,}5^\circ$, **simplificar** expressions i **resoldre equacions**.
 
-## Identidad o ecuación
+## Identitat o equació
 
-Estas dos igualdades parecen del mismo tipo, pero son muy diferentes:
+Aquestes dues igualtats semblen del mateix tipus, però són molt diferents:
 
 $$
 \text{(1)}\quad \sin^2 x + \cos^2 x = 1 \qquad\qquad \text{(2)}\quad 2\sin x - 1 = 0
 $$
 
-- La (1) se cumple **para todos** los valores de $x$. Es una **identidad**. No hay nada que resolver: se usa para transformar expresiones.
-- La (2) solo se cumple **para algunos** valores. Es una **ecuación**. Lo que se pide es encontrar **todos** esos valores.
+- La (1) es compleix **per a tots** els valors de $x$. És una **identitat**. No hi ha res a resoldre: es fa servir per transformar expressions.
+- La (2) només es compleix **per a alguns** valors. És una **equació**. El que es demana és trobar **tots** aquests valors.
 
-## Una ecuación con infinitas soluciones
+## Una equació amb infinites solucions
 
 <Predict
-	pregunta="¿Cuántas soluciones tiene la ecuación $\sin x = \frac12$?"
+	pregunta="Quantes solucions té l’equació $\sin x = \frac12$?"
 	opciones={[
-		{ texto: 'Una: x = 30°.', explicacion: 'Es la que da la calculadora. Pero $\\sin 150^\\circ$ también vale $\\frac12$, y $\\sin 390^\\circ$, y…' },
-		{ texto: 'Dos: 30° y 150°.', explicacion: 'Son las dos de la **primera vuelta**. Pero el seno se repite cada $360^\\circ$: $390^\\circ$, $510^\\circ$, $-210^\\circ$… también son soluciones.' },
-		{ texto: 'Infinitas.', correcta: true, explicacion: 'Cada vuelta tiene dos (una subiendo y otra bajando), y hay infinitas vueltas, hacia delante y hacia atrás. Por eso los ejercicios suelen pedir las soluciones de un intervalo concreto, como $[0^\\circ,\\ 360^\\circ)$.' },
+		{ texto: 'Una: x = 30°.', explicacion: 'És la que dona la calculadora. Però $\\sin 150^\\circ$ també val $\\frac12$, i $\\sin 390^\\circ$, i…' },
+		{ texto: 'Dues: 30° i 150°.', explicacion: 'Són les dues de la **primera volta**. Però el sinus es repeteix cada $360^\\circ$: $390^\\circ$, $510^\\circ$, $-210^\\circ$… també són solucions.' },
+		{ texto: 'Infinites.', correcta: true, explicacion: 'Cada volta en té dues (una pujant i una altra baixant), i hi ha infinites voltes, cap endavant i cap enrere. Per això els exercicis solen demanar les solucions d’un interval concret, com $[0^\\circ,\\ 360^\\circ)$.' },
 	]}
 />
 
@@ -67,17 +67,17 @@ $$
 		niveles: [{ y: 0.5, etiqueta: 'y = 1/2' }],
 		puntos: [{ x: -330 }, { x: -210 }, { x: 30, etiqueta: '30°' }, { x: 150, etiqueta: '150°' }, { x: 390, etiqueta: '390°' }, { x: 510, etiqueta: '510°' }],
 	}}
-	alt="La recta y = 1/2 corta a la gráfica del seno en infinitos puntos: dos en cada vuelta."
-	pie="La recta y = 1/2 corta la onda dos veces en cada vuelta: en 30° y 150°, y en todos los ángulos que se diferencian de ellos en vueltas completas."
+	alt="La recta y = 1/2 talla la gràfica del sinus en infinits punts: dos a cada volta."
+	pie="La recta y = 1/2 talla l’ona dues vegades a cada volta: a 30° i 150°, i a tots els angles que se’n diferencien en voltes completes."
 />
 
 <Callout tipo="idea">
-	Resolver una ecuación trigonométrica tiene **dos partes**: primero, con álgebra e identidades, llegar a algo como $\sin x = k$; después, encontrar **todos** los ángulos que tienen ese seno. Los errores de la segunda parte (soluciones que faltan) son tan frecuentes como los de la primera.
+	Resoldre una equació trigonomètrica té **dues parts**: primer, amb àlgebra i identitats, arribar a alguna cosa com $\sin x = k$; després, trobar **tots** els angles que tenen aquest sinus. Els errors de la segona part (solucions que falten) són tan freqüents com els de la primera.
 </Callout>
 
-## Lo que vas a aprender
+## El que aprendràs
 
-1. **Objetos**: identidades y ecuaciones, la solución general y las fórmulas con las que trabajarás.
-2. **Propiedades**: de dónde salen las fórmulas de la suma, la resta, el ángulo doble y el ángulo mitad (con la deducción de tus apuntes), y estrategias para demostrar identidades y resolver ecuaciones.
-3. **Laboratorio**: ecuaciones en la gráfica y en la circunferencia, y un comparador de identidades.
-4. **Ejemplos guiados** y **práctica**, con los ejercicios de clase (Serie A, Serie B e identidades).
+1. **Objectes**: identitats i equacions, la solució general i les fórmules amb què treballaràs.
+2. **Propietats**: d’on surten les fórmules de la suma, la resta, l’angle doble i l’angle meitat (amb la deducció dels teus apunts), i estratègies per demostrar identitats i resoldre equacions.
+3. **Laboratori**: equacions a la gràfica i a la circumferència, i un comparador d’identitats.
+4. **Exemples guiats** i **pràctica**, amb els exercicis de classe (Sèrie A, Sèrie B i identitats).

@@ -5,26 +5,26 @@ orden: 3
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo, metodo]
-resumen: Ángulo doble en cosenos, ecuación de segundo grado y una raíz imposible.
+resumen: Angle doble en cosinus, equació de segon grau i una arrel impossible.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\cos 2x + 5\cos x + 3 = 0$
+  Resol a $[0^\circ,\ 360^\circ)$: $\quad\cos 2x + 5\cos x + 3 = 0$
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [120, 240]
     pasos:
-      - titulo: Una sola razón
-        piensa: 'Hay $\cos 2x$ y $\cos x$. ¿Qué forma de $\cos 2x$ eliges?'
+      - titulo: Una sola raó
+        piensa: 'Hi ha $\cos 2x$ i $\cos x$. Quina forma de $\cos 2x$ tries?'
         desarrollo: '$$\cos 2x = 2\cos^2 x - 1 \;\Rightarrow\; 2\cos^2 x - 1 + 5\cos x + 3 = 0 \;\Rightarrow\; 2\cos^2 x + 5\cos x + 2 = 0$$'
-        porque: 'La forma con solo cosenos deja toda la ecuación en $\cos x$.'
-      - titulo: Cambio de variable
+        porque: 'La forma amb només cosinus deixa tota l’equació en $\cos x$.'
+      - titulo: Canvi de variable
         desarrollo: '$$2t^2 + 5t + 2 = 0 \;\Rightarrow\; t = \frac{-5 \pm\sqrt{25 - 16}}{4} = \frac{-5 \pm 3}{4} \;\Rightarrow\; t = -\tfrac12 \ \text{ o } \ t = -2$$'
       - titulo: Descartar
-        piensa: ¿Valen los dos valores?
-        desarrollo: '$\cos x = -2$ es imposible. Queda $\cos x = -\frac12$.'
-      - titulo: Ángulos
-        desarrollo: 'Referencia $60^\circ$; coseno negativo en el II y el III cuadrante: $x = 120^\circ$ y $x = 240^\circ$.'
+        piensa: Valen tots dos valors?
+        desarrollo: '$\cos x = -2$ és impossible. Queda $\cos x = -\frac12$.'
+      - titulo: Angles
+        desarrollo: 'Referència $60^\circ$; cosinus negatiu al II i al III: $x = 120^\circ$ i $x = 240^\circ$.'
     resultado: '$x = 120^\circ,\ 240^\circ$.'
 laboratorio: { f: cos, n: 1, k: -0.5 }

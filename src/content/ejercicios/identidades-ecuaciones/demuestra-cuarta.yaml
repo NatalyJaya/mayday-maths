@@ -1,27 +1,27 @@
-titulo: Demuestra que cos⁴x − sin⁴x = cos 2x
+titulo: Demostra que cos⁴x − sin⁴x = cos 2x
 tema: identidades-ecuaciones
 orden: 8
 procedencia: original
 dificultad: intermedio
 habilidades: [demostracion, calculo]
-resumen: Una diferencia de cuadrados escondida.
+resumen: Una diferència de quadrats amagada.
 enunciado: |
-  Demuestra la identidad:
+  Demostra la identitat:
   $$\cos^4 x - \sin^4 x = \cos 2x$$
 apartados:
   - id: a
-    enunciado: Escribe la demostración.
+    enunciado: Escriu la demostració.
     respuesta:
       tipo: abierta
     pistas:
-      - '$\cos^4 x = (\cos^2 x)^2$. ¿Qué forma tiene el primer miembro?'
-      - '$a^2 - b^2 = (a + b)(a - b)$ con $a = \cos^2 x$ y $b = \sin^2 x$.'
+      - '$\cos^4 x = (\cos^2 x)^2$. Quina forma té el primer membre?'
+      - '$a^2 - b^2 = (a + b)(a - b)$ amb $a = \cos^2 x$ i $b = \sin^2 x$.'
     pasos:
-      - titulo: Diferencia de cuadrados
+      - titulo: Diferència de quadrats
         desarrollo: '$$\cos^4 x - \sin^4 x = (\cos^2 x + \sin^2 x)(\cos^2 x - \sin^2 x)$$'
-      - titulo: Identidad fundamental y ángulo doble
+      - titulo: Identitat fonamental i angle doble
         desarrollo: '$$= 1\cdot(\cos^2 x - \sin^2 x) = \cos 2x \quad ∎$$'
-    resultado: 'El primer miembro es igual a $\cos 2x$ para todo $x$.'
+    resultado: 'El primer membre és igual a $\cos 2x$ per a tot $x$.'
 errores:
-  - error: 'Escribir cos⁴x − sin⁴x = (cos x − sin x)⁴'
-    explicacion: 'Una resta de potencias no es la potencia de la resta. Con $x = 0^\circ$: $1 - 0 = 1$, pero $(1 - 0)^4 = 1$ coincide por casualidad; con $x = 45^\circ$ el primer miembro vale 0 y el segundo también, pero con $x = 90^\circ$: $0 - 1 = -1$ frente a $(0 - 1)^4 = 1$.'
+  - error: 'Escriure cos⁴x − sin⁴x = (cos x − sin x)⁴'
+    explicacion: 'Una resta de potències no és la potència de la resta. Amb $x = 0^\circ$: $1 - 0 = 1$, però $(1 - 0)^4 = 1$ coincideix per casualitat; amb $x = 45^\circ$ el primer membre val 0 i el segon també, però amb $x = 90^\circ$: $0 - 1 = -1$ davant de $(0 - 1)^4 = 1$.'

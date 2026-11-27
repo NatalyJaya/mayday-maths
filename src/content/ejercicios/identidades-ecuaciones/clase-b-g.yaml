@@ -3,39 +3,39 @@ tema: identidades-ecuaciones
 orden: 207
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie B, apartado g)
+referencia: Sèrie B, apartat g)
 coleccion: clase-serie-b
 dificultad: basico
 habilidades: [calculo, conceptual]
-resumen: El clásico «no dividas». Factor común y dos casos.
+resumen: El clàssic «no divideixis». Factor comú i dos casos.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\cos^2 x = \cos x$$
 conceptos:
-  - 'Si $A\cdot B = 0$, entonces $A = 0$ o $B = 0$.'
+  - 'Si $A\cdot B = 0$, aleshores $A = 0$ o $B = 0$.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [0, 90, 270]
       trampas:
         - valores: [0]
-          explicacion: 'Has dividido entre $\cos x$ y te has quedado con $\cos x = 1$. Se pierden las soluciones de $\cos x = 0$: $90^\circ$ y $270^\circ$.'
+          explicacion: 'Has dividit entre $\cos x$ i t’has quedat amb $\cos x = 1$. Es perden les solucions de $\cos x = 0$: $90^\circ$ i $270^\circ$.'
         - valores: [90, 270]
-          explicacion: 'Te falta el caso $\cos x = 1$.'
+          explicacion: 'Et falta el cas $\cos x = 1$.'
     pistas:
-      - 'Pasa todo a un lado. No dividas entre $\cos x$.'
+      - 'Passa-ho tot a un costat. No divideixis entre $\cos x$.'
       - '$\cos x\,(\cos x - 1) = 0$.'
     pasos:
-      - titulo: Todo a un lado y factor común
+      - titulo: Tot a un costat i factor comú
         desarrollo: '$$\cos^2 x - \cos x = 0 \;\Rightarrow\; \cos x\,(\cos x - 1) = 0$$'
-        porque: 'En tu cuaderno aparece como $t(t - 1) = 0$ con $t = \cos x$: es el mismo paso.'
-      - titulo: Los dos casos
+        porque: 'A la teva llibreta apareix com $t(t - 1) = 0$ amb $t = \cos x$: és el mateix pas.'
+      - titulo: Els dos casos
         desarrollo: |
           - $\cos x = 0 \Rightarrow x = 90^\circ,\ 270^\circ$.
           - $\cos x = 1 \Rightarrow x = 0^\circ$.
     resultado: '$x = 0^\circ,\ 90^\circ,\ 270^\circ$.'
 errores:
-  - error: 'No resolver el caso cos x = 0 (como en el cuaderno)'
-    explicacion: 'Al plantear $t(t-1) = 0$ salen dos casos y los dos dan soluciones.'
+  - error: 'No resoldre el cas cos x = 0 (com a la llibreta)'
+    explicacion: 'En plantejar $t(t-1) = 0$ surten dos casos i tots dos donen solucions.'

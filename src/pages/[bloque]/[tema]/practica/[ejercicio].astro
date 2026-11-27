@@ -34,23 +34,23 @@ const { topic, entry, prev, next, index, total } = Astro.props;
 const block = await getEntry('bloques', topic.data.bloque.id);
 ---
 
-<BaseLayout title={`${entry.data.titulo} · Práctica`} description={entry.data.resumen}>
+<BaseLayout title={`${entry.data.titulo} · Pràctica`} description={entry.data.resumen}>
 	<div class="container head">
 		<Breadcrumbs
 			items={[
 				{ label: block?.data.titulo ?? '', href: blockUrl(topic.data.bloque.id) },
 				{ label: topic.data.titulo, href: topicUrl(topic) },
-				{ label: '6. Práctica', href: stageUrl(topic, 'practica') },
+				{ label: '6. Pràctica', href: stageUrl(topic, 'practica') },
 				{ label: entry.data.titulo },
 			]}
 		/>
 		<StageNav topic={topic} current="practica" />
-		<p class="eyebrow">Ejercicio {index + 1} de {total}</p>
+		<p class="eyebrow">Exercici {index + 1} de {total}</p>
 		<h1>{entry.data.titulo}</h1>
 	</div>
 	<div class="container body">
 		<ExerciseView entry={entry} topic={topic} />
-		<nav class="ex-pager" aria-label="Otros ejercicios">
+		<nav class="ex-pager" aria-label="Altres exercicis">
 			{
 				prev ? (
 					<a href={exerciseUrl(topic, prev)} class="pg">
@@ -61,11 +61,11 @@ const block = await getEntry('bloques', topic.data.bloque.id);
 					<span />
 				)
 			}
-			<a href={stageUrl(topic, 'practica')} class="all">Todos los ejercicios</a>
+			<a href={stageUrl(topic, 'practica')} class="all">Tots els exercicis</a>
 			{
 				next ? (
 					<a href={exerciseUrl(topic, next)} class="pg nx">
-						<span class="k">Siguiente <Icon name="arrow-right" size={16} /></span>
+						<span class="k">Següent <Icon name="arrow-right" size={16} /></span>
 						<span class="v">{next.data.titulo}</span>
 					</a>
 				) : (

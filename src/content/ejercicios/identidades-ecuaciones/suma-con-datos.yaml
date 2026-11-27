@@ -1,29 +1,29 @@
-titulo: Suma y resta de dos ángulos de cuadrantes distintos
+titulo: Suma i resta de dos angles de quadrants diferents
 tema: identidades-ecuaciones
 orden: 10
 procedencia: original
 dificultad: avanzado
 habilidades: [calculo, multipaso]
-resumen: Completar las razones de cada ángulo con su signo y aplicar las fórmulas.
+resumen: Completar les raons de cada angle amb el seu signe i aplicar les fórmules.
 enunciado: |
-  Sabiendo que $\sin\alpha = \dfrac35$ con $\alpha$ en el **segundo** cuadrante, y que $\cos\beta = \dfrac{5}{13}$ con $\beta$ en el **cuarto** cuadrante, calcula $\sin(\alpha + \beta)$ y $\cos(\alpha - \beta)$.
+  Sabent que $\sin\alpha = \dfrac35$ amb $\alpha$ al **segon** quadrant, i que $\cos\beta = \dfrac{5}{13}$ amb $\beta$ al **quart** quadrant, calcula $\sin(\alpha + \beta)$ i $\cos(\alpha - \beta)$.
 apartados:
   - id: a
-    enunciado: Escribe los dos valores (decimal).
+    enunciado: Escriu els dos valors (decimal).
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\sin(\alpha + \beta)', etiqueta: '', unidad: '', valor: 0.9692, tolerancia: 0.005, trampas: [{ valor: -0.5077, explicacion: 'Revisa los signos: $\cos\alpha$ es negativo (II cuadrante) y $\sin\beta$ también (IV cuadrante).' }] }
+        - { simbolo: '\sin(\alpha + \beta)', etiqueta: '', unidad: '', valor: 0.9692, tolerancia: 0.005, trampas: [{ valor: -0.5077, explicacion: 'Revisa els signes: $\cos\alpha$ és negatiu (II quadrant) i $\sin\beta$ també (IV quadrant).' }] }
         - { simbolo: '\cos(\alpha - \beta)', etiqueta: '', unidad: '', valor: -0.8615, tolerancia: 0.005 }
     pistas:
-      - 'Calcula primero $\cos\alpha$ y $\sin\beta$, con el signo de su cuadrante.'
-      - '$\cos\alpha = -\frac45$ y $\sin\beta = -\frac{12}{13}$.'
+      - 'Calcula primer $\cos\alpha$ i $\sin\beta$, amb el signe del seu quadrant.'
+      - '$\cos\alpha = -\frac45$ i $\sin\beta = -\frac{12}{13}$.'
     pasos:
-      - titulo: Completar las razones
+      - titulo: Completar les raons
         desarrollo: '$$\cos\alpha = -\sqrt{1 - \tfrac{9}{25}} = -\frac45 \qquad \sin\beta = -\sqrt{1 - \tfrac{25}{169}} = -\frac{12}{13}$$'
-        porque: 'II cuadrante: coseno negativo. IV cuadrante: seno negativo.'
-      - titulo: Seno de la suma
+        porque: 'II quadrant: cosinus negatiu. IV quadrant: sinus negatiu.'
+      - titulo: Sinus de la suma
         desarrollo: '$$\sin(\alpha + \beta) = \frac35\cdot\frac{5}{13} + \left(-\frac45\right)\left(-\frac{12}{13}\right) = \frac{15 + 48}{65} = \frac{63}{65} \approx 0{,}9692$$'
-      - titulo: Coseno de la resta
+      - titulo: Cosinus de la resta
         desarrollo: '$$\cos(\alpha - \beta) = \left(-\frac45\right)\frac{5}{13} + \frac35\left(-\frac{12}{13}\right) = \frac{-20 - 36}{65} = -\frac{56}{65} \approx -0{,}8615$$'
-    resultado: '$\sin(\alpha + \beta) = \frac{63}{65}$ y $\cos(\alpha - \beta) = -\frac{56}{65}$.'
+    resultado: '$\sin(\alpha + \beta) = \frac{63}{65}$ i $\cos(\alpha - \beta) = -\frac{56}{65}$.'

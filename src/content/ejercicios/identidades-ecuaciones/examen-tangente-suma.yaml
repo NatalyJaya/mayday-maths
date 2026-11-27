@@ -1,22 +1,22 @@
-titulo: Dos ángulos que suman 45°
+titulo: Dos angles que sumen 45°
 tema: identidades-ecuaciones
 orden: 15
 procedencia: original
 dificultad: examen
 habilidades: [calculo, demostracion, conceptual]
-resumen: La tangente de la suma revela un ángulo exacto sin calcular los ángulos por separado.
+resumen: La tangent de la suma revela un angle exacte sense calcular els angles per separat.
 enunciado: |
-  Los ángulos agudos $\alpha$ y $\beta$ cumplen $\tan\alpha = \dfrac12$ y $\tan\beta = \dfrac13$.
+  Els angles aguts $\alpha$ i $\beta$ compleixen $\tan\alpha = \dfrac12$ i $\tan\beta = \dfrac13$.
 
   a) Calcula $\tan(\alpha + \beta)$.
-  b) ¿Cuánto mide exactamente $\alpha + \beta$?
+  b) Quant mesura exactament $\alpha + \beta$?
 apartados:
   - id: a
     enunciado: '$\tan(\alpha + \beta)$'
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\tan(\alpha + \beta)', etiqueta: '', unidad: '', valor: 1, trampas: [{ valor: 0.8333, explicacion: 'Has sumado las tangentes. La tangente de una suma no es la suma de las tangentes: falta dividir entre $1 - \tan\alpha\tan\beta$.' }] }
+        - { simbolo: '\tan(\alpha + \beta)', etiqueta: '', unidad: '', valor: 1, trampas: [{ valor: 0.8333, explicacion: 'Has sumat les tangents. La tangent d’una suma no és la suma de les tangents: falta dividir entre $1 - \tan\alpha\tan\beta$.' }] }
     pistas:
       - '$\tan(\alpha + \beta) = \dfrac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}$.'
     pasos:
@@ -28,11 +28,11 @@ apartados:
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\alpha + \beta', etiqueta: '', unidad: '°', valor: 45, trampas: [{ valor: 225, explicacion: '$\tan 225^\circ = 1$, pero $\alpha$ y $\beta$ son agudos, así que su suma es menor que $180^\circ$.' }] }
+        - { simbolo: '\alpha + \beta', etiqueta: '', unidad: '°', valor: 45, trampas: [{ valor: 225, explicacion: '$\tan 225^\circ = 1$, però $\alpha$ i $\beta$ són aguts, així que la seva suma és més petita que $180^\circ$.' }] }
     pistas:
-      - '¿Qué ángulos tienen tangente 1? ¿Entre qué valores está $\alpha + \beta$?'
+      - 'Quins angles tenen tangent 1? Entre quins valors és $\alpha + \beta$?'
     pasos:
-      - titulo: El ángulo
-        desarrollo: 'Como $\alpha, \beta < 90^\circ$, su suma está entre $0^\circ$ y $180^\circ$. Con tangente 1, solo puede ser $45^\circ$.'
-        porque: 'Comprobación con la calculadora: $\arctan\frac12 + \arctan\frac13 \approx 26{,}57^\circ + 18{,}43^\circ = 45^\circ$ ✔.'
-    resultado: '$\alpha + \beta = 45^\circ$ exactamente.'
+      - titulo: L’angle
+        desarrollo: 'Com que $\alpha, \beta < 90^\circ$, la seva suma és entre $0^\circ$ i $180^\circ$. Amb tangent 1, només pot ser $45^\circ$.'
+        porque: 'Comprovació amb la calculadora: $\arctan\frac12 + \arctan\frac13 \approx 26{,}57^\circ + 18{,}43^\circ = 45^\circ$ ✔.'
+    resultado: '$\alpha + \beta = 45^\circ$ exactament.'

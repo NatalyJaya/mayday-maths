@@ -1,81 +1,81 @@
 ---
 tema: identidades-ecuaciones
 etapa: objetos
-titulo: Identidades, ecuaciones y soluciones
-descripcion: Qué es exactamente una identidad, cómo se escribe la solución de una ecuación trigonométrica y el catálogo de fórmulas con el que trabajarás.
+titulo: Identitats, equacions i solucions
+descripcion: Què és exactament una identitat, com s’escriu la solució d’una equació trigonomètrica i el catàleg de fórmules amb què treballaràs.
 minutos: 18
 ---
 
-## Identidad
+## Identitat
 
 <Callout tipo="definicion">
-	Una **identidad trigonométrica** es una igualdad que se cumple para **todos** los valores de la variable para los que los dos miembros están definidos.
+	Una **identitat trigonomètrica** és una igualtat que es compleix per a **tots** els valors de la variable per als quals els dos membres estan definits.
 </Callout>
 
-Ejemplos: $\sin^2 x + \cos^2 x = 1$ (para todo $x$), o $\tan x = \frac{\sin x}{\cos x}$ (para todo $x$ con $\cos x \ne 0$).
+Exemples: $\sin^2 x + \cos^2 x = 1$ (per a tot $x$), o $\tan x = \frac{\sin x}{\cos x}$ (per a tot $x$ amb $\cos x \ne 0$).
 
-- Para **demostrar** que una igualdad es una identidad, hay que razonar con fórmulas que valgan siempre. Probar con unos cuantos valores **no** basta: podría fallar en otro.
-- Para **demostrar que no lo es**, basta un solo **contraejemplo**: un valor de $x$ en el que no se cumple.
+- Per **demostrar** que una igualtat és una identitat, cal raonar amb fórmules que valguin sempre. Provar amb uns quants valors **no** n’hi ha prou: podria fallar en un altre.
+- Per **demostrar que no ho és**, n’hi ha prou amb un sol **contraexemple**: un valor de $x$ en què no es compleix.
 
 <Callout tipo="ojo">
-	Comprobar una identidad con un valor concreto (por ejemplo, $x = 30^\circ$) es una **buena forma de detectar errores**, pero no es una demostración.
+	Comprovar una identitat amb un valor concret (per exemple, $x = 30^\circ$) és una **bona manera de detectar errors**, però no és una demostració.
 </Callout>
 
-## Ecuación trigonométrica
+## Equació trigonomètrica
 
-Una **ecuación trigonométrica** es una igualdad con razones trigonométricas de la incógnita que solo se cumple para algunos valores. **Resolverla** es encontrar **todos** esos valores.
+Una **equació trigonomètrica** és una igualtat amb raons trigonomètriques de la incògnita que només es compleix per a alguns valors. **Resoldre-la** és trobar **tots** aquests valors.
 
-### La solución general
+### La solució general
 
-Como las razones se repiten, si encuentras una solución, sumándole vueltas completas obtienes infinitas. Para las ecuaciones básicas, con $\theta$ el ángulo que da la calculadora:
+Com que les raons es repeteixen, si trobes una solució, sumant-hi voltes completes n’obtens infinites. Per a les equacions bàsiques, amb $\theta$ l’angle que dona la calculadora:
 
-| Ecuación | Soluciones de una vuelta | Solución general ($k$ entero) |
+| Equació | Solucions d’una volta | Solució general ($k$ enter) |
 | --- | --- | --- |
-| $\sin x = k$ | $\theta$ y $180^\circ - \theta$ | $x = \theta + 360^\circ k$, $\;x = 180^\circ - \theta + 360^\circ k$ |
-| $\cos x = k$ | $\theta$ y $360^\circ - \theta$ (o $-\theta$) | $x = \pm\theta + 360^\circ k$ |
-| $\tan x = k$ | $\theta$ y $\theta + 180^\circ$ | $x = \theta + 180^\circ k$ |
+| $\sin x = k$ | $\theta$ i $180^\circ - \theta$ | $x = \theta + 360^\circ k$, $\;x = 180^\circ - \theta + 360^\circ k$ |
+| $\cos x = k$ | $\theta$ i $360^\circ - \theta$ (o $-\theta$) | $x = \pm\theta + 360^\circ k$ |
+| $\tan x = k$ | $\theta$ i $\theta + 180^\circ$ | $x = \theta + 180^\circ k$ |
 
 <Figura
 	figura={{ tipo: 'circunferencia', angulos: [{ grados: 30, etiqueta: 'θ = 30°' }, { grados: 150, etiqueta: '180° − θ' }], recta: { tipo: 'seno', valor: 0.5 }, proyecciones: false }}
-	alt="La recta horizontal y = 1/2 corta la circunferencia en los puntos de 30 y 150 grados."
-	pie="sin x = k: la recta horizontal y = k corta la circunferencia en dos puntos, simétricos respecto al eje Y."
+	alt="La recta horitzontal y = 1/2 talla la circumferència als punts de 30 i 150 graus."
+	pie="sin x = k: la recta horitzontal y = k talla la circumferència en dos punts, simètrics respecte de l’eix Y."
 />
 
 <Figura
 	figura={{ tipo: 'circunferencia', angulos: [{ grados: 60, etiqueta: 'θ = 60°' }, { grados: 300, etiqueta: '360° − θ' }], recta: { tipo: 'coseno', valor: 0.5 }, proyecciones: false }}
-	alt="La recta vertical x = 1/2 corta la circunferencia en los puntos de 60 y 300 grados."
-	pie="cos x = k: la recta vertical x = k corta la circunferencia en dos puntos, simétricos respecto al eje X."
+	alt="La recta vertical x = 1/2 talla la circumferència als punts de 60 i 300 graus."
+	pie="cos x = k: la recta vertical x = k talla la circumferència en dos punts, simètrics respecte de l’eix X."
 />
 
-Casos especiales que conviene tener claros:
+Casos especials que convé tenir clars:
 
-- Si $|k| > 1$, $\sin x = k$ y $\cos x = k$ **no tienen solución** (la recta no corta la circunferencia).
-- Si $k = 1$ o $k = -1$, la recta es **tangente** a la circunferencia: una sola solución por vuelta ($\sin x = 1 \Rightarrow x = 90^\circ$; $\cos x = -1 \Rightarrow x = 180^\circ$).
-- La tangente puede valer cualquier número, y se repite cada $180^\circ$, no cada $360^\circ$.
+- Si $|k| > 1$, $\sin x = k$ i $\cos x = k$ **no tenen solució** (la recta no talla la circumferència).
+- Si $k = 1$ o $k = -1$, la recta és **tangent** a la circumferència: una sola solució per volta ($\sin x = 1 \Rightarrow x = 90^\circ$; $\cos x = -1 \Rightarrow x = 180^\circ$).
+- La tangent pot valer qualsevol nombre, i es repeteix cada $180^\circ$, no cada $360^\circ$.
 
-### Soluciones en un intervalo
+### Solucions en un interval
 
-En los ejercicios (y en tus apuntes) casi siempre se piden las soluciones en $[0^\circ,\ 360^\circ)$: todas las de **una vuelta**. Si en la respuesta aparece un ángulo negativo (como el $-19{,}47^\circ$ que da la calculadora para $\arcsin(-\frac13)$), súmale $360^\circ$. Si te piden las soluciones en radianes, el intervalo es $[0,\ 2\pi)$.
+Als exercicis (i als teus apunts) gairebé sempre es demanen les solucions a $[0^\circ,\ 360^\circ)$: totes les d’**una volta**. Si a la resposta apareix un angle negatiu (com el $-19{,}47^\circ$ que dona la calculadora per a $\arcsin(-\frac13)$), suma-hi $360^\circ$. Si et demanen les solucions en radiants, l’interval és $[0,\ 2\pi)$.
 
-<Callout tipo="ojo" titulo="Ángulos múltiples">
-	Si la incógnita aparece como $2x$ y quieres $x \in [0^\circ,\ 360^\circ)$, el ángulo $u = 2x$ recorre $[0^\circ,\ 720^\circ)$: **dos vueltas**. Hay que buscar las soluciones de $u$ en dos vueltas y después dividir. Con $\frac{x}{2}$ pasa lo contrario: $\frac{x}{2}$ solo recorre media vuelta.
+<Callout tipo="ojo" titulo="Angles múltiples">
+	Si la incògnita apareix com $2x$ i vols $x \in [0^\circ,\ 360^\circ)$, l’angle $u = 2x$ recorre $[0^\circ,\ 720^\circ)$: **dues voltes**. Cal buscar les solucions de $u$ en dues voltes i després dividir. Amb $\frac{x}{2}$ passa el contrari: $\frac{x}{2}$ només recorre mitja volta.
 </Callout>
 
-## La notación, con cuidado
+## La notació, amb compte
 
-| Se escribe | Significa | No confundir con |
+| S’escriu | Vol dir | No confondre amb |
 | --- | --- | --- |
-| $\sin 2x$ | el seno del ángulo $2x$ | $2\sin x$ (el doble del seno de $x$) |
+| $\sin 2x$ | el sinus de l’angle $2x$ | $2\sin x$ (el doble del sinus de $x$) |
 | $\sin^2 x$ | $(\sin x)^2$ | $\sin(x^2)$ |
-| $\sin\frac{x}{2}$ | el seno de la mitad del ángulo | $\frac{\sin x}{2}$ |
-| $\cos x + \sin x$ | una suma de dos números | $\cos(x + \sin x)$ |
+| $\sin\frac{x}{2}$ | el sinus de la meitat de l’angle | $\frac{\sin x}{2}$ |
+| $\cos x + \sin x$ | una suma de dos nombres | $\cos(x + \sin x)$ |
 
-## Las fórmulas con las que vas a trabajar
+## Les fórmules amb què treballaràs
 
-Este es el catálogo completo, tal como aparece en el resumen de tus apuntes. En la etapa siguiente verás de dónde sale cada una: **no tienes que memorizarlas sueltas**, porque casi todas se deducen de las dos primeras.
+Aquest és el catàleg complet, tal com apareix al resum dels teus apunts. A l’etapa següent veuràs d’on surt cadascuna: **no les has de memoritzar soltes**, perquè gairebé totes es dedueixen de les dues primeres.
 
-<Formula titulo="Razones de ángulos compuestos" usala="para expresar razones de α ± β, 2α o α/2 en función de las razones de α y β" nousar="pensando que el seno o el coseno «se reparten»">
-	| Nº | Fórmula |
+<Formula titulo="Raons d’angles compostos" usala="per expressar raons de α ± β, 2α o α/2 en funció de les raons de α i β" nousar="pensant que el sinus o el cosinus «es reparteixen»">
+	| Núm. | Fórmula |
 	| --- | --- |
 	| (1) | $\sin(\alpha + \beta) = \sin\alpha\cos\beta + \cos\alpha\sin\beta$ |
 	| (2) | $\cos(\alpha + \beta) = \cos\alpha\cos\beta - \sin\alpha\sin\beta$ |
@@ -92,7 +92,7 @@ Este es el catálogo completo, tal como aparece en el resumen de tus apuntes. En
 </Formula>
 
 <VariableGrid>
-	<Variable simbolo="\alpha \pm \beta" nombre="Suma y resta" tipo="Ángulo compuesto" mide="Un ángulo formado por dos ángulos de razones conocidas, como $75^\circ = 30^\circ + 45^\circ$ o $15^\circ = 45^\circ - 30^\circ$." relacion="Fórmulas (1) a (6)." />
-	<Variable simbolo="2\alpha" nombre="Ángulo doble" tipo="Ángulo compuesto" eje="y" mide="El caso $\beta = \alpha$ de la suma. Aparece en ecuaciones con $x$ y $2x$ a la vez." relacion="Fórmulas (7) a (9). El coseno tiene tres formas: elige la que deje una sola razón." />
-	<Variable simbolo="\tfrac{\alpha}{2}" nombre="Ángulo mitad" tipo="Ángulo compuesto" eje="x" mide="La mitad de un ángulo de razones conocidas, como $22{,}5^\circ = \frac{45^\circ}{2}$." relacion="Fórmulas (10) a (12). El signo $\pm$ depende del cuadrante de $\frac{\alpha}{2}$." />
+	<Variable simbolo="\alpha \pm \beta" nombre="Suma i resta" tipo="Angle compost" mide="Un angle format per dos angles de raons conegudes, com $75^\circ = 30^\circ + 45^\circ$ o $15^\circ = 45^\circ - 30^\circ$." relacion="Fórmules (1) a (6)." />
+	<Variable simbolo="2\alpha" nombre="Angle doble" tipo="Angle compost" eje="y" mide="El cas $\beta = \alpha$ de la suma. Apareix en equacions amb $x$ i $2x$ alhora." relacion="Fórmules (7) a (9). El cosinus té tres formes: tria la que deixi una sola raó." />
+	<Variable simbolo="\tfrac{\alpha}{2}" nombre="Angle meitat" tipo="Angle compost" eje="x" mide="La meitat d’un angle de raons conegudes, com $22{,}5^\circ = \frac{45^\circ}{2}$." relacion="Fórmules (10) a (12). El signe $\pm$ depèn del quadrant de $\frac{\alpha}{2}$." />
 </VariableGrid>

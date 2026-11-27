@@ -1,14 +1,14 @@
 ---
 tema: resolucion-triangulos
 etapa: propiedades
-titulo: Los teoremas del seno y del coseno
-descripcion: La doble observación, la deducción de los dos teoremas a partir de una altura, el caso ambiguo, el área de un triángulo y cómo decidir qué usar.
+titulo: Els teoremes del sinus i del cosinus
+descripcion: La doble observació, la deducció dels dos teoremes a partir d’una altura, el cas ambigu, l’àrea d’un triangle i com decidir què fer servir.
 minutos: 35
 ---
 
-## Doble observación: dos triángulos rectángulos
+## Doble observació: dos triangles rectangles
 
-Quieres la altura $h$ de una torre a cuyo pie no puedes llegar. Desde un punto la ves con un ángulo de elevación $\alpha$; te acercas una distancia $d$ y la ves con un ángulo mayor, $\beta$. No conoces la distancia $x$ que te queda hasta el pie.
+Vols l’altura $h$ d’una torre al peu de la qual no pots arribar. Des d’un punt la veus amb un angle d’elevació $\alpha$; t’hi acostes una distància $d$ i la veus amb un angle més gran, $\beta$. No coneixes la distància $x$ que et queda fins al peu.
 
 <Figura
 	figura={{
@@ -33,117 +33,194 @@ Quieres la altura $h$ de una torre a cuyo pie no puedes llegar. Desde un punto l
 		],
 		suelo: { y: 0, desde: -0.5, hasta: 10.5 },
 	}}
-	alt="Doble observación: desde A se ve la cima T con ángulo α y desde B, más cerca, con ángulo β. Entre A y B hay una distancia d; desde B hasta el pie de la torre, una distancia x desconocida."
+	alt="Doble observació: des d’A es veu el cim T amb angle α i des de B, més a prop, amb angle β. Entre A i B hi ha una distància d; des de B fins al peu de la torre, una distància x desconeguda."
 />
 
-Hay **dos incógnitas** ($h$ y $x$) y **dos triángulos rectángulos** (el grande, con $\alpha$, y el pequeño, con $\beta$). En cada uno, la tangente relaciona la altura con la distancia horizontal:
+Hi ha **dues incògnites** ($h$ i $x$) i **dos triangles rectangles** (el gran, amb $\alpha$, i el petit, amb $\beta$). En cadascun, la tangent relaciona l’altura amb la distància horitzontal:
 
 $$
 \tan\beta = \frac{h}{x} \qquad\qquad \tan\alpha = \frac{h}{x + d}
 $$
 
-Despejando $h$ en las dos e igualando:
+Aïllant $h$ en totes dues i igualant:
 
 $$
 x\tan\beta = (x + d)\tan\alpha \;\Rightarrow\; x(\tan\beta - \tan\alpha) = d\tan\alpha \;\Rightarrow\; x = \frac{d\tan\alpha}{\tan\beta - \tan\alpha} \qquad h = x\tan\beta
 $$
 
 <Callout tipo="idea">
-	No memorices la fórmula final: memoriza el **método**. Escribe una ecuación por cada triángulo rectángulo con la misma incógnita y resuelve el sistema. Funciona igual si los dos puntos de observación están a lados opuestos de la torre (entonces las distancias **suman**: $x + y = d$).
+	No memoritzis la fórmula final: memoritza el **mètode**. Escriu una equació per cada triangle rectangle amb la mateixa incògnita i resol el sistema. Funciona igual si els dos punts d’observació són a costats oposats de la torre (aleshores les distàncies **sumen**: $x + y = d$).
 </Callout>
 
-## El teorema del seno
+## El teorema del sinus
 
-<Derivation titulo="Deducción con la altura">
-	<Paso titulo="Trazar la altura desde C" porque="Así el triángulo queda dividido en dos triángulos rectángulos, donde ya sabemos usar el seno.">
-		<Figura figura={{ tipo: 'triangulo', a: 7, b: 6, c: 8, altura: { desde: 'C', etiqueta: 'h' }, etiquetas: { a: 'a', b: 'b', A: 'A', B: 'B' }, colores: { a: 'x', b: 'y' } }} alt="Triángulo con la altura h desde C." />
+<Derivation titulo="Deducció amb l’altura">
+	<Paso titulo="Traçar l’altura des de C" porque="Així el triangle queda dividit en dos triangles rectangles, on ja sabem fer servir el sinus.">
+		<Figura figura={{ tipo: 'triangulo', a: 7, b: 6, c: 8, altura: { desde: 'C', etiqueta: 'h' }, etiquetas: { a: 'a', b: 'b', A: 'A', B: 'B' }, colores: { a: 'x', b: 'y' } }} alt="Triangle amb l’altura h des de C." />
 	</Paso>
-	<Paso titulo="Escribir la altura de dos formas" porque="En el triángulo de la izquierda, $h$ es el cateto opuesto a $A$ y la hipotenusa es $b$. En el de la derecha, $h$ es opuesto a $B$ y la hipotenusa es $a$.">
+	<Paso titulo="Escriure l’altura de dues maneres" porque="Al triangle de l’esquerra, $h$ és el catet oposat a $A$ i la hipotenusa és $b$. Al de la dreta, $h$ és oposat a $B$ i la hipotenusa és $a$.">
 		$$
 		\sin A = \frac{h}{b} \;\Rightarrow\; h = b\sin A \qquad\qquad \sin B = \frac{h}{a} \;\Rightarrow\; h = a\sin B
 		$$
 	</Paso>
-	<Paso titulo="Igualar y reordenar">
+	<Paso titulo="Igualar i reordenar">
 		$$
 		b\sin A = a\sin B \quad\Longrightarrow\quad \frac{a}{\sin A} = \frac{b}{\sin B}
 		$$
 	</Paso>
-	<Paso titulo="Repetir con otra altura" porque="Con la altura desde $A$ se obtiene, del mismo modo, $\frac{b}{\sin B} = \frac{c}{\sin C}$.">
+	<Paso titulo="Traçar ara l’altura des d’A, en el mateix triangle" porque="Ara l’altura cau sobre el costat $a$ (el $BC$) i divideix el mateix triangle en dos triangles rectangles diferents dels d’abans: un amb el vèrtex $B$ i un altre amb el vèrtex $C$.">
+		<Figura figura={{ tipo: 'triangulo', a: 7, b: 6, c: 8, base: 'a', altura: { desde: 'A', etiqueta: 'h’' }, etiquetas: { b: 'b', c: 'c', B: 'B', C: 'C' }, colores: { b: 'y', c: 'g' } }} alt="El mateix triangle, ara amb el costat a a la base i l’altura h’ traçada des d’A." />
+	</Paso>
+	<Paso titulo="Escriure aquesta altura de dues maneres" porque="Al triangle rectangle de l’esquerra, $h'$ és el catet oposat a $B$ i la hipotenusa és $c$. Al de la dreta, $h'$ és oposat a $C$ i la hipotenusa és $b$.">
+		$$
+		\sin B = \frac{h'}{c} \;\Rightarrow\; h' = c\sin B \qquad\qquad \sin C = \frac{h'}{b} \;\Rightarrow\; h' = b\sin C
+		$$
+	</Paso>
+	<Paso titulo="Igualar i reordenar" porque="Les dues expressions són la mateixa altura $h'$. Es divideixen els dos membres entre $\sin B\cdot\sin C$, com abans.">
+		$$
+		c\sin B = b\sin C \quad\Longrightarrow\quad \frac{b}{\sin B} = \frac{c}{\sin C}
+		$$
+	</Paso>
+	<Paso titulo="Ajuntar les dues igualtats" porque="La primera altura ha donat $\frac{a}{\sin A} = \frac{b}{\sin B}$ i la segona, $\frac{b}{\sin B} = \frac{c}{\sin C}$. Totes dues tenen $\frac{b}{\sin B}$, així que els tres quocients són iguals.">
 		$$
 		\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}
 		$$
 	</Paso>
 </Derivation>
 
-<Formula titulo="Teorema del seno" usala="cuando conozcas un lado y su ángulo opuesto (una «pareja») y otro dato: casos ALA, AAL y LLA" nousar="con los tres lados (LLL) o con dos lados y el ángulo que forman (LAL): ninguna pareja está completa">
+<Formula titulo="Teorema del sinus" usala="quan coneguis un costat i el seu angle oposat (una «parella») i una altra dada: casos ACA, AAC i CCA" nousar="amb els tres costats (CCC) o amb dos costats i l’angle que formen (CAC): cap parella no és completa">
 	$$
 	\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R
 	$$
 </Formula>
 
-En palabras: **los lados son proporcionales a los senos de sus ángulos opuestos**. El ángulo más grande tiene el seno más grande… salvo cuando es obtuso, y por eso hay que tener cuidado.
+En paraules: **els costats són proporcionals als sinus dels seus angles oposats**. L’angle més gran té el sinus més gran… excepte quan és obtús, i per això cal anar amb compte.
 
-<Reveal titulo="Ampliación: ¿qué es ese 2R?">
+<Reveal titulo="Ampliació: què és aquest 2R?">
 
-El cociente común es el **diámetro de la circunferencia circunscrita** al triángulo (la que pasa por los tres vértices). Si trazas el diámetro que pasa por $B$, el ángulo inscrito que abarca el lado $a$ es igual a $A$ (ángulos inscritos que abarcan el mismo arco), y en el triángulo rectángulo que se forma sale $\sin A = \frac{a}{2R}$. En el laboratorio puedes activar la circunferencia y comprobarlo.
+El quocient comú és el **diàmetre de la circumferència circumscrita** al triangle (la que passa pels tres vèrtexs). Si traces el diàmetre que passa per $B$, l’angle inscrit que abasta el costat $a$ és igual a $A$ (angles inscrits que abasten el mateix arc), i en el triangle rectangle que es forma surt $\sin A = \frac{a}{2R}$. Al laboratori pots activar la circumferència i comprovar-ho.
 
 </Reveal>
 
-<Callout tipo="ojo" titulo="Si el triángulo es obtuso">
-	Si $A$ es obtuso, la altura desde $C$ cae **fuera** del triángulo, sobre la prolongación de $c$. La deducción sigue funcionando porque $\sin(180^\circ - A) = \sin A$. Por la misma razón, el seno no distingue un ángulo agudo $\theta$ de su suplementario $180^\circ - \theta$, y eso trae el caso ambiguo.
+<Callout tipo="ojo" titulo="Si el triangle és obtusangle">
+	Si $A$ és obtús, l’altura des de $C$ cau **fora** del triangle, sobre la prolongació de $c$. La deducció continua funcionant perquè $\sin(180^\circ - A) = \sin A$. Per la mateixa raó, el sinus no distingeix un angle agut $\theta$ del seu suplementari $180^\circ - \theta$, i això porta el cas ambigu.
 </Callout>
 
-## El caso ambiguo (LLA)
+## El cas ambigu (CCA)
 
-Conoces $a$, $b$ y el ángulo $A$, opuesto a $a$. Con el teorema del seno calculas $\sin B = \frac{b\sin A}{a}$. Pero **dos ángulos tienen ese seno**: $B$ y $180^\circ - B$. ¿Valen los dos?
+Coneixes $a$, $b$ i l’angle $A$, oposat a $a$. Amb el teorema del sinus calcules $\sin B = \frac{b\sin A}{a}$. Però **dos angles tenen aquest sinus**: $B$ i $180^\circ - B$. Valen tots dos?
 
-Construyámoslo: dibuja el ángulo $A$ y, sobre uno de sus lados, el lado $b$ hasta $C$. El vértice $B$ tiene que estar en el otro lado del ángulo y a distancia $a$ de $C$: es decir, donde la circunferencia de centro $C$ y radio $a$ corta esa recta.
+Construïm-ho: dibuixa l’angle $A$ i, sobre un dels seus costats, el costat $b$ fins a $C$. El vèrtex $B$ ha de ser a l’altre costat de l’angle i a distància $a$ de $C$: és a dir, on la circumferència de centre $C$ i radi $a$ talla aquesta recta.
 
 <AmbiguousCase />
 
-Llamando $h = b\sin A$ a la distancia de $C$ a la recta (la altura), si $A$ es agudo:
+Anomenant $h = b\sin A$ la distància de $C$ a la recta (l’altura), si $A$ és agut:
 
-| Situación | Lo que pasa | Triángulos |
+| Situació | El que passa | Triangles |
 | --- | --- | --- |
-| $a < h$ | la circunferencia no llega a la recta ($\sin B > 1$) | **ninguno** |
-| $a = h$ | la toca en un punto ($\sin B = 1$, $B = 90^\circ$) | **uno**, rectángulo |
-| $h < a < b$ | la corta en dos puntos | **dos** |
-| $a \ge b$ | uno de los cortes queda detrás de $A$ | **uno** |
+| $a < h$ | la circumferència no arriba a la recta ($\sin B > 1$) | **cap** |
+| $a = h$ | la toca en un punt ($\sin B = 1$, $B = 90^\circ$) | **un**, rectangle |
+| $h < a < b$ | la talla en dos punts | **dos** |
+| $a \ge b$ | un dels talls queda darrere d’$A$ | **un** |
 
-Si $A$ es obtuso o recto, solo hay triángulo cuando $a > b$, y es único.
+Si $A$ és obtús o recte, només hi ha triangle quan $a > b$, i és únic.
 
-<Callout tipo="idea" titulo="Cómo detectarlo en la práctica">
-	Cada vez que calcules un ángulo con $\arcsin$, prueba también su suplementario $180^\circ - B$: **vale si sumado al ángulo conocido da menos de $180^\circ$**. Si vale, hay dos triángulos y el problema tiene dos soluciones.
+<Callout tipo="idea" titulo="Com detectar-ho a la pràctica">
+	Cada vegada que calculis un angle amb $\arcsin$, prova també el seu suplementari $180^\circ - B$: **val si sumat a l’angle conegut dona menys de $180^\circ$**. Si val, hi ha dos triangles i el problema té dues solucions.
 </Callout>
 
-## El teorema del coseno
+## El teorema del cosinus
 
-Cuando no tienes ninguna pareja lado–ángulo opuesto completa (casos LLL y LAL), el teorema del seno no sirve. Hace falta una relación entre los **tres lados** y un ángulo.
+Quan no tens cap parella costat–angle oposat completa (casos CCC i CAC), el teorema del sinus no serveix. Cal una relació entre els **tres costats** i un angle.
 
-<Derivation titulo="Deducción con coordenadas">
-	<Paso titulo="Colocar el triángulo en unos ejes" porque="Con $A$ en el origen y $c$ sobre el eje $X$, las coordenadas salen directamente de la definición de seno y coseno (el punto $C$ está a distancia $b$ del origen, con ángulo $A$).">
+<Derivation titulo="Deducció amb coordenades">
+	<Paso titulo="Col·locar el triangle en uns eixos" porque="Amb $A$ a l’origen i $c$ sobre l’eix $X$, les coordenades d’$A$ i de $B$ són immediates. Les de $C$ surten del triangle rectangle de la figura.">
 		$$
 		A = (0,\ 0) \qquad B = (c,\ 0) \qquad C = (b\cos A,\ b\sin A)
 		$$
 	</Paso>
-	<Paso titulo="Distancia de B a C" porque="El lado $a$ es la distancia entre $B$ y $C$ (Pitágoras con las diferencias de coordenadas).">
+	<Paso titulo="Per què C = (b·cos A, b·sin A)?" porque="És la circumferència goniomètrica ampliada: un punt a distància 1 amb angle $A$ és $(\cos A,\ \sin A)$; a distància $b$, les dues coordenades es multipliquen per $b$.">
+		<Figura
+			figura={{
+				tipo: 'geometria',
+				puntos: [
+					{ id: 'A', x: 0, y: 0, etiqueta: 'A (0, 0)', lado: 'so' },
+					{ id: 'H', x: 2.5, y: 0, etiqueta: 'H', lado: 's' },
+					{ id: 'B', x: 8, y: 0, etiqueta: 'B (c, 0)', lado: 'se' },
+					{ id: 'C', x: 2.5, y: 4.3301, etiqueta: 'C (b·cos A, b·sin A)', lado: 'n' },
+					{ id: 'Y', x: 0, y: 5.3, etiqueta: 'y', lado: 'n', marca: false },
+					{ id: 'X', x: 9.6, y: 0, etiqueta: 'x', lado: 'e', marca: false },
+				],
+				segmentos: [
+					{ de: 'A', a: 'Y', discontinuo: true },
+					{ de: 'B', a: 'X', discontinuo: true },
+					{ de: 'A', a: 'C', etiqueta: 'b' },
+					{ de: 'A', a: 'H', etiqueta: 'b·cos A', color: 'x', lado: 'derecha' },
+					{ de: 'H', a: 'C', etiqueta: 'b·sin A', color: 'y', lado: 'derecha' },
+					{ de: 'H', a: 'B', lado: 'derecha' },
+					{ de: 'C', a: 'B', etiqueta: 'a', discontinuo: true },
+				],
+				angulos: [
+					{ vertice: 'A', desde: 'H', hasta: 'C', etiqueta: 'A', color: 'g', radio: 30 },
+					{ vertice: 'H', desde: 'B', hasta: 'C', recto: true },
+				],
+			}}
+			alt="Triangle ABC en uns eixos: A a l’origen, B sobre l’eix X i C a dalt. La perpendicular des de C fins a l’eix X, amb peu H, forma el triangle rectangle AHC d’hipotenusa b, catet horitzontal b·cos A i catet vertical b·sin A."
+			pie="Exemple a escala amb b = 5, c = 8 i A = 60°: C = (5·cos 60°, 5·sin 60°) = (2,5; 4,33)."
+		/>
+
+		Baixa la perpendicular des de $C$ fins a l’eix $X$: el peu és $H$. Es forma el triangle rectangle $AHC$, amb **hipotenusa $b$** i angle $A$ al vèrtex $A$. Aplicant-hi les definicions de sempre:
+
 		$$
-		a^2 = (b\cos A - c)^2 + (b\sin A)^2
+		\cos A = \frac{\cx{AH}}{b} \;\Rightarrow\; \cx{AH = b\cos A} \qquad\qquad \sin A = \frac{\cy{HC}}{b} \;\Rightarrow\; \cy{HC = b\sin A}
+		$$
+
+		$AH$ és el que $C$ **avança** en horitzontal des de l’origen (la seva abscissa) i $HC$ és el que **puja** (la seva ordenada). Per això $C = (\cx{b\cos A},\ \cy{b\sin A})$. Amb els valors de la figura: $C = (5\cdot 0{,}5;\ 5\cdot 0{,}866) = (2{,}5;\ 4{,}33)$.
+
+		Si $A$ fos obtús, $\cos A$ seria negatiu i $C$ quedaria a l’esquerra de l’eix $Y$: les coordenades $(b\cos A,\ b\sin A)$ continuen sent correctes, igual que a la circumferència goniomètrica.
+	</Paso>
+	<Paso titulo="Distància de B a C" porque="El costat $a$ és la hipotenusa del triangle rectangle $HBC$. Els seus catets són les diferències de coordenades entre $B$ i $C$.">
+		<Figura
+			figura={{
+				tipo: 'geometria',
+				puntos: [
+					{ id: 'A', x: 0, y: 0, lado: 'so' },
+					{ id: 'H', x: 2.5, y: 0, lado: 's' },
+					{ id: 'B', x: 8, y: 0, lado: 'se' },
+					{ id: 'C', x: 2.5, y: 4.3301, lado: 'n' },
+				],
+				segmentos: [
+					{ de: 'A', a: 'H', discontinuo: true },
+					{ de: 'A', a: 'C', discontinuo: true },
+					{ de: 'H', a: 'B', etiqueta: 'c − b·cos A', color: 'x', lado: 'derecha' },
+					{ de: 'H', a: 'C', etiqueta: 'b·sin A', color: 'y' },
+					{ de: 'C', a: 'B', etiqueta: 'a', color: 'g' },
+				],
+				angulos: [{ vertice: 'H', desde: 'B', hasta: 'C', recto: true }],
+			}}
+			alt="El triangle rectangle HBC: catet horitzontal c menys b·cos A, catet vertical b·sin A i hipotenusa a."
+			pie="El triangle HBC és rectangle a H: el catet horitzontal és el que falta d’H fins a B, c − b·cos A."
+		/>
+
+		El catet horitzontal és el tros de base que va d’$H$ fins a $B$: tota la base $c$ menys el que ja ha avançat $C$, és a dir, $\cx{c - b\cos A}$. El vertical és l’altura de $C$, $\cy{b\sin A}$. Per Pitàgores:
+
+		$$
+		a^2 = (c - b\cos A)^2 + (b\sin A)^2
 		$$
 	</Paso>
-	<Paso titulo="Desarrollar el cuadrado">
+	<Paso titulo="Desenvolupar el quadrat">
 		$$
 		a^2 = b^2\cos^2 A - 2bc\cos A + c^2 + b^2\sin^2 A
 		$$
 	</Paso>
-	<Paso titulo="Usar la identidad fundamental" porque="$b^2\cos^2 A + b^2\sin^2 A = b^2(\cos^2 A + \sin^2 A) = b^2$.">
+	<Paso titulo="Fer servir la identitat fonamental" porque="$b^2\cos^2 A + b^2\sin^2 A = b^2(\cos^2 A + \sin^2 A) = b^2$.">
 		$$
 		a^2 = b^2 + c^2 - 2bc\cos A
 		$$
 	</Paso>
 </Derivation>
 
-<Formula titulo="Teorema del coseno" usala="con los tres lados (para un ángulo) o con dos lados y el ángulo que forman (para el tercer lado)" nousar="si el ángulo que conoces no es el que forman los dos lados conocidos">
+<Formula titulo="Teorema del cosinus" usala="amb els tres costats (per a un angle) o amb dos costats i l’angle que formen (per al tercer costat)" nousar="si l’angle que coneixes no és el que formen els dos costats coneguts">
 	$$
 	a^2 = b^2 + c^2 - 2bc\cos A \qquad b^2 = a^2 + c^2 - 2ac\cos B \qquad c^2 = a^2 + b^2 - 2ab\cos C
 	$$
@@ -152,49 +229,49 @@ Cuando no tienes ninguna pareja lado–ángulo opuesto completa (casos LLL y LAL
 	$$
 </Formula>
 
-<Callout tipo="porque" titulo="¿Por qué se llama «Pitágoras generalizado»?">
-	Si $A = 90^\circ$, entonces $\cos A = 0$ y queda $a^2 = b^2 + c^2$: el teorema de Pitágoras. El término $-2bc\cos A$ es la **corrección** cuando el ángulo no es recto: si $A$ es agudo ($\cos A > 0$), el lado $a$ es más corto que en el triángulo rectángulo; si es obtuso ($\cos A < 0$), más largo.
+<Callout tipo="porque" titulo="Per què s’anomena «Pitàgores generalitzat»?">
+	Si $A = 90^\circ$, aleshores $\cos A = 0$ i queda $a^2 = b^2 + c^2$: el teorema de Pitàgores. El terme $-2bc\cos A$ és la **correcció** quan l’angle no és recte: si $A$ és agut ($\cos A > 0$), el costat $a$ és més curt que en el triangle rectangle; si és obtús ($\cos A < 0$), més llarg.
 </Callout>
 
-Una ventaja del coseno: en $(0^\circ,\ 180^\circ)$ cada valor del coseno corresponde a **un solo** ángulo. El $\arccos$ distingue agudos (coseno positivo) de obtusos (coseno negativo). Por eso, en el caso LLL, **calcula primero el ángulo mayor (el opuesto al lado mayor) con el coseno**, y así los otros dos son seguro agudos.
+Un avantatge del cosinus: a $(0^\circ,\ 180^\circ)$ cada valor del cosinus correspon a **un sol** angle. L’$\arccos$ distingeix aguts (cosinus positiu) d’obtusos (cosinus negatiu). Per això, en el cas CCC, **calcula primer l’angle més gran (l’oposat al costat més gran) amb el cosinus**, i així els altres dos són segur aguts.
 
 <Callout tipo="contraejemplo">
-	Olvidar el término $-2bc\cos A$ y usar Pitágoras en un triángulo que no es rectángulo es el error más frecuente del tema. En el Problema 31 de clase, Pitágoras daría $6458\un{m}$ en lugar de $3383\un{m}$.
+	Oblidar el terme $-2bc\cos A$ i fer servir Pitàgores en un triangle que no és rectangle és l’error més freqüent del tema. Al Problema 31 de classe, Pitàgores donaria $6458\un{m}$ en lloc de $3383\un{m}$.
 </Callout>
 
-## El área de un triángulo
+## L’àrea d’un triangle
 
-El área es $\frac12\cdot\text{base}\cdot\text{altura}$. Con la base $c$, la altura desde $C$ es $h = b\sin A$, así que:
+L’àrea és $\frac12\cdot\text{base}\cdot\text{altura}$. Amb la base $c$, l’altura des de $C$ és $h = b\sin A$, així que:
 
-<Formula titulo="Área con dos lados y el ángulo comprendido" usala="cuando conozcas dos lados y el ángulo que forman" nousar="con un ángulo que no esté entre los dos lados">
+<Formula titulo="Àrea amb dos costats i l’angle comprès" usala="quan coneguis dos costats i l’angle que formen" nousar="amb un angle que no sigui entre els dos costats">
 	$$
 	S = \frac12\, b\, c\,\sin A = \frac12\, a\, c\,\sin B = \frac12\, a\, b\,\sin C
 	$$
 </Formula>
 
-<Reveal titulo="Ampliación: la fórmula de Herón (con los tres lados)">
+<Reveal titulo="Ampliació: la fórmula d’Heró (amb els tres costats)">
 
-Si conoces los tres lados, con el semiperímetro $p = \frac{a + b + c}{2}$:
+Si coneixes els tres costats, amb el semiperímetre $p = \frac{a + b + c}{2}$:
 
 $$
 S = \sqrt{p\,(p - a)(p - b)(p - c)}
 $$
 
-Por ejemplo, con lados 13, 14 y 15: $p = 21$ y $S = \sqrt{21\cdot 8\cdot 7\cdot 6} = \sqrt{7056} = 84$.
+Per exemple, amb costats 13, 14 i 15: $p = 21$ i $S = \sqrt{21\cdot 8\cdot 7\cdot 6} = \sqrt{7056} = 84$.
 
 </Reveal>
 
-## ¿Qué teorema uso?
+## Quin teorema faig servir?
 
 <Figura
 	figura={{
 		tipo: 'flujo',
-		titulo: 'Decidir el método',
+		titulo: 'Decidir el mètode',
 		pasos: [
-			{ etiqueta: 'Paso 1', titulo: '¿Es rectángulo?', texto: 'Sí: seno, coseno, tangente y Pitágoras. No hacen falta los teoremas.' },
-			{ etiqueta: 'Paso 2', titulo: '¿Tienes una pareja?', texto: 'Si conoces un lado **y su ángulo opuesto**: teorema del seno (en LLA, piensa en el caso ambiguo).', color: 'y' },
-			{ etiqueta: 'Paso 3', titulo: 'Si no hay pareja', texto: 'LLL o LAL: teorema del coseno. Después ya tendrás una pareja.', color: 'x' },
-			{ etiqueta: 'Paso 4', titulo: 'Comprueba', texto: 'A + B + C = 180° y al lado mayor, el ángulo mayor.', color: 'g' },
+			{ etiqueta: 'Pas 1', titulo: 'És rectangle?', texto: 'Sí: sinus, cosinus, tangent i Pitàgores. No calen els teoremes.' },
+			{ etiqueta: 'Pas 2', titulo: 'Tens una parella?', texto: 'Si coneixes un costat **i el seu angle oposat**: teorema del sinus (en CCA, pensa en el cas ambigu).', color: 'y' },
+			{ etiqueta: 'Pas 3', titulo: 'Si no hi ha parella', texto: 'CCC o CAC: teorema del cosinus. Després ja tindràs una parella.', color: 'x' },
+			{ etiqueta: 'Pas 4', titulo: 'Comprova', texto: 'A + B + C = 180° i al costat més gran, l’angle més gran.', color: 'g' },
 		],
 	}}
 />

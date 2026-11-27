@@ -3,49 +3,49 @@ tema: identidades-ecuaciones
 orden: 201
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie B, apartado a)
+referencia: Sèrie B, apartat a)
 coleccion: clase-serie-b
 dificultad: avanzado
 habilidades: [calculo, metodo, multipaso]
-resumen: Quitar el denominador con su condición y reconocer una diferencia de cuadrados.
+resumen: Treure el denominador amb la seva condició i reconèixer una diferència de quadrats.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\frac{1}{\cos x + \sin x} = 2(\cos x - \sin x)$$
 conceptos:
-  - 'Al multiplicar por un denominador hay que exigir que no se anule.'
+  - 'En multiplicar per un denominador cal exigir que no s’anul·li.'
   - '$(\cos x - \sin x)(\cos x + \sin x) = \cos^2 x - \sin^2 x = \cos 2x$.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [30, 150, 210, 330]
       trampas:
         - valores: [30, 330]
-          explicacion: 'Te faltan las soluciones de $\cos x = -\frac{\sqrt3}{2}$: al hacer la raíz de $\cos^2 x = \frac34$ hay que poner $\pm$.'
+          explicacion: 'Et falten les solucions de $\cos x = -\frac{\sqrt3}{2}$: en fer l’arrel de $\cos^2 x = \frac34$ cal posar-hi $\pm$.'
     pistas:
-      - 'Multiplica los dos miembros por $\cos x + \sin x$ (exigiendo que no valga 0).'
-      - 'Te queda una suma por diferencia: $(\cos x - \sin x)(\cos x + \sin x)$.'
-      - 'Llega a $\cos^2 x = \frac34$ y no olvides el $\pm$.'
+      - 'Multiplica els dos membres per $\cos x + \sin x$ (exigint que no valgui 0).'
+      - 'Et queda una suma per diferència: $(\cos x - \sin x)(\cos x + \sin x)$.'
+      - 'Arriba a $\cos^2 x = \frac34$ i no t’oblidis del $\pm$.'
     pasos:
-      - titulo: Quitar el denominador
+      - titulo: Treure el denominador
         desarrollo: '$$1 = 2(\cos x - \sin x)(\cos x + \sin x), \qquad \cos x + \sin x \ne 0$$'
-        porque: '$\cos x + \sin x = 0$ cuando $\tan x = -1$, es decir, en $135^\circ$ y $315^\circ$. Esos valores quedan excluidos.'
-      - titulo: Suma por diferencia
+        porque: '$\cos x + \sin x = 0$ quan $\tan x = -1$, és a dir, a $135^\circ$ i $315^\circ$. Aquests valors queden exclosos.'
+      - titulo: Suma per diferència
         desarrollo: '$$1 = 2(\cos^2 x - \sin^2 x)$$'
-      - titulo: Todo en cosenos
+      - titulo: Tot en cosinus
         desarrollo: '$$1 = 2\big(\cos^2 x - (1 - \cos^2 x)\big) = 2(2\cos^2 x - 1)$$'
-        porque: 'También se ve que $\cos^2 x - \sin^2 x = \cos 2x$, así que la ecuación es $\cos 2x = \tfrac12$.'
-      - titulo: Despejar
+        porque: 'També es veu que $\cos^2 x - \sin^2 x = \cos 2x$, així que l’equació és $\cos 2x = \tfrac12$.'
+      - titulo: Aïllar
         desarrollo: '$$\tfrac12 = 2\cos^2 x - 1 \;\Rightarrow\; \cos^2 x = \tfrac34 \;\Rightarrow\; \cos x = \pm\tfrac{\sqrt3}{2}$$'
-      - titulo: Ángulos y comprobación
+      - titulo: Angles i comprovació
         desarrollo: |
           - $\cos x = \frac{\sqrt3}{2} \Rightarrow x = 30^\circ,\ 330^\circ$.
           - $\cos x = -\frac{\sqrt3}{2} \Rightarrow x = 150^\circ,\ 210^\circ$.
 
-          Ninguno es $135^\circ$ ni $315^\circ$: todos valen.
+          Cap no és $135^\circ$ ni $315^\circ$: totes valen.
     resultado: '$x = 30^\circ,\ 150^\circ,\ 210^\circ,\ 330^\circ$.'
 alternativas:
-  - titulo: Con el ángulo doble
-    desarrollo: '$1 = 2\cos 2x \Rightarrow \cos 2x = \frac12$. Como $2x$ recorre $[0^\circ,\ 720^\circ)$: $2x = 60^\circ,\ 300^\circ,\ 420^\circ,\ 660^\circ$, y dividiendo entre 2, $x = 30^\circ,\ 150^\circ,\ 210^\circ,\ 330^\circ$.'
+  - titulo: Amb l’angle doble
+    desarrollo: '$1 = 2\cos 2x \Rightarrow \cos 2x = \frac12$. Com que $2x$ recorre $[0^\circ,\ 720^\circ)$: $2x = 60^\circ,\ 300^\circ,\ 420^\circ,\ 660^\circ$, i dividint entre 2, $x = 30^\circ,\ 150^\circ,\ 210^\circ,\ 330^\circ$.'
 laboratorio: { f: cos, n: 2, k: 0.5 }

@@ -3,51 +3,51 @@ tema: identidades-ecuaciones
 orden: 108
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie A, apartado t)
-nota_fuente: 'La letra de este enunciado no se leía bien en la foto; se ha transcrito como 2 cos²x + cos 2x · cos x = 0.'
+referencia: Sèrie A, apartat t)
+nota_fuente: 'La lletra d’aquest enunciat no es llegia bé a la foto; s’ha transcrit com 2 cos²x + cos 2x · cos x = 0.'
 coleccion: clase-serie-a
 dificultad: avanzado
 habilidades: [calculo, metodo, multipaso]
-resumen: Factor común, ángulo doble y una raíz de la ecuación de segundo grado que hay que descartar.
+resumen: Factor comú, angle doble i una arrel de l’equació de segon grau que cal descartar.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$2\cos^2 x + \cos 2x\cdot\cos x = 0$$
 conceptos:
-  - 'Factor común $\cos x$.'
-  - '$\cos 2x = 2\cos^2 x - 1$ (la forma con solo cosenos).'
-  - 'El coseno solo toma valores entre $-1$ y $1$.'
+  - 'Factor comú $\cos x$.'
+  - '$\cos 2x = 2\cos^2 x - 1$ (la forma amb només cosinus).'
+  - 'El cosinus només pren valors entre $-1$ i $1$.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$, con dos decimales si no son exactas.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$, amb dos decimals si no són exactes.
     respuesta:
       tipo: conjunto
       valores: [68.53, 90, 270, 291.47]
       trampas:
         - valores: [68.53, 291.47]
-          explicacion: 'Has dividido entre $\cos x$ y has perdido las soluciones de $\cos x = 0$: $90^\circ$ y $270^\circ$.'
+          explicacion: 'Has dividit entre $\cos x$ i has perdut les solucions de $\cos x = 0$: $90^\circ$ i $270^\circ$.'
         - valores: [90, 270]
-          explicacion: 'Te falta el segundo factor: $2\cos x + \cos 2x = 0$.'
+          explicacion: 'Et falta el segon factor: $2\cos x + \cos 2x = 0$.'
     pistas:
-      - 'Los dos términos llevan $\cos x$. Sácalo factor común.'
-      - 'En el otro factor usa $\cos 2x = 2\cos^2 x - 1$.'
-      - 'Una de las raíces de la ecuación de segundo grado es menor que $-1$.'
+      - 'Els dos termes porten $\cos x$. Treu-lo factor comú.'
+      - 'A l’altre factor fes servir $\cos 2x = 2\cos^2 x - 1$.'
+      - 'Una de les arrels de l’equació de segon grau és més petita que $-1$.'
     pasos:
-      - titulo: Factor común
+      - titulo: Factor comú
         desarrollo: '$$\cos x\,(2\cos x + \cos 2x) = 0$$'
       - titulo: Primer factor
         desarrollo: '$\cos x = 0 \Rightarrow x = 90^\circ,\ 270^\circ$.'
-      - titulo: Segundo factor
+      - titulo: Segon factor
         desarrollo: |
-          $2\cos x + \cos 2x = 0$ con $\cos 2x = 2\cos^2 x - 1$:
+          $2\cos x + \cos 2x = 0$ amb $\cos 2x = 2\cos^2 x - 1$:
           $$2\cos^2 x + 2\cos x - 1 = 0 \;\Rightarrow\; t = \frac{-2 \pm\sqrt{4 + 8}}{4} = \frac{-1 \pm \sqrt3}{2}$$
-        porque: 'Se elige la forma de $\cos 2x$ que deja todo en cosenos.'
-      - titulo: Descartar y calcular los ángulos
+        porque: 'Es tria la forma de $\cos 2x$ que ho deixa tot en cosinus.'
+      - titulo: Descartar i calcular els angles
         desarrollo: |
-          - $t = \frac{-1 + \sqrt3}{2} \approx 0{,}366 \Rightarrow x = \arccos 0{,}366 \approx 68{,}53^\circ$ y $360^\circ - 68{,}53^\circ = 291{,}47^\circ$.
-          - $t = \frac{-1 - \sqrt3}{2} \approx -1{,}366 < -1$: **imposible**.
+          - $t = \frac{-1 + \sqrt3}{2} \approx 0{,}366 \Rightarrow x = \arccos 0{,}366 \approx 68{,}53^\circ$ i $360^\circ - 68{,}53^\circ = 291{,}47^\circ$.
+          - $t = \frac{-1 - \sqrt3}{2} \approx -1{,}366 < -1$: **impossible**.
     resultado: '$x \approx 68{,}53^\circ,\ 90^\circ,\ 270^\circ,\ 291{,}47^\circ$.'
 errores:
   - error: 'Dividir entre $\cos x$'
-    explicacion: 'Se pierden $90^\circ$ y $270^\circ$.'
+    explicacion: 'Es perden $90^\circ$ i $270^\circ$.'
   - error: 'Calcular $\arccos(-1{,}366)$'
-    explicacion: 'La calculadora da error porque no existe: ningún ángulo tiene un coseno menor que $-1$.'
+    explicacion: 'La calculadora dona error perquè no existeix: cap angle no té un cosinus més petit que $-1$.'

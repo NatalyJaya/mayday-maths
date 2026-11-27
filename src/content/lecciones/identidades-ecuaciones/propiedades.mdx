@@ -1,32 +1,32 @@
 ---
 tema: identidades-ecuaciones
 etapa: propiedades
-titulo: De dónde salen las fórmulas
-descripcion: La demostración geométrica del seno y el coseno de la suma, y de ahí todas las demás (resta, ángulo doble y ángulo mitad, como en tus apuntes). Después, cómo demostrar identidades y cómo resolver ecuaciones sin perder soluciones.
+titulo: D’on surten les fórmules
+descripcion: La demostració geomètrica del sinus i el cosinus de la suma, i a partir d’aquí totes les altres (resta, angle doble i angle meitat, com als teus apunts). Després, com demostrar identitats i com resoldre equacions sense perdre solucions.
 minutos: 40
 ---
 
-## El punto de partida: la suma
+## El punt de partida: la suma
 
-Todas las fórmulas del tema salen de dos: el seno y el coseno de la suma. En tus apuntes se aceptan sin demostrar; aquí tienes de dónde vienen.
+Totes les fórmules del tema surten de dues: el sinus i el cosinus de la suma. Als teus apunts s’accepten sense demostrar; aquí tens d’on vénen.
 
 <SumFormula />
 
-<Derivation titulo="Seno y coseno de la suma (con el dibujo de arriba)">
-	<Paso titulo="Dos triángulos rectángulos encajados" porque="$P$ está a distancia 1 del origen y forma el ángulo $\alpha + \beta$, así que su altura es $\sin(\alpha + \beta)$ y su abscisa es $\cos(\alpha + \beta)$.">
-		En el triángulo $OQP$ (hipotenusa 1, ángulo $\beta$): $\;OQ = \cos\beta$, $\;QP = \sin\beta$.
+<Derivation titulo="Sinus i cosinus de la suma (amb el dibuix de dalt)">
+	<Paso titulo="Dos triangles rectangles encaixats" porque="$P$ és a distància 1 de l’origen i forma l’angle $\alpha + \beta$, així que la seva altura és $\sin(\alpha + \beta)$ i la seva abscissa és $\cos(\alpha + \beta)$.">
+		Al triangle $OQP$ (hipotenusa 1, angle $\beta$): $\;OQ = \cos\beta$, $\;QP = \sin\beta$.
 	</Paso>
-	<Paso titulo="Proyectar OQ" porque="En el triángulo $ORQ$ la hipotenusa es $OQ = \cos\beta$ y el ángulo en $O$ es $\alpha$.">
+	<Paso titulo="Projectar OQ" porque="Al triangle $ORQ$ la hipotenusa és $OQ = \cos\beta$ i l’angle a $O$ és $\alpha$.">
 		$$
 		QR = \cos\beta\sin\alpha \qquad OR = \cos\beta\cos\alpha
 		$$
 	</Paso>
-	<Paso titulo="Proyectar QP" porque="El ángulo $\widehat{TPQ}$ también mide $\alpha$: $PQ$ es perpendicular a $OQ$, y $PT$ es perpendicular al eje $X$, así que forman el mismo ángulo que $OQ$ y el eje $X$. La hipotenusa es $QP = \sin\beta$.">
+	<Paso titulo="Projectar QP" porque="L’angle $\widehat{TPQ}$ també mesura $\alpha$: $PQ$ és perpendicular a $OQ$, i $PT$ és perpendicular a l’eix $X$, així que formen el mateix angle que $OQ$ i l’eix $X$. La hipotenusa és $QP = \sin\beta$.">
 		$$
 		PT = \sin\beta\cos\alpha \qquad TQ = \sin\beta\sin\alpha
 		$$
 	</Paso>
-	<Paso titulo="Sumar y restar">
+	<Paso titulo="Sumar i restar">
 		$$
 		\sin(\alpha + \beta) = PS = TS + PT = \sin\alpha\cos\beta + \cos\alpha\sin\beta
 		$$
@@ -36,206 +36,207 @@ Todas las fórmulas del tema salen de dos: el seno y el coseno de la suma. En tu
 	</Paso>
 </Derivation>
 
-La demostración se ha hecho con ángulos agudos, pero las fórmulas valen para **cualquier** par de ángulos (se puede demostrar con la circunferencia goniométrica o con vectores).
+La demostració s’ha fet amb angles aguts, però les fórmules valen per a **qualsevol** parella d’angles (es pot demostrar amb la circumferència goniomètrica o amb vectors).
 
-### Tangente de la suma
+### Tangent de la suma
 
-Como en tus apuntes: se parte de $\tan = \frac{\sin}{\cos}$ y se **divide numerador y denominador entre** $\cos\alpha\cos\beta$:
+Com als teus apunts: es parteix de $\tan = \frac{\sin}{\cos}$ i es **divideixen numerador i denominador entre** $\cos\alpha\cos\beta$:
 
 $$
 \tan(\alpha + \beta) = \frac{\sin\alpha\cos\beta + \cos\alpha\sin\beta}{\cos\alpha\cos\beta - \sin\alpha\sin\beta} = \frac{\dfrac{\sin\alpha\cos\beta}{\cos\alpha\cos\beta} + \dfrac{\cos\alpha\sin\beta}{\cos\alpha\cos\beta}}{\dfrac{\cos\alpha\cos\beta}{\cos\alpha\cos\beta} - \dfrac{\sin\alpha\sin\beta}{\cos\alpha\cos\beta}} = \frac{\tan\alpha + \tan\beta}{1 - \tan\alpha\tan\beta}
 $$
 
-<Callout tipo="porque" titulo="¿Por qué dividir entre cos α · cos β?">
-	Porque cada término se convierte en algo conocido: $\frac{\sin\alpha}{\cos\alpha} = \tan\alpha$, $\frac{\sin\beta}{\cos\beta} = \tan\beta$ y $\frac{\cos\alpha\cos\beta}{\cos\alpha\cos\beta} = 1$. Así la fórmula queda solo con tangentes.
+<Callout tipo="porque" titulo="Per què dividir entre cos α · cos β?">
+	Perquè cada terme es converteix en alguna cosa coneguda: $\frac{\sin\alpha}{\cos\alpha} = \tan\alpha$, $\frac{\sin\beta}{\cos\beta} = \tan\beta$ i $\frac{\cos\alpha\cos\beta}{\cos\alpha\cos\beta} = 1$. Així la fórmula queda només amb tangents.
 </Callout>
 
 ## La resta: α − β = α + (−β)
 
-**Truco de los apuntes:** escribir $\alpha - \beta = \alpha + (-\beta)$ y usar las fórmulas de la suma con la **paridad**: el coseno es par y el seno, impar.
+**Truc dels apunts:** escriure $\alpha - \beta = \alpha + (-\beta)$ i fer servir les fórmules de la suma amb la **paritat**: el cosinus és parell i el sinus, senar.
 
 $$
 \cos(-\beta) = \cos\beta \qquad \sin(-\beta) = -\sin\beta \qquad \tan(-\beta) = -\tan\beta
 $$
 
-<Derivation titulo="Fórmulas de la resta">
-	<Paso titulo="Seno">
+<Derivation titulo="Fórmules de la resta">
+	<Paso titulo="Sinus">
 		$$
 		\sin(\alpha - \beta) = \sin\alpha\cos(-\beta) + \cos\alpha\sin(-\beta) = \sin\alpha\cos\beta - \cos\alpha\sin\beta
 		$$
 	</Paso>
-	<Paso titulo="Coseno">
+	<Paso titulo="Cosinus">
 		$$
 		\cos(\alpha - \beta) = \cos\alpha\cos(-\beta) - \sin\alpha\sin(-\beta) = \cos\alpha\cos\beta + \sin\alpha\sin\beta
 		$$
 	</Paso>
-	<Paso titulo="Tangente">
+	<Paso titulo="Tangent">
 		$$
 		\tan(\alpha - \beta) = \frac{\tan\alpha + \tan(-\beta)}{1 - \tan\alpha\tan(-\beta)} = \frac{\tan\alpha - \tan\beta}{1 + \tan\alpha\tan\beta}
 		$$
 	</Paso>
 </Derivation>
 
-<Callout tipo="clase" titulo="Regla para recordar (de tus apuntes)">
-	En la resta **cambian los signos** respecto a la suma. En el coseno y en la tangente cambia también el del denominador.
+<Callout tipo="clase" titulo="Regla per recordar (dels teus apunts)">
+	En la resta **canvien els signes** respecte de la suma. En el cosinus i en la tangent canvia també el del denominador.
 </Callout>
 
-**Aplicación: valores exactos.** $\sin 75^\circ = \sin(45^\circ + 30^\circ) = \frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2} + \frac{\sqrt2}{2}\cdot\frac12 = \frac{\sqrt6 + \sqrt2}{4} \approx 0{,}9659$.
+**Aplicació: valors exactes.** $\sin 75^\circ = \sin(45^\circ + 30^\circ) = \frac{\sqrt2}{2}\cdot\frac{\sqrt3}{2} + \frac{\sqrt2}{2}\cdot\frac12 = \frac{\sqrt6 + \sqrt2}{4} \approx 0{,}9659$.
 
-## El ángulo doble: 2α = α + α
+## L’angle doble: 2α = α + α
 
-**Truco:** tomar $\beta = \alpha$ en las fórmulas de la suma.
+**Truc:** prendre $\beta = \alpha$ a les fórmules de la suma.
 
-<Derivation titulo="Fórmulas del ángulo doble">
-	<Paso titulo="Seno">
+<Derivation titulo="Fórmules de l’angle doble">
+	<Paso titulo="Sinus">
 		$$
 		\sin 2\alpha = \sin\alpha\cos\alpha + \cos\alpha\sin\alpha = 2\sin\alpha\cos\alpha
 		$$
 	</Paso>
-	<Paso titulo="Coseno">
+	<Paso titulo="Cosinus">
 		$$
 		\cos 2\alpha = \cos\alpha\cos\alpha - \sin\alpha\sin\alpha = \cos^2\alpha - \sin^2\alpha
 		$$
 	</Paso>
-	<Paso titulo="Tangente">
+	<Paso titulo="Tangent">
 		$$
 		\tan 2\alpha = \frac{\tan\alpha + \tan\alpha}{1 - \tan\alpha\tan\alpha} = \frac{2\tan\alpha}{1 - \tan^2\alpha}
 		$$
 	</Paso>
 </Derivation>
 
-Con $\sin^2\alpha + \cos^2\alpha = 1$, el coseno del ángulo doble tiene **tres formas**. En las ecuaciones se elige la que deja una sola razón:
+Amb $\sin^2\alpha + \cos^2\alpha = 1$, el cosinus de l’angle doble té **tres formes**. A les equacions es tria la que deixa una sola raó:
 
 $$
-\cos 2\alpha = \cos^2\alpha - \sin^2\alpha = \underbrace{2\cos^2\alpha - 1}_{\text{solo cosenos}} = \underbrace{1 - 2\sin^2\alpha}_{\text{solo senos}}
+\cos 2\alpha = \cos^2\alpha - \sin^2\alpha = \underbrace{2\cos^2\alpha - 1}_{\text{només cosinus}} = \underbrace{1 - 2\sin^2\alpha}_{\text{només sinus}}
 $$
 
-## El ángulo mitad (la deducción de tus apuntes)
+## L’angle meitat (la deducció dels teus apunts)
 
-Aquí se hace un **cambio de variable**: $\beta = \frac{\alpha}{2}$, es decir, $\alpha = 2\beta$. Se parte de dos igualdades que ya conocemos:
+Aquí es fa un **canvi de variable**: $\beta = \frac{\alpha}{2}$, és a dir, $\alpha = 2\beta$. Es parteix de dues igualtats que ja coneixem:
 
 $$
 [1]\quad \sin^2\beta + \cos^2\beta = 1 \qquad\qquad [2]\quad \cos^2\beta - \sin^2\beta = \cos 2\beta
 $$
 
-<Derivation titulo="Seno y coseno del ángulo mitad">
-	<Paso titulo="Seno: restar [1] − [2]" porque="Al restar, los $\cos^2\beta$ se cancelan y queda solo el seno. En los apuntes se hace sumando $[1]$ con $-[2]$, que es lo mismo.">
+<Derivation titulo="Sinus i cosinus de l’angle meitat">
+	<Paso titulo="Sinus: restar [1] − [2]" porque="En restar, els $\cos^2\beta$ es cancel·len i queda només el sinus. Als apunts es fa sumant $[1]$ amb $-[2]$, que és el mateix.">
 		$$
 		2\sin^2\beta = 1 - \cos 2\beta \;\Rightarrow\; \sin^2\beta = \frac{1 - \cos 2\beta}{2}
 		$$
 	</Paso>
-	<Paso titulo="Coseno: sumar [1] + [2]" porque="Al sumar, los $\sin^2\beta$ se cancelan.">
+	<Paso titulo="Cosinus: sumar [1] + [2]" porque="En sumar, els $\sin^2\beta$ es cancel·len.">
 		$$
 		2\cos^2\beta = 1 + \cos 2\beta \;\Rightarrow\; \cos^2\beta = \frac{1 + \cos 2\beta}{2}
 		$$
 	</Paso>
-	<Paso titulo="Deshacer el cambio β = α/2" porque="$2\beta = \alpha$. Al hacer la raíz aparece el $\pm$.">
+	<Paso titulo="Desfer el canvi β = α/2" porque="$2\beta = \alpha$. En fer l’arrel apareix el $\pm$.">
 		$$
 		\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}} \qquad \cos\frac{\alpha}{2} = \pm\sqrt{\frac{1 + \cos\alpha}{2}}
 		$$
 	</Paso>
-	<Paso titulo="Tangente: dividir" porque="Los «÷ 2» de dentro de las raíces se cancelan.">
+	<Paso titulo="Tangent: dividir" porque="Els «÷ 2» de dins de les arrels es cancel·len.">
 		$$
 		\tan\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{1 + \cos\alpha}}
 		$$
 	</Paso>
 </Derivation>
 
-<Callout tipo="ojo" titulo="¿Qué signo elegir?">
-	El $\pm$ **no** significa que haya dos respuestas: el signo lo decide el **cuadrante de** $\frac{\alpha}{2}$ (no el de $\alpha$). Por ejemplo, si $\alpha = 300^\circ$, entonces $\frac{\alpha}{2} = 150^\circ$, en el segundo cuadrante: seno positivo, coseno negativo.
+<Callout tipo="ojo" titulo="Quin signe cal triar?">
+	El $\pm$ **no** vol dir que hi hagi dues respostes: el signe el decideix el **quadrant de** $\frac{\alpha}{2}$ (no el de $\alpha$). Per exemple, si $\alpha = 300^\circ$, aleshores $\frac{\alpha}{2} = 150^\circ$, al segon quadrant: sinus positiu, cosinus negatiu.
 </Callout>
 
-<Callout tipo="idea" titulo="El ángulo mitad sin raíces">
-	Las fórmulas **antes de la raíz** son muy útiles en las ecuaciones: si aparece $\cos^2\frac{x}{2}$ o $\sin^2\frac{x}{2}$, se sustituye directamente, sin raíces ni $\pm$:
+<Callout tipo="idea" titulo="L’angle meitat sense arrels">
+	Les fórmules **abans de l’arrel** són molt útils a les equacions: si apareix $\cos^2\frac{x}{2}$ o $\sin^2\frac{x}{2}$, se substitueix directament, sense arrels ni $\pm$:
 	$$
 	\cos^2\frac{x}{2} = \frac{1 + \cos x}{2} \qquad \sin^2\frac{x}{2} = \frac{1 - \cos x}{2}
 	$$
-	En tus apuntes, el ejercicio $6\cos^2\frac{x}{2} + \cos x - 1 = 0$ se complicaba por usar la raíz.
+	Als teus apunts, l’exercici $6\cos^2\frac{x}{2} + \cos x - 1 = 0$ es complicava per fer servir l’arrel.
 </Callout>
 
-Las fórmulas del ángulo mitad no se cumplen como identidades «sin el signo»: compruébalo con la última opción del comparador de identidades en el laboratorio ($\cos\frac{x}{2}$ frente a $\sqrt{\frac{1 + \cos x}{2}}$).
+Les fórmules de l’angle meitat no es compleixen com a identitats «sense el signe»: comprova-ho amb l’última opció del comparador d’identitats del laboratori ($\cos\frac{x}{2}$ davant de $\sqrt{\frac{1 + \cos x}{2}}$).
 
-<Reveal titulo="Ampliación: transformar sumas en productos">
+<Reveal titulo="Ampliació: transformar sumes en productes">
 
-Sumando y restando las fórmulas del seno de la suma y de la resta:
+Sumant i restant les fórmules del sinus de la suma i de la resta:
 
 $$
 \sin(\alpha + \beta) + \sin(\alpha - \beta) = 2\sin\alpha\cos\beta
 $$
 
-Llamando $A = \alpha + \beta$ y $B = \alpha - \beta$ (así $\alpha = \frac{A + B}{2}$ y $\beta = \frac{A - B}{2}$) se obtienen las fórmulas de transformación, útiles en ecuaciones como $\sin 3x + \sin x = 0$:
+Anomenant $A = \alpha + \beta$ i $B = \alpha - \beta$ (així $\alpha = \frac{A + B}{2}$ i $\beta = \frac{A - B}{2}$) s’obtenen les fórmules de transformació, útils en equacions com $\sin 3x + \sin x = 0$:
 
 $$
 \sin A + \sin B = 2\sin\frac{A + B}{2}\cos\frac{A - B}{2} \qquad \sin A - \sin B = 2\cos\frac{A + B}{2}\sin\frac{A - B}{2}
 $$
+
 $$
 \cos A + \cos B = 2\cos\frac{A + B}{2}\cos\frac{A - B}{2} \qquad \cos A - \cos B = -2\sin\frac{A + B}{2}\sin\frac{A - B}{2}
 $$
 
-Según el centro, estas fórmulas se estudian en 1.º o no se piden. Si las necesitas, se deducen siempre igual.
+Segons el centre, aquestes fórmules s’estudien a 1r o no es demanen. Si les necessites, es dedueixen sempre igual.
 
 </Reveal>
 
-## Cómo demostrar una identidad
+## Com demostrar una identitat
 
-Demostrar es **transformar un miembro** (normalmente el más complicado) **hasta llegar al otro**, con pasos que sean identidades conocidas.
+Demostrar és **transformar un membre** (normalment el més complicat) **fins a arribar a l’altre**, amb passos que siguin identitats conegudes.
 
-1. **Pasa todo a senos y cosenos** (la tangente como cociente).
-2. **Iguala los ángulos**: si hay $2x$ y $x$, usa el ángulo doble para que todo esté en $x$.
-3. **Busca la identidad fundamental**: $1$ puede escribirse como $\sin^2 x + \cos^2 x$; $1 - \cos^2 x$ es $\sin^2 x$.
-4. **Factoriza** (factor común, diferencia de cuadrados) y **simplifica** factores, nunca sumandos.
-5. **Comprueba** con un valor concreto que no te has equivocado por el camino.
+1. **Passa-ho tot a sinus i cosinus** (la tangent com a quocient).
+2. **Iguala els angles**: si hi ha $2x$ i $x$, fes servir l’angle doble perquè tot sigui en $x$.
+3. **Busca la identitat fonamental**: $1$ es pot escriure com $\sin^2 x + \cos^2 x$; $1 - \cos^2 x$ és $\sin^2 x$.
+4. **Factoritza** (factor comú, diferència de quadrats) i **simplifica** factors, mai sumands.
+5. **Comprova** amb un valor concret que no t’has equivocat pel camí.
 
 <Callout tipo="ojo">
-	En una demostración **no se pasan términos de un miembro al otro** como en una ecuación: todavía no sabes si la igualdad es cierta. Se trabaja con un solo miembro, o con los dos por separado hasta llegar a la misma expresión.
+	En una demostració **no es passen termes d’un membre a l’altre** com en una equació: encara no saps si la igualtat és certa. Es treballa amb un sol membre, o amb tots dos per separat fins a arribar a la mateixa expressió.
 </Callout>
 
 <Callout tipo="clase">
-	Los dos ejercicios de identidades de tus apuntes siguen exactamente estos pasos: en $\frac{\sin(a + b)\sin(a - b)}{\cos a + \cos b}$ se desarrolla, se pasa a cosenos y se **factoriza dos veces** (diferencia de cuadrados); en la demostración «per demà» se usa el ángulo doble **dos veces**, la segunda con $\frac{x}{2}$. Los tienes resueltos en la práctica.
+	Els dos exercicis d’identitats dels teus apunts segueixen exactament aquests passos: en $\frac{\sin(a + b)\sin(a - b)}{\cos a + \cos b}$ es desenvolupa, es passa a cosinus i es **factoritza dues vegades** (diferència de quadrats); en la demostració «per demà» es fa servir l’angle doble **dues vegades**, la segona amb $\frac{x}{2}$. Els tens resolts a la pràctica.
 </Callout>
 
-## Cómo resolver una ecuación
+## Com resoldre una equació
 
-Este es el método general de tus apuntes, paso a paso:
+Aquest és el mètode general dels teus apunts, pas a pas:
 
 <Figura
 	figura={{
 		tipo: 'flujo',
-		titulo: 'Método general',
+		titulo: 'Mètode general',
 		pasos: [
-			{ etiqueta: 'Paso 1', titulo: 'Una sola razón', texto: 'Con las identidades, deja la ecuación en una sola razón y un solo ángulo.' },
-			{ etiqueta: 'Paso 2', titulo: 'Cambio de variable', texto: 'Si sale de 2.º grado: $t = \\sin x$, $\\cos x$ o $\\tan x$. Si hay factor común, factoriza.', color: 'y' },
-			{ etiqueta: 'Paso 3', titulo: 'Deshacer el cambio', texto: 'Busca el ángulo con $\\arcsin$, $\\arccos$ o $\\arctan$. Descarta $|t| > 1$ en seno y coseno.', color: 'x' },
-			{ etiqueta: 'Paso 4', titulo: 'Todos los ángulos', texto: 'Dos por cada valor (uno si es ±1) en cada vuelta. Comprueba denominadores y soluciones.', color: 'g' },
+			{ etiqueta: 'Pas 1', titulo: 'Una sola raó', texto: 'Amb les identitats, deixa l’equació amb una sola raó i un sol angle.' },
+			{ etiqueta: 'Pas 2', titulo: 'Canvi de variable', texto: 'Si surt de 2n grau: $t = \\sin x$, $\\cos x$ o $\\tan x$. Si hi ha factor comú, factoritza.', color: 'y' },
+			{ etiqueta: 'Pas 3', titulo: 'Desfer el canvi', texto: 'Busca l’angle amb $\\arcsin$, $\\arccos$ o $\\arctan$. Descarta $|t| > 1$ en sinus i cosinus.', color: 'x' },
+			{ etiqueta: 'Pas 4', titulo: 'Tots els angles', texto: 'Dos per cada valor (un si és ±1) a cada volta. Comprova denominadors i solucions.', color: 'g' },
 		],
 	}}
 />
 
-| Si la ecuación… | Haz esto | Ejemplo |
+| Si l’equació… | Fes això | Exemple |
 | --- | --- | --- |
-| tiene una sola razón de un solo ángulo | despeja | $2\sin x - 1 = 0$ |
-| es de 2.º grado en una razón | cambio de variable $t$ | $\tan^2 x - 3\tan x + 2 = 0$ |
-| mezcla $\sin^2 x$ y $\cos x$ (o al revés) | pasa el **cuadrado** a la otra razón | $2\sin^2 x + 3\cos x - 3 = 0$ |
-| tiene $2x$ y $x$ | ángulo doble; elige la forma de $\cos 2x$ que deje una razón | $\cos 2x = \sin x$ |
-| tiene $\frac{x}{2}$ al cuadrado | fórmula del ángulo mitad **sin raíz** | $6\cos^2\frac{x}{2} + \cos x - 1 = 0$ |
-| tiene un factor común | **factoriza**: no dividas | $\cos^2 x = \cos x$ |
-| tiene denominadores | multiplica, pero exige que no se anulen | $\frac{1}{\cos x + \sin x} = \ldots$ |
-| es $a\sin x + b\cos x = c$ | eleva al cuadrado y **comprueba** | $\cos x + \sin x = 1$ |
+| té una sola raó d’un sol angle | aïlla | $2\sin x - 1 = 0$ |
+| és de 2n grau en una raó | canvi de variable $t$ | $\tan^2 x - 3\tan x + 2 = 0$ |
+| barreja $\sin^2 x$ i $\cos x$ (o al revés) | passa el **quadrat** a l’altra raó | $2\sin^2 x + 3\cos x - 3 = 0$ |
+| té $2x$ i $x$ | angle doble; tria la forma de $\cos 2x$ que deixi una raó | $\cos 2x = \sin x$ |
+| té $\frac{x}{2}$ al quadrat | fórmula de l’angle meitat **sense arrel** | $6\cos^2\frac{x}{2} + \cos x - 1 = 0$ |
+| té un factor comú | **factoritza**: no divideixis | $\cos^2 x = \cos x$ |
+| té denominadors | multiplica, però exigeix que no s’anul·lin | $\frac{1}{\cos x + \sin x} = \ldots$ |
+| és $a\sin x + b\cos x = c$ | eleva al quadrat i **comprova** | $\cos x + \sin x = 1$ |
 
-### Los cuatro peligros
+### Els quatre perills
 
-<Callout tipo="limite" titulo="1. Dividir entre una expresión que puede ser cero">
-	En $\sin x = \tan x$ o en $\cos^2 x = \cos x$, si divides entre $\sin x$ o $\cos x$ **pierdes soluciones**: justo las que anulan aquello entre lo que has dividido. Saca factor común.
+<Callout tipo="limite" titulo="1. Dividir entre una expressió que pot ser zero">
+	A $\sin x = \tan x$ o a $\cos^2 x = \cos x$, si divideixes entre $\sin x$ o $\cos x$ **perds solucions**: justament les que anul·len allò entre el que has dividit. Treu factor comú.
 </Callout>
 
-<Callout tipo="limite" titulo="2. Elevar al cuadrado">
-	Al elevar al cuadrado se cuelan **soluciones falsas**: las de la ecuación con el signo cambiado. En $\cos x + \sin x = 1$, al elevar aparecen $180^\circ$ y $270^\circ$, que dan $-1$. Después de elevar, **comprueba siempre** en la ecuación original.
+<Callout tipo="limite" titulo="2. Elevar al quadrat">
+	En elevar al quadrat s’hi colen **solucions falses**: les de l’equació amb el signe canviat. A $\cos x + \sin x = 1$, en elevar apareixen $180^\circ$ i $270^\circ$, que donen $-1$. Després d’elevar, **comprova sempre** a l’equació original.
 </Callout>
 
-<Callout tipo="limite" titulo="3. Quedarse con el ángulo de la calculadora">
-	La calculadora da un ángulo. El otro de la misma vuelta hay que buscarlo con la simetría ($180^\circ - \theta$ para el seno, $360^\circ - \theta$ para el coseno, $\theta + 180^\circ$ para la tangente).
+<Callout tipo="limite" titulo="3. Quedar-se amb l’angle de la calculadora">
+	La calculadora dona un angle. L’altre de la mateixa volta cal buscar-lo amb la simetria ($180^\circ - \theta$ per al sinus, $360^\circ - \theta$ per al cosinus, $\theta + 180^\circ$ per a la tangent).
 </Callout>
 
-<Callout tipo="limite" titulo="4. Ángulos múltiples">
-	Con $\sin 2x = k$, busca **todas** las soluciones de $2x$ en $[0^\circ,\ 720^\circ)$ **antes** de dividir entre 2. Si no, pierdes la mitad.
+<Callout tipo="limite" titulo="4. Angles múltiples">
+	Amb $\sin 2x = k$, busca **totes** les solucions de $2x$ a $[0^\circ,\ 720^\circ)$ **abans** de dividir entre 2. Si no, en perds la meitat.
 </Callout>

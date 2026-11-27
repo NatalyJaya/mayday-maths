@@ -6,24 +6,24 @@ interface Props {
 	bare?: boolean;
 }
 const { fn = 'sin', bare = false } = Astro.props;
-const name = fn === 'sin' ? 'seno' : 'coseno';
+const name = fn === 'sin' ? 'sinus' : 'cosinus';
 ---
 
 <circle-wave class:list={[{ sim: !bare }]} data-fn={fn}>
 	{
 		!bare && (
 			<div class="sim-head">
-				<h4>De la circunferencia a la gráfica del {name}</h4>
-				<p class="muted">{fn === 'sin' ? 'La altura del punto es el seno.' : 'La abscisa del punto es el coseno.'}</p>
+				<h4>De la circumferència a la gràfica del {name}</h4>
+				<p class="muted">{fn === 'sin' ? 'L’altura del punt és el sinus.' : 'L’abscissa del punt és el cosinus.'}</p>
 			</div>
 		)
 	}
-	<svg class="sim-svg mfig" viewBox="0 0 600 250" role="img" aria-label={`Un punto gira por la circunferencia de radio 1 y su ${fn === 'sin' ? 'altura' : 'abscisa'} se dibuja a la derecha: así aparece la gráfica del ${name}.`}></svg>
+	<svg class="sim-svg mfig" viewBox="0 0 600 250" role="img" aria-label={`Un punt gira per la circumferència de radi 1 i la seva ${fn === 'sin' ? 'altura' : 'abscissa'} es dibuixa a la dreta: així apareix la gràfica del ${name}.`}></svg>
 	<div class="cw-controls">
-		<button class="btn btn-sm btn-ghost play-btn" type="button" aria-label="Reproducir o pausar">
+		<button class="btn btn-sm btn-ghost play-btn" type="button" aria-label="Reprodueix o posa en pausa">
 			<span class="i-play"><Icon name="play" size={16} /></span><span class="i-pause"><Icon name="pause" size={16} /></span>
 		</button>
-		<input type="range" min="0" max="360" step="1" value="0" aria-label="Ángulo recorrido (grados)" />
+		<input type="range" min="0" max="360" step="1" value="0" aria-label="Angle recorregut (graus)" />
 	</div>
 </circle-wave>
 

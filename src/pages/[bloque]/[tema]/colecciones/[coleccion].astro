@@ -40,8 +40,8 @@ const groups = await Promise.all(
 	})),
 );
 const total = groups.reduce((n, g) => n + 1 + g.variants.length, 0);
-const fecha = col.data.fecha ? new Date(col.data.fecha).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
-const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
+const fecha = col.data.fecha ? new Date(col.data.fecha).toLocaleDateString('ca-ES', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
+const LEVEL = ['Més fàcil', 'Un pas més', 'Repte'];
 const exam = col.data.tipo === 'examen';
 const base = col.data.basada_en ? await getEntry('colecciones', col.data.basada_en) : undefined;
 const siblings = exam ? (await getCollections(topic.id)).filter((c) => c.data.tipo === 'examen') : [];
@@ -53,17 +53,17 @@ const siblings = exam ? (await getCollections(topic.id)).filter((c) => c.data.ti
 			items={[
 				{ label: block?.data.titulo ?? '', href: blockUrl(topic.data.bloque.id) },
 				{ label: topic.data.titulo, href: topicUrl(topic) },
-				{ label: '6. Práctica', href: stageUrl(topic, 'practica') },
+				{ label: '6. Pràctica', href: stageUrl(topic, 'practica') },
 				{ label: col.data.corto },
 			]}
 		/>
 		{
 			exam ? (
 				<p class="eyebrow">
-					<Icon name="clock" size={14} /> Examen de práctica{col.data.minutos && ` · ${col.data.minutos} min`}
+					<Icon name="clock" size={14} /> Examen de pràctica{col.data.minutos && ` · ${col.data.minutos} min`}
 				</p>
 			) : (
-				<p class="eyebrow"><Icon name="layers" size={14} /> Ejercicios de clase{fecha && ` · ${fecha}`}</p>
+				<p class="eyebrow"><Icon name="layers" size={14} /> Exercicis de classe{fecha && ` · ${fecha}`}</p>
 			)
 		}
 		<h1>{col.data.titulo}</h1>
@@ -71,26 +71,26 @@ const siblings = exam ? (await getCollections(topic.id)).filter((c) => c.data.ti
 		{
 			exam ? (
 				<p class="muted count">
-					{groups.length} ejercicios de nivel examen
+					{groups.length} exercicis de nivell d’examen
 					{base && (
 						<>
-							{' '}basados en la <a href={collectionUrl(topic, base.id)}>{base.data.titulo.charAt(0).toLowerCase() + base.data.titulo.slice(1)}</a>
+							{' '}basats en la <a href={collectionUrl(topic, base.id)}>{base.data.titulo.charAt(0).toLowerCase() + base.data.titulo.slice(1)}</a>
 						</>
 					)}
-					. Cada uno tiene pistas y la solución explicada, pero intenta resolverlo entero antes de mirarlas.
+					. Cadascun té pistes i la solució explicada, però intenta resoldre’l sencer abans de mirar-les.
 				</p>
 			) : (
 				<p class="muted count">
-					{groups.length} {groups.length === 1 ? 'ejercicio' : 'ejercicios'} en el orden de tus apuntes
-					{total > groups.length && <> y {total - groups.length} {total - groups.length === 1 ? 'variante' : 'variantes'} de práctica adicional</>}
-					. Intenta cada uno sin mirar la solución: después tienes la resolución explicada y los errores que aparecían en los apuntes.
+					{groups.length} {groups.length === 1 ? 'exercici' : 'exercicis'} en l’ordre dels teus apunts
+					{total > groups.length && <> i {total - groups.length} {total - groups.length === 1 ? 'variant' : 'variants'} de pràctica addicional</>}
+					. Intenta cadascun sense mirar la solució: després tens la resolució explicada i els errors que apareixien als apunts.
 				</p>
 			)
 		}
 		{
 			exam && col.data.instrucciones.length > 0 && (
 				<div class="card rules">
-					<strong>Antes de empezar</strong>
+					<strong>Abans de començar</strong>
 					<ul>
 						{col.data.instrucciones.map((i) => (
 							<li>{i}</li>
@@ -101,7 +101,7 @@ const siblings = exam ? (await getCollections(topic.id)).filter((c) => c.data.ti
 		}
 		{
 			siblings.length > 1 && (
-				<nav class="siblings" aria-label="Otros exámenes">
+				<nav class="siblings" aria-label="Altres exàmens">
 					{siblings.map((c) =>
 						c.id === col.id ? (
 							<span class="sib current" aria-current="page">{c.data.corto}</span>
@@ -123,21 +123,21 @@ const siblings = exam ? (await getCollections(topic.id)).filter((c) => c.data.ti
 							<span class="n">{exam ? i + 1 : `P${i + 1}`}</span>
 							<span class="body">
 								<span class="solved-mark">
-									<Icon name="check" size={14} /> Resuelto
+									<Icon name="check" size={14} /> Resolt
 								</span>
 								<strong class="t">{g.main.data.titulo}</strong>
 								<span class="r">{g.main.data.resumen}</span>
 								<ExerciseMeta ex={g.main.data} compact />
 								{g.main.data.visual.length > 0 && (
 									<span class="hasvis">
-										<Icon name="eye" size={14} /> Con explicación en dibujos
+										<Icon name="eye" size={14} /> Amb explicació en dibuixos
 									</span>
 								)}
 							</span>
 							<Icon name="arrow-right" />
 						</a>
 						{g.variants.length > 0 && (
-							<ol class="vars" aria-label={`Variantes de ${g.main.data.titulo}`}>
+							<ol class="vars" aria-label={`Variants de ${g.main.data.titulo}`}>
 								{g.variants.map((v, j) => (
 									<li>
 										<a class="card" href={exerciseUrl(topic, v)} data-solved-id={v.id}>
@@ -160,7 +160,7 @@ const siblings = exam ? (await getCollections(topic.id)).filter((c) => c.data.ti
 		</ol>
 		{source && <p class="src muted"><Icon name="quote" size={14} /> {source.data.autor}.</p>}
 		<p class="back">
-			<a href={stageUrl(topic, 'practica')}><Icon name="arrow-left" size={16} /> Todos los ejercicios del tema</a>
+			<a href={stageUrl(topic, 'practica')}><Icon name="arrow-left" size={16} /> Tots els exercicis del tema</a>
 		</p>
 	</div>
 </BaseLayout>

@@ -1,17 +1,17 @@
-titulo: La altura de un edificio
+titulo: L’altura d’un edifici
 tema: razones-trigonometricas
 rol: ejemplo
 orden: 3
 procedencia: original
 dificultad: basico
 habilidades: [planteamiento, modelizacion]
-resumen: Ángulo de elevación, tangente y no olvidar la altura de los ojos.
+resumen: Angle d’elevació, tangent i no oblidar l’altura dels ulls.
 enunciado: |
-  Una estudiante se coloca a $40\un{m}$ del pie de un edificio y mira la parte más alta con un ángulo de elevación de $32^\circ$. Sus ojos están a $1{,}6\un{m}$ del suelo. ¿Cuánto mide el edificio?
+  Una estudiant es col·loca a $40\un{m}$ del peu d’un edifici i mira la part més alta amb un angle d’elevació de $32^\circ$. Els seus ulls són a $1{,}6\un{m}$ del terra. Quant fa l’edifici?
 figura:
   tipo: geometria
   puntos:
-    - { id: O, x: 0, y: 1.6, etiqueta: 'ojos', lado: o }
+    - { id: O, x: 0, y: 1.6, etiqueta: 'ulls', lado: o }
     - { id: S, x: 0, y: 0, etiqueta: '', marca: false }
     - { id: B, x: 40, y: 0, etiqueta: '', marca: false }
     - { id: H, x: 40, y: 1.6, etiqueta: '', marca: false }
@@ -27,39 +27,39 @@ figura:
     - { vertice: H, desde: O, hasta: T, recto: true }
   suelo: { y: 0, desde: -4, hasta: 46 }
 datos:
-  - { simbolo: 'd', valor: '40\un{m}', significado: 'distancia horizontal al edificio' }
-  - { simbolo: '\alpha', valor: '32^\circ', significado: 'ángulo de elevación' }
-  - { simbolo: 'h_0', valor: '1{,}6\un{m}', significado: 'altura de los ojos' }
+  - { simbolo: 'd', valor: '40\un{m}', significado: 'distància horitzontal a l’edifici' }
+  - { simbolo: '\alpha', valor: '32^\circ', significado: 'angle d’elevació' }
+  - { simbolo: 'h_0', valor: '1{,}6\un{m}', significado: 'altura dels ulls' }
 incognitas:
-  - 'La altura total del edificio, $H$.'
+  - 'L’altura total de l’edifici, $H$.'
 interpretacion: |
-  El **ángulo de elevación** se mide desde la horizontal de los ojos hacia arriba. Se forma un triángulo rectángulo cuyo cateto contiguo son los $40\un{m}$ y cuyo cateto opuesto es la parte del edificio que está **por encima de los ojos**. A eso hay que sumarle $1{,}6\un{m}$.
+  L’**angle d’elevació** es mesura des de l’horitzontal dels ulls cap amunt. Es forma un triangle rectangle el catet contigu del qual són els $40\un{m}$ i el catet oposat del qual és la part de l’edifici que hi ha **per sobre dels ulls**. A això cal sumar-hi $1{,}6\un{m}$.
 apartados:
   - id: a
-    enunciado: Calcula la altura del edificio.
+    enunciado: Calcula l’altura de l’edifici.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'H'
-          etiqueta: altura del edificio
+          etiqueta: altura de l’edifici
           unidad: m
           valor: 26.59
           trampas:
             - valor: 24.99
-              explicacion: 'Es la parte del edificio que está por encima de los ojos. Te falta sumar $1{,}6\un{m}$.'
+              explicacion: 'És la part de l’edifici que hi ha per sobre dels ulls. Et falta sumar-hi $1{,}6\un{m}$.'
             - valor: 21.20
-              explicacion: 'Has usado el seno. Los $40\un{m}$ son el cateto contiguo, no la hipotenusa: la razón que une los dos catetos es la tangente.'
+              explicacion: 'Has fet servir el sinus. Els $40\un{m}$ són el catet contigu, no la hipotenusa: la raó que uneix els dos catets és la tangent.'
     pasos:
-      - titulo: Elegir la razón
-        piensa: 'Conoces el cateto contiguo y buscas el opuesto. ¿Qué razón los relaciona?'
+      - titulo: Triar la raó
+        piensa: 'Coneixes el catet contigu i busques l’oposat. Quina raó els relaciona?'
         desarrollo: '$$\tan 32^\circ = \frac{\cy{x}}{\cx{40}}$$'
-        porque: 'La tangente es la razón entre los dos catetos.'
-      - titulo: Despejar
+        porque: 'La tangent és la raó entre els dos catets.'
+      - titulo: Aïllar
         desarrollo: '$$x = 40\cdot\tan 32^\circ \approx 40\cdot 0{,}6249 \approx 24{,}99\un{m}$$'
-      - titulo: Sumar la altura de los ojos
+      - titulo: Sumar l’altura dels ulls
         desarrollo: '$$H = 24{,}99 + 1{,}6 \approx 26{,}59\un{m}$$'
-        porque: 'El triángulo empieza a la altura de los ojos, no en el suelo.'
-    resultado: 'El edificio mide unos $26{,}6\un{m}$.'
+        porque: 'El triangle comença a l’altura dels ulls, no a terra.'
+    resultado: 'L’edifici fa uns $26{,}6\un{m}$.'
 errores:
-  - error: 'Olvidar la altura del observador'
-    explicacion: 'El ángulo se mide desde los ojos. Si el enunciado da esa altura, hay que sumarla.'
+  - error: 'Oblidar l’altura de l’observador'
+    explicacion: 'L’angle es mesura des dels ulls. Si l’enunciat dona aquesta altura, cal sumar-la.'

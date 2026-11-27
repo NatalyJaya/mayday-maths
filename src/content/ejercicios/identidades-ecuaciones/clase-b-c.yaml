@@ -3,13 +3,13 @@ tema: identidades-ecuaciones
 orden: 203
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie B, apartado c)
+referencia: Sèrie B, apartat c)
 coleccion: clase-serie-b
 dificultad: basico
 habilidades: [calculo, graficas]
-resumen: La ecuación más directa. Pero hay dos ángulos con seno 1/2.
+resumen: L’equació més directa. Però hi ha dos angles amb sinus 1/2.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$2\sin x - 1 = 0$$
 figura:
   tipo: circunferencia
@@ -19,27 +19,27 @@ figura:
   recta: { tipo: seno, valor: 0.5 }
   proyecciones: false
 conceptos:
-  - '$\sin x = k$ tiene dos soluciones por vuelta: $\theta$ y $180^\circ - \theta$.'
+  - '$\sin x = k$ té dues solucions per volta: $\theta$ i $180^\circ - \theta$.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [30, 150]
       trampas:
         - valores: [30]
-          explicacion: 'Es lo que da la calculadora (y lo que había en el cuaderno), pero falta otra: el seno también es positivo en el segundo cuadrante. La recta $y = \frac12$ corta la circunferencia en dos puntos.'
+          explicacion: 'És el que dona la calculadora (i el que hi havia a la llibreta), però en falta una altra: el sinus també és positiu al segon quadrant. La recta $y = \frac12$ talla la circumferència en dos punts.'
     pistas:
-      - 'Despeja $\sin x$.'
-      - 'En la circunferencia, la recta horizontal $y = \frac12$ corta en dos puntos. ¿Cuáles son sus ángulos?'
+      - 'Aïlla $\sin x$.'
+      - 'A la circumferència, la recta horitzontal $y = \frac12$ talla en dos punts. Quins angles tenen?'
     pasos:
-      - titulo: Despejar
+      - titulo: Aïllar
         desarrollo: '$$2\sin x = 1 \;\Rightarrow\; \sin x = \tfrac12$$'
-      - titulo: Los dos ángulos
-        desarrollo: '$\arcsin\frac12 = 30^\circ$. El seno también es positivo en el segundo cuadrante: $180^\circ - 30^\circ = 150^\circ$.'
-        porque: '$30^\circ$ y $150^\circ$ son simétricos respecto al eje Y: tienen la misma altura.'
+      - titulo: Els dos angles
+        desarrollo: '$\arcsin\frac12 = 30^\circ$. El sinus també és positiu al segon quadrant: $180^\circ - 30^\circ = 150^\circ$.'
+        porque: '$30^\circ$ i $150^\circ$ són simètrics respecte de l’eix $Y$: tenen la mateixa altura.'
     resultado: '$x = 30^\circ,\ 150^\circ$.'
 errores:
-  - error: 'Dar solo $30^\circ$ (como en el cuaderno)'
-    explicacion: 'La calculadora devuelve un solo ángulo. El otro, $150^\circ$, hay que buscarlo con la simetría.'
+  - error: 'Donar només $30^\circ$ (com a la llibreta)'
+    explicacion: 'La calculadora retorna un sol angle. L’altre, $150^\circ$, s’ha de buscar amb la simetria.'
 laboratorio: { f: sin, n: 1, k: 0.5 }

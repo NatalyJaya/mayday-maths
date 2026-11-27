@@ -5,23 +5,23 @@ interface Props {
 }
 const { lab = false } = Astro.props;
 const presets = [
-	['Acutángulo', { A: [1.5, 1], B: [12, 1], C: [4.5, 7.5] }],
-	['Rectángulo en A', { A: [2, 1], B: [10, 1], C: [2, 7] }],
-	['Obtusángulo', { A: [1, 1], B: [7, 1], C: [12, 5] }],
+	['Acutangle', { A: [1.5, 1], B: [12, 1], C: [4.5, 7.5] }],
+	['Rectangle a A', { A: [2, 1], B: [10, 1], C: [2, 7] }],
+	['Obtusangle', { A: [1, 1], B: [7, 1], C: [12, 5] }],
 ] as const;
 ---
 
 <triangle-lab class="sim wide" id={lab ? 'laboratorio' : undefined} data-url={lab ? '' : undefined}>
 	<div class="sim-head">
-		<h4>Arrastra los vértices</h4>
-		<p class="muted">Cada lado tiene el color de su ángulo opuesto. Una cuadrícula = 1 unidad.</p>
+		<h4>Arrossega els vèrtexs</h4>
+		<p class="muted">Cada costat té el color del seu angle oposat. Una quadrícula = 1 unitat.</p>
 	</div>
 	<div class="sim-layout wide-left">
-		<svg class="sim-svg mfig" viewBox="0 0 560 380" role="application" aria-label="Triángulo ABC con vértices arrastrables. Con el teclado: elige un vértice y muévelo con las flechas."></svg>
+		<svg class="sim-svg mfig" viewBox="0 0 560 380" role="application" aria-label="Triangle ABC amb vèrtexs arrossegables. Amb el teclat: tria un vèrtex i mou-lo amb les fletxes."></svg>
 		<div class="tl-panels">
-			<p class="sim-note bad tl-bad" hidden>Los tres puntos están alineados: no forman un triángulo.</p>
+			<p class="sim-note bad tl-bad" hidden>Els tres punts estan alineats: no formen un triangle.</p>
 			<section>
-				<p class="k">Teorema del seno</p>
+				<p class="k">Teorema del sinus</p>
 				<table class="sim-table">
 					<tbody>
 						<tr><th>a / sin A</th><td class="x"><output data-out="ra"></output></td></tr>
@@ -29,29 +29,29 @@ const presets = [
 						<tr><th>c / sin C</th><td class="g"><output data-out="rc"></output></td></tr>
 					</tbody>
 				</table>
-				<p class="muted small">Los tres valen lo mismo: el diámetro de la circunferencia circunscrita, 2R = <output data-out="2r"></output>.</p>
+				<p class="muted small">Tots tres valen el mateix: el diàmetre de la circumferència circumscrita, 2R = <output data-out="2r"></output>.</p>
 			</section>
 			<section>
-				<p class="k">Teorema del coseno (para el lado a)</p>
+				<p class="k">Teorema del cosinus (per al costat a)</p>
 				<p class="eq">a² = <output data-out="a2"></output></p>
 				<p class="eq muted">b² + c² − 2bc·cos A = <output data-out="cos"></output></p>
 			</section>
 			<section>
-				<p class="k">Área</p>
-				<p class="eq">½·b·c·sin A = <output data-out="area"></output> · Herón: <output data-out="heron"></output></p>
-				<p class="muted small">Triángulo <output data-out="kind"></output>. A + B + C = <output data-out="sum"></output></p>
+				<p class="k">Àrea</p>
+				<p class="eq">½·b·c·sin A = <output data-out="area"></output> · Heró: <output data-out="heron"></output></p>
+				<p class="muted small">Triangle <output data-out="kind"></output>. A + B + C = <output data-out="sum"></output></p>
 			</section>
 		</div>
 	</div>
 	<div class="sim-controls">
-		<div class="vsel" role="group" aria-label="Vértice que mueven las flechas del teclado">
-			<span class="k">Teclado:</span>
+		<div class="vsel" role="group" aria-label="Vèrtex que mouen les fletxes del teclat">
+			<span class="k">Teclat:</span>
 			<button class="btn btn-sm" type="button" data-sel="A">A</button>
 			<button class="btn btn-sm" type="button" data-sel="B">B</button>
 			<button class="btn btn-sm" type="button" data-sel="C">C</button>
 		</div>
-		<label class="check"><input type="checkbox" data-k="snap" checked /> Ajustar a la cuadrícula</label>
-		<label class="check"><input type="checkbox" data-k="circ" /> Circunferencia circunscrita</label>
+		<label class="check"><input type="checkbox" data-k="snap" checked /> Ajusta a la quadrícula</label>
+		<label class="check"><input type="checkbox" data-k="circ" /> Circumferència circumscrita</label>
 		<div class="vsel">
 			{presets.map(([t, p]) => <button class="btn btn-sm btn-ghost" type="button" data-preset={JSON.stringify(p)}>{t}</button>)}
 		</div>

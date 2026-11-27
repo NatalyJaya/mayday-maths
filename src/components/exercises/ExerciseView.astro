@@ -21,14 +21,14 @@ const single = R.apartados.length === 1;
 const col = ex.coleccion ? await getEntry('colecciones', ex.coleccion) : undefined;
 const parent = ex.variante_de ? await getEntry('ejercicios', `${ex.tema}/${ex.variante_de}`) : undefined;
 const variants = await getVariants(ex.tema, exerciseSlug(entry));
-const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
+const LEVEL = ['Més fàcil', 'Un pas més', 'Repte'];
 ---
 
 <exercise-tracker class="exercise" data-id={entry.id}>
 	<ExerciseMeta ex={ex} />
 	{
 		(col || parent) && (
-			<nav class="situate" aria-label="Dónde está este ejercicio">
+			<nav class="situate" aria-label="On és aquest exercici">
 				{col && (
 					<a href={collectionUrl(topic, col.id)}>
 						<Icon name="layers" size={16} /> {col.data.titulo}
@@ -36,7 +36,7 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 				)}
 				{parent && (
 					<a href={exerciseUrl(topic, parent)}>
-						<Icon name="arrow-left" size={16} /> Variante de: <strong>{parent.data.titulo}</strong>
+						<Icon name="arrow-left" size={16} /> Variant de: <strong>{parent.data.titulo}</strong>
 					</a>
 				)}
 			</nav>
@@ -48,8 +48,8 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 	{
 		R.visual.length > 0 && (
 			<section class="visual">
-				<h2 class="h-sec">El problema en dibujos</h2>
-				<p class="muted">Antes de calcular, entiende qué pasa y qué te piden. Cada viñeta es un paso del razonamiento.</p>
+				<h2 class="h-sec">El problema en dibuixos</h2>
+				<p class="muted">Abans de calcular, entén què passa i què et demanen. Cada vinyeta és un pas del raonament.</p>
 				<ol class="panels">
 					{R.visual.map((v, i) => (
 						<li class="panel-v">
@@ -68,19 +68,19 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 	{
 		(R.datos.length > 0 || R.interpretacion || R.conceptos.length > 0) && (
 			<section class="plan">
-				<h2 class="h-sec">Antes de calcular</h2>
+				<h2 class="h-sec">Abans de calcular</h2>
 				<p class="muted">
-					Escribe en tu cuaderno los datos y lo que te piden, y haz un dibujo. Luego compáralo aquí.
+					Escriu a la llibreta les dades i el que et demanen, i fes un dibuix. Després compara-ho aquí.
 				</p>
 				{(R.datos.length > 0 || R.incognitas.length > 0) && (
-					<Reveal titulo="Compara tus datos e incógnitas">
+					<Reveal titulo="Compara les teves dades i incògnites">
 						{R.datos.length > 0 && (
 							<table class="datos">
 								<thead>
 									<tr>
-										<th>Dato</th>
+										<th>Dada</th>
 										<th>Valor</th>
-										<th>Qué es</th>
+										<th>Què és</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -96,7 +96,7 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 						)}
 						{R.incognitas.length > 0 && (
 							<>
-								<p class="k">Qué nos piden</p>
+								<p class="k">Què ens demanen</p>
 								<ul>
 									{R.incognitas.map((q) => (
 										<li set:html={q} />
@@ -107,12 +107,12 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 					</Reveal>
 				)}
 				{R.interpretacion && (
-					<Reveal titulo="¿Qué está pasando? Interprétalo antes de calcular">
+					<Reveal titulo="Què està passant? Interpreta-ho abans de calcular">
 						<Fragment set:html={R.interpretacion} />
 					</Reveal>
 				)}
 				{R.conceptos.length > 0 && (
-					<Reveal titulo="Conceptos y fórmulas que vas a necesitar">
+					<Reveal titulo="Conceptes i fórmules que necessitaràs">
 						<ul>
 							{R.conceptos.map((c) => (
 								<li set:html={c} />
@@ -125,16 +125,16 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 	}
 
 	<section class="parts">
-		<h2 class="h-sec">{single ? 'Resuélvelo' : 'Apartados'}</h2>
+		<h2 class="h-sec">{single ? 'Resol-ho' : 'Apartats'}</h2>
 		{R.apartados.map((p) => <PartView part={p} exId={entry.id.replace(/\W/g, '-')} single={single} />)}
 	</section>
 
-	<p class="solved-banner" hidden><Icon name="check" /> ¡Ejercicio resuelto! Ha quedado marcado en tu lista.</p>
+	<p class="solved-banner" hidden><Icon name="check" /> Exercici resolt! Ha quedat marcat a la teva llista.</p>
 
 	{
 		R.errores.length > 0 && (
 			<section>
-				<h2 class="h-sec">Errores frecuentes</h2>
+				<h2 class="h-sec">Errors freqüents</h2>
 				<ul class="mistakes">
 					{R.errores.map((e) => (
 						<li>
@@ -152,7 +152,7 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 	{
 		R.alternativas.length > 0 && (
 			<section>
-				<h2 class="h-sec">Otra forma de verlo</h2>
+				<h2 class="h-sec">Una altra manera de veure-ho</h2>
 				{R.alternativas.map((a) => (
 					<Reveal titulo={a.titulo}>
 						<Fragment set:html={a.desarrollo} />
@@ -165,13 +165,13 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 	{
 		variants.length > 0 && (
 			<section>
-				<h2 class="h-sec">Variantes para practicar</h2>
-				<p class="muted">El mismo tipo de problema, cambiando algo cada vez. Ordenadas de más fácil a más difícil.</p>
+				<h2 class="h-sec">Variants per practicar</h2>
+				<p class="muted">El mateix tipus de problema, canviant alguna cosa cada vegada. Ordenades de més fàcil a més difícil.</p>
 				<ol class="variants">
 					{variants.map((v, i) => (
 						<li>
 							<a href={exerciseUrl(topic, v)} class="card" data-solved-id={v.id}>
-								<span class="v-level">{LEVEL[i] ?? `Variante ${i + 1}`}</span>
+								<span class="v-level">{LEVEL[i] ?? `Variant ${i + 1}`}</span>
 								<strong>{v.data.titulo}</strong>
 								<span class="muted">{v.data.resumen}</span>
 							</a>
@@ -187,8 +187,8 @@ const LEVEL = ['Más fácil', 'Un paso más', 'Reto'];
 			<a class="lab-link card" href={labUrl(topic, ex.laboratorio)}>
 				<Icon name="flask" size={22} />
 				<span>
-					<strong>Compruébalo en el laboratorio</strong>
-					<span class="muted">Se abre con los datos de este ejercicio para que lo veas y lo manipules.</span>
+					<strong>Comprova-ho al laboratori</strong>
+					<span class="muted">S’obre amb les dades d’aquest exercici perquè ho vegis i ho manipulis.</span>
 				</span>
 				<Icon name="arrow-right" />
 			</a>

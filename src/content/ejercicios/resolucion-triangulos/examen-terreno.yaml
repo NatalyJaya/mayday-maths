@@ -1,16 +1,16 @@
-titulo: Un terreno de cuatro lados
+titulo: Un terreny de quatre costats
 tema: resolucion-triangulos
 orden: 15
 procedencia: original
 dificultad: examen
 habilidades: [geometria, multipaso, metodo, modelizacion]
-resumen: Dividir un cuadrilátero con una diagonal y resolver dos triángulos encadenados.
+resumen: Dividir un quadrilàter amb una diagonal i resoldre dos triangles encadenats.
 enunciado: |
-  Un terreno tiene forma de cuadrilátero $ABCD$. Se ha medido: $AB = 50\un{m}$, $BC = 40\un{m}$, el ángulo $\widehat{B} = 110^\circ$, $AD = 45\un{m}$ y el ángulo $\widehat{CAD} = 35^\circ$ (entre la diagonal $AC$ y el lado $AD$).
+  Un terreny té forma de quadrilàter $ABCD$. S’ha mesurat: $AB = 50\un{m}$, $BC = 40\un{m}$, l’angle $\widehat{B} = 110^\circ$, $AD = 45\un{m}$ i l’angle $\widehat{CAD} = 35^\circ$ (entre la diagonal $AC$ i el costat $AD$).
 
   a) Calcula la diagonal $AC$.
-  b) Calcula el área del terreno.
-  c) Calcula el lado $CD$.
+  b) Calcula l’àrea del terreny.
+  c) Calcula el costat $CD$.
 figura:
   tipo: geometria
   puntos:
@@ -28,7 +28,7 @@ figura:
     - { vertice: B, desde: C, hasta: A, etiqueta: '110°', radio: 18 }
     - { vertice: A, desde: C, hasta: D, etiqueta: '35°', radio: 34 }
 interpretacion: |
-  Un cuadrilátero no se resuelve directamente. La diagonal $AC$ lo divide en dos triángulos: el $ABC$ (dos lados y el ángulo que forman) y el $ACD$, que se puede resolver en cuanto se conozca $AC$.
+  Un quadrilàter no es resol directament. La diagonal $AC$ el divideix en dos triangles: l’$ABC$ (dos costats i l’angle que formen) i l’$ACD$, que es pot resoldre tan bon punt es conegui $AC$.
 apartados:
   - id: a
     enunciado: Diagonal $AC$.
@@ -37,43 +37,43 @@ apartados:
       campos:
         - { simbolo: 'AC', etiqueta: diagonal, unidad: m, valor: 73.95 }
     pasos:
-      - titulo: Teorema del coseno en ABC
+      - titulo: Teorema del cosinus a ABC
         desarrollo: '$$AC^2 = 50^2 + 40^2 - 2\cdot 50\cdot 40\cos 110^\circ \approx 4100 + 1368{,}08 = 5468{,}08 \;\Rightarrow\; AC \approx 73{,}95\un{m}$$'
-        porque: '$\cos 110^\circ < 0$, así que el término $-2\cdot50\cdot40\cos 110^\circ$ suma: el ángulo es obtuso.'
+        porque: '$\cos 110^\circ < 0$, així que el terme $-2\cdot50\cdot40\cos 110^\circ$ suma: l’angle és obtús.'
     resultado: '$AC \approx 73{,}95\un{m}$.'
   - id: b
-    enunciado: Área del terreno.
+    enunciado: Àrea del terreny.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'S'
-          etiqueta: área total
+          etiqueta: àrea total
           unidad: m²
           valor: 1894.0
           trampas:
-            - { valor: 939.69, explicacion: 'Esa es solo el área del triángulo $ABC$. Falta sumar la del $ACD$.' }
-            - { valor: 954.31, explicacion: 'Esa es solo el área del triángulo $ACD$. Falta sumar la del $ABC$.' }
+            - { valor: 939.69, explicacion: 'Aquesta és només l’àrea del triangle $ABC$. Hi falta sumar la de l’$ACD$.' }
+            - { valor: 954.31, explicacion: 'Aquesta és només l’àrea del triangle $ACD$. Hi falta sumar la de l’$ABC$.' }
     pistas:
-      - 'Suma las áreas de los dos triángulos, cada una con $\frac12\cdot\text{lado}\cdot\text{lado}\cdot\sin(\text{ángulo comprendido})$.'
+      - 'Suma les àrees dels dos triangles, cadascuna amb $\frac12\cdot\text{costat}\cdot\text{costat}\cdot\sin(\text{angle comprès})$.'
     pasos:
-      - titulo: Área de ABC
+      - titulo: Àrea d’ABC
         desarrollo: '$$S_1 = \frac12\cdot 50\cdot 40\sin 110^\circ \approx 939{,}69\un{m^2}$$'
-      - titulo: Área de ACD
+      - titulo: Àrea d’ACD
         desarrollo: '$$S_2 = \frac12\cdot 73{,}95\cdot 45\sin 35^\circ \approx 954{,}31\un{m^2}$$'
-        porque: 'El ángulo de $35^\circ$ está entre $AC$ y $AD$.'
+        porque: 'L’angle de $35^\circ$ és entre $AC$ i $AD$.'
       - titulo: Total
         desarrollo: '$$S = S_1 + S_2 \approx 1894{,}0\un{m^2}$$'
-    resultado: 'El terreno mide unos $1894\un{m^2}$.'
+    resultado: 'El terreny fa uns $1894\un{m^2}$.'
   - id: c
-    enunciado: Lado $CD$.
+    enunciado: Costat $CD$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'CD', etiqueta: lado, unidad: m, valor: 45.18 }
+        - { simbolo: 'CD', etiqueta: costat, unidad: m, valor: 45.18 }
     pasos:
-      - titulo: Teorema del coseno en ACD
+      - titulo: Teorema del cosinus a ACD
         desarrollo: '$$CD^2 = 73{,}95^2 + 45^2 - 2\cdot 73{,}95\cdot 45\cos 35^\circ \Rightarrow CD \approx 45{,}18\un{m}$$'
     resultado: '$CD \approx 45{,}2\un{m}$.'
 errores:
-  - error: 'Redondear la diagonal a unidades antes de seguir'
-    explicacion: 'Los resultados de un apartado se usan en el siguiente: arrastra al menos dos decimales.'
+  - error: 'Arrodonir la diagonal a unitats abans de continuar'
+    explicacion: 'Els resultats d’un apartat es fan servir al següent: arrossega com a mínim dos decimals.'

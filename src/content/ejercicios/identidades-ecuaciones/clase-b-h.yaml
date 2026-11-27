@@ -3,44 +3,44 @@ tema: identidades-ecuaciones
 orden: 208
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie B, apartado h)
+referencia: Sèrie B, apartat h)
 coleccion: clase-serie-b
 dificultad: intermedio
 habilidades: [calculo]
-resumen: Ecuación de segundo grado en el seno. Comprueba bien la factorización.
+resumen: Equació de segon grau en el sinus. Comprova bé la factorització.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$2\sin^2 x - \sin x - 1 = 0$$
 conceptos:
-  - 'Cambio de variable $t = \sin x$.'
-  - 'Una factorización se comprueba multiplicando.'
+  - 'Canvi de variable $t = \sin x$.'
+  - 'Una factorització es comprova multiplicant.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [90, 210, 330]
       trampas:
         - valores: [30, 150, 210, 330]
-          explicacion: 'Así sale con la factorización $(2\sin x + 1)(2\sin x - 1)$, la de los apuntes. Pero ese producto es $4\sin^2 x - 1$, no la ecuación. Lo correcto es $(2\sin x + 1)(\sin x - 1)$.'
+          explicacion: 'Això surt amb la factorització $(2\sin x + 1)(2\sin x - 1)$, la dels apunts. Però aquest producte és $4\sin^2 x - 1$, no l’equació. El correcte és $(2\sin x + 1)(\sin x - 1)$.'
         - valores: [90]
-          explicacion: 'Te falta la solución $\sin x = -\frac12$.'
+          explicacion: 'Et falta la solució $\sin x = -\frac12$.'
         - valores: [90, 210]
-          explicacion: '$\sin x = -\frac12$ tiene dos soluciones: en el tercer y en el cuarto cuadrante.'
+          explicacion: '$\sin x = -\frac12$ té dues solucions: al tercer i al quart quadrant.'
     pistas:
-      - 'Llama $t = \sin x$ y resuelve $2t^2 - t - 1 = 0$.'
-      - 'Las raíces son $t = 1$ y $t = -\frac12$.'
+      - 'Anomena $t = \sin x$ i resol $2t^2 - t - 1 = 0$.'
+      - 'Les arrels són $t = 1$ i $t = -\frac12$.'
     pasos:
-      - titulo: Cambio de variable
+      - titulo: Canvi de variable
         desarrollo: '$$2t^2 - t - 1 = 0 \;\Rightarrow\; t = \frac{1 \pm\sqrt{1 + 8}}{4} = \frac{1 \pm 3}{4} \;\Rightarrow\; t = 1 \ \text{ o } \ t = -\tfrac12$$'
-      - titulo: Factorización (comprobada)
+      - titulo: Factorització (comprovada)
         desarrollo: '$$2\sin^2 x - \sin x - 1 = (2\sin x + 1)(\sin x - 1)$$'
-        porque: 'Comprobación: $(2s + 1)(s - 1) = 2s^2 - 2s + s - 1 = 2s^2 - s - 1$ ✔.'
-      - titulo: Ángulos
+        porque: 'Comprovació: $(2s + 1)(s - 1) = 2s^2 - 2s + s - 1 = 2s^2 - s - 1$ ✔.'
+      - titulo: Angles
         desarrollo: |
           - $\sin x = 1 \Rightarrow x = 90^\circ$.
-          - $\sin x = -\frac12$: referencia $30^\circ$, seno negativo en el 3.er y el 4.º cuadrante $\Rightarrow x = 210^\circ,\ 330^\circ$.
+          - $\sin x = -\frac12$: referència $30^\circ$, sinus negatiu al 3r i al 4t quadrant $\Rightarrow x = 210^\circ,\ 330^\circ$.
     resultado: '$x = 90^\circ,\ 210^\circ,\ 330^\circ$.'
 errores:
-  - error: 'Factorizar como $(2\sin x + 1)(2\sin x - 1)$ (error de los apuntes)'
-    explicacion: 'Ese producto es $4\sin^2 x - 1$. En el cuaderno aparecían además ángulos como $30^\circ$, $60^\circ$ y $300^\circ$, que no cumplen la ecuación; solo $330^\circ$ era correcto.'
+  - error: 'Factoritzar com $(2\sin x + 1)(2\sin x - 1)$ (error dels apunts)'
+    explicacion: 'Aquest producte és $4\sin^2 x - 1$. A la llibreta apareixien a més angles com $30^\circ$, $60^\circ$ i $300^\circ$, que no compleixen l’equació; només $330^\circ$ era correcte.'

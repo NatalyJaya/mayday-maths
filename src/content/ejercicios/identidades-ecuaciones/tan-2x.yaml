@@ -4,27 +4,27 @@ orden: 6
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo, conceptual]
-resumen: 'Ángulo múltiple y tangente: el periodo de 180° se divide entre 2.'
-enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad\tan 2x = \sqrt3$'
+resumen: 'Angle múltiple i tangent: el període de 180° es divideix entre 2.'
+enunciado: 'Resol a $[0^\circ,\ 360^\circ)$: $\quad\tan 2x = \sqrt3$'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [30, 120, 210, 300]
       trampas:
-        - { valores: [30, 120], explicacion: 'Has buscado $2x$ solo en una vuelta. Como $x$ llega a $360^\circ$, $2x$ llega a $720^\circ$: hay dos soluciones más.' }
-        - { valores: [60, 240], explicacion: 'Esas son las soluciones de $\tan x = \sqrt3$. Falta trabajar con $2x$ y dividir entre 2.' }
+        - { valores: [30, 120], explicacion: 'Has buscat $2x$ només en una volta. Com que $x$ arriba a $360^\circ$, $2x$ arriba a $720^\circ$: hi ha dues solucions més.' }
+        - { valores: [60, 240], explicacion: 'Aquestes són les solucions de $\tan x = \sqrt3$. Falta treballar amb $2x$ i dividir entre 2.' }
     pistas:
-      - '$\tan u = \sqrt3$ para $u = 60^\circ + 180^\circ k$.'
-      - 'Con $u = 2x \in [0^\circ,\ 720^\circ)$ hay cuatro valores de $u$.'
+      - '$\tan u = \sqrt3$ per a $u = 60^\circ + 180^\circ k$.'
+      - 'Amb $u = 2x \in [0^\circ,\ 720^\circ)$ hi ha quatre valors de $u$.'
     pasos:
-      - titulo: Ángulo u = 2x
+      - titulo: Angle u = 2x
         desarrollo: '$$\tan u = \sqrt3 \;\Rightarrow\; u = 60^\circ + 180^\circ k$$'
-      - titulo: Valores de u en dos vueltas
-        desarrollo: '$u = 60^\circ,\ 240^\circ,\ 420^\circ,\ 600^\circ$ (todos en $[0^\circ,\ 720^\circ)$).'
+      - titulo: Valors de u en dues voltes
+        desarrollo: '$u = 60^\circ,\ 240^\circ,\ 420^\circ,\ 600^\circ$ (tots a $[0^\circ,\ 720^\circ)$).'
       - titulo: Dividir entre 2
         desarrollo: '$x = 30^\circ,\ 120^\circ,\ 210^\circ,\ 300^\circ$.'
-        porque: 'Las soluciones están separadas $90^\circ$: el periodo de $\tan 2x$ es $180^\circ / 2$.'
+        porque: 'Les solucions són separades $90^\circ$: el període de $\tan 2x$ és $180^\circ / 2$.'
     resultado: '$x = 30^\circ,\ 120^\circ,\ 210^\circ,\ 300^\circ$.'
 laboratorio: { f: tan, n: 2, k: 1.732 }

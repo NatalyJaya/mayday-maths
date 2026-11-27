@@ -6,9 +6,9 @@ interface Props {
 const { items } = Astro.props;
 ---
 
-<nav class="crumbs" aria-label="Estás en">
+<nav class="crumbs" aria-label="Ets a">
 	<ol>
-		<li><a href={withBase('/')}>Inicio</a></li>
+		<li><a href={withBase('/')}>Inici</a></li>
 		{
 			items.map((it, i) => (
 				<li>

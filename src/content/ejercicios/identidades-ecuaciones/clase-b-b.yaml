@@ -3,46 +3,46 @@ tema: identidades-ecuaciones
 orden: 202
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie B, apartado b)
+referencia: Sèrie B, apartat b)
 coleccion: clase-serie-b
 dificultad: intermedio
 habilidades: [calculo]
-resumen: Pasar el coseno al cuadrado a senos y resolver la ecuación de segundo grado.
+resumen: Passar el cosinus al quadrat a sinus i resoldre l’equació de segon grau.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\sin x\,(\sin x - 1) = 5\cos^2 x - 4$$
 conceptos:
   - '$\cos^2 x = 1 - \sin^2 x$.'
-  - '$\sin x = k < 0$: soluciones en el tercer y el cuarto cuadrante.'
+  - '$\sin x = k < 0$: solucions al tercer i al quart quadrant.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$, con dos decimales si no son exactas.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$, amb dos decimals si no són exactes.
     respuesta:
       tipo: conjunto
       valores: [30, 150, 199.47, 340.53]
       trampas:
         - valores: [30, 150]
-          explicacion: 'Te faltan las soluciones de $\sin x = -\frac13$.'
+          explicacion: 'Et falten les solucions de $\sin x = -\frac13$.'
         - valores: [30, 150, 19.47, 160.53]
-          explicacion: 'Esos ángulos tienen seno $+\frac13$. Para $\sin x = -\frac13$, los ángulos están en el tercer y el cuarto cuadrante: $180^\circ + 19{,}47^\circ$ y $360^\circ - 19{,}47^\circ$.'
+          explicacion: 'Aquests angles tenen sinus $+\frac13$. Per a $\sin x = -\frac13$, els angles són al tercer i al quart quadrant: $180^\circ + 19{,}47^\circ$ i $360^\circ - 19{,}47^\circ$.'
         - valores: [30, 150, 340.53]
-          explicacion: 'La calculadora da $-19{,}47^\circ$, que es $340{,}53^\circ$. Te falta el otro ángulo con el mismo seno: $180^\circ + 19{,}47^\circ$.'
+          explicacion: 'La calculadora dona $-19{,}47^\circ$, que és $340{,}53^\circ$. Et falta l’altre angle amb el mateix sinus: $180^\circ + 19{,}47^\circ$.'
     pistas:
-      - 'Desarrolla el producto y cambia $\cos^2 x$ por $1 - \sin^2 x$.'
+      - 'Desenvolupa el producte i canvia $\cos^2 x$ per $1 - \sin^2 x$.'
       - 'Queda $6\sin^2 x - \sin x - 1 = 0$.'
     pasos:
-      - titulo: Desarrollar y pasar a senos
+      - titulo: Desenvolupar i passar a sinus
         desarrollo: '$$\sin^2 x - \sin x = 5(1 - \sin^2 x) - 4 = 1 - 5\sin^2 x$$'
       - titulo: Ordenar
         desarrollo: '$$6\sin^2 x - \sin x - 1 = 0$$'
-      - titulo: Cambio de variable
+      - titulo: Canvi de variable
         desarrollo: '$$t = \frac{1 \pm\sqrt{1 + 24}}{12} = \frac{1 \pm 5}{12} \;\Rightarrow\; t = \tfrac12 \ \text{ o } \ t = -\tfrac13$$'
-      - titulo: Ángulos
+      - titulo: Angles
         desarrollo: |
           - $\sin x = \frac12 \Rightarrow x = 30^\circ,\ 150^\circ$.
-          - $\sin x = -\frac13$: la calculadora da $\arcsin(-\frac13) \approx -19{,}47^\circ$. En $[0^\circ,\ 360^\circ)$: $x \approx 180^\circ + 19{,}47^\circ = 199{,}47^\circ$ y $x \approx 360^\circ - 19{,}47^\circ = 340{,}53^\circ$.
-        porque: 'El seno es negativo en el tercer y el cuarto cuadrante; el ángulo de referencia es $19{,}47^\circ$.'
+          - $\sin x = -\frac13$: la calculadora dona $\arcsin(-\frac13) \approx -19{,}47^\circ$. A $[0^\circ,\ 360^\circ)$: $x \approx 180^\circ + 19{,}47^\circ = 199{,}47^\circ$ i $x \approx 360^\circ - 19{,}47^\circ = 340{,}53^\circ$.
+        porque: 'El sinus és negatiu al tercer i al quart quadrant; l’angle de referència és $19{,}47^\circ$.'
     resultado: '$x = 30^\circ,\ 150^\circ,\ \approx 199{,}47^\circ,\ \approx 340{,}53^\circ$.'
 errores:
-  - error: 'Quedarse con el ángulo negativo de la calculadora'
-    explicacion: '$-19{,}47^\circ$ no está en $[0^\circ,\ 360^\circ)$. Súmale $360^\circ$ y busca también el otro ángulo con el mismo seno.'
+  - error: 'Quedar-se amb l’angle negatiu de la calculadora'
+    explicacion: '$-19{,}47^\circ$ no és a $[0^\circ,\ 360^\circ)$. Suma-hi $360^\circ$ i busca també l’altre angle amb el mateix sinus.'

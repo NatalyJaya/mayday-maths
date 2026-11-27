@@ -5,39 +5,39 @@ const name = `sf-${Math.random().toString(36).slice(2, 7)}`;
 
 <sum-formula class="sim wide">
 	<div class="sim-head">
-		<h4>¿Por qué sin(α + β) = sin α cos β + cos α sin β?</h4>
-		<p class="muted">Radio OP = 1. Mueve α y β: la igualdad se cumple siempre.</p>
+		<h4>Per què sin(α + β) = sin α cos β + cos α sin β?</h4>
+		<p class="muted">Radi OP = 1. Mou α i β: la igualtat es compleix sempre.</p>
 	</div>
 	<div class="sim-layout wide-left">
-		<svg class="sim-svg mfig" viewBox="0 0 520 430" role="img" aria-label="Construcción geométrica: el ángulo α + β con radio 1, dividido en dos triángulos rectángulos cuyos catetos suman el seno de α + β."></svg>
+		<svg class="sim-svg mfig" viewBox="0 0 520 430" role="img" aria-label="Construcció geomètrica: l’angle α + β amb radi 1, dividit en dos triangles rectangles els catets dels quals sumen el sinus de α + β."></svg>
 		<div>
 			<fieldset class="mode">
-				<legend class="k">Qué quieres ver</legend>
-				<label class="check"><input type="radio" name={name} value="sin" checked /> El seno: la altura PS</label>
-				<label class="check"><input type="radio" name={name} value="cos" /> El coseno: la abscisa OS</label>
+				<legend class="k">Què vols veure</legend>
+				<label class="check"><input type="radio" name={name} value="sin" checked /> El sinus: l’altura PS</label>
+				<label class="check"><input type="radio" name={name} value="cos" /> El cosinus: l’abscissa OS</label>
 			</fieldset>
 			<table class="sim-table">
 				<tbody>
 					<tr><th><output data-out="f"></output>(α + β)</th><td><strong><output data-out="lhs"></output></strong></td></tr>
-					<tr><th>Primer término</th><td><output data-out="t1"></output></td></tr>
-					<tr><th>Segundo término</th><td><output data-out="op"></output> <output data-out="t2"></output></td></tr>
-					<tr><th>«Repartir» (¡mal!)</th><td class="muted"><output data-out="f"></output> α + <output data-out="f"></output> β = <output data-out="naive"></output></td></tr>
+					<tr><th>Primer terme</th><td><output data-out="t1"></output></td></tr>
+					<tr><th>Segon terme</th><td><output data-out="op"></output> <output data-out="t2"></output></td></tr>
+					<tr><th>«Repartir» (malament!)</th><td class="muted"><output data-out="f"></output> α + <output data-out="f"></output> β = <output data-out="naive"></output></td></tr>
 				</tbody>
 			</table>
 			<p class="sim-note">
-				<strong>Seno:</strong> PS = TS + PT. TS = QR es el cateto opuesto a α en el triángulo OQR, cuya hipotenusa es cos β. PT es el cateto contiguo a α en el triángulo PTQ, cuya hipotenusa es sin β.
-				<br /><strong>Coseno:</strong> OS = OR − TQ.
+				<strong>Sinus:</strong> PS = TS + PT. TS = QR és el catet oposat a α en el triangle OQR, d’hipotenusa cos β. PT és el catet contigu a α en el triangle PTQ, d’hipotenusa sin β.
+				<br /><strong>Cosinus:</strong> OS = OR − TQ.
 			</p>
 		</div>
 	</div>
 	<div class="sim-controls">
 		<div class="param">
 			<label>α: <output data-out="a"></output></label>
-			<input type="range" data-k="a" min="5" max="60" step="1" value="30" aria-label="Ángulo α (grados)" />
+			<input type="range" data-k="a" min="5" max="60" step="1" value="30" aria-label="Angle α (graus)" />
 		</div>
 		<div class="param">
 			<label>β: <output data-out="b"></output></label>
-			<input type="range" data-k="b" min="5" max="60" step="1" value="25" aria-label="Ángulo β (grados)" />
+			<input type="range" data-k="b" min="5" max="60" step="1" value="25" aria-label="Angle β (graus)" />
 		</div>
 	</div>
 </sum-formula>

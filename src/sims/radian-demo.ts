@@ -73,7 +73,7 @@ class RadianDemo extends HTMLElement {
 			t(RX + m * r, RY - 24, s, 'l-g small');
 		}
 		el('line', { x1: RX, y1: RY, x2: RX + rad * r, y2: RY, class: 'seg thick t-y' }, svg);
-		t(RX, RY - 40, `Arco = ${fmt(rad, 2)} radios`, 'l-y', 'start');
+		t(RX, RY - 40, `Arc = ${fmt(rad, 2)} radis`, 'l-y', 'start');
 		const out = (k: string, s: string) => (this.querySelector(`[data-out="${k}"]`)!.textContent = s);
 		out('deg', `${fmt(a, 1)}°`);
 		out('rad', radText(a));

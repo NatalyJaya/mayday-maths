@@ -1,42 +1,42 @@
-titulo: Conocida la tangente
+titulo: Coneguda la tangent
 tema: razones-trigonometricas
 orden: 6
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo, metodo]
-resumen: Cuando el dato es la tangente, la relación útil es 1 + tan²α = 1/cos²α.
+resumen: Quan la dada és la tangent, la relació útil és 1 + tan²α = 1/cos²α.
 enunciado: |
-  Sabiendo que $\tan\alpha = -2$ y que $\alpha$ está en el **cuarto cuadrante**, calcula $\cos\alpha$ y $\sin\alpha$.
+  Sabent que $\tan\alpha = -2$ i que $\alpha$ és al **quart quadrant**, calcula $\cos\alpha$ i $\sin\alpha$.
 conceptos:
   - '$1 + \tan^2\alpha = \dfrac{1}{\cos^2\alpha}$.'
   - '$\sin\alpha = \tan\alpha\cdot\cos\alpha$.'
-  - 'En el cuarto cuadrante: coseno positivo y seno negativo.'
+  - 'Al quart quadrant: cosinus positiu i sinus negatiu.'
 apartados:
   - id: a
-    enunciado: Calcula $\cos\alpha$ y $\sin\alpha$ (con cuatro decimales).
+    enunciado: Calcula $\cos\alpha$ i $\sin\alpha$ (amb quatre decimals).
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\cos\alpha', etiqueta: coseno, unidad: '', valor: 0.4472, tolerancia: 0.005 }
+        - { simbolo: '\cos\alpha', etiqueta: cosinus, unidad: '', valor: 0.4472, tolerancia: 0.005 }
         - simbolo: '\sin\alpha'
-          etiqueta: seno
+          etiqueta: sinus
           unidad: ''
           valor: -0.8944
           tolerancia: 0.005
     pistas:
-      - 'Divide la identidad fundamental entre $\cos^2\alpha$: $1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}$.'
-      - '$\cos^2\alpha = \frac15$. En el cuarto cuadrante, ¿qué signo tiene el coseno?'
-      - 'Después, $\sin\alpha = \tan\alpha\cdot\cos\alpha$.'
+      - 'Divideix la identitat fonamental entre $\cos^2\alpha$: $1 + \tan^2\alpha = \frac{1}{\cos^2\alpha}$.'
+      - '$\cos^2\alpha = \frac15$. Al quart quadrant, quin signe té el cosinus?'
+      - 'Després, $\sin\alpha = \tan\alpha\cdot\cos\alpha$.'
     pasos:
-      - titulo: Coseno a partir de la tangente
+      - titulo: Cosinus a partir de la tangent
         desarrollo: '$$1 + (-2)^2 = \frac{1}{\cos^2\alpha} \;\Rightarrow\; \cos^2\alpha = \frac15 \;\Rightarrow\; \cos\alpha = \pm\frac{1}{\sqrt5}$$'
-        porque: 'Esta relación conecta directamente la tangente con el coseno.'
-      - titulo: Signo
-        desarrollo: 'Cuarto cuadrante: coseno positivo. $\cos\alpha = \frac{1}{\sqrt5} = \frac{\sqrt5}{5} \approx 0{,}4472$.'
-      - titulo: Seno
+        porque: 'Aquesta relació connecta directament la tangent amb el cosinus.'
+      - titulo: Signe
+        desarrollo: 'Quart quadrant: cosinus positiu. $\cos\alpha = \frac{1}{\sqrt5} = \frac{\sqrt5}{5} \approx 0{,}4472$.'
+      - titulo: Sinus
         desarrollo: '$$\sin\alpha = \tan\alpha\cdot\cos\alpha = -2\cdot\frac{\sqrt5}{5} = -\frac{2\sqrt5}{5} \approx -0{,}8944$$'
-        porque: 'Comprobación: negativo, como debe ser en el cuarto cuadrante, y $0{,}2 + 0{,}8 = 1$ ✔.'
-    resultado: '$\cos\alpha = \dfrac{\sqrt5}{5} \approx 0{,}4472$ y $\sin\alpha = -\dfrac{2\sqrt5}{5} \approx -0{,}8944$.'
+        porque: 'Comprovació: negatiu, com ha de ser al quart quadrant, i $0{,}2 + 0{,}8 = 1$ ✔.'
+    resultado: '$\cos\alpha = \dfrac{\sqrt5}{5} \approx 0{,}4472$ i $\sin\alpha = -\dfrac{2\sqrt5}{5} \approx -0{,}8944$.'
 errores:
-  - error: 'Pensar que, como tan α = −2, el seno es −2 y el coseno 1'
-    explicacion: 'Solo se conoce el cociente. Además, el seno no puede valer $-2$: está entre $-1$ y $1$.'
+  - error: 'Pensar que, com que tan α = −2, el sinus és −2 i el cosinus 1'
+    explicacion: 'Només se’n coneix el quocient. A més, el sinus no pot valer $-2$: és entre $-1$ i $1$.'

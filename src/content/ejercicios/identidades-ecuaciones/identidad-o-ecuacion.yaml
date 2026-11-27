@@ -1,25 +1,25 @@
-titulo: ¿Cuál es una identidad?
+titulo: Quina és una identitat?
 tema: identidades-ecuaciones
 orden: 4
 procedencia: original
 dificultad: basico
 habilidades: [conceptual]
-resumen: Distinguir una identidad de una ecuación.
-enunciado: Solo una de estas igualdades es una identidad (se cumple para todo $x$).
+resumen: Distingir una identitat d’una equació.
+enunciado: Només una d’aquestes igualtats és una identitat (es compleix per a tot $x$).
 apartados:
   - id: a
-    enunciado: ¿Cuál?
+    enunciado: Quina?
     respuesta:
       tipo: opciones
       opciones:
-        - { texto: '$\sin 2x = 2\sin x$', explicacion: 'Contraejemplo: con $x = 90^\circ$, $\sin 180^\circ = 0$ pero $2\sin 90^\circ = 2$. Es una ecuación (se cumple solo en algunos $x$).' }
-        - { texto: '$(\sin x + \cos x)^2 = 1 + \sin 2x$', correcta: true, explicacion: 'Desarrollando: $\sin^2 x + 2\sin x\cos x + \cos^2 x = 1 + 2\sin x\cos x = 1 + \sin 2x$, para todo $x$.' }
-        - { texto: '$\cos 2x = 1$', explicacion: 'Solo se cumple si $2x$ es un número entero de vueltas: en $0^\circ$ y $180^\circ$ de la primera vuelta. Es una ecuación.' }
-        - { texto: '$\sin x + \cos x = 1$', explicacion: 'Con $x = 45^\circ$ vale $\sqrt2 \ne 1$. Es una ecuación (soluciones $0^\circ$ y $90^\circ$ en la primera vuelta).' }
+        - { texto: '$\sin 2x = 2\sin x$', explicacion: 'Contraexemple: amb $x = 90^\circ$, $\sin 180^\circ = 0$ però $2\sin 90^\circ = 2$. És una equació (es compleix només per a alguns $x$).' }
+        - { texto: '$(\sin x + \cos x)^2 = 1 + \sin 2x$', correcta: true, explicacion: 'Desenvolupant: $\sin^2 x + 2\sin x\cos x + \cos^2 x = 1 + 2\sin x\cos x = 1 + \sin 2x$, per a tot $x$.' }
+        - { texto: '$\cos 2x = 1$', explicacion: 'Només es compleix si $2x$ és un nombre enter de voltes: a $0^\circ$ i $180^\circ$ de la primera volta. És una equació.' }
+        - { texto: '$\sin x + \cos x = 1$', explicacion: 'Amb $x = 45^\circ$ val $\sqrt2 \ne 1$. És una equació (solucions $0^\circ$ i $90^\circ$ a la primera volta).' }
     pistas:
-      - 'Busca un contraejemplo para cada una. La que no tenga ninguno, demuéstrala.'
+      - 'Busca un contraexemple per a cadascuna. La que no en tingui cap, demostra-la.'
     pasos:
-      - titulo: Desarrollar el cuadrado
+      - titulo: Desenvolupar el quadrat
         desarrollo: '$$(\sin x + \cos x)^2 = \sin^2 x + \cos^2 x + 2\sin x\cos x = 1 + \sin 2x$$'
-        porque: 'Se usan la identidad fundamental y el ángulo doble, que valen para todo $x$.'
-    resultado: 'La identidad es $(\sin x + \cos x)^2 = 1 + \sin 2x$.'
+        porque: 'Es fan servir la identitat fonamental i l’angle doble, que valen per a tot $x$.'
+    resultado: 'La identitat és $(\sin x + \cos x)^2 = 1 + \sin 2x$.'

@@ -1,20 +1,27 @@
-# Procedencia de todo el material de la plataforma.
-#   clase      → apuntes y ejercicios trabajados en clase (etiqueta «Ejercicio de clase»).
-#   externo    → recurso con licencia abierta del que se ADAPTA contenido (con atribución).
-#   referencia → recurso consultado solo para identificar tipos de problema y nivel.
-#   curriculo  → normativa usada para organizar el temario.
+# Procedència de tot el material de la plataforma.
+#   clase      → apunts i exercicis treballats a classe (etiqueta «Exercici de classe»).
+#   externo    → recurs amb llicència oberta del qual s’ADAPTA contingut (amb atribució).
+#   referencia → recurs consultat només per identificar tipus de problema i nivell.
+#   curriculo  → normativa utilitzada per organitzar el temari.
 
 - id: apuntes-trigonometria-2
   tipo: clase
-  titulo: 'Trigonometría 2: apuntes y ejercicios del cuaderno de clase (pasados a limpio y explicados)'
-  autor: Apuntes de clase de 1.º de Bachillerato, transcritos de las fotos del cuaderno
-  licencia: Material privado de clase, usado con permiso
-  uso: Ejercicios marcados «Ejercicio de clase» (identidades, Serie A, Serie B y Problema 31) y las deducciones de las fórmulas de la suma, la resta, el ángulo doble y el ángulo mitad. Los enunciados se conservan como se leyeron en el cuaderno, con los avisos de lectura dudosa. Todas las soluciones se han vuelto a comprobar, y los errores detectados en los apuntes alimentan la sección «Errores frecuentes».
+  titulo: 'Trigonometria 2: apunts i exercicis de la llibreta de classe (passats a net i explicats)'
+  autor: Apunts de classe de 1r de Batxillerat, transcrits de les fotos de la llibreta
+  licencia: Material privat de classe, utilitzat amb permís
+  uso: Exercicis marcats «Exercici de classe» (identitats, Sèrie A, Sèrie B i Problema 31) i les deduccions de les fórmules de la suma, la resta, l’angle doble i l’angle meitat. Els enunciats es conserven tal com es van llegir a la llibreta, amb els avisos de lectura dubtosa. Totes les solucions s’han tornat a comprovar, i els errors detectats als apunts alimenten la secció «Errors freqüents».
+
+- id: decret-171-2022
+  tipo: curriculo
+  titulo: Decret 171/2022, de 20 de setembre, d’ordenació dels ensenyaments de batxillerat (Matemàtiques I)
+  autor: Departament d’Educació, Generalitat de Catalunya (DOGC)
+  licencia: Text normatiu
+  uso: Currículum de referència a Catalunya per organitzar els blocs i el contingut de trigonometria.
 
 - id: rd-243-2022
   tipo: curriculo
   titulo: Real Decreto 243/2022, de 5 de abril, por el que se establecen la ordenación y las enseñanzas mínimas del Bachillerato (Matemáticas I)
   autor: Ministerio de Educación y Formación Profesional (BOE)
   url: https://www.boe.es/buscar/act.php?id=BOE-A-2022-5521
-  licencia: Texto normativo
-  uso: Organización del temario en bloques y del contenido de trigonometría (sentido de la medida y sentido espacial). Conviene revisar la normativa vigente de cada comunidad, como el Decret 171/2022 en Cataluña.
+  licencia: Text normatiu
+  uso: Ensenyaments mínims estatals en què es basa el currículum català (sentit de la mesura i sentit espacial).

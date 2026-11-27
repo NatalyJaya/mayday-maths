@@ -115,7 +115,7 @@ export function triangleSvg(f: TriangleFigure) {
 		out.push(`<line x1="${n(from[0])}" y1="${n(from[1])}" x2="${n(foot[0])}" y2="${n(foot[1])}" class="seg dash t-g"/>`);
 		out.push(rightMark(foot, from, t > L / 2 ? p1 : p2, 9));
 		const mid = mul(add(from, foot), 0.5);
-		out.push(label(mid[0] + 12, mid[1], f.altura.etiqueta, 'l-g', 'start'));
+		out.push(label(mid[0] - 10, mid[1], f.altura.etiqueta, 'l-g', 'end'));
 	}
 
 	// lados

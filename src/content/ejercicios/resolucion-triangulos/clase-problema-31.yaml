@@ -1,21 +1,21 @@
-titulo: 'Problema 31: dos puntos vistos desde lo alto'
+titulo: 'Problema 31: dos punts vistos des de dalt'
 tema: resolucion-triangulos
 orden: 100
 procedencia: clase
 fuente: apuntes-trigonometria-2
 referencia: Problema 31
-nota_fuente: 'En las fotos no estaba el enunciado: se ha reconstruido a partir del dibujo y de los cálculos del cuaderno. Si tu enunciado dice otra cosa, el método es el mismo.'
+nota_fuente: 'A les fotos no hi havia l’enunciat: s’ha reconstruït a partir del dibuix i dels càlculs de la llibreta. Si el teu enunciat diu una altra cosa, el mètode és el mateix.'
 coleccion: clase-problema-31
 dificultad: examen
 habilidades: [planteamiento, geometria, multipaso, modelizacion]
-resumen: Ángulos de depresión para dos distancias y teorema del coseno para la tercera.
+resumen: Angles de depressió per a dues distàncies i teorema del cosinus per a la tercera.
 enunciado: |
-  Desde un punto $P$ situado a $1000\un{m}$ de altura sobre una llanura se ven dos puntos $A$ y $B$ de la llanura. La visual a $A$ forma un ángulo de depresión de $10^\circ$, la visual a $B$ uno de $20^\circ$, y el ángulo entre las dos visuales $PA$ y $PB$ es de $26^\circ$.
+  Des d’un punt $P$ situat a $1000\un{m}$ d’altura sobre una plana es veuen dos punts $A$ i $B$ de la plana. La visual cap a $A$ forma un angle de depressió de $10^\circ$, la visual cap a $B$ un de $20^\circ$, i l’angle entre les dues visuals $PA$ i $PB$ és de $26^\circ$.
 
-  Calcula la distancia $x = AB$.
+  Calcula la distància $x = AB$.
 figura:
   tipo: geometria
-  titulo: El triángulo PAB, dibujado en su propio plano (inclinado)
+  titulo: 'Triangle de referència PAB (com a la llibreta: P a l’esquerra, A a la dreta, B a dalt)'
   puntos:
     - { id: P, x: 0, y: 0, lado: o }
     - { id: A, x: 5758.77, y: 0, lado: e }
@@ -27,127 +27,168 @@ figura:
   angulos:
     - { vertice: P, desde: A, hasta: B, etiqueta: '26°', radio: 44 }
 datos:
-  - { simbolo: 'h', valor: '1000\un{m}', significado: 'altura de P sobre la llanura' }
-  - { simbolo: '\alpha_A', valor: '10^\circ', significado: 'ángulo de depresión hacia A' }
-  - { simbolo: '\alpha_B', valor: '20^\circ', significado: 'ángulo de depresión hacia B' }
-  - { simbolo: '\widehat{APB}', valor: '26^\circ', significado: 'ángulo entre las dos visuales' }
+  - { simbolo: 'h', valor: '1000\un{m}', significado: 'altura de P sobre la plana' }
+  - { simbolo: '\alpha_A', valor: '10^\circ', significado: 'angle de depressió cap a A' }
+  - { simbolo: '\alpha_B', valor: '20^\circ', significado: 'angle de depressió cap a B' }
+  - { simbolo: '\widehat{APB}', valor: '26^\circ', significado: 'angle entre les dues visuals' }
 incognitas:
-  - 'La distancia $x = AB$.'
+  - 'La distància $x = AB$.'
 interpretacion: |
-  Hay **tres triángulos**. Dos son rectángulos y verticales: el de la visual a $A$ y el de la visual a $B$, con la altura de $1000\un{m}$ como cateto. Con ellos se calculan $PA$ y $PB$. El tercero, $PAB$, está inclinado y **no es rectángulo**: se conocen dos lados y el ángulo que forman, así que se usa el **teorema del coseno**.
+  Llegeix l’enunciat frase a frase i situa cada dada **en el triangle de referència** $PAB$ (el de la figura: $P$ a l’esquerra, $A$ a la dreta i $B$ a dalt).
+
+  - «$P$ és a $1000\un{m}$ d’altura»: $P$ és **a l’aire**. A terra, just a sota, hi ha el seu peu $O$, i $PO = 1000\un{m}$ és vertical. $A$ i $B$ són a terra. Per això el triangle $PAB$ està **inclinat**: no és ni horitzontal ni vertical.
+  - «La visual cap a $A$ forma un angle de depressió de $10^\circ$»: és l’angle entre la visual $PA$ i l’**horitzontal** que passa per $P$, mirant cap avall. Aquest angle és en un pla **vertical** (el que conté $P$, $O$ i $A$), **no** en el triangle $PAB$. No és l’angle $\widehat{PAB}$ ni cap altre angle del triangle de referència.
+  - «La visual cap a $B$, un de $20^\circ$»: el mateix, en el pla vertical que conté $P$, $O$ i $B$.
+  - «L’angle entre les dues visuals és de $26^\circ$»: aquest sí que és del triangle de referència. És l’angle a $P$, entre els costats $PA$ i $PB$.
+  - «Calcula $x = AB$»: és el costat del triangle de referència oposat a l’angle de $26^\circ$.
+
+  Així doncs, cal fer dues coses: primer, amb els angles de depressió, trobar $PA$ i $PB$ (cadascun en el seu triangle rectangle vertical); després, en el triangle $PAB$ ja coneixerem dos costats i l’angle que formen, i el **teorema del cosinus** dona $x$.
 visual:
-  - titulo: 'Triángulo vertical de la visual a A'
-    texto: 'El ángulo de depresión (desde la horizontal de $P$ hacia abajo) es igual al ángulo de elevación en $A$: son ángulos alternos. La altura es el cateto **opuesto** a ese ángulo y $PA$ es la hipotenusa.'
+  - titulo: 'El triangle de referència PAB: què en sabem'
+    texto: 'L’únic angle de l’enunciat que és d’aquest triangle és el de $26^\circ$, a $P$, entre les dues visuals. Els costats $PA$ i $PB$ encara no els coneixem i $x = AB$ és el que ens demanen.'
     figura:
       tipo: geometria
       puntos:
-        - { id: P, x: 0, y: 1000, lado: n }
-        - { id: H, x: 0, y: 0, etiqueta: '', marca: false }
-        - { id: A, x: 5671.28, y: 0, lado: s }
-        - { id: R, x: 5671.28, y: 1000, etiqueta: '', marca: false }
+        - { id: P, x: 0, y: 0, lado: o }
+        - { id: A, x: 5758.77, y: 0, lado: e }
+        - { id: B, x: 2627.9, y: 1281.71, lado: n }
       segmentos:
-        - { de: P, a: H, etiqueta: '1000 m', color: y, lado: derecha }
-        - { de: H, a: A }
-        - { de: P, a: A, etiqueta: 'PA = ?', color: g }
-        - { de: P, a: R, discontinuo: true }
+        - { de: P, a: A, etiqueta: 'PA = ?', lado: derecha }
+        - { de: P, a: B, etiqueta: 'PB = ?' }
+        - { de: B, a: A, etiqueta: 'x = ?', color: g }
       angulos:
-        - { vertice: P, desde: R, hasta: A, etiqueta: '10°', color: g, radio: 60 }
-        - { vertice: A, desde: H, hasta: P, etiqueta: '10°', radio: 60 }
-        - { vertice: H, desde: P, hasta: A, recto: true }
-      suelo: { y: 0, desde: -200, hasta: 5900 }
-  - titulo: 'Triángulo vertical de la visual a B'
-    texto: 'Lo mismo con $20^\circ$: $\sin 20^\circ = \frac{1000}{PB}$.'
+        - { vertice: P, desde: A, hasta: B, etiqueta: '26°', radio: 44 }
+  - titulo: 'L’angle de depressió cap a A no és un angle del triangle'
+    texto: |
+      El $10^\circ$ viu en un altre triangle: el **triangle rectangle vertical** $POA$, format per la visual $PA$, l’altura $PO = 1000\un{m}$ i el terra $OA$. Aquí l’hem **abatut** (girat) fins al pla del dibuix, enganxat al costat $PA$ del triangle de referència.
+
+      L’angle de depressió es mesura a $P$, entre l’horitzontal i la visual. Com que l’horitzontal que passa per $P$ i el terra $OA$ són paral·leles, aquest angle és igual al que forma la visual amb el terra a $A$ (angles alterns): $10^\circ$. En aquest triangle rectangle, $PA$ és la **hipotenusa** i els $1000\un{m}$ són el catet **oposat** a l’angle de $10^\circ$:
+      $$\sin 10^\circ = \frac{1000}{PA}$$
     figura:
       tipo: geometria
       puntos:
-        - { id: P, x: 0, y: 1000, lado: n }
-        - { id: H, x: 0, y: 0, etiqueta: '', marca: false }
-        - { id: B, x: 2747.48, y: 0, lado: s }
-        - { id: R, x: 2747.48, y: 1000, etiqueta: '', marca: false }
+        - { id: P, x: 0, y: 0, lado: o }
+        - { id: A, x: 5758.77, y: 0, lado: e }
+        - { id: B, x: 2627.9, y: 1281.71, lado: n }
+        - { id: O, x: 173.65, y: -984.81, etiqueta: 'O (peu de P)', lado: s }
       segmentos:
-        - { de: P, a: H, etiqueta: '1000 m', color: y, lado: derecha }
-        - { de: H, a: B }
-        - { de: P, a: B, etiqueta: 'PB = ?', color: g }
-        - { de: P, a: R, discontinuo: true }
+        - { de: P, a: B, discontinuo: true }
+        - { de: B, a: A, discontinuo: true }
+        - { de: P, a: A, etiqueta: 'PA (hipotenusa)', color: v }
+        - { de: P, a: O, etiqueta: '1000 m', color: y }
+        - { de: O, a: A, etiqueta: 'terra', color: x, lado: derecha }
       angulos:
-        - { vertice: P, desde: R, hasta: B, etiqueta: '20°', color: g, radio: 50 }
-        - { vertice: H, desde: P, hasta: B, recto: true }
-      suelo: { y: 0, desde: -150, hasta: 2900 }
-  - titulo: 'El triángulo PAB: dos lados y el ángulo que forman'
-    texto: 'Ya conocemos $PA$ y $PB$, y el ángulo entre ellos. Eso es el caso LAL: teorema del coseno.'
+        - { vertice: A, desde: O, hasta: P, etiqueta: '10°', color: g, radio: 70 }
+        - { vertice: O, desde: P, hasta: A, recto: true }
+  - titulo: 'El mateix amb la visual cap a B'
+    texto: |
+      Ara abatem el triangle rectangle vertical $POB$, enganxat al costat $PB$. És la mateixa altura $PO = 1000\un{m}$ (el punt $O$ és el mateix a la realitat; surt dues vegades perquè cada triangle vertical s’ha abatut sobre un costat diferent). L’angle amb el terra a $B$ és el de depressió, $20^\circ$:
+      $$\sin 20^\circ = \frac{1000}{PB}$$
+    figura:
+      tipo: geometria
+      puntos:
+        - { id: P, x: 0, y: 0, lado: s }
+        - { id: A, x: 5758.77, y: 0, lado: e }
+        - { id: B, x: 2627.9, y: 1281.71, lado: ne }
+        - { id: O, x: -104.53, y: 994.52, etiqueta: 'O (peu de P)', lado: n }
+      segmentos:
+        - { de: P, a: A, discontinuo: true }
+        - { de: B, a: A, discontinuo: true }
+        - { de: P, a: B, etiqueta: 'PB (hipotenusa)', color: v, lado: derecha }
+        - { de: P, a: O, etiqueta: '1000 m', color: y }
+        - { de: O, a: B, etiqueta: 'terra', color: x }
+      angulos:
+        - { vertice: B, desde: O, hasta: P, etiqueta: '20°', color: g, radio: 60 }
+        - { vertice: O, desde: P, hasta: B, recto: true }
+  - titulo: 'Tornem al triangle de referència: dos costats i l’angle que formen'
+    texto: 'Amb $PA \approx 5758{,}77\un{m}$ i $PB \approx 2923{,}80\un{m}$, en el triangle $PAB$ coneixem dos costats i l’angle de $26^\circ$ que formen. És el cas CAC: **teorema del cosinus** per a $x$. Fixa’t que aquí no apareixen ni el $10^\circ$ ni el $20^\circ$: ja han fet la seva feina.'
+    figura:
+      tipo: geometria
+      puntos:
+        - { id: P, x: 0, y: 0, lado: o }
+        - { id: A, x: 5758.77, y: 0, lado: e }
+        - { id: B, x: 2627.9, y: 1281.71, lado: n }
+      segmentos:
+        - { de: P, a: A, etiqueta: 'PA ≈ 5758,77 m', lado: derecha }
+        - { de: P, a: B, etiqueta: 'PB ≈ 2923,80 m' }
+        - { de: B, a: A, etiqueta: 'x = ?', color: g }
+      angulos:
+        - { vertice: P, desde: A, hasta: B, etiqueta: '26°', radio: 44 }
 conceptos:
-  - 'Ángulo de depresión: el que forma la visual con la horizontal, hacia abajo. Es igual al ángulo de elevación desde el otro extremo.'
-  - '$\sin\alpha = \dfrac{\text{opuesto}}{\text{hipotenusa}}$.'
-  - 'Teorema del coseno: $x^2 = PA^2 + PB^2 - 2\cdot PA\cdot PB\cdot\cos\widehat{P}$.'
+  - 'Angle de depressió: el que forma la visual amb l’horitzontal, cap avall. És igual a l’angle d’elevació des de l’altre extrem.'
+  - '$\sin\alpha = \dfrac{\text{oposat}}{\text{hipotenusa}}$.'
+  - 'Teorema del cosinus: $x^2 = PA^2 + PB^2 - 2\cdot PA\cdot PB\cdot\cos\widehat{P}$.'
 apartados:
   - id: a
-    enunciado: Calcula las distancias $PA$ y $PB$.
+    enunciado: Calcula les distàncies $PA$ i $PB$.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'PA'
-          etiqueta: distancia de P a A
+          etiqueta: distància de P a A
           unidad: m
           valor: 5758.77
           tolerancia: 0.005
           trampas:
             - valor: -1838.16
-              explicacion: 'Un resultado negativo: tu calculadora está en radianes. Ponla en grados (DEG).'
+              explicacion: 'Un resultat negatiu: la calculadora està en radiants. Posa-la en graus (DEG).'
             - valor: 5671.28
-              explicacion: 'Eso es la distancia horizontal $1000/\tan 10^\circ$. La visual $PA$ es la hipotenusa: usa el seno.'
+              explicacion: 'Aquesta és la distància horitzontal $1000/\tan 10^\circ$. La visual $PA$ és la hipotenusa: fes servir el sinus.'
             - valor: 1015.43
-              explicacion: 'Has usado el coseno. La altura es el cateto opuesto al ángulo de $10^\circ$: $\sin 10^\circ = \frac{1000}{PA}$.'
+              explicacion: 'Has fet servir el cosinus. L’altura és el catet oposat a l’angle de $10^\circ$: $\sin 10^\circ = \frac{1000}{PA}$.'
         - simbolo: 'PB'
-          etiqueta: distancia de P a B
+          etiqueta: distància de P a B
           unidad: m
           valor: 2923.80
           tolerancia: 0.005
           trampas:
             - valor: 2423.80
-              explicacion: 'En el cuaderno se leía «2423,80», pero $1000/\sin 20^\circ = 2923{,}80$. Revisa la cuenta.'
+              explicacion: 'A la llibreta es llegia «2423,80», però $1000/\sin 20^\circ = 2923{,}80$. Revisa el càlcul.'
             - valor: 2747.48
-              explicacion: 'Esa es la distancia horizontal. $PB$ es la hipotenusa: $\sin 20^\circ = \frac{1000}{PB}$.'
+              explicacion: 'Aquesta és la distància horitzontal. $PB$ és la hipotenusa: $\sin 20^\circ = \frac{1000}{PB}$.'
     pistas:
-      - 'En cada triángulo vertical, la altura es el cateto opuesto al ángulo y la visual es la hipotenusa.'
+      - 'A cada triangle vertical, l’altura és el catet oposat a l’angle i la visual és la hipotenusa.'
       - '$PA = \dfrac{1000}{\sin 10^\circ}$.'
     pasos:
-      - titulo: Distancia PA
+      - titulo: Distància PA
         desarrollo: '$$\sin 10^\circ = \frac{1000}{PA} \;\Rightarrow\; PA = \frac{1000}{\sin 10^\circ} \approx 5758{,}77\un{m}$$'
-        porque: 'El ángulo de depresión desde $P$ es igual al ángulo de elevación en $A$ (alternos), y la altura es su cateto opuesto.'
-      - titulo: Distancia PB
+        porque: 'L’angle de depressió des de $P$ és igual a l’angle d’elevació a $A$ (alterns), i l’altura és el seu catet oposat.'
+      - titulo: Distància PB
         desarrollo: '$$\sin 20^\circ = \frac{1000}{PB} \;\Rightarrow\; PB = \frac{1000}{\sin 20^\circ} \approx 2923{,}80\un{m}$$'
-    resultado: '$PA \approx 5758{,}77\un{m}$ y $PB \approx 2923{,}80\un{m}$.'
+    resultado: '$PA \approx 5758{,}77\un{m}$ i $PB \approx 2923{,}80\un{m}$.'
   - id: b
-    enunciado: Calcula la distancia $x = AB$.
+    enunciado: Calcula la distància $x = AB$.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'x'
-          etiqueta: distancia AB
+          etiqueta: distància AB
           unidad: m
           valor: 3383.07
           tolerancia: 0.005
           trampas:
             - valor: 11445146.9
               tolerancia: 0.01
-              explicacion: 'Eso es $x^2$. Te falta la raíz cuadrada (le pasaba lo mismo al cuaderno).'
+              explicacion: 'Això és $x^2$. Et falta l’arrel quadrada (com li passava a la llibreta).'
             - valor: 6458.49
-              explicacion: 'Has usado Pitágoras, pero el triángulo $PAB$ no es rectángulo. Usa el teorema del coseno con el ángulo de $26^\circ$.'
+              explicacion: 'Has fet servir Pitàgores, però el triangle $PAB$ no és rectangle. Fes servir el teorema del cosinus amb l’angle de $26^\circ$.'
     pistas:
-      - 'En el triángulo $PAB$ conoces dos lados y el ángulo que forman.'
-      - '$x^2 = PA^2 + PB^2 - 2\cdot PA\cdot PB\cdot\cos 26^\circ$. No olvides la raíz al final.'
+      - 'Al triangle $PAB$ coneixes dos costats i l’angle que formen.'
+      - '$x^2 = PA^2 + PB^2 - 2\cdot PA\cdot PB\cdot\cos 26^\circ$. No t’oblidis de l’arrel al final.'
     pasos:
-      - titulo: Teorema del coseno
+      - titulo: Teorema del cosinus
         desarrollo: |
           $$x^2 = 5758{,}77^2 + 2923{,}80^2 - 2\cdot 5758{,}77\cdot 2923{,}80\cdot\cos 26^\circ \approx 11\,445\,147\un{m^2}$$
-        porque: 'Dos lados y el ángulo comprendido (caso LAL): es el teorema del coseno.'
-      - titulo: Raíz cuadrada
+        porque: 'Dos costats i l’angle comprès (cas CAC): és el teorema del cosinus.'
+      - titulo: Arrel quadrada
         desarrollo: '$$x = \sqrt{11\,445\,147} \approx 3383\un{m}$$'
-        porque: 'El teorema del coseno da $x^2$, no $x$.'
-    resultado: 'La distancia entre $A$ y $B$ es $x \approx 3383\un{m} \approx 3{,}38\un{km}$.'
+        porque: 'El teorema del cosinus dona $x^2$, no $x$.'
+    resultado: 'La distància entre $A$ i $B$ és $x \approx 3383\un{m} \approx 3{,}38\un{km}$.'
 errores:
-  - error: 'Olvidar la raíz cuadrada (error de los apuntes)'
-    explicacion: 'En el cuaderno se escribía «$x = \ldots$» con el valor de $x^2$. Sin la raíz, la distancia saldría de más de 11 000 km.'
-  - error: 'Redondear PA y PB a unidades antes del teorema del coseno'
-    explicacion: 'Con $5758$ y $2923$ sale $x^2 \approx 11\,443\,946$ y $x \approx 3382{,}9\un{m}$: casi igual, pero conviene arrastrar dos decimales.'
+  - error: 'Posar el 10° com un angle del triangle PAB (per exemple, a A, entre PA i AB)'
+    explicacion: 'Els angles de depressió no són angles del triangle de referència: són entre cada visual i l’horitzontal, en un pla vertical. Si es fan servir dins del triangle $PAB$ (amb el teorema del sinus, per exemple), el resultat surt malament. Al triangle $PAB$ només hi ha l’angle de $26^\circ$, a $P$.'
+  - error: 'Oblidar l’arrel quadrada (error dels apunts)'
+    explicacion: 'A la llibreta s’escrivia «$x = \ldots$» amb el valor de $x^2$. Sense l’arrel, la distància sortiria de més d’11 000 km.'
+  - error: 'Arrodonir PA i PB a unitats abans del teorema del cosinus'
+    explicacion: 'Amb $5758$ i $2923$ surt $x^2 \approx 11\,443\,946$ i $x \approx 3382{,}9\un{m}$: gairebé igual, però convé arrossegar dos decimals.'
 laboratorio: { a: 3383.07, b: 2923.80, c: 5758.77 }

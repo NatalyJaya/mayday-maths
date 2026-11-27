@@ -1,34 +1,34 @@
-titulo: Demuestra que sin 2x / (1 − cos 2x) = 1 / tan x
+titulo: Demostra que sin 2x / (1 − cos 2x) = 1 / tan x
 tema: identidades-ecuaciones
 rol: ejemplo
 orden: 2
 procedencia: original
 dificultad: intermedio
 habilidades: [demostracion, calculo]
-resumen: Ángulo doble arriba y abajo, y la forma de cos 2x que hace desaparecer el 1.
+resumen: Angle doble a dalt i a baix, i la forma de cos 2x que fa desaparèixer l’1.
 enunciado: |
-  Demuestra la identidad (para los $x$ en que tiene sentido):
+  Demostra la identitat (per als $x$ en què té sentit):
   $$\frac{\sin 2x}{1 - \cos 2x} = \frac{1}{\tan x}$$
 apartados:
   - id: a
-    enunciado: Escribe la demostración.
+    enunciado: Escriu la demostració.
     respuesta:
       tipo: abierta
     pasos:
-      - titulo: Elegir el miembro
-        piensa: ¿Por qué lado empezarías?
-        desarrollo: 'Por el izquierdo, que tiene ángulos dobles. El derecho ya es sencillo: $\frac{1}{\tan x} = \frac{\cos x}{\sin x}$.'
-        porque: 'Se transforma el miembro más complicado hasta llegar al otro.'
+      - titulo: Triar el membre
+        piensa: Per quin costat començaries?
+        desarrollo: 'Per l’esquerre, que té angles dobles. El dret ja és senzill: $\frac{1}{\tan x} = \frac{\cos x}{\sin x}$.'
+        porque: 'Es transforma el membre més complicat fins a arribar a l’altre.'
       - titulo: Numerador
         desarrollo: '$$\sin 2x = 2\sin x\cos x$$'
       - titulo: Denominador
-        piensa: '$\cos 2x$ tiene tres formas. ¿Cuál hace desaparecer el 1?'
+        piensa: '$\cos 2x$ té tres formes. Quina fa desaparèixer l’1?'
         desarrollo: '$$1 - \cos 2x = 1 - (1 - 2\sin^2 x) = 2\sin^2 x$$'
-        porque: 'Con $\cos 2x = 1 - 2\sin^2 x$ los unos se cancelan.'
+        porque: 'Amb $\cos 2x = 1 - 2\sin^2 x$ els uns es cancel·len.'
       - titulo: Simplificar
         desarrollo: '$$\frac{2\sin x\cos x}{2\sin^2 x} = \frac{\cos x}{\sin x} = \frac{1}{\tan x} \quad ∎$$'
-        porque: 'Se simplifican los factores $2$ y $\sin x$ (con $\sin x \ne 0$).'
-    resultado: 'El primer miembro se transforma en $\frac{\cos x}{\sin x} = \frac{1}{\tan x}$. La identidad es cierta para $x \ne 180^\circ k$ (y $x \ne 90^\circ + 180^\circ k$, donde $\tan x$ no existe).'
+        porque: 'Se simplifiquen els factors $2$ i $\sin x$ (amb $\sin x \ne 0$).'
+    resultado: 'El primer membre es transforma en $\frac{\cos x}{\sin x} = \frac{1}{\tan x}$. La identitat és certa per a $x \ne 180^\circ k$ (i $x \ne 90^\circ + 180^\circ k$, on $\tan x$ no existeix).'
 errores:
-  - error: 'Usar cos 2x = cos²x − sin²x en el denominador'
-    explicacion: 'No es un error, pero queda $1 - \cos^2 x + \sin^2 x$ y hay que dar un paso más ($1 - \cos^2 x = \sin^2 x$). Elegir bien la forma ahorra trabajo.'
+  - error: 'Fer servir cos 2x = cos²x − sin²x al denominador'
+    explicacion: 'No és un error, però queda $1 - \cos^2 x + \sin^2 x$ i cal fer un pas més ($1 - \cos^2 x = \sin^2 x$). Triar bé la forma estalvia feina.'

@@ -1,111 +1,111 @@
-# Temas de cada bloque. Solo los temas «disponible» tienen páginas.
-# Para abrir un tema: estado: disponible y sus cinco lecciones en
-# src/content/lecciones/<tema>/ (ver docs/CONTENIDO.md).
+# Temes de cada bloc. Només els temes «disponible» tenen pàgines.
+# Per obrir un tema: estado: disponible i les seves cinc lliçons a
+# src/content/lecciones/<tema>/ (vegeu docs/CONTENIDO.md).
 
-# ─── Números ───
+# ─── Nombres ───
 - id: numeros-reales
   bloque: numeros
-  titulo: Números reales e intervalos
+  titulo: Nombres reals i intervals
   estado: proximamente
   orden: 1
-  resumen: Racionales e irracionales, la recta real, valor absoluto, intervalos y aproximaciones con su error.
-  aprenderas: [Clasificar números, Trabajar con intervalos y valor absoluto, Acotar errores]
+  resumen: Racionals i irracionals, la recta real, valor absolut, intervals i aproximacions amb el seu error.
+  aprenderas: [Classificar nombres, Treballar amb intervals i valor absolut, Fitar errors]
 
 - id: potencias-logaritmos
   bloque: numeros
-  titulo: Potencias, radicales y logaritmos
+  titulo: Potències, radicals i logaritmes
   estado: proximamente
   orden: 2
-  resumen: Propiedades de las potencias y los radicales, racionalización y logaritmos con sus propiedades.
-  aprenderas: [Operar con radicales, Racionalizar, Usar las propiedades de los logaritmos]
+  resumen: Propietats de les potències i dels radicals, racionalització i logaritmes amb les seves propietats.
+  aprenderas: [Operar amb radicals, Racionalitzar, Fer servir les propietats dels logaritmes]
 
 - id: complejos
   bloque: numeros
-  titulo: Números complejos
+  titulo: Nombres complexos
   estado: proximamente
   orden: 3
-  resumen: La unidad imaginaria, formas binómica y polar, y operaciones con complejos.
-  aprenderas: [Operar en forma binómica, Pasar a forma polar, Resolver ecuaciones sin solución real]
+  resumen: La unitat imaginària, formes binòmica i polar, i operacions amb complexos.
+  aprenderas: [Operar en forma binòmica, Passar a forma polar, Resoldre equacions sense solució real]
 
-# ─── Álgebra ───
+# ─── Àlgebra ───
 - id: polinomios
   bloque: algebra
-  titulo: Polinomios y fracciones algebraicas
+  titulo: Polinomis i fraccions algebraiques
   estado: proximamente
   orden: 1
-  resumen: Operaciones, regla de Ruffini, teorema del resto, factorización y fracciones algebraicas.
-  aprenderas: [Factorizar polinomios, Simplificar fracciones algebraicas]
+  resumen: Operacions, regla de Ruffini, teorema del residu, factorització i fraccions algebraiques.
+  aprenderas: [Factoritzar polinomis, Simplificar fraccions algebraiques]
 
 - id: ecuaciones
   bloque: algebra
-  titulo: Ecuaciones
+  titulo: Equacions
   estado: proximamente
   orden: 2
-  resumen: Ecuaciones de segundo grado, bicuadradas, racionales, irracionales, exponenciales y logarítmicas.
-  aprenderas: [Elegir el método según el tipo de ecuación, Comprobar las soluciones]
+  resumen: Equacions de segon grau, biquadrades, racionals, irracionals, exponencials i logarítmiques.
+  aprenderas: [Triar el mètode segons el tipus d’equació, Comprovar les solucions]
 
 - id: inecuaciones
   bloque: algebra
-  titulo: Inecuaciones
+  titulo: Inequacions
   estado: proximamente
   orden: 3
-  resumen: Inecuaciones lineales, de segundo grado y racionales, y sistemas de inecuaciones.
-  aprenderas: [Resolver inecuaciones, Expresar la solución como intervalo]
+  resumen: Inequacions lineals, de segon grau i racionals, i sistemes d’inequacions.
+  aprenderas: [Resoldre inequacions, Expressar la solució com a interval]
 
 - id: sistemas
   bloque: algebra
-  titulo: Sistemas de ecuaciones (método de Gauss)
+  titulo: Sistemes d’equacions (mètode de Gauss)
   estado: proximamente
   orden: 4
-  resumen: Sistemas lineales de tres ecuaciones, método de Gauss y discusión de sistemas.
-  aprenderas: [Escalonar un sistema, Clasificar sistemas]
+  resumen: Sistemes lineals de tres equacions, mètode de Gauss i discussió de sistemes.
+  aprenderas: [Esglaonar un sistema, Classificar sistemes]
 
-# ─── Trigonometría ───
+# ─── Trigonometria ───
 - id: razones-trigonometricas
   bloque: trigonometria
-  titulo: Ángulos y razones trigonométricas
+  titulo: Angles i raons trigonomètriques
   estado: disponible
   orden: 1
-  resumen: Grados y radianes, seno, coseno y tangente, la circunferencia goniométrica y la reducción al primer cuadrante.
-  esencia: En triángulos semejantes, el cociente entre dos lados no depende del tamaño, solo del ángulo. Ese número (el seno, el coseno o la tangente) permite pasar de ángulos a longitudes y al revés.
+  resumen: Graus i radiants, sinus, cosinus i tangent, la circumferència goniomètrica i la reducció al primer quadrant.
+  esencia: En triangles semblants, el quocient entre dos costats no depèn de la mida, només de l’angle. Aquest nombre (el sinus, el cosinus o la tangent) permet passar d’angles a longituds i al revés.
   aprenderas:
-    - Medir ángulos en grados y en radianes y pasar de una unidad a otra
-    - Calcular las razones de un ángulo en un triángulo rectángulo
-    - Deducir los valores exactos de 30°, 45° y 60°
-    - Extender las razones a cualquier ángulo con la circunferencia goniométrica
-    - Reducir cualquier ángulo al primer cuadrante
-    - Reconocer las gráficas del seno, el coseno y la tangente
+    - Mesurar angles en graus i en radiants i passar d’una unitat a l’altra
+    - Calcular les raons d’un angle en un triangle rectangle
+    - Deduir els valors exactes de 30°, 45° i 60°
+    - Estendre les raons a qualsevol angle amb la circumferència goniomètrica
+    - Reduir qualsevol angle al primer quadrant
+    - Reconèixer les gràfiques del sinus, el cosinus i la tangent
   antes: |
-    Solo necesitas el **teorema de Pitágoras** y la idea de **triángulos semejantes** (mismos ángulos, lados proporcionales). Ten a mano una calculadora científica y comprueba que sabes ponerla en modo **grados (DEG)**.
+    Només necessites el **teorema de Pitàgores** i la idea de **triangles semblants** (mateixos angles, costats proporcionals). Tingues a mà una calculadora científica i comprova que la saps posar en mode **graus (DEG)**.
   portada:
     tipo: circunferencia
     angulos:
       - { grados: 150, etiqueta: '150°' }
     cuadrantes: true
   mapa:
-    - { q: 'Conozco un ángulo y la hipotenusa', c: '\cy{\text{opuesto}} = \text{hip} \cdot \sin\alpha', d: 'usa seno o coseno según el cateto que busques' }
-    - { q: 'Conozco dos lados, busco el ángulo', c: '\alpha = \arctan\frac{\cy{\text{opuesto}}}{\cx{\text{contiguo}}}', d: 'la tecla es sin⁻¹, cos⁻¹ o tan⁻¹, no 1/sin' }
-    - { q: 'Sé una razón, busco las otras', c: '\sin^2\alpha + \cos^2\alpha = 1', d: 'el signo lo da el cuadrante' }
-    - { q: 'Razón de un ángulo mayor que 90°', c: '\sin(180^\circ - \alpha) = \sin\alpha', d: 'busca el ángulo de referencia y pon el signo del cuadrante' }
-    - { q: 'Pasar de grados a radianes', c: '180^\circ = \pi \text{ rad}', d: 'regla de tres; la calculadora, en el modo correcto' }
+    - { q: 'Conec un angle i la hipotenusa', c: '\cy{\text{oposat}} = \text{hip} \cdot \sin\alpha', d: 'fes servir sinus o cosinus segons el catet que busquis' }
+    - { q: 'Conec dos costats, busco l’angle', c: '\alpha = \arctan\frac{\cy{\text{oposat}}}{\cx{\text{contigu}}}', d: 'la tecla és sin⁻¹, cos⁻¹ o tan⁻¹, no 1/sin' }
+    - { q: 'Sé una raó, busco les altres', c: '\sin^2\alpha + \cos^2\alpha = 1', d: 'el signe el dona el quadrant' }
+    - { q: 'Raó d’un angle més gran que 90°', c: '\sin(180^\circ - \alpha) = \sin\alpha', d: 'busca l’angle de referència i posa-hi el signe del quadrant' }
+    - { q: 'Passar de graus a radiants', c: '180^\circ = \pi \text{ rad}', d: 'regla de tres; la calculadora, en el mode correcte' }
 
 - id: resolucion-triangulos
   bloque: trigonometria
-  titulo: Resolución de triángulos
+  titulo: Resolució de triangles
   estado: disponible
   orden: 2
-  resumen: Triángulos rectángulos, doble observación, teorema del seno (y su caso ambiguo), teorema del coseno y área de un triángulo.
-  esencia: Con tres datos de un triángulo (y al menos un lado) se pueden calcular los otros tres. El teorema del seno y el del coseno hacen para cualquier triángulo lo que las razones hacen para los rectángulos.
+  resumen: Triangles rectangles, doble observació, teorema del sinus (i el seu cas ambigu), teorema del cosinus i àrea d’un triangle.
+  esencia: Amb tres dades d’un triangle (i almenys un costat) es poden calcular les altres tres. El teorema del sinus i el del cosinus fan per a qualsevol triangle el que les raons fan per als rectangles.
   aprenderas:
-    - Resolver triángulos rectángulos y problemas de alturas y distancias
-    - Plantear problemas de doble observación con dos triángulos rectángulos
-    - Deducir y aplicar el teorema del seno, incluido el caso ambiguo
-    - Deducir y aplicar el teorema del coseno
-    - Calcular el área de cualquier triángulo
-    - Elegir el teorema adecuado según los datos
+    - Resoldre triangles rectangles i problemes d’altures i distàncies
+    - Plantejar problemes de doble observació amb dos triangles rectangles
+    - Deduir i aplicar el teorema del sinus, inclòs el cas ambigu
+    - Deduir i aplicar el teorema del cosinus
+    - Calcular l’àrea de qualsevol triangle
+    - Triar el teorema adequat segons les dades
   requisitos: [razones-trigonometricas]
   antes: |
-    Necesitas manejar el **seno, el coseno y la tangente** en un triángulo rectángulo y saber obtener un ángulo con la calculadora (tecla **sin⁻¹**, **cos⁻¹** o **tan⁻¹**).
+    Necessites dominar el **sinus, el cosinus i la tangent** en un triangle rectangle i saber obtenir un angle amb la calculadora (tecla **sin⁻¹**, **cos⁻¹** o **tan⁻¹**).
   portada:
     tipo: triangulo
     a: 7
@@ -113,30 +113,30 @@
     c: 8
     etiquetas: { a: 'a = 7', b: 'b = 5', c: 'c = 8', A: '60°', B: 'B = ?', C: 'C = ?' }
   mapa:
-    - { q: 'Triángulo rectángulo', c: '\sin,\ \cos,\ \tan', d: 'no hace falta ningún teorema' }
-    - { q: 'Dos ángulos y un lado', c: '\frac{a}{\sin A} = \frac{b}{\sin B}', d: 'el tercer ángulo sale de A + B + C = 180°' }
-    - { q: 'Dos lados y el ángulo que NO forman', c: '\frac{a}{\sin A} = \frac{b}{\sin B}', d: 'caso ambiguo: puede haber 0, 1 o 2 triángulos' }
-    - { q: 'Dos lados y el ángulo que forman', c: 'a^2 = b^2 + c^2 - 2bc\cos A', d: 'teorema del coseno para el tercer lado' }
-    - { q: 'Los tres lados', c: '\cos A = \frac{b^2 + c^2 - a^2}{2bc}', d: 'el coseno no tiene caso ambiguo' }
-    - { q: 'Área', c: 'S = \tfrac{1}{2}\, b\, c \sin A', d: 'el ángulo debe ser el que forman los dos lados' }
+    - { q: 'Triangle rectangle', c: '\sin,\ \cos,\ \tan', d: 'no cal cap teorema' }
+    - { q: 'Dos angles i un costat', c: '\frac{a}{\sin A} = \frac{b}{\sin B}', d: 'el tercer angle surt de A + B + C = 180°' }
+    - { q: 'Dos costats i l’angle que NO formen', c: '\frac{a}{\sin A} = \frac{b}{\sin B}', d: 'cas ambigu: hi pot haver 0, 1 o 2 triangles' }
+    - { q: 'Dos costats i l’angle que formen', c: 'a^2 = b^2 + c^2 - 2bc\cos A', d: 'teorema del cosinus per al tercer costat' }
+    - { q: 'Els tres costats', c: '\cos A = \frac{b^2 + c^2 - a^2}{2bc}', d: 'el cosinus no té cas ambigu' }
+    - { q: 'Àrea', c: 'S = \tfrac{1}{2}\, b\, c \sin A', d: 'l’angle ha de ser el que formen els dos costats' }
 
 - id: identidades-ecuaciones
   bloque: trigonometria
-  titulo: Identidades y ecuaciones trigonométricas
+  titulo: Identitats i equacions trigonomètriques
   estado: disponible
   orden: 3
-  resumen: Razones de la suma y la resta de ángulos, del ángulo doble y del ángulo mitad, demostración de identidades y resolución de ecuaciones trigonométricas.
-  esencia: El seno no se reparte. sin(α + β) no es sin α + sin β, y las fórmulas de este tema dicen qué es en realidad. Con ellas se simplifican expresiones, se demuestran identidades y se resuelven ecuaciones, que tienen infinitas soluciones porque las razones se repiten cada vuelta.
+  resumen: Raons de la suma i la resta d’angles, de l’angle doble i de l’angle meitat, demostració d’identitats i resolució d’equacions trigonomètriques.
+  esencia: El sinus no es reparteix. sin(α + β) no és sin α + sin β, i les fórmules d’aquest tema diuen què és en realitat. Amb elles se simplifiquen expressions, es demostren identitats i es resolen equacions, que tenen infinites solucions perquè les raons es repeteixen a cada volta.
   aprenderas:
-    - Deducir y usar las fórmulas de la suma, la resta, el ángulo doble y el ángulo mitad
-    - Calcular razones exactas de ángulos como 15°, 75° o 22,5°
-    - Distinguir una identidad de una ecuación
-    - Simplificar expresiones y demostrar identidades
-    - Resolver ecuaciones trigonométricas y encontrar TODAS sus soluciones
-    - Detectar las soluciones falsas al elevar al cuadrado o al dividir
+    - Deduir i fer servir les fórmules de la suma, la resta, l’angle doble i l’angle meitat
+    - Calcular raons exactes d’angles com 15°, 75° o 22,5°
+    - Distingir una identitat d’una equació
+    - Simplificar expressions i demostrar identitats
+    - Resoldre equacions trigonomètriques i trobar-ne TOTES les solucions
+    - Detectar les solucions falses en elevar al quadrat o en dividir
   requisitos: [razones-trigonometricas]
   antes: |
-    Necesitas la **identidad fundamental**, los **valores exactos** de 30°, 45° y 60° y saber en qué cuadrantes es positiva cada razón. También resolver **ecuaciones de segundo grado** y **factorizar** sacando factor común.
+    Necessites la **identitat fonamental**, els **valors exactes** de 30°, 45° i 60° i saber en quins quadrants és positiva cada raó. També resoldre **equacions de segon grau** i **factoritzar** traient factor comú.
   portada:
     tipo: funcion
     dominio: [-360, 720]
@@ -153,70 +153,70 @@
       - { x: 390 }
       - { x: 510 }
   mapa:
-    - { q: 'Razón de 15°, 75°, 105°…', c: '\sin(\alpha \pm \beta)', d: 'escríbelo como suma o resta de 30°, 45° y 60°' }
-    - { q: 'En la ecuación aparecen x y 2x', c: '\cos 2x = 1 - 2\sin^2 x', d: 'elige la forma que deja una sola razón' }
-    - { q: 'Aparece x/2', c: '\cos^2\tfrac{x}{2} = \tfrac{1 + \cos x}{2}', d: 'con el cuadrado no hace falta la raíz' }
-    - { q: 'Ecuación de 2.º grado en sin o cos', c: 't = \sin x', d: 'descarta |t| > 1' }
-    - { q: 'Todo multiplicado por sin x o cos x', c: 'A \cdot B = 0', d: 'saca factor común: NO dividas' }
-    - { q: 'sin x + cos x = k', c: '(\sin x + \cos x)^2', d: 'al elevar al cuadrado, comprueba las soluciones' }
+    - { q: 'Raó de 15°, 75°, 105°…', c: '\sin(\alpha \pm \beta)', d: 'escriu-lo com a suma o resta de 30°, 45° i 60°' }
+    - { q: 'A l’equació hi ha x i 2x', c: '\cos 2x = 1 - 2\sin^2 x', d: 'tria la forma que deixa una sola raó' }
+    - { q: 'Hi apareix x/2', c: '\cos^2\tfrac{x}{2} = \tfrac{1 + \cos x}{2}', d: 'amb el quadrat no cal l’arrel' }
+    - { q: 'Equació de 2n grau en sin o cos', c: 't = \sin x', d: 'descarta |t| > 1' }
+    - { q: 'Tot multiplicat per sin x o cos x', c: 'A \cdot B = 0', d: 'treu factor comú: NO divideixis' }
+    - { q: 'sin x + cos x = k', c: '(\sin x + \cos x)^2', d: 'en elevar al quadrat, comprova les solucions' }
 
-# ─── Geometría ───
+# ─── Geometria ───
 - id: vectores
   bloque: geometria
-  titulo: Vectores en el plano
+  titulo: Vectors en el pla
   estado: proximamente
   orden: 1
-  resumen: Operaciones con vectores, producto escalar, módulo y ángulo entre vectores.
-  aprenderas: [Operar con vectores, Calcular ángulos con el producto escalar]
+  resumen: Operacions amb vectors, producte escalar, mòdul i angle entre vectors.
+  aprenderas: [Operar amb vectors, Calcular angles amb el producte escalar]
 
 - id: rectas
   bloque: geometria
-  titulo: Rectas en el plano
+  titulo: Rectes en el pla
   estado: proximamente
   orden: 2
-  resumen: Ecuaciones de la recta, posiciones relativas, distancias y ángulos.
-  aprenderas: [Pasar de una ecuación de la recta a otra, Calcular distancias]
+  resumen: Equacions de la recta, posicions relatives, distàncies i angles.
+  aprenderas: [Passar d’una equació de la recta a una altra, Calcular distàncies]
 
 - id: conicas
   bloque: geometria
-  titulo: Lugares geométricos y cónicas
+  titulo: Llocs geomètrics i còniques
   estado: proximamente
   orden: 3
-  resumen: Mediatriz y bisectriz, circunferencia, elipse, hipérbola y parábola.
-  aprenderas: [Reconocer una cónica por su ecuación]
+  resumen: Mediatriu i bisectriu, circumferència, el·lipse, hipèrbola i paràbola.
+  aprenderas: [Reconèixer una cònica per la seva equació]
 
-# ─── Análisis ───
+# ─── Anàlisi ───
 - id: funciones
   bloque: analisis
-  titulo: Funciones elementales
+  titulo: Funcions elementals
   estado: proximamente
   orden: 1
-  resumen: Dominio y recorrido, transformaciones, funciones polinómicas, racionales, exponenciales, logarítmicas y trigonométricas.
-  aprenderas: [Reconocer las funciones elementales, Aplicar traslaciones y dilataciones]
+  resumen: Domini i recorregut, transformacions, funcions polinòmiques, racionals, exponencials, logarítmiques i trigonomètriques.
+  aprenderas: [Reconèixer les funcions elementals, Aplicar translacions i dilatacions]
 
 - id: limites
   bloque: analisis
-  titulo: Límites y continuidad
+  titulo: Límits i continuïtat
   estado: proximamente
   orden: 2
-  resumen: Idea de límite, límites laterales, indeterminaciones, asíntotas y continuidad.
-  aprenderas: [Calcular límites, Encontrar asíntotas]
+  resumen: Idea de límit, límits laterals, indeterminacions, asímptotes i continuïtat.
+  aprenderas: [Calcular límits, Trobar asímptotes]
 
 - id: derivadas
   bloque: analisis
-  titulo: Derivadas
+  titulo: Derivades
   estado: proximamente
   orden: 3
-  resumen: Tasa de variación, derivada en un punto, reglas de derivación y recta tangente.
-  aprenderas: [Derivar funciones, Interpretar la derivada]
+  resumen: Taxa de variació, derivada en un punt, regles de derivació i recta tangent.
+  aprenderas: [Derivar funcions, Interpretar la derivada]
 
 - id: representacion
   bloque: analisis
-  titulo: Representación de funciones
+  titulo: Representació de funcions
   estado: proximamente
   orden: 4
-  resumen: Crecimiento, extremos, curvatura y representación gráfica completa.
-  aprenderas: [Estudiar y dibujar una función]
+  resumen: Creixement, extrems, curvatura i representació gràfica completa.
+  aprenderas: [Estudiar i dibuixar una funció]
 
 # ─── Estadística ───
 - id: bidimensional
@@ -224,21 +224,21 @@
   titulo: Estadística bidimensional
   estado: proximamente
   orden: 1
-  resumen: Nubes de puntos, covarianza, correlación y rectas de regresión.
-  aprenderas: [Interpretar la correlación, Hacer predicciones con la regresión]
+  resumen: Núvols de punts, covariància, correlació i rectes de regressió.
+  aprenderas: [Interpretar la correlació, Fer prediccions amb la regressió]
 
 - id: probabilidad
   bloque: estadistica
-  titulo: Probabilidad
+  titulo: Probabilitat
   estado: proximamente
   orden: 2
-  resumen: Sucesos, regla de Laplace, probabilidad condicionada y teorema de Bayes.
-  aprenderas: [Usar diagramas de árbol, Aplicar la probabilidad total]
+  resumen: Esdeveniments, regla de Laplace, probabilitat condicionada i teorema de Bayes.
+  aprenderas: [Fer servir diagrames d’arbre, Aplicar la probabilitat total]
 
 - id: distribuciones
   bloque: estadistica
-  titulo: Distribuciones binomial y normal
+  titulo: Distribucions binomial i normal
   estado: proximamente
   orden: 3
-  resumen: Variables aleatorias, la distribución binomial, la normal y la aproximación de la binomial por la normal.
-  aprenderas: [Calcular probabilidades con la binomial y la normal]
+  resumen: Variables aleatòries, la distribució binomial, la normal i l’aproximació de la binomial per la normal.
+  aprenderas: [Calcular probabilitats amb la binomial i la normal]

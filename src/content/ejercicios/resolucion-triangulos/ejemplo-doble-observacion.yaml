@@ -1,13 +1,13 @@
-titulo: La altura de una torre inaccesible
+titulo: L’altura d’una torre inaccessible
 tema: resolucion-triangulos
 rol: ejemplo
 orden: 1
 procedencia: original
 dificultad: intermedio
 habilidades: [planteamiento, calculo, multipaso]
-resumen: Dos ángulos de elevación desde dos puntos alineados con la torre.
+resumen: Dos angles d’elevació des de dos punts alineats amb la torre.
 enunciado: |
-  Desde un punto $A$ se ve lo alto de una torre con un ángulo de elevación de $30^\circ$. Al acercarnos $50\un{m}$ en línea recta hacia la torre, hasta $B$, el ángulo de elevación es de $45^\circ$. ¿Cuánto mide la torre? (Desprecia la altura del observador.)
+  Des d’un punt $A$ es veu el capdamunt d’una torre amb un angle d’elevació de $30^\circ$. En acostar-nos $50\un{m}$ en línia recta cap a la torre, fins a $B$, l’angle d’elevació és de $45^\circ$. Quant fa la torre? (Menysprea l’altura de l’observador.)
 figura:
   tipo: geometria
   puntos:
@@ -27,41 +27,41 @@ figura:
     - { vertice: P, desde: B, hasta: T, recto: true }
   suelo: { y: 0, desde: -5, hasta: 125 }
 datos:
-  - { simbolo: 'd', valor: '50\un{m}', significado: 'distancia entre A y B' }
-  - { simbolo: '\alpha', valor: '30^\circ', significado: 'elevación desde A (lejos)' }
-  - { simbolo: '\beta', valor: '45^\circ', significado: 'elevación desde B (cerca)' }
+  - { simbolo: 'd', valor: '50\un{m}', significado: 'distància entre A i B' }
+  - { simbolo: '\alpha', valor: '30^\circ', significado: 'elevació des d’A (lluny)' }
+  - { simbolo: '\beta', valor: '45^\circ', significado: 'elevació des de B (a prop)' }
 incognitas:
-  - 'La altura $h$ (y, de paso, la distancia $x$ de $B$ al pie).'
+  - 'L’altura $h$ (i, de passada, la distància $x$ de $B$ al peu).'
 interpretacion: |
-  Hay dos triángulos rectángulos con la misma altura $h$: el grande ($ATP$, con $30^\circ$) y el pequeño ($BTP$, con $45^\circ$). Ninguno se puede resolver solo, porque en cada uno solo conocemos el ángulo. Juntos dan **un sistema de dos ecuaciones** con dos incógnitas.
+  Hi ha dos triangles rectangles amb la mateixa altura $h$: el gran ($ATP$, amb $30^\circ$) i el petit ($BTP$, amb $45^\circ$). Cap no es pot resoldre sol, perquè en cadascun només coneixem l’angle. Junts donen **un sistema de dues equacions** amb dues incògnites.
 apartados:
   - id: a
-    enunciado: Calcula la altura de la torre.
+    enunciado: Calcula l’altura de la torre.
     respuesta:
       tipo: numerica
       campos:
         - { simbolo: 'h', etiqueta: altura de la torre, unidad: m, valor: 68.30 }
     pasos:
-      - titulo: Una ecuación por triángulo
-        piensa: 'En cada triángulo rectángulo conoces un ángulo. ¿Qué razón une la altura con la distancia horizontal?'
+      - titulo: Una equació per triangle
+        piensa: 'A cada triangle rectangle coneixes un angle. Quina raó uneix l’altura amb la distància horitzontal?'
         desarrollo: |
-          $$\text{Pequeño: } \tan 45^\circ = \frac{h}{x} \qquad\qquad \text{Grande: } \tan 30^\circ = \frac{h}{x + 50}$$
-        porque: 'La tangente relaciona los dos catetos: la altura y la distancia horizontal.'
-      - titulo: Despejar h e igualar
+          $$\text{Petit: } \tan 45^\circ = \frac{h}{x} \qquad\qquad \text{Gran: } \tan 30^\circ = \frac{h}{x + 50}$$
+        porque: 'La tangent relaciona els dos catets: l’altura i la distància horitzontal.'
+      - titulo: Aïllar h i igualar
         desarrollo: |
           $$h = x\tan 45^\circ = x \qquad h = (x + 50)\tan 30^\circ$$
           $$x = (x + 50)\cdot\frac{\sqrt3}{3}$$
-      - titulo: Resolver
+      - titulo: Resoldre
         desarrollo: |
           $$3x = \sqrt3\,x + 50\sqrt3 \;\Rightarrow\; x(3 - \sqrt3) = 50\sqrt3 \;\Rightarrow\; x = \frac{50\sqrt3}{3 - \sqrt3} \approx 68{,}30\un{m}$$
-      - titulo: La altura
+      - titulo: L’altura
         desarrollo: '$$h = x\tan 45^\circ = x \approx 68{,}30\un{m}$$'
-        porque: 'Comprobación: desde $A$, $\tan 30^\circ \approx \frac{68{,}30}{118{,}30} \approx 0{,}577$ ✔.'
-    resultado: 'La torre mide unos $68{,}3\un{m}$.'
+        porque: 'Comprovació: des d’$A$, $\tan 30^\circ \approx \frac{68{,}30}{118{,}30} \approx 0{,}577$ ✔.'
+    resultado: 'La torre fa uns $68{,}3\un{m}$.'
 errores:
-  - error: 'Usar 50 m como distancia hasta la torre'
-    explicacion: 'Los 50 m son lo que se avanza entre las dos observaciones. La distancia hasta el pie de la torre es desconocida.'
+  - error: 'Fer servir 50 m com a distància fins a la torre'
+    explicacion: 'Els 50 m són el que s’avança entre les dues observacions. La distància fins al peu de la torre és desconeguda.'
 alternativas:
-  - titulo: Con el teorema del seno
-    desarrollo: 'En el triángulo $ABT$: el ángulo en $B$ es $180^\circ - 45^\circ = 135^\circ$ y el ángulo en $T$ es $180^\circ - 30^\circ - 135^\circ = 15^\circ$. Por el teorema del seno, $BT = \frac{50\sin 30^\circ}{\sin 15^\circ} \approx 96{,}59\un{m}$, y $h = BT\sin 45^\circ \approx 68{,}30\un{m}$.'
+  - titulo: Amb el teorema del sinus
+    desarrollo: 'Al triangle $ABT$: l’angle a $B$ és $180^\circ - 45^\circ = 135^\circ$ i l’angle a $T$ és $180^\circ - 30^\circ - 135^\circ = 15^\circ$. Pel teorema del sinus, $BT = \frac{50\sin 30^\circ}{\sin 15^\circ} \approx 96{,}59\un{m}$, i $h = BT\sin 45^\circ \approx 68{,}30\un{m}$.'
 laboratorio: { a: 96.59, b: 136.6, c: 50 }

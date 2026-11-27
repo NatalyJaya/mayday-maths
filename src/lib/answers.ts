@@ -35,12 +35,12 @@ export function checkNumeric(input: string, spec: NumericSpec): CheckResult {
 
 /** Mensajes genéricos (las trampas traen el suyo). */
 export const MESSAGES: Record<Exclude<CheckStatus, 'trap'>, string> = {
-	correct: '¡Correcto!',
-	sign: 'El valor absoluto es correcto, pero el signo no. Revisa en qué cuadrante estás y qué signo tiene allí cada razón.',
-	close: 'Te acercas, pero no del todo. Revisa los redondeos: no redondees los pasos intermedios a menos de tres cifras.',
-	wrong: 'No es correcto. Revisa el planteamiento o pide una pista.',
-	invalid: 'Escribe solo el número, sin unidades. Puedes usar coma decimal (por ejemplo, 0,866).',
-	empty: 'Escribe tu resultado antes de comprobar.',
+	correct: 'Correcte!',
+	sign: 'El valor absolut és correcte, però el signe no. Revisa en quin quadrant ets i quin signe hi té cada raó.',
+	close: 'T’hi acostes, però no del tot. Revisa els arrodoniments: no arrodoneixis els passos intermedis a menys de tres xifres.',
+	wrong: 'No és correcte. Revisa el plantejament o demana una pista.',
+	invalid: 'Escriu només el nombre, sense unitats. Pots fer servir la coma decimal (per exemple, 0,866).',
+	empty: 'Escriu el teu resultat abans de comprovar.',
 };
 
 // ─── Conjuntos de soluciones ──────────────────────────────────────────────
@@ -72,7 +72,7 @@ export function parseList(input: string): number[] | null {
 		.replace(/[{}[\]()]/g, ' ')
 		.replace(/[a-zA-Zα-ω]\s*=/g, ' ')
 		.replace(/[°º]/g, ' ')
-		.replace(/\by\b/g, ';')
+		.replace(/\b(y|i)\b/g, ';')
 		.trim();
 	if (!s) return [];
 	const parts = (s.includes(';') ? s.split(';') : s.split(/,\s+|\s+/)).map((p) => p.trim()).filter(Boolean);
@@ -130,21 +130,21 @@ export function setMessage(r: SetResult, unidad = '°'): string {
 	const list = (xs: number[]) => xs.map((x) => `${String(x).replace('.', ',')}${unidad}`).join('; ');
 	switch (r.status) {
 		case 'correct':
-			return '¡Correcto! Tienes todas las soluciones y ninguna de más.';
+			return 'Correcte! Tens totes les solucions i cap de més.';
 		case 'missing':
-			return `Lo que has escrito está bien, pero te ${r.missing === 1 ? 'falta' : 'faltan'} ${plural(r.missing!, 'solución', 'soluciones')}. Recuerda que cada valor del seno o del coseno (salvo ±1) corresponde a dos ángulos en una vuelta.`;
+			return `El que has escrit està bé, però et ${r.missing === 1 ? 'falta' : 'falten'} ${plural(r.missing!, 'solució', 'solucions')}. Recorda que cada valor del sinus o del cosinus (excepte ±1) correspon a dos angles en una volta.`;
 		case 'extra':
-			return `Tienes todas las soluciones, pero ${r.extra!.length === 1 ? 'sobra' : 'sobran'} ${list(r.extra!)}: sustitúyelo en la ecuación y verás que no la cumple (o que anula un denominador).`;
+			return `Tens totes les solucions, però ${r.extra!.length === 1 ? 'sobra' : 'sobren'} ${list(r.extra!)}: substitueix-ho a l’equació i veuràs que no la compleix (o que anul·la un denominador).`;
 		case 'mixed':
-			return `Hay algo que no encaja: ${r.extra!.length === 1 ? 'no es solución' : 'no son soluciones'} ${list(r.extra!)} y te ${r.missing === 1 ? 'falta una solución' : `faltan ${r.missing} soluciones`}.`;
+			return `Hi ha alguna cosa que no encaixa: ${r.extra!.length === 1 ? 'no és solució' : 'no són solucions'} ${list(r.extra!)} i et ${r.missing === 1 ? 'falta una solució' : `falten ${r.missing} solucions`}.`;
 		case 'radians':
-			return 'Parece que tu calculadora está en radianes (RAD). Ponla en grados (DEG) y vuelve a calcular.';
+			return 'Sembla que la calculadora està en radiants (RAD). Posa-la en graus (DEG) i torna a calcular.';
 		case 'repeated':
-			return 'Has escrito la misma solución dos veces. Cada solución se escribe una sola vez.';
+			return 'Has escrit la mateixa solució dues vegades. Cada solució s’escriu una sola vegada.';
 		case 'invalid':
-			return 'Escribe solo los números separados por punto y coma, por ejemplo: 30; 150. Puedes usar coma decimal (63,43).';
+			return 'Escriu només els nombres separats per punt i coma, per exemple: 30; 150. Pots fer servir la coma decimal (63,43).';
 		case 'empty':
-			return 'Escribe tus soluciones antes de comprobar.';
+			return 'Escriu les teves solucions abans de comprovar.';
 		default:
 			return '';
 	}

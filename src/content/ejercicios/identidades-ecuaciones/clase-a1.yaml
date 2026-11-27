@@ -3,59 +3,59 @@ tema: identidades-ecuaciones
 orden: 101
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie A, primera ecuación
-nota_fuente: 'La letra de este enunciado no se leía bien en la foto del cuaderno; se ha transcrito como 2 sin²x + 3 cos x − 3 = 0.'
+referencia: Sèrie A, primera equació
+nota_fuente: 'La lletra d’aquest enunciat no es llegia bé a la foto de la llibreta; s’ha transcrit com 2 sin²x + 3 cos x − 3 = 0.'
 coleccion: clase-serie-a
 dificultad: intermedio
 habilidades: [calculo, metodo]
-resumen: Hay un seno al cuadrado y un coseno sin cuadrado. ¿A qué razón conviene pasarlo todo?
+resumen: Hi ha un sinus al quadrat i un cosinus sense quadrat. A quina raó convé passar-ho tot?
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$2\sin^2 x + 3\cos x - 3 = 0$$
 conceptos:
-  - 'Identidad fundamental: $\sin^2 x = 1 - \cos^2 x$.'
-  - 'Ecuación de segundo grado con el cambio $t = \cos x$.'
-  - '$\cos x = k$ tiene dos soluciones por vuelta: $\theta$ y $360^\circ - \theta$ (una sola si $k = \pm 1$).'
+  - 'Identitat fonamental: $\sin^2 x = 1 - \cos^2 x$.'
+  - 'Equació de segon grau amb el canvi $t = \cos x$.'
+  - '$\cos x = k$ té dues solucions per volta: $\theta$ i $360^\circ - \theta$ (una sola si $k = \pm 1$).'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [0, 60, 300]
       trampas:
         - valores: [50.77, 129.23]
-          explicacion: 'Así sale si sustituyes $\cos x = 1 - \sin^2 x$, el error que aparecía en los apuntes. Lo que vale $1 - \sin^2 x$ es $\cos^2 x$, no $\cos x$.'
+          explicacion: 'Això surt si substitueixes $\cos x = 1 - \sin^2 x$, l’error que apareixia als apunts. El que val $1 - \sin^2 x$ és $\cos^2 x$, no $\cos x$.'
         - valores: [50.77, 129.23, 230.77, 309.23]
-          explicacion: 'Así sale si sustituyes $\cos x = 1 - \sin^2 x$. Pero lo que vale $1 - \sin^2 x$ es $\cos^2 x$, no $\cos x$: comprueba que 50,77° no cumple la ecuación.'
+          explicacion: 'Això surt si substitueixes $\cos x = 1 - \sin^2 x$. Però el que val $1 - \sin^2 x$ és $\cos^2 x$, no $\cos x$: comprova que 50,77° no compleix l’equació.'
         - valores: [60, 300]
-          explicacion: 'Te falta la solución de $\cos x = 1$.'
+          explicacion: 'Et falta la solució de $\cos x = 1$.'
     pistas:
-      - 'El $\cos x$ no tiene cuadrado, así que no se puede pasar a senos sin raíces. Pasa el $\sin^2 x$ a cosenos.'
-      - 'Con $\sin^2 x = 1 - \cos^2 x$ queda una ecuación de segundo grado en $\cos x$.'
-      - 'Llama $t = \cos x$. Te quedará $2t^2 - 3t + 1 = 0$.'
+      - 'El $\cos x$ no té quadrat, així que no es pot passar a sinus sense arrels. Passa el $\sin^2 x$ a cosinus.'
+      - 'Amb $\sin^2 x = 1 - \cos^2 x$ queda una equació de segon grau en $\cos x$.'
+      - 'Anomena $t = \cos x$. Et quedarà $2t^2 - 3t + 1 = 0$.'
     pasos:
-      - titulo: Elegir la razón
-        piensa: '¿Qué razón dejarías: seno o coseno?'
-        desarrollo: 'Aparecen $\sin^2 x$ y $\cos x$. El cuadrado del seno se pasa a cosenos sin raíces: $\sin^2 x = 1 - \cos^2 x$. Al revés ($\cos x = \pm\sqrt{1 - \sin^2 x}$) aparecería una raíz.'
-        porque: Se elige la razón que no obliga a introducir raíces.
-      - titulo: Sustituir y ordenar
+      - titulo: Triar la raó
+        piensa: 'Quina raó deixaries: sinus o cosinus?'
+        desarrollo: 'Hi apareixen $\sin^2 x$ i $\cos x$. El quadrat del sinus es passa a cosinus sense arrels: $\sin^2 x = 1 - \cos^2 x$. Al revés ($\cos x = \pm\sqrt{1 - \sin^2 x}$) hi apareixeria una arrel.'
+        porque: Es tria la raó que no obliga a introduir arrels.
+      - titulo: Substituir i ordenar
         desarrollo: |
           $$2(1 - \cos^2 x) + 3\cos x - 3 = 0$$
           $$2 - 2\cos^2 x + 3\cos x - 3 = 0 \;\Rightarrow\; -2\cos^2 x + 3\cos x - 1 = 0$$
-          Multiplicando por $-1$: $\;2\cos^2 x - 3\cos x + 1 = 0$.
-      - titulo: Cambio de variable
+          Multiplicant per $-1$: $\;2\cos^2 x - 3\cos x + 1 = 0$.
+      - titulo: Canvi de variable
         desarrollo: |
-          Con $t = \cos x$:
+          Amb $t = \cos x$:
           $$2t^2 - 3t + 1 = 0 \;\Rightarrow\; t = \frac{3 \pm \sqrt{9 - 8}}{4} = \frac{3 \pm 1}{4} \;\Rightarrow\; t = 1 \ \text{ o } \ t = \tfrac{1}{2}$$
-        porque: 'Las dos soluciones están entre −1 y 1, así que las dos son posibles.'
-      - titulo: Deshacer el cambio
+        porque: 'Les dues solucions són entre −1 i 1, així que totes dues són possibles.'
+      - titulo: Desfer el canvi
         desarrollo: |
-          - $\cos x = 1 \Rightarrow x = 0^\circ$ (una sola: es un extremo).
-          - $\cos x = \tfrac12 \Rightarrow x = 60^\circ$ y $x = 360^\circ - 60^\circ = 300^\circ$.
-        porque: El coseno es positivo en el primer y el cuarto cuadrante.
-      - titulo: Comprobar
-        desarrollo: 'Con $x = 60^\circ$: $2\cdot\frac34 + 3\cdot\frac12 - 3 = 1{,}5 + 1{,}5 - 3 = 0$ ✔.'
+          - $\cos x = 1 \Rightarrow x = 0^\circ$ (només una: és un extrem).
+          - $\cos x = \tfrac12 \Rightarrow x = 60^\circ$ i $x = 360^\circ - 60^\circ = 300^\circ$.
+        porque: El cosinus és positiu al primer i al quart quadrant.
+      - titulo: Comprovar
+        desarrollo: 'Amb $x = 60^\circ$: $2\cdot\frac34 + 3\cdot\frac12 - 3 = 1{,}5 + 1{,}5 - 3 = 0$ ✔.'
     resultado: '$x = 0^\circ,\ 60^\circ,\ 300^\circ$.'
 errores:
-  - error: 'Sustituir $\cos x = 1 - \sin^2 x$ (error de los apuntes)'
-    explicacion: 'La identidad fundamental dice $\sin^2 x + \cos^2 x = 1$, así que $1 - \sin^2 x$ es $\cos^2 x$. Con el error salía $5\sin^2 x - 3 = 0$ y unos ángulos (50,77°, 129,23°…) que no cumplen la ecuación.'
+  - error: 'Substituir $\cos x = 1 - \sin^2 x$ (error dels apunts)'
+    explicacion: 'La identitat fonamental diu $\sin^2 x + \cos^2 x = 1$, així que $1 - \sin^2 x$ és $\cos^2 x$. Amb l’error sortia $5\sin^2 x - 3 = 0$ i uns angles (50,77°, 129,23°…) que no compleixen l’equació.'

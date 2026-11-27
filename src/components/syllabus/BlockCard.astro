@@ -25,17 +25,17 @@ const open = available.length > 0;
 		{
 			open ? (
 				<span class="tag tag-ok">
-					{available.length} de {topics.length} {topics.length === 1 ? 'tema' : 'temas'}
+					{available.length} de {topics.length} {topics.length === 1 ? 'tema' : 'temes'}
 				</span>
 			) : (
 				<span class="tag tag-locked">
-					<Icon name="lock" size={13} /> Próximamente
+					<Icon name="lock" size={13} /> Properament
 				</span>
 			)
 		}
 	</header>
 	<p class="desc">{block.data.descripcion}</p>
-	<ul class="topics" aria-label={`Temas de ${block.data.titulo}`}>
+	<ul class="topics" aria-label={`Temes de ${block.data.titulo}`}>
 		{
 			topics.map((t) =>
 				isAvailable(t) ? (
@@ -50,7 +50,7 @@ const open = available.length > 0;
 					<li class="off">
 						<Icon name="lock" size={14} />
 						<span class="name">{t.data.sigla ? `${t.data.sigla}: ` : ''}{t.data.titulo}</span>
-						<span class="visually-hidden">(próximamente)</span>
+						<span class="visually-hidden">(properament)</span>
 					</li>
 				),
 			)
@@ -59,7 +59,7 @@ const open = available.length > 0;
 	{
 		open && size === 'lg' && (
 			<a class="btn btn-primary cta" href={blockUrl(block.id)}>
-				Entrar en {block.data.titulo} <Icon name="arrow-right" />
+				Entra a {block.data.titulo} <Icon name="arrow-right" />
 			</a>
 		)
 	}

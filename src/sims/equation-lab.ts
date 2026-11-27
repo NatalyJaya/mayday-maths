@@ -119,16 +119,16 @@ class EquationLab extends HTMLElement {
 		const note = this.querySelector('.eq-note')!;
 		if (!base.length) {
 			note.className = 'sim-note eq-note bad';
-			out('steps', `No hay solución: ${fn === 'sin' ? 'el seno' : 'el coseno'} siempre está entre −1 y 1, y ${fmt(this.k, 3)} se sale de ese intervalo. La recta no corta a la curva.`);
+			out('steps', `No hi ha solució: ${fn === 'sin' ? 'el sinus' : 'el cosinus'} sempre és entre −1 i 1, i ${fmt(this.k, 3)} surt d’aquest interval. La recta no talla la corba.`);
 		} else {
 			note.className = 'sim-note eq-note';
-			const u = base.map((v) => `${fmtTrim(v, 2)}°`).join(' y ');
+			const u = base.map((v) => `${fmtTrim(v, 2)}°`).join(' i ');
 			const period = fn === 'tan' ? 180 : 360;
 			const steps =
 				this.n === 1
-					? `Ángulos de una vuelta con ${fn} = ${fmt(this.k, 3)}: ${u}. ${base.length === 1 ? 'Solo hay uno porque el valor es un extremo (±1).' : ''}`
-					: `Llamamos u = ${arg}. Si x recorre [0°, 360°), u recorre [0°, ${fmtTrim(360 * this.n, 1)}°): ${this.n > 1 ? 'más de una vuelta' : 'media vuelta'}. Ángulos básicos: u = ${u} (+ 360°·k). Después se divide entre ${fmtTrim(this.n, 1)}.`;
-			out('steps', `${steps}${fn === 'tan' ? ` La tangente se repite cada ${period}°.` : ''}`);
+					? `Angles d’una volta amb ${fn} = ${fmt(this.k, 3)}: ${u}. ${base.length === 1 ? 'Només n’hi ha un perquè el valor és un extrem (±1).' : ''}`
+					: `Anomenem u = ${arg}. Si x recorre [0°, 360°), u recorre [0°, ${fmtTrim(360 * this.n, 1)}°): ${this.n > 1 ? 'més d’una volta' : 'mitja volta'}. Angles bàsics: u = ${u} (+ 360°·k). Després es divideix entre ${fmtTrim(this.n, 1)}.`;
+			out('steps', `${steps}${fn === 'tan' ? ` La tangent es repeteix cada ${period}°.` : ''}`);
 		}
 		out('sols', sols.length ? sols.map((s) => `${fmtTrim(s, 2)}°`).join(' ; ') : '—');
 		out('count', String(sols.length));

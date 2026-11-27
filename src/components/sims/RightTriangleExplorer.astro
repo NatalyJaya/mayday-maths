@@ -4,30 +4,30 @@
 
 <right-triangle-explorer class="sim wide">
 	<div class="sim-head">
-		<h4>Mismo ángulo, distinto tamaño</h4>
-		<p class="muted">En gris, triángulos semejantes de otros tamaños.</p>
+		<h4>Mateix angle, mida diferent</h4>
+		<p class="muted">En gris, triangles semblants d’altres mides.</p>
 	</div>
-	<svg class="sim-svg mfig" viewBox="0 0 560 330" role="img" aria-label="Triángulo rectángulo con el ángulo α, el cateto contiguo en azul, el opuesto en naranja y la hipotenusa en negro, y triángulos semejantes de otros tamaños en gris."></svg>
+	<svg class="sim-svg mfig" viewBox="0 0 560 330" role="img" aria-label="Triangle rectangle amb l’angle α, el catet contigu en blau, l’oposat en taronja i la hipotenusa en negre, i triangles semblants d’altres mides en gris."></svg>
 	<table class="sim-table rt-ratios">
-		<thead><tr><th>Cociente</th><th>Valor</th><th>Nombre</th></tr></thead>
+		<thead><tr><th>Quocient</th><th>Valor</th><th>Nom</th></tr></thead>
 		<tbody>
-			<tr><td><span class="q-y">opuesto</span> / hipotenusa</td><td class="y"><output data-out="sin"></output></td><td>seno de α</td></tr>
-			<tr><td><span class="q-x">contiguo</span> / hipotenusa</td><td class="x"><output data-out="cos"></output></td><td>coseno de α</td></tr>
-			<tr><td><span class="q-y">opuesto</span> / <span class="q-x">contiguo</span></td><td class="g"><output data-out="tan"></output></td><td>tangente de α</td></tr>
+			<tr><td><span class="q-y">oposat</span> / hipotenusa</td><td class="y"><output data-out="sin"></output></td><td>sinus de α</td></tr>
+			<tr><td><span class="q-x">contigu</span> / hipotenusa</td><td class="x"><output data-out="cos"></output></td><td>cosinus de α</td></tr>
+			<tr><td><span class="q-y">oposat</span> / <span class="q-x">contigu</span></td><td class="g"><output data-out="tan"></output></td><td>tangent de α</td></tr>
 		</tbody>
 	</table>
 	<div class="sim-controls">
 		<div class="param">
-			<label>Ángulo α: <output data-out="a"></output></label>
-			<input type="range" data-k="a" min="5" max="75" step="1" value="35" aria-label="Ángulo α (grados)" />
+			<label>Angle α: <output data-out="a"></output></label>
+			<input type="range" data-k="a" min="5" max="75" step="1" value="35" aria-label="Angle α (graus)" />
 		</div>
 		<div class="param">
 			<label>Hipotenusa: <output data-out="h"></output></label>
 			<input type="range" data-k="h" min="2" max="11" step="0.1" value="9" aria-label="Longitud de la hipotenusa (cm)" />
 		</div>
-		<label class="check"><input type="checkbox" data-k="ghost" checked /> Ver triángulos semejantes</label>
+		<label class="check"><input type="checkbox" data-k="ghost" checked /> Mostra triangles semblants</label>
 	</div>
-	<p class="sim-note">Mueve <strong>solo la hipotenusa</strong>: los lados cambian, pero los tres cocientes no. Mueve el <strong>ángulo</strong>: los cocientes sí cambian.</p>
+	<p class="sim-note">Mou <strong>només la hipotenusa</strong>: els costats canvien, però els tres quocients no. Mou l’<strong>angle</strong>: els quocients sí que canvien.</p>
 </right-triangle-explorer>
 
 <style>

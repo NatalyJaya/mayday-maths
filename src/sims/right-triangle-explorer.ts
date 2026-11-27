@@ -55,8 +55,8 @@ class RightTriangleExplorer extends HTMLElement {
 			e.textContent = s;
 		};
 		t(A[0] + 50 * cosD(this.ang / 2), A[1] - 50 * sinD(this.ang / 2), 'α', 'l-ang');
-		t((A[0] + C[0]) / 2, A[1] + 15, `contiguo = ${fmt(this.hyp * cosD(this.ang), 2)} cm`, 'l-x small');
-		t(C[0] + 8, (C[1] + B[1]) / 2, `opuesto = ${fmt(this.hyp * sinD(this.ang), 2)} cm`, 'l-y small', 'start');
+		t((A[0] + C[0]) / 2, A[1] + 15, `contigu = ${fmt(this.hyp * cosD(this.ang), 2)} cm`, 'l-x small');
+		t(C[0] + 8, (C[1] + B[1]) / 2, `oposat = ${fmt(this.hyp * sinD(this.ang), 2)} cm`, 'l-y small', 'start');
 		const mx = (A[0] + B[0]) / 2,
 			my = (A[1] + B[1]) / 2;
 		t(mx - 12 * sinD(this.ang), my - 12 * cosD(this.ang) - 4, `hipotenusa = ${fmt(this.hyp, 2)} cm`, 'small', 'end');

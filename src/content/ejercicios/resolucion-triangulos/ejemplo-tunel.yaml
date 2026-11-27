@@ -1,16 +1,16 @@
-titulo: La longitud de un túnel
+titulo: La longitud d’un túnel
 tema: resolucion-triangulos
 rol: ejemplo
 orden: 3
 procedencia: original
 dificultad: intermedio
 habilidades: [metodo, modelizacion, calculo]
-resumen: Dos lados y el ángulo comprendido. Teorema del coseno y un ángulo con el arcocoseno.
+resumen: Dos costats i l’angle comprès. Teorema del cosinus i un angle amb l’arccosinus.
 enunciado: |
-  Hay que excavar un túnel recto entre dos puntos $A$ y $B$ de una montaña. Desde un punto $C$, en el valle, se mide $CA = 380\un{m}$, $CB = 450\un{m}$ y el ángulo $\widehat{ACB} = 68^\circ$.
+  Cal excavar un túnel recte entre dos punts $A$ i $B$ d’una muntanya. Des d’un punt $C$, a la vall, es mesura $CA = 380\un{m}$, $CB = 450\un{m}$ i l’angle $\widehat{ACB} = 68^\circ$.
 
-  a) ¿Cuánto medirá el túnel?
-  b) ¿Qué ángulo forma el túnel con la dirección $AC$ en el punto $A$?
+  a) Quant farà el túnel?
+  b) Quin angle forma el túnel amb la direcció $AC$ al punt $A$?
 figura:
   tipo: triangulo
   a: 450
@@ -21,7 +21,7 @@ figura:
 datos:
   - { simbolo: 'b = CA', valor: '380\un{m}', significado: '' }
   - { simbolo: 'a = CB', valor: '450\un{m}', significado: '' }
-  - { simbolo: 'C', valor: '68^\circ', significado: 'ángulo entre los dos lados conocidos' }
+  - { simbolo: 'C', valor: '68^\circ', significado: 'angle entre els dos costats coneguts' }
 apartados:
   - id: a
     enunciado: Longitud del túnel.
@@ -33,26 +33,26 @@ apartados:
           unidad: m
           valor: 467.74
           trampas:
-            - { valor: 588.98, explicacion: 'Has usado Pitágoras. El ángulo en $C$ es de $68^\circ$, no de $90^\circ$: falta el término $-2ab\cos C$.' }
+            - { valor: 588.98, explicacion: 'Has fet servir Pitàgores. L’angle a $C$ és de $68^\circ$, no de $90^\circ$: hi falta el terme $-2ab\cos C$.' }
     pasos:
-      - titulo: Elegir el teorema
-        piensa: 'El ángulo conocido, ¿está entre los dos lados conocidos o enfrente de uno?'
-        desarrollo: 'Está **entre** ellos (caso LAL). No hay ninguna pareja lado–ángulo opuesto: **teorema del coseno**.'
-      - titulo: Teorema del coseno
+      - titulo: Triar el teorema
+        piensa: 'L’angle conegut, és entre els dos costats coneguts o davant d’un d’ells?'
+        desarrollo: 'És **entre** ells (cas CAC). No hi ha cap parella costat–angle oposat: **teorema del cosinus**.'
+      - titulo: Teorema del cosinus
         desarrollo: '$$c^2 = 380^2 + 450^2 - 2\cdot 380\cdot 450\cdot\cos 68^\circ \approx 144\,400 + 202\,500 - 128\,116 \approx 218\,784$$'
-      - titulo: Raíz
+      - titulo: Arrel
         desarrollo: '$$c \approx \sqrt{218\,784} \approx 467{,}74\un{m}$$'
-    resultado: 'El túnel medirá unos $467{,}7\un{m}$.'
+    resultado: 'El túnel farà uns $467{,}7\un{m}$.'
   - id: b
-    enunciado: Ángulo en $A$.
+    enunciado: Angle a $A$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'A', etiqueta: ángulo en A, unidad: '°', valor: 63.12 }
+        - { simbolo: 'A', etiqueta: angle a A, unidad: '°', valor: 63.12 }
     pasos:
-      - titulo: Teorema del coseno despejando el ángulo
-        piensa: 'Ya conoces los tres lados. ¿Qué método no tiene caso ambiguo?'
+      - titulo: Teorema del cosinus aïllant l’angle
+        piensa: 'Ja coneixes els tres costats. Quin mètode no té cas ambigu?'
         desarrollo: '$$\cos A = \frac{b^2 + c^2 - a^2}{2bc} = \frac{380^2 + 467{,}74^2 - 450^2}{2\cdot 380\cdot 467{,}74} \approx 0{,}4522 \;\Rightarrow\; A \approx 63{,}12^\circ$$'
-        porque: 'Con el coseno no hay ambigüedad: cada coseno corresponde a un único ángulo entre $0^\circ$ y $180^\circ$. Con el teorema del seno también sale, pero habría que comprobar el suplementario.'
-    resultado: 'El túnel forma unos $63{,}1^\circ$ con la dirección $AC$.'
+        porque: 'Amb el cosinus no hi ha ambigüitat: cada cosinus correspon a un únic angle entre $0^\circ$ i $180^\circ$. Amb el teorema del sinus també surt, però caldria comprovar el suplementari.'
+    resultado: 'El túnel forma uns $63{,}1^\circ$ amb la direcció $AC$.'
 laboratorio: { a: 450, b: 380, c: 467.74 }

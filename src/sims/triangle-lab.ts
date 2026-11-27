@@ -175,7 +175,7 @@ class TriangleLab extends HTMLElement {
 		out('area', fmt(0.5 * b * c * sinD(Ang.A), 2));
 		const p = (a + b + c) / 2;
 		out('heron', fmt(Math.sqrt(p * (p - a) * (p - b) * (p - c)), 2));
-		const kind = Math.abs(Ang.A - 90) < 0.05 || Math.abs(Ang.B - 90) < 0.05 || Math.abs(Ang.C - 90) < 0.05 ? 'rectángulo' : Math.max(Ang.A, Ang.B, Ang.C) > 90 ? 'obtusángulo' : 'acutángulo';
+		const kind = Math.abs(Ang.A - 90) < 0.05 || Math.abs(Ang.B - 90) < 0.05 || Math.abs(Ang.C - 90) < 0.05 ? 'rectangle' : Math.max(Ang.A, Ang.B, Ang.C) > 90 ? 'obtusangle' : 'acutangle';
 		out('kind', kind);
 		out('sum', `${fmt(Ang.A + Ang.B + Ang.C, 1)}°`);
 	}

@@ -4,6 +4,8 @@ Plataforma interactiva de **Matemáticas I (1.º de Bachillerato)** para entende
 
 > **Primero, la intuición. Después, la formalización. Por último, los problemas.**
 
+La web está **en catalán** (interfaz, temario, lecciones, ejercicios y simulaciones). Las rutas y los identificadores internos siguen en castellano (`razones-trigonometricas`, `practica`…) para no romper enlaces.
+
 Cada tema tiene seis etapas: **Idea**, **Objetos**, **Propiedades**, **Laboratorio**, **Ejemplos guiados** y **Práctica**.
 
 ## Estado

@@ -60,3 +60,9 @@ describe('conjuntos de soluciones', () => {
 		expect(checkSet('30; 330', withTrap)).toMatchObject({ status: 'trap', html: 'cos' });
 	});
 });
+
+describe('llistes en català', () => {
+	it('accepta «i» com a separador', () => {
+		expect(parseList('30 i 150')).toEqual([30, 150]);
+	});
+});

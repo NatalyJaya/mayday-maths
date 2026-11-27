@@ -11,10 +11,10 @@ const exercises = await getCollection('ejercicios');
 const counts = Object.fromEntries(Object.keys(ORIGINS).map((k) => [k, exercises.filter((e) => e.data.procedencia === k).length]));
 
 const groups = [
-	{ tipo: 'clase', id: 'clase', title: 'Apuntes de clase', intro: 'La fuente principal: los apuntes y ejercicios trabajados en clase. Todos llevan la etiqueta «Ejercicio de clase».' },
-	{ tipo: 'externo', id: 'externos', title: 'Recursos con licencia abierta', intro: 'Material del que se ha adaptado contenido, respetando su licencia y citando la autoría.' },
-	{ tipo: 'referencia', id: 'referencias', title: 'Referencias de tipos de problema', intro: 'Colecciones consultadas para identificar los problemas que más se repiten y su nivel. No se reproduce ningún enunciado: se usan como inspiración para crear ejercicios originales.' },
-	{ tipo: 'curriculo', id: 'curriculo', title: 'Currículo', intro: 'Normativa usada para organizar el temario.' },
+	{ tipo: 'clase', id: 'clase', title: 'Apunts de classe', intro: 'La font principal: els apunts i els exercicis treballats a classe. Tots porten l’etiqueta «Exercici de classe».' },
+	{ tipo: 'externo', id: 'externos', title: 'Recursos amb llicència oberta', intro: 'Material del qual s’ha adaptat contingut, respectant-ne la llicència i citant-ne l’autoria.' },
+	{ tipo: 'referencia', id: 'referencias', title: 'Referències de tipus de problema', intro: 'Col·leccions consultades per identificar els problemes que més es repeteixen i el seu nivell. No es reprodueix cap enunciat: s’utilitzen com a inspiració per crear exercicis originals.' },
+	{ tipo: 'curriculo', id: 'curriculo', title: 'Currículum', intro: 'Normativa utilitzada per organitzar el temari.' },
 ];
 
 const usedBy = async (sourceId: string) => {
@@ -29,12 +29,12 @@ const usedBy = async (sourceId: string) => {
 const uses = Object.fromEntries(await Promise.all(sources.map(async (s) => [s.id, await usedBy(s.id)])));
 ---
 
-<BaseLayout title="Fuentes y licencias" description="De dónde sale el material de la plataforma y con qué licencia se usa.">
+<BaseLayout title="Fonts i llicències" description="D’on surt el material de la plataforma i amb quina llicència s’utilitza.">
 	<div class="container head">
-		<Breadcrumbs items={[{ label: 'Fuentes y licencias' }]} />
-		<h1>Fuentes y licencias</h1>
+		<Breadcrumbs items={[{ label: 'Fonts i llicències' }]} />
+		<h1>Fonts i llicències</h1>
 		<p class="lead">
-			Cada ejercicio indica su procedencia. Hay tres tipos y se distinguen con una etiqueta de color en toda la web.
+			Cada exercici indica la seva procedència. N’hi ha tres tipus i es distingeixen amb una etiqueta de color a tot el web.
 		</p>
 		<ul class="origins">
 			{
@@ -42,7 +42,7 @@ const uses = Object.fromEntries(await Promise.all(sources.map(async (s) => [s.id
 					<li>
 						<span class:list={['tag', `o-${k}`]}>{o.label}</span>
 						<span>
-							{o.descripcion} <strong>{counts[k]}</strong> {counts[k] === 1 ? 'ejercicio' : 'ejercicios'}.
+							{o.descripcion} <strong>{counts[k]}</strong> {counts[k] === 1 ? 'exercici' : 'exercicis'}.
 						</span>
 					</li>
 				))
@@ -65,22 +65,22 @@ const uses = Object.fromEntries(await Promise.all(sources.map(async (s) => [s.id
 									<p class="author">{s.data.autor}</p>
 									<dl>
 										<div>
-											<dt>Licencia</dt>
+											<dt>Llicència</dt>
 											<dd>{s.data.licencia_url ? <a href={s.data.licencia_url} rel="license noopener">{s.data.licencia}</a> : s.data.licencia}</dd>
 										</div>
 										{s.data.consultado && (
 											<div>
-												<dt>Consultado</dt>
-												<dd>{new Date(s.data.consultado).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</dd>
+												<dt>Consultat</dt>
+												<dd>{new Date(s.data.consultado).toLocaleDateString('ca-ES', { day: 'numeric', month: 'long', year: 'numeric' })}</dd>
 											</div>
 										)}
 										<div class="full">
-											<dt>Cómo se usa</dt>
+											<dt>Com s’utilitza</dt>
 											<dd>{s.data.uso}</dd>
 										</div>
 										{uses[s.id].length > 0 && (
 											<div class="full">
-												<dt>Ejercicios relacionados</dt>
+												<dt>Exercicis relacionats</dt>
 												<dd>
 													{uses[s.id].map((u: { title: string; href: string }, i: number) => (
 														<>
@@ -102,15 +102,15 @@ const uses = Object.fromEntries(await Promise.all(sources.map(async (s) => [s.id
 	}
 
 	<section class="container group">
-		<h2>Criterios</h2>
+		<h2>Criteris</h2>
 		<ul class="rules">
-			<li>Solo se reproduce o adapta contenido con licencia que lo permite, citando la autoría, la licencia y los cambios.</li>
-			<li>Las adaptaciones de recursos CC BY-SA se comparten con la misma licencia.</li>
+			<li>Només es reprodueix o s’adapta contingut amb una llicència que ho permet, citant-ne l’autoria, la llicència i els canvis.</li>
+			<li>Les adaptacions de recursos CC BY-SA es comparteixen amb la mateixa llicència.</li>
 			<li>
-				Si un recurso no indica licencia, o la suya no permite este uso, solo se analizan los <em>tipos</em> de problema
-				y se crean ejercicios originales con datos y redacción nuevos.
+				Si un recurs no indica cap llicència, o la seva no permet aquest ús, només se n’analitzen els <em>tipus</em> de problema
+				i es creen exercicis originals amb dades i redacció noves.
 			</li>
-			<li>Todos los resultados numéricos se recalculan automáticamente con el modelo matemático de la plataforma, y cada conjunto de soluciones de una ecuación se comprueba: que todas la cumplen y que no falta ninguna.</li>
+			<li>Tots els resultats numèrics es recalculen automàticament amb el model matemàtic de la plataforma, i cada conjunt de solucions d’una equació es comprova: que totes la compleixen i que no en falta cap.</li>
 		</ul>
 	</section>
 </BaseLayout>

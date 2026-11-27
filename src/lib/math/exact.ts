@@ -17,7 +17,7 @@ export function exactTrig(deg: number, f: TrigFn): string | null {
 	if (d % 30 !== 0 && d % 45 !== 0) return null;
 	const ref = Math.round(referenceAngle(d));
 	const v = TABLE[f][ref];
-	if (v === null) return 'no existe';
+	if (v === null) return 'no existeix';
 	if (v === undefined) return null;
 	const num = f === 'sin' ? sinD(d) : f === 'cos' ? cosD(d) : tanD(d);
 	return num < -1e-12 ? `−${v}` : v;

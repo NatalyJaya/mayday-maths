@@ -3,34 +3,34 @@ tema: identidades-ecuaciones
 orden: 206
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie B, apartado f)
+referencia: Sèrie B, apartat f)
 coleccion: clase-serie-b
 dificultad: basico
 habilidades: [calculo]
-resumen: Despejar y buscar los ángulos con seno negativo.
+resumen: Aïllar i buscar els angles amb sinus negatiu.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\sin x + \sqrt2 = -\sin x$$
 conceptos:
   - '$\sin 45^\circ = \frac{\sqrt2}{2}$.'
-  - 'El seno es negativo en el tercer y el cuarto cuadrante.'
+  - 'El sinus és negatiu al tercer i al quart quadrant.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [225, 315]
       trampas:
         - valores: [45, 135]
-          explicacion: 'Esos ángulos tienen seno $+\frac{\sqrt2}{2}$. Aquí $\sin x = -\frac{\sqrt2}{2}$: tercer y cuarto cuadrante.'
+          explicacion: 'Aquests angles tenen sinus $+\frac{\sqrt2}{2}$. Aquí $\sin x = -\frac{\sqrt2}{2}$: tercer i quart quadrant.'
     pistas:
-      - 'Pasa los senos a un lado: $2\sin x = -\sqrt2$.'
-      - 'El ángulo de referencia es $45^\circ$. ¿En qué cuadrantes es negativo el seno?'
+      - 'Passa els sinus a un costat: $2\sin x = -\sqrt2$.'
+      - 'L’angle de referència és $45^\circ$. En quins quadrants és negatiu el sinus?'
     pasos:
-      - titulo: Despejar
+      - titulo: Aïllar
         desarrollo: '$$2\sin x = -\sqrt2 \;\Rightarrow\; \sin x = -\tfrac{\sqrt2}{2}$$'
-      - titulo: Ángulos
-        desarrollo: 'Ángulo de referencia $45^\circ$; seno negativo en el 3.er y el 4.º cuadrante: $x = 180^\circ + 45^\circ = 225^\circ$ y $x = 360^\circ - 45^\circ = 315^\circ$.'
-        porque: 'La calculadora da $-45^\circ$, que equivale a $315^\circ$; el otro ángulo con la misma altura es $225^\circ$.'
+      - titulo: Angles
+        desarrollo: 'Angle de referència $45^\circ$; sinus negatiu al 3r i al 4t quadrant: $x = 180^\circ + 45^\circ = 225^\circ$ i $x = 360^\circ - 45^\circ = 315^\circ$.'
+        porque: 'La calculadora dona $-45^\circ$, que equival a $315^\circ$; l’altre angle amb la mateixa altura és $225^\circ$.'
     resultado: '$x = 225^\circ,\ 315^\circ$.'
 laboratorio: { f: sin, n: 1, k: -0.7071 }

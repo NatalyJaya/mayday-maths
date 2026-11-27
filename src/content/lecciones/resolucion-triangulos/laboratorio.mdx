@@ -1,60 +1,60 @@
 ---
 tema: resolucion-triangulos
 etapa: laboratorio
-titulo: El laboratorio de triángulos
-descripcion: Deforma un triángulo arrastrando sus vértices y comprueba en vivo el teorema del seno, el del coseno y el área. Después, explora el caso ambiguo.
+titulo: El laboratori de triangles
+descripcion: Deforma un triangle arrossegant-ne els vèrtexs i comprova en directe el teorema del sinus, el del cosinus i l’àrea. Després, explora el cas ambigu.
 minutos: 20
 ---
 
-## Cómo usar el laboratorio
+## Com fer servir el laboratori
 
-- **Arrastra cualquier vértice.** Con «Ajustar a la cuadrícula» los vértices caen en medias unidades, para que los números sean manejables.
-- Cada lado tiene el **color de su ángulo opuesto**: $a$ y $A$ en azul, $b$ y $B$ en naranja, $c$ y $C$ en verde.
-- A la derecha verás los tres cocientes del teorema del seno, el teorema del coseno para el lado $a$ y el área calculada de dos formas.
+- **Arrossega qualsevol vèrtex.** Amb «Ajusta a la quadrícula» els vèrtexs cauen en mitges unitats, perquè els nombres siguin manejables.
+- Cada costat té el **color del seu angle oposat**: $a$ i $A$ en blau, $b$ i $B$ en taronja, $c$ i $C$ en verd.
+- A la dreta veuràs els tres quocients del teorema del sinus, el teorema del cosinus per al costat $a$ i l’àrea calculada de dues maneres.
 
 <TriangleLab lab />
 
-## Retos
+## Reptes
 
 <Predict
-	pregunta="**Reto 1.** Deforma el triángulo como quieras. ¿Qué les pasa a los tres cocientes $\dfrac{a}{\sin A}$, $\dfrac{b}{\sin B}$ y $\dfrac{c}{\sin C}$?"
+	pregunta="**Repte 1.** Deforma el triangle com vulguis. Què els passa als tres quocients $\dfrac{a}{\sin A}$, $\dfrac{b}{\sin B}$ i $\dfrac{c}{\sin C}$?"
 	opciones={[
-		{ texto: 'Cambian, pero siempre en el mismo orden.', explicacion: 'Cambian al deformar el triángulo, sí, pero no solo mantienen el orden: son **iguales** entre sí en todo momento.' },
-		{ texto: 'Son siempre iguales entre sí, aunque el valor común cambia.', correcta: true, explicacion: 'Es el teorema del seno. El valor común es $2R$, el diámetro de la circunferencia circunscrita: activa la casilla y compruébalo.' },
-		{ texto: 'Valen siempre lo mismo, sea cual sea el triángulo.', explicacion: 'Haz el triángulo más grande: el valor común crece. Depende del triángulo (es su $2R$).' },
+		{ texto: 'Canvien, però sempre en el mateix ordre.', explicacion: 'Canvien en deformar el triangle, sí, però no només mantenen l’ordre: són **iguals** entre ells en tot moment.' },
+		{ texto: 'Són sempre iguals entre ells, encara que el valor comú canvia.', correcta: true, explicacion: 'És el teorema del sinus. El valor comú és $2R$, el diàmetre de la circumferència circumscrita: activa la casella i comprova-ho.' },
+		{ texto: 'Valen sempre el mateix, sigui quin sigui el triangle.', explicacion: 'Fes el triangle més gran: el valor comú creix. Depèn del triangle (és el seu $2R$).' },
 	]}
 />
 
-**Reto 2.** Pulsa «Rectángulo en A». ¿Cuánto vale el término $2bc\cos A$? ¿En qué se convierte el teorema del coseno?
+**Repte 2.** Prem «Rectangle a A». Quant val el terme $2bc\cos A$? En què es converteix el teorema del cosinus?
 
-**Reto 3.** Mueve el vértice $A$ hasta que el ángulo $A$ sea **obtuso**. Compara $a^2$ con $b^2 + c^2$: ¿cuál es mayor? ¿Por qué?
+**Repte 3.** Mou el vèrtex $A$ fins que l’angle $A$ sigui **obtús**. Compara $a^2$ amb $b^2 + c^2$: quin és més gran? Per què?
 
-**Reto 4.** Coloca los tres vértices casi alineados. ¿Qué le pasa al área? ¿Y a $2R$?
+**Repte 4.** Col·loca els tres vèrtexs gairebé alineats. Què li passa a l’àrea? I a $2R$?
 
-**Reto 5.** Busca un triángulo con los tres ángulos iguales. ¿Cuánto vale cada uno? ¿Cómo son sus lados?
+**Repte 5.** Busca un triangle amb els tres angles iguals. Quant val cadascun? Com són els seus costats?
 
-<Reveal titulo="Soluciones de los retos 2 a 5">
+<Reveal titulo="Solucions dels reptes 2 a 5">
 
-- **Reto 2.** $\cos 90^\circ = 0$, así que el término vale 0 y queda $a^2 = b^2 + c^2$: Pitágoras.
-- **Reto 3.** Si $A > 90^\circ$, $\cos A < 0$ y el término $-2bc\cos A$ es **positivo**: $a^2 > b^2 + c^2$. El lado opuesto a un ángulo obtuso es más largo que en un triángulo rectángulo con los mismos lados $b$ y $c$.
-- **Reto 4.** El área tiende a 0 (un ángulo se acerca a $180^\circ$ y su seno a 0). El radio de la circunferencia circunscrita se dispara: tres puntos casi alineados solo caben en una circunferencia enorme.
-- **Reto 5.** $60^\circ$ cada uno (equilátero): los tres lados son iguales, porque los lados son proporcionales a los senos de sus ángulos opuestos.
+- **Repte 2.** $\cos 90^\circ = 0$, així que el terme val 0 i queda $a^2 = b^2 + c^2$: Pitàgores.
+- **Repte 3.** Si $A > 90^\circ$, $\cos A < 0$ i el terme $-2bc\cos A$ és **positiu**: $a^2 > b^2 + c^2$. El costat oposat a un angle obtús és més llarg que en un triangle rectangle amb els mateixos costats $b$ i $c$.
+- **Repte 4.** L’àrea tendeix a 0 (un angle s’acosta a $180^\circ$ i el seu sinus a 0). El radi de la circumferència circumscrita es dispara: tres punts gairebé alineats només caben en una circumferència enorme.
+- **Repte 5.** $60^\circ$ cadascun (equilàter): els tres costats són iguals, perquè els costats són proporcionals als sinus dels seus angles oposats.
 
 </Reveal>
 
-## El caso ambiguo, en directo
+## El cas ambigu, en directe
 
-Ahora el dato es el ángulo $A$, el lado $b$ y el lado $a$, opuesto a $A$. El vértice $B$ tiene que estar sobre la base y a distancia $a$ de $C$.
+Ara la dada és l’angle $A$, el costat $b$ i el costat $a$, oposat a $A$. El vèrtex $B$ ha de ser sobre la base i a distància $a$ de $C$.
 
 <AmbiguousCase />
 
-**Reto 6.** Con $A = 35^\circ$ y $b = 7$, empieza con $a = 2$ y ve aumentando $a$ poco a poco. Anota para qué valores de $a$ hay 0, 1 y 2 triángulos. ¿Qué papel juega la altura $h = b\sin A \approx 4{,}0$?
+**Repte 6.** Amb $A = 35^\circ$ i $b = 7$, comença amb $a = 2$ i ves augmentant $a$ a poc a poc. Anota per a quins valors de $a$ hi ha 0, 1 i 2 triangles. Quin paper hi fa l’altura $h = b\sin A \approx 4{,}0$?
 
-**Reto 7.** Pon $A = 120^\circ$. ¿Puede haber dos triángulos? ¿Por qué?
+**Repte 7.** Posa $A = 120^\circ$. Hi pot haver dos triangles? Per què?
 
-<Reveal titulo="Soluciones de los retos 6 y 7">
+<Reveal titulo="Solucions dels reptes 6 i 7">
 
-- **Reto 6.** $a < h \approx 4{,}02$: ninguno. $a = h$: uno (rectángulo en $B$). $4{,}02 < a < 7$: dos. $a \ge 7$: uno.
-- **Reto 7.** No. Si $A$ es obtuso, el triángulo ya tiene su único ángulo obtuso, así que $B$ debe ser agudo: el suplementario de $B$ no sirve. Además, solo hay triángulo si $a > b$.
+- **Repte 6.** $a < h \approx 4{,}02$: cap. $a = h$: un (rectangle a $B$). $4{,}02 < a < 7$: dos. $a \ge 7$: un.
+- **Repte 7.** No. Si $A$ és obtús, el triangle ja té el seu únic angle obtús, així que $B$ ha de ser agut: el suplementari de $B$ no serveix. A més, només hi ha triangle si $a > b$.
 
 </Reveal>

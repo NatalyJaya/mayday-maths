@@ -1,5 +1,5 @@
 ---
-// Ángulos relacionados en la circunferencia goniométrica.
+// Angles relacionats en la circunferencia goniométrica.
 interface Props {
 	rel?: 'sup' | 'pi' | 'neg' | 'comp';
 }
@@ -15,18 +15,18 @@ const name = `sym-${Math.random().toString(36).slice(2, 7)}`;
 
 <symmetry-explorer class="sim wide" data-rel={rel}>
 	<div class="sim-head">
-		<h4>Ángulos relacionados</h4>
+		<h4>Angles relacionats</h4>
 		<p class="muted"><output data-out="axis"></output></p>
 	</div>
 	<div class="sim-layout">
-		<svg class="sim-svg mfig" viewBox="0 0 380 360" role="img" aria-label="Circunferencia goniométrica con el ángulo α y su ángulo relacionado, simétricos respecto a un eje o al origen."></svg>
+		<svg class="sim-svg mfig" viewBox="0 0 380 360" role="img" aria-label="Circumferència goniomètrica amb l’angle α i el seu angle relacionat, simètrics respecte d’un eix o de l’origen."></svg>
 		<div>
 			<fieldset class="rels">
-				<legend class="k">Compara α con…</legend>
+				<legend class="k">Compara α amb…</legend>
 				{opts.map(([v, t]) => <label class="check"><input type="radio" name={name} value={v} /> {t}</label>)}
 			</fieldset>
 			<table class="sim-table">
-				<thead><tr><th>Ángulo</th><th>cos</th><th>sin</th></tr></thead>
+				<thead><tr><th>Angle</th><th>cos</th><th>sin</th></tr></thead>
 				<tbody>
 					<tr><th>α = <output data-out="a"></output></th><td class="x"><output data-out="ca"></output></td><td class="y"><output data-out="sa"></output></td></tr>
 					<tr><th><output data-out="name"></output> = <output data-out="b"></output></th><td class="x"><output data-out="cb"></output></td><td class="y"><output data-out="sb"></output></td></tr>
@@ -37,8 +37,8 @@ const name = `sym-${Math.random().toString(36).slice(2, 7)}`;
 	</div>
 	<div class="sim-controls">
 		<div class="param">
-			<label>Ángulo α (primer cuadrante): <output data-out="a"></output></label>
-			<input type="range" min="1" max="89" step="1" value="30" aria-label="Ángulo α en grados" />
+			<label>Angle α (primer quadrant): <output data-out="a"></output></label>
+			<input type="range" min="1" max="89" step="1" value="30" aria-label="Angle α en graus" />
 		</div>
 	</div>
 </symmetry-explorer>

@@ -1,42 +1,42 @@
 ---
 tema: razones-trigonometricas
 etapa: idea
-titulo: Medir lo que no se puede medir
-descripcion: Cómo calcular la altura de un edificio sin subir, o la anchura de un río sin cruzarlo. Antes de ninguna fórmula, descubrimos el número que lo hace posible.
+titulo: Mesurar el que no es pot mesurar
+descripcion: Com calcular l’altura d’un edifici sense pujar-hi, o l’amplada d’un riu sense creuar-lo. Abans de cap fórmula, descobrim el nombre que ho fa possible.
 minutos: 12
 ---
 
-## Un problema muy antiguo
+## Un problema molt antic
 
-Quieres saber la altura de un edificio, de un árbol o de una montaña. No puedes subir con una cinta métrica. Lo que sí puedes medir son **distancias en el suelo** y **ángulos** (con un transportador, un teodolito o el móvil).
+Vols saber l’altura d’un edifici, d’un arbre o d’una muntanya. No hi pots pujar amb una cinta mètrica. El que sí que pots mesurar són **distàncies a terra** i **angles** (amb un transportador, un teodolit o el mòbil).
 
-Cuenta la tradición que, hace unos 2600 años, Tales de Mileto midió la altura de una pirámide de Egipto con su sombra. Esperó al momento del día en que la sombra de un palo era igual de larga que el palo. En ese mismo instante, la sombra de la pirámide también medía lo mismo que su altura.
+Explica la tradició que, fa uns 2600 anys, Tales de Milet va mesurar l’altura d’una piràmide d’Egipte amb la seva ombra. Va esperar el moment del dia en què l’ombra d’un pal era igual de llarga que el pal. En aquell mateix instant, l’ombra de la piràmide també mesurava el mateix que la seva altura.
 
-¿Por qué funciona? Porque el palo con su sombra y la pirámide con la suya forman dos triángulos con **los mismos ángulos**. El sol llega con la misma inclinación a los dos. Y los triángulos con los mismos ángulos tienen la misma forma, aunque uno sea mucho más grande.
+Per què funciona? Perquè el pal amb la seva ombra i la piràmide amb la seva formen dos triangles amb **els mateixos angles**. El sol arriba amb la mateixa inclinació a tots dos. I els triangles amb els mateixos angles tenen la mateixa forma, encara que un sigui molt més gran.
 
-## La pregunta clave
+## La pregunta clau
 
 <Predict
-	pregunta="Dos rampas tienen la **misma inclinación**. Una mide 2 m de largo y la otra 10 m. Para cada una calculas el cociente $\dfrac{\text{altura que sube}}{\text{longitud de la rampa}}$. ¿Qué pasa?"
+	pregunta="Dues rampes tenen la **mateixa inclinació**. Una fa 2 m de llarg i l’altra 10 m. Per a cadascuna calcules el quocient $\dfrac{\text{altura que puja}}{\text{longitud de la rampa}}$. Què passa?"
 	opciones={[
-		{ texto: 'La rampa larga tiene un cociente mayor, porque sube más.', explicacion: 'Sube más, sí, pero también es más larga, y en la misma proporción: 5 veces más larga, 5 veces más alta. El cociente no cambia.' },
-		{ texto: 'La rampa corta tiene un cociente mayor.', explicacion: 'Si fuera así, la rampa corta sería más empinada. Pero hemos dicho que tienen la misma inclinación.' },
-		{ texto: 'Las dos tienen el mismo cociente.', correcta: true, explicacion: 'Los dos triángulos tienen los mismos ángulos, así que son **semejantes**: todos sus lados son proporcionales. Al dividir dos lados, la proporción se cancela.' },
-		{ texto: 'Depende de la altura del suelo.', explicacion: 'Lo único que importa es la forma del triángulo, y esa la decide el ángulo.' },
+		{ texto: 'La rampa llarga té un quocient més gran, perquè puja més.', explicacion: 'Puja més, sí, però també és més llarga, i en la mateixa proporció: 5 vegades més llarga, 5 vegades més alta. El quocient no canvia.' },
+		{ texto: 'La rampa curta té un quocient més gran.', explicacion: 'Si fos així, la rampa curta seria més dreta. Però hem dit que tenen la mateixa inclinació.' },
+		{ texto: 'Totes dues tenen el mateix quocient.', correcta: true, explicacion: 'Els dos triangles tenen els mateixos angles, així que són **semblants**: tots els costats són proporcionals. En dividir dos costats, la proporció es cancel·la.' },
+		{ texto: 'Depèn de l’altura del terra.', explicacion: 'L’única cosa que importa és la forma del triangle, i aquesta la decideix l’angle.' },
 	]}
-	despues="Compruébalo: cambia la hipotenusa del triángulo de abajo y mira la tabla."
+	despues="Comprova-ho: canvia la hipotenusa del triangle de sota i mira la taula."
 />
 
 <RightTriangleExplorer />
 
-Fíjate en dos cosas:
+Fixa’t en dues coses:
 
-- Si cambias **solo el tamaño**, los tres lados cambian, pero los tres **cocientes** se quedan exactamente igual.
-- Si cambias **el ángulo**, los cocientes sí cambian. Cada ángulo tiene sus propios cocientes.
+- Si canvies **només la mida**, els tres costats canvien, però els tres **quocients** es queden exactament igual.
+- Si canvies **l’angle**, els quocients sí que canvien. Cada angle té els seus propis quocients.
 
-## Lo que no cambia: el cociente
+## El que no canvia: el quocient
 
-Aquí tienes dos triángulos rectángulos con el mismo ángulo $\alpha$. El de la derecha es el doble que el de la izquierda:
+Aquí tens dos triangles rectangles amb el mateix angle $\alpha$. El de la dreta és el doble que el de l’esquerra:
 
 <Figura
 	figura={{
@@ -64,44 +64,44 @@ Aquí tienes dos triángulos rectángulos con el mismo ángulo $\alpha$. El de l
 			{ vertice: "C'", desde: "A'", hasta: "B'", recto: true },
 		],
 	}}
-	alt="Dos triángulos rectángulos semejantes con el mismo ángulo α: uno de lados 3, 4 y 5 y otro de lados 6, 8 y 10."
-	pie="El pequeño tiene lados 3, 4 y 5. El grande, 6, 8 y 10. Los cocientes son iguales: 3/5 = 6/10 = 0,6."
+	alt="Dos triangles rectangles semblants amb el mateix angle α: un de costats 3, 4 i 5 i un altre de costats 6, 8 i 10."
+	pie="El petit té costats 3, 4 i 5. El gran, 6, 8 i 10. Els quocients són iguals: 3/5 = 6/10 = 0,6."
 />
 
-| Cociente | Triángulo pequeño | Triángulo grande |
+| Quocient | Triangle petit | Triangle gran |
 | --- | --- | --- |
-| <span class="q-y">opuesto</span> / hipotenusa | $3/5 = 0{,}6$ | $6/10 = 0{,}6$ |
-| <span class="q-x">contiguo</span> / hipotenusa | $4/5 = 0{,}8$ | $8/10 = 0{,}8$ |
-| <span class="q-y">opuesto</span> / <span class="q-x">contiguo</span> | $3/4 = 0{,}75$ | $6/8 = 0{,}75$ |
+| <span class="q-y">oposat</span> / hipotenusa | $3/5 = 0{,}6$ | $6/10 = 0{,}6$ |
+| <span class="q-x">contigu</span> / hipotenusa | $4/5 = 0{,}8$ | $8/10 = 0{,}8$ |
+| <span class="q-y">oposat</span> / <span class="q-x">contigu</span> | $3/4 = 0{,}75$ | $6/8 = 0{,}75$ |
 
 <Callout tipo="idea">
-	En un triángulo rectángulo, el cociente entre dos lados **solo depende del ángulo**, no del tamaño del triángulo. Por eso a cada ángulo le podemos asignar unos números fijos. Esos números son el **seno**, el **coseno** y la **tangente**, y en la etapa siguiente les pondremos nombre.
+	En un triangle rectangle, el quocient entre dos costats **només depèn de l’angle**, no de la mida del triangle. Per això a cada angle li podem assignar uns nombres fixos. Aquests nombres són el **sinus**, el **cosinus** i la **tangent**, i a l’etapa següent els posarem nom.
 </Callout>
 
-## De ángulos a longitudes (y al revés)
+## D’angles a longituds (i al revés)
 
-Si alguien ya ha calculado esos cocientes para cada ángulo (hoy los da la calculadora), los problemas imposibles se vuelven fáciles:
+Si algú ja ha calculat aquests quocients per a cada angle (avui els dona la calculadora), els problemes impossibles es tornen fàcils:
 
-- **Del ángulo a la longitud.** Una rampa de $12\un{m}$ sube con una inclinación de $10^\circ$. Para $10^\circ$, el cociente $\frac{\text{opuesto}}{\text{hipotenusa}}$ vale $0{,}174$. Entonces la rampa sube $12 \cdot 0{,}174 \approx 2{,}08\un{m}$.
-- **De la longitud al ángulo.** Una escalera de $5\un{m}$ apoyada en una pared tiene el pie a $1{,}5\un{m}$ de la pared. El cociente $\frac{\text{contiguo}}{\text{hipotenusa}} = \frac{1{,}5}{5} = 0{,}3$, y la calculadora te dice qué ángulo tiene ese cociente: unos $72,5^\circ$ con el suelo.
+- **De l’angle a la longitud.** Una rampa de $12\un{m}$ puja amb una inclinació de $10^\circ$. Per a $10^\circ$, el quocient $\frac{\text{oposat}}{\text{hipotenusa}}$ val $0{,}174$. Aleshores la rampa puja $12 \cdot 0{,}174 \approx 2{,}08\un{m}$.
+- **De la longitud a l’angle.** Una escala de $5\un{m}$ recolzada en una paret té el peu a $1{,}5\un{m}$ de la paret. El quocient $\frac{\text{contigu}}{\text{hipotenusa}} = \frac{1{,}5}{5} = 0{,}3$, i la calculadora et diu quin angle té aquest quocient: uns $72{,}5^\circ$ amb el terra.
 
-Esto es la **trigonometría** (del griego: «medida de los triángulos»): pasar de ángulos a longitudes y de longitudes a ángulos.
+Això és la **trigonometria** (del grec: «mesura dels triangles»): passar d’angles a longituds i de longituds a angles.
 
-## Y cuando no hay triángulo: algo que gira
+## I quan no hi ha triangle: alguna cosa que gira
 
-Los ángulos de un triángulo rectángulo son menores de $90^\circ$. Pero en la vida real muchos ángulos son mayores: una noria que gira, las agujas de un reloj, una rueda, un motor. Si sigues la **altura** de una cabina de una noria mientras gira, sube, baja y vuelve a empezar, y dibuja siempre la misma curva:
+Els angles d’un triangle rectangle són més petits de $90^\circ$. Però a la vida real molts angles són més grans: una sínia que gira, les agulles d’un rellotge, una roda, un motor. Si segueixes l’**altura** d’una cabina d’una sínia mentre gira, puja, baixa i torna a començar, i dibuixa sempre la mateixa corba:
 
 <CircleWave />
 
-Esa curva es la gráfica del **seno**. Para llegar hasta ella necesitamos extender el seno, el coseno y la tangente a **cualquier ángulo**, no solo a los de un triángulo. Lo haremos en la etapa 3 con la *circunferencia goniométrica*.
+Aquesta corba és la gràfica del **sinus**. Per arribar-hi necessitem estendre el sinus, el cosinus i la tangent a **qualsevol angle**, no només als d’un triangle. Ho farem a l’etapa 3 amb la *circumferència goniomètrica*.
 
 <Callout tipo="analogia">
-	Piensa en el seno como en una **máquina**: le das un ángulo y te devuelve un número. Para ángulos agudos, ese número es el cociente $\frac{\text{opuesto}}{\text{hipotenusa}}$ de cualquier triángulo rectángulo con ese ángulo. Para ángulos mayores, es la altura de un punto que gira.
+	Pensa en el sinus com en una **màquina**: li dones un angle i et retorna un nombre. Per a angles aguts, aquest nombre és el quocient $\frac{\text{oposat}}{\text{hipotenusa}}$ de qualsevol triangle rectangle amb aquest angle. Per a angles més grans, és l’altura d’un punt que gira.
 </Callout>
 
-## Lo que vas a aprender en este tema
+## El que aprendràs en aquest tema
 
-1. **Objetos**: cómo se miden los ángulos (grados y radianes) y la definición exacta de seno, coseno y tangente.
-2. **Propiedades**: de dónde salen la identidad fundamental, los valores exactos de $30^\circ$, $45^\circ$ y $60^\circ$, la circunferencia goniométrica y la reducción al primer cuadrante.
-3. **Laboratorio**: un punto que gira por la circunferencia y las gráficas que dibuja.
-4. **Ejemplos guiados** y **práctica**.
+1. **Objectes**: com es mesuren els angles (graus i radiants) i la definició exacta de sinus, cosinus i tangent.
+2. **Propietats**: d’on surten la identitat fonamental, els valors exactes de $30^\circ$, $45^\circ$ i $60^\circ$, la circumferència goniomètrica i la reducció al primer quadrant.
+3. **Laboratori**: un punt que gira per la circumferència i les gràfiques que dibuixa.
+4. **Exemples guiats** i **pràctica**.

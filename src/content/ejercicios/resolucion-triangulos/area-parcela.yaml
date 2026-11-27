@@ -1,15 +1,15 @@
-titulo: El área de una parcela triangular
+titulo: L’àrea d’una parcel·la triangular
 tema: resolucion-triangulos
 orden: 7
 procedencia: original
 dificultad: intermedio
 habilidades: [modelizacion, calculo]
-resumen: Área con dos lados y el ángulo comprendido, y la valla del tercer lado.
+resumen: Àrea amb dos costats i l’angle comprès, i la tanca del tercer costat.
 enunciado: |
-  Una parcela triangular tiene dos lados de $40\un{m}$ y $55\un{m}$ que forman un ángulo de $72^\circ$.
+  Una parcel·la triangular té dos costats de $40\un{m}$ i $55\un{m}$ que formen un angle de $72^\circ$.
 
-  a) ¿Qué área tiene?
-  b) ¿Cuántos metros de valla hacen falta para el tercer lado?
+  a) Quina àrea té?
+  b) Quants metres de tanca calen per al tercer costat?
 figura:
   tipo: triangulo
   a: 57.143
@@ -19,29 +19,29 @@ figura:
   colores: { a: g }
 apartados:
   - id: a
-    enunciado: Área de la parcela.
+    enunciado: Àrea de la parcel·la.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'S'
-          etiqueta: área
+          etiqueta: àrea
           unidad: m²
           valor: 1046.16
           trampas:
-            - { valor: 1100, explicacion: 'Eso sería si el ángulo fuera recto ($\frac12\cdot 40\cdot 55$). Falta multiplicar por $\sin 72^\circ$.' }
-            - { valor: 2092.32, explicacion: 'Te falta el $\frac12$ de la fórmula del área.' }
+            - { valor: 1100, explicacion: 'Això seria si l’angle fos recte ($\frac12\cdot 40\cdot 55$). Falta multiplicar per $\sin 72^\circ$.' }
+            - { valor: 2092.32, explicacion: 'Et falta el $\frac12$ de la fórmula de l’àrea.' }
     pasos:
-      - titulo: Fórmula del área
+      - titulo: Fórmula de l’àrea
         desarrollo: '$$S = \frac12\cdot 40\cdot 55\cdot\sin 72^\circ \approx 1046{,}16\un{m^2}$$'
-        porque: '$40\sin 72^\circ$ es la altura sobre el lado de $55\un{m}$.'
+        porque: '$40\sin 72^\circ$ és l’altura sobre el costat de $55\un{m}$.'
     resultado: '$S \approx 1046{,}2\un{m^2}$.'
   - id: b
-    enunciado: Longitud del tercer lado.
+    enunciado: Longitud del tercer costat.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'a', etiqueta: tercer lado, unidad: m, valor: 57.14 }
+        - { simbolo: 'a', etiqueta: tercer costat, unidad: m, valor: 57.14 }
     pasos:
-      - titulo: Teorema del coseno
+      - titulo: Teorema del cosinus
         desarrollo: '$$a = \sqrt{40^2 + 55^2 - 2\cdot 40\cdot 55\cos 72^\circ} \approx 57{,}14\un{m}$$'
-    resultado: 'Hacen falta unos $57{,}1\un{m}$ de valla.'
+    resultado: 'Calen uns $57{,}1\un{m}$ de tanca.'

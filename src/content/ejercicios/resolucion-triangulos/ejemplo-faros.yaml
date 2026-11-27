@@ -1,13 +1,13 @@
-titulo: Un barco visto desde dos faros
+titulo: Un vaixell vist des de dos fars
 tema: resolucion-triangulos
 rol: ejemplo
 orden: 2
 procedencia: original
 dificultad: intermedio
 habilidades: [planteamiento, metodo, modelizacion]
-resumen: Un lado y los dos ángulos contiguos. Tercer ángulo y teorema del seno.
+resumen: Un costat i els dos angles contigus. Tercer angle i teorema del sinus.
 enunciado: |
-  Dos faros $A$ y $B$ están en la costa, separados $10\un{km}$. Desde $A$, la dirección de un barco $S$ forma un ángulo de $52^\circ$ con la línea $AB$; desde $B$, forma un ángulo de $71^\circ$. ¿A qué distancia está el barco de cada faro?
+  Dos fars $A$ i $B$ són a la costa, separats $10\un{km}$. Des d’$A$, la direcció d’un vaixell $S$ forma un angle de $52^\circ$ amb la línia $AB$; des de $B$, forma un angle de $71^\circ$. A quina distància és el vaixell de cada far?
 figura:
   tipo: triangulo
   a: 9.396
@@ -17,34 +17,34 @@ figura:
   etiquetas: { c: '10 km', a: 'BS = ?', b: 'AS = ?', A: '52°', B: '71°' }
   colores: { a: g, b: g }
 datos:
-  - { simbolo: 'c = AB', valor: '10\un{km}', significado: 'distancia entre los faros' }
-  - { simbolo: 'A', valor: '52^\circ', significado: 'ángulo en el faro A' }
-  - { simbolo: 'B', valor: '71^\circ', significado: 'ángulo en el faro B' }
+  - { simbolo: 'c = AB', valor: '10\un{km}', significado: 'distància entre els fars' }
+  - { simbolo: 'A', valor: '52^\circ', significado: 'angle al far A' }
+  - { simbolo: 'B', valor: '71^\circ', significado: 'angle al far B' }
 incognitas:
-  - 'Las distancias $AS$ y $BS$.'
+  - 'Les distàncies $AS$ i $BS$.'
 apartados:
   - id: a
-    enunciado: Calcula las distancias del barco a cada faro.
+    enunciado: Calcula les distàncies del vaixell a cada far.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'AS', etiqueta: distancia al faro A, unidad: km, valor: 11.27 }
-        - { simbolo: 'BS', etiqueta: distancia al faro B, unidad: km, valor: 9.40 }
+        - { simbolo: 'AS', etiqueta: distància al far A, unidad: km, valor: 11.27 }
+        - { simbolo: 'BS', etiqueta: distància al far B, unidad: km, valor: 9.40 }
     pasos:
-      - titulo: El tercer ángulo
-        piensa: '¿Hay alguna pareja lado–ángulo opuesto completa?'
+      - titulo: El tercer angle
+        piensa: 'Hi ha alguna parella costat–angle oposat completa?'
         desarrollo: '$$S = 180^\circ - 52^\circ - 71^\circ = 57^\circ$$'
-        porque: 'El lado conocido, $AB$, está enfrente del ángulo $S$. Con $S$ ya tenemos una pareja completa: lado $10\un{km}$ y ángulo $57^\circ$.'
-      - titulo: Elegir el teorema
-        desarrollo: 'Tenemos la pareja ($c$, $S$) y los otros dos ángulos: **teorema del seno**.'
-      - titulo: Distancia al faro A
+        porque: 'El costat conegut, $AB$, és davant de l’angle $S$. Amb $S$ ja tenim una parella completa: costat $10\un{km}$ i angle $57^\circ$.'
+      - titulo: Triar el teorema
+        desarrollo: 'Tenim la parella ($c$, $S$) i els altres dos angles: **teorema del sinus**.'
+      - titulo: Distància al far A
         desarrollo: '$$\frac{AS}{\sin 71^\circ} = \frac{10}{\sin 57^\circ} \;\Rightarrow\; AS = \frac{10\sin 71^\circ}{\sin 57^\circ} \approx 11{,}27\un{km}$$'
-        porque: '$AS$ es el lado opuesto al ángulo en $B$ ($71^\circ$).'
-      - titulo: Distancia al faro B
+        porque: '$AS$ és el costat oposat a l’angle a $B$ ($71^\circ$).'
+      - titulo: Distància al far B
         desarrollo: '$$BS = \frac{10\sin 52^\circ}{\sin 57^\circ} \approx 9{,}40\un{km}$$'
-        porque: 'Comprobación: el lado mayor ($AS$) está enfrente del ángulo mayor ($71^\circ$) ✔.'
-    resultado: 'El barco está a unos $11{,}27\un{km}$ del faro $A$ y a unos $9{,}40\un{km}$ del faro $B$.'
+        porque: 'Comprovació: el costat més gran ($AS$) és davant de l’angle més gran ($71^\circ$) ✔.'
+    resultado: 'El vaixell és a uns $11{,}27\un{km}$ del far $A$ i a uns $9{,}40\un{km}$ del far $B$.'
 errores:
-  - error: 'Emparejar cada lado con un ángulo contiguo'
-    explicacion: 'En el teorema del seno, cada lado va con su ángulo **opuesto**. $AS$ va con el ángulo en $B$, no con el de $A$.'
+  - error: 'Aparellar cada costat amb un angle contigu'
+    explicacion: 'En el teorema del sinus, cada costat va amb el seu angle **oposat**. $AS$ va amb l’angle a $B$, no amb el d’$A$.'
 laboratorio: { a: 9.396, b: 11.274, c: 10 }

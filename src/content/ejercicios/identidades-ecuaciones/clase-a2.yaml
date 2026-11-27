@@ -3,46 +3,46 @@ tema: identidades-ecuaciones
 orden: 102
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie A, apartado a)
+referencia: Sèrie A, apartat a)
 coleccion: clase-serie-a
 dificultad: intermedio
 habilidades: [calculo, metodo]
-resumen: Ángulo doble en la forma que deja solo senos, y factor común.
+resumen: Angle doble en la forma que deixa només sinus, i factor comú.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\cos 2x = 1 + 4\sin x$$
 conceptos:
-  - '$\cos 2x = 1 - 2\sin^2 x$ (la forma del ángulo doble que solo tiene senos).'
-  - 'Si un producto vale cero, uno de los factores vale cero.'
-  - 'El seno siempre está entre $-1$ y $1$.'
+  - '$\cos 2x = 1 - 2\sin^2 x$ (la forma de l’angle doble que només té sinus).'
+  - 'Si un producte val zero, un dels factors val zero.'
+  - 'El sinus sempre és entre $-1$ i $1$.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [0, 180]
       trampas:
         - valores: [0]
-          explicacion: 'Te falta una: $\sin x = 0$ también en $180^\circ$.'
+          explicacion: 'Te’n falta una: $\sin x = 0$ també a $180^\circ$.'
     pistas:
-      - 'El segundo miembro tiene $\sin x$. Elige la forma de $\cos 2x$ que solo tiene senos.'
-      - 'Con $\cos 2x = 1 - 2\sin^2 x$ los unos se van. Saca factor común.'
+      - 'El segon membre té $\sin x$. Tria la forma de $\cos 2x$ que només té sinus.'
+      - 'Amb $\cos 2x = 1 - 2\sin^2 x$ els uns se’n van. Treu factor comú.'
     pasos:
-      - titulo: Elegir la forma del ángulo doble
-        piensa: '$\cos 2x$ tiene tres formas. ¿Cuál te conviene?'
+      - titulo: Triar la forma de l’angle doble
+        piensa: '$\cos 2x$ té tres formes. Quina et convé?'
         desarrollo: '$$1 - 2\sin^2 x = 1 + 4\sin x$$'
-        porque: 'Así todo queda en función de $\sin x$. En tus apuntes lo haces con $\cos^2 x - \sin^2 x = (1 - \sin^2 x) - \sin^2 x$, que es lo mismo.'
-      - titulo: Pasar todo a un lado y sacar factor común
+        porque: 'Així tot queda en funció de $\sin x$. Als teus apunts ho fas amb $\cos^2 x - \sin^2 x = (1 - \sin^2 x) - \sin^2 x$, que és el mateix.'
+      - titulo: Passar-ho tot a un costat i treure factor comú
         desarrollo: |
           $$-2\sin^2 x - 4\sin x = 0 \;\Rightarrow\; -2\sin x\,(\sin x + 2) = 0$$
-        porque: 'Comprueba el factor: $-2\sin x \cdot (+2) = -4\sin x$. Por eso es $(\sin x + 2)$.'
-      - titulo: Cada factor igual a cero
+        porque: 'Comprova el factor: $-2\sin x \cdot (+2) = -4\sin x$. Per això és $(\sin x + 2)$.'
+      - titulo: Cada factor igual a zero
         desarrollo: |
           - $\sin x = 0 \Rightarrow x = 0^\circ,\ 180^\circ$.
-          - $\sin x + 2 = 0 \Rightarrow \sin x = -2$: **imposible**, el seno está entre $-1$ y $1$.
+          - $\sin x + 2 = 0 \Rightarrow \sin x = -2$: **impossible**, el sinus és entre $-1$ i $1$.
     resultado: '$x = 0^\circ,\ 180^\circ$.'
 errores:
-  - error: 'Escribir el factor como $(\sin x - 2)$ (error de signo de los apuntes)'
-    explicacion: 'Al multiplicar $-2\sin x \cdot(\sin x - 2)$ sale $-2\sin^2 x + 4\sin x$, con el signo cambiado. Aquí no cambia el resultado (tampoco $\sin x = 2$ es posible), pero en otra ecuación sí podría.'
+  - error: 'Escriure el factor com $(\sin x - 2)$ (error de signe dels apunts)'
+    explicacion: 'En multiplicar $-2\sin x \cdot(\sin x - 2)$ surt $-2\sin^2 x + 4\sin x$, amb el signe canviat. Aquí no canvia el resultat (tampoc $\sin x = 2$ és possible), però en una altra equació sí que podria.'
   - error: 'Dividir entre $\sin x$'
-    explicacion: 'Si divides los dos miembros entre $\sin x$, pierdes justo las soluciones de $\sin x = 0$. Saca factor común.'
+    explicacion: 'Si divideixes els dos membres entre $\sin x$, perds justament les solucions de $\sin x = 0$. Treu factor comú.'

@@ -1,5 +1,5 @@
 ---
-// Ejemplo guiado: el problema se resuelve paso a paso, pero cada paso empieza
+// Exemple guiat: el problema se resuelve paso a paso, pero cada paso empieza
 // con una pregunta («¿qué harías ahora?») y el desarrollo solo aparece cuando
 // el alumno lo pide. Así piensa antes de leer.
 import { getEntry } from 'astro:content';
@@ -26,7 +26,7 @@ let k = 0;
 
 <guided-example class="guided wide" id={`ejemplo-${id.split('/').pop()}`}>
 	<header class="g-head">
-		<p class="g-kicker">Ejemplo guiado{n ? ` ${n}` : ''}</p>
+		<p class="g-kicker">Exemple guiat{n ? ` ${n}` : ''}</p>
 		<h3>{ex.titulo}</h3>
 		<ExerciseMeta ex={ex} compact />
 	</header>
@@ -38,7 +38,7 @@ let k = 0;
 			{
 				R.interpretacion && (
 					<section>
-						<p class="g-k"><Icon name="eye" size={15} /> Qué está pasando</p>
+						<p class="g-k"><Icon name="eye" size={15} /> Què està passant</p>
 						<Fragment set:html={R.interpretacion} />
 					</section>
 				)
@@ -46,7 +46,7 @@ let k = 0;
 			{
 				R.datos.length > 0 && (
 					<section>
-						<p class="g-k"><Icon name="pencil" size={15} /> Datos (con signo y en el SI)</p>
+						<p class="g-k"><Icon name="pencil" size={15} /> Dades</p>
 						<ul class="datos">
 							{R.datos.map((d) => (
 								<li>
@@ -56,7 +56,7 @@ let k = 0;
 						</ul>
 						{R.incognitas.length > 0 && (
 							<>
-								<p class="g-k">Nos piden</p>
+								<p class="g-k">Ens demanen</p>
 								<ul>
 									{R.incognitas.map((q) => (
 										<li set:html={q} />
@@ -89,13 +89,13 @@ let k = 0;
 										</p>
 									)}
 									<button class="btn btn-sm show-step" type="button">
-										Ver el paso <Icon name="chevron" size={16} />
+										Mostra el pas <Icon name="chevron" size={16} />
 									</button>
 									<div class="g-work" hidden>
 										<Fragment set:html={s.desarrollo} />
 										{s.porque && (
 											<p class="g-why">
-												<strong>Por qué:</strong> <span set:html={s.porque} />
+												<strong>Per què:</strong> <span set:html={s.porque} />
 											</p>
 										)}
 									</div>
@@ -104,7 +104,7 @@ let k = 0;
 						})}
 					</ol>
 					<div class="g-result" hidden>
-						<p class="g-k">Resultado{R.apartados.length > 1 ? ` del apartado ${p.id})` : ''}</p>
+						<p class="g-k">Resultat{R.apartados.length > 1 ? ` de l’apartat ${p.id})` : ''}</p>
 						<Fragment set:html={p.resultado} />
 					</div>
 				</section>
@@ -112,14 +112,14 @@ let k = 0;
 		}
 
 		<div class="g-controls">
-			<button class="btn btn-ghost btn-sm show-all" type="button">Mostrar toda la resolución</button>
+			<button class="btn btn-ghost btn-sm show-all" type="button">Mostra tota la resolució</button>
 		</div>
 
 		<div class="g-after" hidden>
 			{
 				R.errores.length > 0 && (
 					<section>
-						<p class="g-k"><Icon name="alert" size={15} /> Errores frecuentes</p>
+						<p class="g-k"><Icon name="alert" size={15} /> Errors freqüents</p>
 						<ul class="mistakes">
 							{R.errores.map((e) => (
 								<li>
@@ -142,7 +142,7 @@ let k = 0;
 			{
 				ex.laboratorio && (
 					<a class="btn" href={labUrl(topic, ex.laboratorio)}>
-						<Icon name="flask" /> Ver este ejemplo en el laboratorio
+						<Icon name="flask" /> Mostra aquest exemple al laboratori
 					</a>
 				)
 			}

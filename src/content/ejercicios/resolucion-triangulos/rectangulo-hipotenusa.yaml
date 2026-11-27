@@ -1,12 +1,12 @@
-titulo: Resolver un triángulo rectángulo (hipotenusa y ángulo)
+titulo: Resoldre un triangle rectangle (hipotenusa i angle)
 tema: resolucion-triangulos
 orden: 1
 procedencia: original
 dificultad: basico
 habilidades: [calculo, geometria]
-resumen: El otro ángulo por complemento y los catetos con seno y coseno.
+resumen: L’altre angle per complement i els catets amb sinus i cosinus.
 enunciado: |
-  Resuelve el triángulo rectángulo (ángulo recto en $C$) con hipotenusa $c = 12\un{cm}$ y ángulo $A = 35^\circ$.
+  Resol el triangle rectangle (angle recte a $C$) amb hipotenusa $c = 12\un{cm}$ i angle $A = 35^\circ$.
 figura:
   tipo: triangulo
   a: 6.883
@@ -17,20 +17,20 @@ figura:
   colores: { a: y, b: x }
 apartados:
   - id: a
-    enunciado: Calcula el ángulo $B$ y los catetos $a$ y $b$.
+    enunciado: Calcula l’angle $B$ i els catets $a$ i $b$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'B', etiqueta: ángulo, unidad: '°', valor: 55 }
-        - { simbolo: 'a', etiqueta: cateto opuesto a A, unidad: cm, valor: 6.88, trampas: [{ valor: 9.83, explicacion: 'Ese es el cateto contiguo a $A$. El lado $a$ está enfrente de $A$: $a = 12\sin 35^\circ$.' }] }
-        - { simbolo: 'b', etiqueta: cateto contiguo a A, unidad: cm, valor: 9.83, trampas: [{ valor: 6.88, explicacion: 'Ese es el cateto opuesto a $A$. El lado $b$ es el contiguo: $b = 12\cos 35^\circ$.' }] }
+        - { simbolo: 'B', etiqueta: angle, unidad: '°', valor: 55 }
+        - { simbolo: 'a', etiqueta: catet oposat a A, unidad: cm, valor: 6.88, trampas: [{ valor: 9.83, explicacion: 'Aquest és el catet contigu a $A$. El costat $a$ és davant d’$A$: $a = 12\sin 35^\circ$.' }] }
+        - { simbolo: 'b', etiqueta: catet contigu a A, unidad: cm, valor: 9.83, trampas: [{ valor: 6.88, explicacion: 'Aquest és el catet oposat a $A$. El costat $b$ és el contigu: $b = 12\cos 35^\circ$.' }] }
     pistas:
-      - 'Los dos ángulos agudos suman $90^\circ$.'
-      - '$a$ es el cateto opuesto a $A$; $b$, el contiguo.'
+      - 'Els dos angles aguts sumen $90^\circ$.'
+      - '$a$ és el catet oposat a $A$; $b$, el contigu.'
     pasos:
-      - titulo: Ángulo B
+      - titulo: Angle B
         desarrollo: '$$B = 90^\circ - 35^\circ = 55^\circ$$'
-      - titulo: Catetos
+      - titulo: Catets
         desarrollo: '$$a = 12\sin 35^\circ \approx 6{,}88\un{cm} \qquad b = 12\cos 35^\circ \approx 9{,}83\un{cm}$$'
-        porque: 'Comprobación: $6{,}88^2 + 9{,}83^2 \approx 144 = 12^2$ ✔.'
+        porque: 'Comprovació: $6{,}88^2 + 9{,}83^2 \approx 144 = 12^2$ ✔.'
     resultado: '$B = 55^\circ$, $a \approx 6{,}88\un{cm}$, $b \approx 9{,}83\un{cm}$.'

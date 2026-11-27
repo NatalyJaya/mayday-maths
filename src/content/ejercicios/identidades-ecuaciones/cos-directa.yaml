@@ -4,23 +4,23 @@ orden: 3
 procedencia: original
 dificultad: basico
 habilidades: [calculo, graficas]
-resumen: Despejar y buscar los dos ángulos con coseno negativo.
-enunciado: 'Resuelve en $[0^\circ,\ 360^\circ)$: $\quad 2\cos x + \sqrt3 = 0$'
+resumen: Aïllar i buscar els dos angles amb cosinus negatiu.
+enunciado: 'Resol a $[0^\circ,\ 360^\circ)$: $\quad 2\cos x + \sqrt3 = 0$'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones.
+    enunciado: Escriu totes les solucions.
     respuesta:
       tipo: conjunto
       valores: [150, 210]
       trampas:
-        - { valores: [30, 330], explicacion: 'Esos ángulos tienen coseno $+\frac{\sqrt3}{2}$. Aquí el coseno es negativo: segundo y tercer cuadrante.' }
-        - { valores: [150], explicacion: 'Te falta la otra: el coseno también es negativo en el tercer cuadrante.' }
+        - { valores: [30, 330], explicacion: 'Aquests angles tenen cosinus $+\frac{\sqrt3}{2}$. Aquí el cosinus és negatiu: segon i tercer quadrant.' }
+        - { valores: [150], explicacion: 'Et falta l’altra: el cosinus també és negatiu al tercer quadrant.' }
     pistas:
-      - 'Despeja $\cos x$. El ángulo de referencia es $30^\circ$.'
+      - 'Aïlla $\cos x$. L’angle de referència és $30^\circ$.'
     pasos:
-      - titulo: Despejar
+      - titulo: Aïllar
         desarrollo: '$$\cos x = -\frac{\sqrt3}{2}$$'
-      - titulo: Ángulos
-        desarrollo: 'Referencia $30^\circ$; coseno negativo en el II y el III: $x = 180^\circ - 30^\circ = 150^\circ$ y $x = 180^\circ + 30^\circ = 210^\circ$.'
+      - titulo: Angles
+        desarrollo: 'Referència $30^\circ$; cosinus negatiu al II i al III: $x = 180^\circ - 30^\circ = 150^\circ$ i $x = 180^\circ + 30^\circ = 210^\circ$.'
     resultado: '$x = 150^\circ,\ 210^\circ$.'
 laboratorio: { f: cos, n: 1, k: -0.866 }

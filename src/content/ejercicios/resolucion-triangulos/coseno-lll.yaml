@@ -1,11 +1,11 @@
-titulo: Los tres ángulos a partir de los tres lados
+titulo: Els tres angles a partir dels tres costats
 tema: resolucion-triangulos
 orden: 6
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo, metodo]
-resumen: Teorema del coseno despejando el coseno.
-enunciado: Calcula los ángulos de un triángulo de lados $a = 4$, $b = 5$ y $c = 6$.
+resumen: Teorema del cosinus aïllant el cosinus.
+enunciado: Calcula els angles d’un triangle de costats $a = 4$, $b = 5$ i $c = 6$.
 figura:
   tipo: triangulo
   a: 4
@@ -14,22 +14,22 @@ figura:
   etiquetas: { a: '4', b: '5', c: '6', A: '?', B: '?', C: '?' }
 apartados:
   - id: a
-    enunciado: Calcula $A$, $B$ y $C$.
+    enunciado: Calcula $A$, $B$ i $C$.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'A', etiqueta: ángulo opuesto a 4, unidad: '°', valor: 41.41 }
-        - { simbolo: 'B', etiqueta: ángulo opuesto a 5, unidad: '°', valor: 55.77 }
-        - { simbolo: 'C', etiqueta: ángulo opuesto a 6, unidad: '°', valor: 82.82 }
+        - { simbolo: 'A', etiqueta: angle oposat a 4, unidad: '°', valor: 41.41 }
+        - { simbolo: 'B', etiqueta: angle oposat a 5, unidad: '°', valor: 55.77 }
+        - { simbolo: 'C', etiqueta: angle oposat a 6, unidad: '°', valor: 82.82 }
     pistas:
       - '$\cos A = \dfrac{b^2 + c^2 - a^2}{2bc}$.'
-      - 'El tercer ángulo: $180^\circ$ menos los otros dos.'
+      - 'El tercer angle: $180^\circ$ menys els altres dos.'
     pasos:
-      - titulo: Ángulo A
+      - titulo: Angle A
         desarrollo: '$$\cos A = \frac{25 + 36 - 16}{2\cdot 5\cdot 6} = \frac{45}{60} = 0{,}75 \;\Rightarrow\; A \approx 41{,}41^\circ$$'
-      - titulo: Ángulo B
+      - titulo: Angle B
         desarrollo: '$$\cos B = \frac{16 + 36 - 25}{2\cdot 4\cdot 6} = \frac{27}{48} = 0{,}5625 \;\Rightarrow\; B \approx 55{,}77^\circ$$'
-      - titulo: Ángulo C
+      - titulo: Angle C
         desarrollo: '$$C = 180^\circ - 41{,}41^\circ - 55{,}77^\circ \approx 82{,}82^\circ$$'
-        porque: 'Comprobación: $\cos C = \frac{16 + 25 - 36}{40} = 0{,}125 \Rightarrow C \approx 82{,}82^\circ$ ✔.'
+        porque: 'Comprovació: $\cos C = \frac{16 + 25 - 36}{40} = 0{,}125 \Rightarrow C \approx 82{,}82^\circ$ ✔.'
     resultado: '$A \approx 41{,}41^\circ$, $B \approx 55{,}77^\circ$, $C \approx 82{,}82^\circ$.'

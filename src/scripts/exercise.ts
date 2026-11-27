@@ -35,12 +35,12 @@ class ExercisePart extends HTMLElement {
 		$(this, '.next-step')?.addEventListener('click', () => this.nextStep());
 		$(this, '.all-steps')?.addEventListener('click', () => this.allSteps());
 		$(this, '.self-yes')?.addEventListener('click', (e) => {
-			(e.currentTarget as HTMLElement).closest('.self')!.innerHTML = '<strong>¡Bien!</strong>';
+			(e.currentTarget as HTMLElement).closest('.self')!.innerHTML = '<strong>Molt bé!</strong>';
 			this.markSolved();
 		});
 		$(this, '.self-no')?.addEventListener('click', (e) => {
 			(e.currentTarget as HTMLElement).closest('.self')!.innerHTML =
-				'Repasa el paso en el que te separaste de la solución y vuelve a intentarlo más tarde sin mirarla.';
+				'Repassa el pas en què t’has separat de la solució i torna-ho a intentar més tard sense mirar-la.';
 		});
 	}
 
@@ -63,7 +63,7 @@ class ExercisePart extends HTMLElement {
 			if (res.status === 'empty') anyEmpty = true;
 			if (res.status === 'correct') {
 				f.classList.add('ok');
-				out.textContent = '✓ Correcto';
+				out.textContent = '✓ Correcte';
 			} else {
 				allOk = false;
 				f.classList.add(res.status === 'close' || res.status === 'sign' || res.status === 'empty' ? 'warn' : 'ko');
@@ -71,11 +71,11 @@ class ExercisePart extends HTMLElement {
 			}
 		});
 		if (allOk) {
-			this.feedback(true, '<strong>¡Correcto!</strong><p>Compara tu razonamiento con la solución explicada.</p>');
-			$(this, '.sol-btn')!.innerHTML = 'Ver la solución explicada';
+			this.feedback(true, '<strong>Correcte!</strong><p>Compara el teu raonament amb la solució explicada.</p>');
+			$(this, '.sol-btn')!.innerHTML = 'Mostra la solució explicada';
 			this.markSolved();
 		} else if (!anyEmpty) {
-			this.feedback(false, '<p>Revisa los campos marcados. Si te atascas, pide una pista.</p>');
+			this.feedback(false, '<p>Revisa els camps marcats. Si t’encalles, demana una pista.</p>');
 		} else {
 			$(this, '.feedback')!.hidden = true;
 		}
@@ -90,9 +90,9 @@ class ExercisePart extends HTMLElement {
 		if (res.status !== 'empty' && res.status !== 'invalid') this.attempts++;
 		if (res.status === 'correct') {
 			f.classList.add('ok');
-			out.textContent = '✓ Correcto';
-			this.feedback(true, '<strong>¡Correcto!</strong><p>Tienes todas las soluciones y ninguna de más. Compara tu razonamiento con la solución explicada.</p>');
-			$(this, '.sol-btn')!.innerHTML = 'Ver la solución explicada';
+			out.textContent = '✓ Correcte';
+			this.feedback(true, '<strong>Correcte!</strong><p>Tens totes les solucions i cap de més. Compara el teu raonament amb la solució explicada.</p>');
+			$(this, '.sol-btn')!.innerHTML = 'Mostra la solució explicada';
 			this.markSolved();
 			return;
 		}
@@ -105,7 +105,7 @@ class ExercisePart extends HTMLElement {
 	private checkChoice(correct: boolean[]) {
 		const sel = $<HTMLInputElement>(this, 'input[type=radio]:checked');
 		if (!sel) {
-			this.feedback(false, `<p>${MESSAGES.empty.replace('tu resultado', 'una opción')}</p>`);
+			this.feedback(false, `<p>${MESSAGES.empty.replace('el teu resultat', 'una opció')}</p>`);
 			return;
 		}
 		this.attempts++;
@@ -114,7 +114,7 @@ class ExercisePart extends HTMLElement {
 		$$(this, '.opt').forEach((o) => o.classList.remove('ok', 'ko'));
 		$(this, `.opt[data-i="${i}"]`)!.classList.add(ok ? 'ok' : 'ko');
 		const expl = $<HTMLTemplateElement>(this, `template.opt-fb[data-i="${i}"]`)!.innerHTML;
-		this.feedback(ok, `<strong>${ok ? '¡Correcto!' : 'No es esa.'}</strong><p>${expl}</p>`);
+		this.feedback(ok, `<strong>${ok ? 'Correcte!' : 'No és aquesta.'}</strong><p>${expl}</p>`);
 		if (ok) this.markSolved();
 	}
 
@@ -125,7 +125,7 @@ class ExercisePart extends HTMLElement {
 		this.hintsShown++;
 		const btn = $<HTMLButtonElement>(this, '.hint-btn')!;
 		const left = hints.length - this.hintsShown;
-		btn.querySelector('span')!.textContent = left ? `Otra pista (${this.hintsShown}/${hints.length})` : 'No hay más pistas';
+		btn.querySelector('span')!.textContent = left ? `Una altra pista (${this.hintsShown}/${hints.length})` : 'No hi ha més pistes';
 		btn.disabled = left === 0;
 	}
 

@@ -1,7 +1,7 @@
 export const SITE = {
-	name: 'Mayday Matemáticas',
-	tagline: 'Matemáticas de 1.º de Bachillerato para entender, no para memorizar',
+	name: 'Mayday Matemàtiques',
+	tagline: 'Matemàtiques de 1r de Batxillerat per entendre-les, no per memoritzar-les',
 	description:
-		'Plataforma interactiva de Matemáticas de 1.º de Bachillerato: figuras y simulaciones, deducciones paso a paso y ejercicios con corrección para entender por qué funcionan las matemáticas.',
-	lang: 'es',
+		'Plataforma interactiva de Matemàtiques de 1r de Batxillerat: figures i simulacions, deduccions pas a pas i exercicis amb correcció per entendre per què funcionen les matemàtiques.',
+	lang: 'ca',
 };

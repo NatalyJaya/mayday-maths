@@ -8,11 +8,11 @@ const { pair = 0 } = Astro.props;
 
 <identity-grapher class="sim wide" data-pair={pair}>
 	<div class="sim-head">
-		<h4>¿Es una identidad?</h4>
-		<p class="muted">Una identidad se cumple para todos los valores de x.</p>
+		<h4>És una identitat?</h4>
+		<p class="muted">Una identitat es compleix per a tots els valors de x.</p>
 	</div>
-	<label class="param-row k ig-sel">Igualdad: <select aria-label="Igualdad que quieres comprobar"></select></label>
-	<svg class="sim-svg mfig" viewBox="0 0 560 280" role="img" aria-label="Gráficas de los dos miembros de la igualdad: el izquierdo en azul continuo y el derecho en verde discontinuo."></svg>
+	<label class="param-row k ig-sel">Igualtat: <select aria-label="Igualtat que vols comprovar"></select></label>
+	<svg class="sim-svg mfig" viewBox="0 0 560 280" role="img" aria-label="Gràfiques dels dos membres de la igualtat: l’esquerre en blau continu i el dret en verd discontinu."></svg>
 	<ul class="fig-legend">
 		<li><i class="sw sw-x"></i> y = <output data-out="l"></output></li>
 		<li><i class="sw sw-g dash"></i> y = <output data-out="r"></output></li>
@@ -22,11 +22,11 @@ const { pair = 0 } = Astro.props;
 	<div class="sim-controls">
 		<div class="param">
 			<label>Cursor: x = <output data-out="x"></output></label>
-			<input type="range" min="0" max="360" step="1" value="60" aria-label="Valor de x para comparar (grados)" />
+			<input type="range" min="0" max="360" step="1" value="60" aria-label="Valor de x per comparar (graus)" />
 		</div>
 		<div class="sim-readout">
-			<span class="r-x">Izquierda: <output data-out="fx"></output></span>
-			<span class="r-g">Derecha: <output data-out="gx"></output></span>
+			<span class="r-x">Esquerra: <output data-out="fx"></output></span>
+			<span class="r-g">Dreta: <output data-out="gx"></output></span>
 		</div>
 	</div>
 </identity-grapher>

@@ -1,25 +1,25 @@
-titulo: ¿Por dónde empiezo?
+titulo: Per on començo?
 tema: resolucion-triangulos
 orden: 8
 procedencia: original
 dificultad: intermedio
 habilidades: [metodo, conceptual]
-resumen: Reconocer el caso a partir de los datos.
+resumen: Reconèixer el cas a partir de les dades.
 enunciado: |
-  De un triángulo se conocen $a = 7$, $b = 9$ y $C = 40^\circ$.
+  D’un triangle se’n coneixen $a = 7$, $b = 9$ i $C = 40^\circ$.
 apartados:
   - id: a
-    enunciado: ¿Cuál es el primer paso para resolverlo?
+    enunciado: Quin és el primer pas per resoldre’l?
     respuesta:
       tipo: opciones
       opciones:
-        - { texto: 'Teorema del seno para calcular A.', explicacion: 'Para usar el teorema del seno hace falta una pareja lado–ángulo opuesto completa. El ángulo $C$ es opuesto a $c$, que no conocemos.' }
-        - { texto: 'Teorema del coseno para calcular c.', correcta: true, explicacion: '$C$ está **entre** los lados $a$ y $b$ (caso LAL): $c^2 = a^2 + b^2 - 2ab\cos C$. Con $c$ ya habrá una pareja ($c$, $C$) y se puede seguir.' }
-        - { texto: 'Pitágoras para calcular c.', explicacion: 'Solo vale si $C = 90^\circ$.' }
-        - { texto: 'No se puede resolver: faltan datos.', explicacion: 'Tres datos con al menos un lado bastan. Aquí son dos lados y el ángulo que forman: el triángulo es único.' }
+        - { texto: 'Teorema del sinus per calcular A.', explicacion: 'Per fer servir el teorema del sinus cal una parella costat–angle oposat completa. L’angle $C$ és oposat a $c$, que no coneixem.' }
+        - { texto: 'Teorema del cosinus per calcular c.', correcta: true, explicacion: '$C$ és **entre** els costats $a$ i $b$ (cas CAC): $c^2 = a^2 + b^2 - 2ab\cos C$. Amb $c$ ja hi haurà una parella ($c$, $C$) i es pot continuar.' }
+        - { texto: 'Pitàgores per calcular c.', explicacion: 'Només val si $C = 90^\circ$.' }
+        - { texto: 'No es pot resoldre: falten dades.', explicacion: 'Tres dades amb almenys un costat n’hi ha prou. Aquí són dos costats i l’angle que formen: el triangle és únic.' }
     pistas:
-      - '¿Hay algún lado del que conozcas el ángulo opuesto?'
+      - 'Hi ha algun costat del qual coneguis l’angle oposat?'
     pasos:
-      - titulo: Identificar el caso
-        desarrollo: '$C$ es el ángulo formado por $a$ y $b$: caso **LAL**. Primero, el teorema del coseno para $c$; después, el seno o el coseno para otro ángulo.'
-    resultado: 'Teorema del coseno para el lado $c$.'
+      - titulo: Identificar el cas
+        desarrollo: '$C$ és l’angle format per $a$ i $b$: cas **CAC**. Primer, el teorema del cosinus per a $c$; després, el sinus o el cosinus per a un altre angle.'
+    resultado: 'Teorema del cosinus per al costat $c$.'

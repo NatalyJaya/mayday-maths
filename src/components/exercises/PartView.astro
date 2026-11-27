@@ -46,13 +46,13 @@ const spec =
 				<div class="fields">
 					<div class="field set-field">
 						<label for={fid(0)}>
-							Todas las soluciones <span set:html={r.simbolo} /> en <span set:html={r.intervalo} />
+							Totes les solucions <span set:html={r.simbolo} /> a <span set:html={r.intervalo} />
 						</label>
 						<span class="input">
-							<input id={fid(0)} class="set-input" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="p. ej. 30; 150" aria-describedby={`${fid(0)}-h`} />
+							<input id={fid(0)} class="set-input" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" placeholder="p. ex. 30; 150" aria-describedby={`${fid(0)}-h`} />
 							{r.unidad && <span class="unit">{r.unidad}</span>}
 						</span>
-						<p class="set-help" id={`${fid(0)}-h`}>Separa las soluciones con punto y coma (;). En cualquier orden y, si no son exactas, con dos decimales.</p>
+						<p class="set-help" id={`${fid(0)}-h`}>Separa les solucions amb punt i coma (;). En qualsevol ordre i, si no són exactes, amb dos decimals.</p>
 						<p class="field-fb" aria-live="polite" />
 					</div>
 				</div>
@@ -61,7 +61,7 @@ const spec =
 		{
 			r.tipo === 'opciones' && (
 				<fieldset class="options">
-					<legend class="visually-hidden">Elige una opción</legend>
+					<legend class="visually-hidden">Tria una opció</legend>
 					{r.opciones.map((o, i) => (
 						<label class="opt" data-i={i}>
 							<input type="radio" name={`${exId}-${part.id}`} value={i} />
@@ -74,13 +74,13 @@ const spec =
 		{
 			r.tipo === 'abierta' && (
 				<p class="open-note">
-					<Icon name="pencil" size={16} /> Resuélvelo en tu cuaderno. Después compáralo con la solución.
+					<Icon name="pencil" size={16} /> Resol-ho a la llibreta. Després compara-ho amb la solució.
 					{r.criterio && <span set:html={` ${r.criterio}`} />}
 				</p>
 			)
 		}
 		<div class="actions">
-			{r.tipo !== 'abierta' && <button class="btn btn-primary btn-sm check" type="submit"><Icon name="check" size={16} /> Comprobar</button>}
+			{r.tipo !== 'abierta' && <button class="btn btn-primary btn-sm check" type="submit"><Icon name="check" size={16} /> Comprova</button>}
 			{
 				part.pistas.length > 0 && (
 					<button class="btn btn-sm hint-btn" type="button" data-total={part.pistas.length}>
@@ -88,7 +88,7 @@ const spec =
 					</button>
 				)
 			}
-			<button class="btn btn-ghost btn-sm sol-btn" type="button"><Icon name="eye" size={16} /> Ver la solución</button>
+			<button class="btn btn-ghost btn-sm sol-btn" type="button"><Icon name="eye" size={16} /> Mostra la solució</button>
 		</div>
 	</form>
 
@@ -102,12 +102,12 @@ const spec =
 
 	<div class="nudge" hidden>
 		<p>
-			<strong>¿Lo has intentado ya?</strong> Equivocarse y corregirse es lo que más ayuda a aprender. Si te has
-			atascado, prueba antes con una pista.
+			<strong>Ja ho has intentat?</strong> Equivocar-se i corregir-se és el que més ajuda a aprendre. Si t’has
+			encallat, prova abans amb una pista.
 		</p>
 		<div class="actions">
-			{part.pistas.length > 0 && <button class="btn btn-sm nudge-hint" type="button"><Icon name="bulb" size={16} /> Dame una pista</button>}
-			<button class="btn btn-ghost btn-sm nudge-go" type="button">Ver la solución igualmente</button>
+			{part.pistas.length > 0 && <button class="btn btn-sm nudge-hint" type="button"><Icon name="bulb" size={16} /> Dona’m una pista</button>}
+			<button class="btn btn-ghost btn-sm nudge-go" type="button">Mostra la solució igualment</button>
 		</div>
 	</div>
 
@@ -124,8 +124,8 @@ const spec =
 		)
 	}
 
-	<section class="solution" hidden aria-label="Solución paso a paso">
-		<p class="sol-title">Solución paso a paso</p>
+	<section class="solution" hidden aria-label="Solució pas a pas">
+		<p class="sol-title">Solució pas a pas</p>
 		<ol class="steps">
 			{
 				part.pasos.map((s, i) => (
@@ -134,7 +134,7 @@ const spec =
 						<div class="step-work" set:html={s.desarrollo} />
 						{s.porque && (
 							<p class="step-why">
-								<strong>Por qué este paso:</strong> <span set:html={s.porque} />
+								<strong>Per què aquest pas:</strong> <span set:html={s.porque} />
 							</p>
 						)}
 					</li>
@@ -145,22 +145,22 @@ const spec =
 			{
 				part.pasos.length > 1 && (
 					<>
-						<button class="btn btn-sm next-step" type="button">Siguiente paso <Icon name="arrow-right" size={16} /></button>
-						<button class="btn btn-ghost btn-sm all-steps" type="button">Ver todos los pasos</button>
+						<button class="btn btn-sm next-step" type="button">Pas següent <Icon name="arrow-right" size={16} /></button>
+						<button class="btn btn-ghost btn-sm all-steps" type="button">Mostra tots els passos</button>
 					</>
 				)
 			}
 		</div>
 		<div class="result" hidden={part.pasos.length > 1}>
-			<p class="result-k">Resultado</p>
+			<p class="result-k">Resultat</p>
 			<div set:html={part.resultado} />
 		</div>
 		{
 			r.tipo === 'abierta' && (
 				<div class="self" hidden={part.pasos.length > 1}>
-					<span>¿Te había salido igual?</span>
+					<span>T’havia sortit igual?</span>
 					<button class="btn btn-sm self-yes" type="button"><Icon name="check" size={16} /> Sí</button>
-					<button class="btn btn-ghost btn-sm self-no" type="button">No del todo</button>
+					<button class="btn btn-ghost btn-sm self-no" type="button">No del tot</button>
 				</div>
 			)
 		}

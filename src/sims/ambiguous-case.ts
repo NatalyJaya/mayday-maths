@@ -76,18 +76,18 @@ class AmbiguousCase extends HTMLElement {
 		out('b', fmt(this.b, 1));
 		out('h', fmt(h, 2));
 		let why: string;
-		if (this.A >= 90) why = this.a > this.b ? 'A es obtuso y a > b: un único triángulo.' : 'A no es agudo y a ≤ b: el lado a no llega. Ningún triángulo.';
-		else if (this.a < h - 1e-9) why = 'a < h: el lado a es demasiado corto, la circunferencia no toca la base. Ningún triángulo.';
-		else if (Math.abs(this.a - h) < 0.05) why = 'a = h: la circunferencia toca la base en un punto. Un triángulo, rectángulo en B.';
-		else if (this.a < this.b) why = 'h < a < b: la circunferencia corta la base en dos puntos a la derecha de A. DOS triángulos.';
-		else why = 'a ≥ b: el segundo corte queda a la izquierda de A (o en A). Un único triángulo.';
+		if (this.A >= 90) why = this.a > this.b ? 'A és obtús i a > b: un únic triangle.' : 'A no és agut i a ≤ b: el costat a no hi arriba. Cap triangle.';
+		else if (this.a < h - 1e-9) why = 'a < h: el costat a és massa curt, la circumferència no toca la base. Cap triangle.';
+		else if (Math.abs(this.a - h) < 0.05) why = 'a = h: la circumferència toca la base en un punt. Un triangle, rectangle a B.';
+		else if (this.a < this.b) why = 'h < a < b: la circumferència talla la base en dos punts a la dreta d’A. DOS triangles.';
+		else why = 'a ≥ b: el segon tall queda a l’esquerra d’A (o a A). Un únic triangle.';
 		out('why', why);
 		out('n', String(sols.length));
 		out(
 			'sols',
 			sols.length
-				? sols.map((s, i) => `${sols.length === 2 ? `Triángulo ${i + 1}: ` : ''}B = ${fmt(s.B, 2)}°, C = ${fmt(s.C, 2)}°, c = ${fmt(s.c, 2)}`).join(' · ')
-				: 'sin solución',
+				? sols.map((s, i) => `${sols.length === 2 ? `Triangle ${i + 1}: ` : ''}B = ${fmt(s.B, 2)}°, C = ${fmt(s.C, 2)}°, c = ${fmt(s.c, 2)}`).join(' · ')
+				: 'sense solució',
 		);
 	}
 }

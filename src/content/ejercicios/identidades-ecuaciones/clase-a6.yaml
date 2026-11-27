@@ -3,45 +3,45 @@ tema: identidades-ecuaciones
 orden: 106
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie A, apartado i)
+referencia: Sèrie A, apartat i)
 coleccion: clase-serie-a
 dificultad: avanzado
 habilidades: [calculo, metodo]
-resumen: Ángulo mitad, pero sin raíces. Aprovecha que ya aparece al cuadrado.
+resumen: Angle meitat, però sense arrels. Aprofita que ja apareix al quadrat.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$6\cos^2\frac{x}{2} + \cos x - 1 = 0$$
 conceptos:
-  - '$\cos^2\dfrac{x}{2} = \dfrac{1 + \cos x}{2}$: es la fórmula del ángulo mitad antes de hacer la raíz.'
-  - '$\cos x = -\tfrac12$ en el segundo y el tercer cuadrante.'
+  - '$\cos^2\dfrac{x}{2} = \dfrac{1 + \cos x}{2}$: és la fórmula de l’angle meitat abans de fer l’arrel.'
+  - '$\cos x = -\tfrac12$ al segon i al tercer quadrant.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [120, 240]
       trampas:
         - valores: [60, 300]
-          explicacion: 'Esos ángulos tienen $\cos x = +\tfrac12$. La ecuación da $\cos x = -\tfrac12$: el coseno es negativo en el segundo y el tercer cuadrante.'
+          explicacion: 'Aquests angles tenen $\cos x = +\tfrac12$. L’equació dona $\cos x = -\tfrac12$: el cosinus és negatiu al segon i al tercer quadrant.'
     pistas:
-      - 'No hace falta la raíz: lo que aparece es $\cos^2\frac{x}{2}$, y eso tiene fórmula directa.'
-      - '$\cos^2\frac{x}{2} = \frac{1 + \cos x}{2}$. Sustituye y verás que queda una ecuación de primer grado.'
+      - 'No cal l’arrel: el que hi apareix és $\cos^2\frac{x}{2}$, i això té fórmula directa.'
+      - '$\cos^2\frac{x}{2} = \frac{1 + \cos x}{2}$. Substitueix i veuràs que queda una equació de primer grau.'
     pasos:
-      - titulo: Fórmula del ángulo mitad, sin raíz
-        piensa: '¿Necesitas $\cos\frac{x}{2}$ o te basta con su cuadrado?'
+      - titulo: Fórmula de l’angle meitat, sense arrel
+        piensa: 'Necessites $\cos\frac{x}{2}$ o en tens prou amb el seu quadrat?'
         desarrollo: '$$\cos^2\frac{x}{2} = \frac{1 + \cos x}{2}$$'
-        porque: 'Es la igualdad de la que sale la fórmula del ángulo mitad (antes de la raíz). Usarla evita la raíz y el $\pm$.'
-      - titulo: Sustituir
+        porque: 'És la igualtat de què surt la fórmula de l’angle meitat (abans de l’arrel). Fer-la servir evita l’arrel i el $\pm$.'
+      - titulo: Substituir
         desarrollo: |
           $$6\cdot\frac{1 + \cos x}{2} + \cos x - 1 = 0 \;\Rightarrow\; 3 + 3\cos x + \cos x - 1 = 0 \;\Rightarrow\; 4\cos x + 2 = 0$$
-      - titulo: Despejar
+      - titulo: Aïllar
         desarrollo: '$$\cos x = -\frac{2}{4} = -\frac12$$'
-      - titulo: Ángulos
-        desarrollo: 'El ángulo de referencia es $60^\circ$ y el coseno es negativo en el 2.º y el 3.er cuadrante: $x = 180^\circ - 60^\circ = 120^\circ$ y $x = 180^\circ + 60^\circ = 240^\circ$.'
-      - titulo: Comprobar
-        desarrollo: 'Con $x = 120^\circ$: $\cos^2 60^\circ = \frac14$, así que $6\cdot\frac14 - \frac12 - 1 = 1{,}5 - 0{,}5 - 1 = 0$ ✔.'
+      - titulo: Angles
+        desarrollo: 'L’angle de referència és $60^\circ$ i el cosinus és negatiu al 2n i al 3r quadrant: $x = 180^\circ - 60^\circ = 120^\circ$ i $x = 180^\circ + 60^\circ = 240^\circ$.'
+      - titulo: Comprovar
+        desarrollo: 'Amb $x = 120^\circ$: $\cos^2 60^\circ = \frac14$, així que $6\cdot\frac14 - \frac12 - 1 = 1{,}5 - 0{,}5 - 1 = 0$ ✔.'
     resultado: '$x = 120^\circ,\ 240^\circ$.'
 errores:
-  - error: 'Meter la raíz de la fórmula del ángulo mitad y luego elevar (enfoque de los apuntes)'
-    explicacion: 'En los apuntes se usaba $\cos\frac{x}{2} = \pm\sqrt{\frac{1+\cos x}{2}}$, se elevaba al cuadrado y salía $2\cos^2 x + 6\cos x - 3 = 0$, que no es correcta. Como en la ecuación ya aparece $\cos^2\frac{x}{2}$, la fórmula sin raíz es directa y no hay nada que elevar.'
+  - error: 'Ficar-hi l’arrel de la fórmula de l’angle meitat i després elevar (enfocament dels apunts)'
+    explicacion: 'Als apunts es feia servir $\cos\frac{x}{2} = \pm\sqrt{\frac{1+\cos x}{2}}$, s’elevava al quadrat i sortia $2\cos^2 x + 6\cos x - 3 = 0$, que no és correcta. Com que a l’equació ja hi apareix $\cos^2\frac{x}{2}$, la fórmula sense arrel és directa i no cal elevar res.'
 laboratorio: { f: cos, n: 1, k: -0.5 }

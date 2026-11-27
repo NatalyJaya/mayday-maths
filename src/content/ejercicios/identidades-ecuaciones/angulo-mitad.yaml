@@ -1,33 +1,33 @@
-titulo: Razones del ángulo mitad
+titulo: Raons de l’angle meitat
 tema: identidades-ecuaciones
 orden: 5
 procedencia: original
 dificultad: intermedio
 habilidades: [calculo, conceptual]
-resumen: El signo de las raíces lo decide el cuadrante de α/2, no el de α.
+resumen: El signe de les arrels el decideix el quadrant de α/2, no el de α.
 enunciado: |
-  Sabiendo que $\cos\alpha = -\dfrac{7}{25}$ y que $180^\circ < \alpha < 270^\circ$, calcula $\sin\dfrac{\alpha}{2}$ y $\cos\dfrac{\alpha}{2}$.
+  Sabent que $\cos\alpha = -\dfrac{7}{25}$ i que $180^\circ < \alpha < 270^\circ$, calcula $\sin\dfrac{\alpha}{2}$ i $\cos\dfrac{\alpha}{2}$.
 apartados:
   - id: a
-    enunciado: Escribe los dos valores.
+    enunciado: Escriu els dos valors.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: '\sin\frac{\alpha}{2}', etiqueta: '', unidad: '', valor: 0.8, trampas: [{ valor: -0.8, explicacion: 'Si $\alpha$ está entre $180^\circ$ y $270^\circ$, $\frac{\alpha}{2}$ está entre $90^\circ$ y $135^\circ$: segundo cuadrante, seno positivo.' }] }
-        - { simbolo: '\cos\frac{\alpha}{2}', etiqueta: '', unidad: '', valor: -0.6, trampas: [{ valor: 0.6, explicacion: '$\frac{\alpha}{2}$ está en el segundo cuadrante: coseno negativo.' }] }
+        - { simbolo: '\sin\frac{\alpha}{2}', etiqueta: '', unidad: '', valor: 0.8, trampas: [{ valor: -0.8, explicacion: 'Si $\alpha$ és entre $180^\circ$ i $270^\circ$, $\frac{\alpha}{2}$ és entre $90^\circ$ i $135^\circ$: segon quadrant, sinus positiu.' }] }
+        - { simbolo: '\cos\frac{\alpha}{2}', etiqueta: '', unidad: '', valor: -0.6, trampas: [{ valor: 0.6, explicacion: '$\frac{\alpha}{2}$ és al segon quadrant: cosinus negatiu.' }] }
     pistas:
-      - '¿Entre qué valores está $\frac{\alpha}{2}$? ¿En qué cuadrante?'
+      - 'Entre quins valors és $\frac{\alpha}{2}$? A quin quadrant?'
       - '$\sin\frac{\alpha}{2} = \pm\sqrt{\frac{1 - \cos\alpha}{2}}$.'
     pasos:
-      - titulo: Cuadrante de α/2
-        piensa: '¿El signo depende de $\alpha$ o de $\frac{\alpha}{2}$?'
+      - titulo: Quadrant de α/2
+        piensa: 'El signe depèn de $\alpha$ o de $\frac{\alpha}{2}$?'
         desarrollo: |
           $$90^\circ < \frac{\alpha}{2} < 135^\circ$$
-          Segundo cuadrante: seno positivo y coseno negativo.
-      - titulo: Fórmulas
+          Segon quadrant: sinus positiu i cosinus negatiu.
+      - titulo: Fórmules
         desarrollo: '$$\sin\frac{\alpha}{2} = +\sqrt{\frac{1 + \frac{7}{25}}{2}} = \sqrt{\frac{16}{25}} = \frac45 \qquad \cos\frac{\alpha}{2} = -\sqrt{\frac{1 - \frac{7}{25}}{2}} = -\sqrt{\frac{9}{25}} = -\frac35$$'
-        porque: 'Comprobación: $0{,}64 + 0{,}36 = 1$ ✔.'
-    resultado: '$\sin\frac{\alpha}{2} = \frac45$ y $\cos\frac{\alpha}{2} = -\frac35$.'
+        porque: 'Comprovació: $0{,}64 + 0{,}36 = 1$ ✔.'
+    resultado: '$\sin\frac{\alpha}{2} = \frac45$ i $\cos\frac{\alpha}{2} = -\frac35$.'
 errores:
-  - error: 'Elegir el signo según el cuadrante de α'
-    explicacion: '$\alpha$ está en el tercer cuadrante (seno y coseno negativos), pero $\frac{\alpha}{2}$ está en el segundo. Es el cuadrante de $\frac{\alpha}{2}$ el que decide.'
+  - error: 'Triar el signe segons el quadrant de α'
+    explicacion: '$\alpha$ és al tercer quadrant (sinus i cosinus negatius), però $\frac{\alpha}{2}$ és al segon. És el quadrant de $\frac{\alpha}{2}$ el que decideix.'

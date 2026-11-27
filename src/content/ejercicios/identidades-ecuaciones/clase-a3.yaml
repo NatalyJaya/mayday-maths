@@ -3,41 +3,41 @@ tema: identidades-ecuaciones
 orden: 103
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie A, apartado b)
+referencia: Sèrie A, apartat b)
 coleccion: clase-serie-a
 dificultad: basico
 habilidades: [calculo]
-resumen: Ecuación de segundo grado en la tangente. Ojo con el periodo de 180°.
+resumen: 'Equació de segon grau en la tangent. Compte amb el període de 180°.'
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\tan^2 x - 3\tan x + 2 = 0$$
 conceptos:
-  - 'Cambio de variable $t = \tan x$.'
-  - 'La tangente se repite cada $180^\circ$: si $\tan\theta = k$, también $\tan(\theta + 180^\circ) = k$.'
+  - 'Canvi de variable $t = \tan x$.'
+  - 'La tangent es repeteix cada $180^\circ$: si $\tan\theta = k$, també $\tan(\theta + 180^\circ) = k$.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$ (con dos decimales si no son exactas).
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$ (amb dos decimals si no són exactes).
     respuesta:
       tipo: conjunto
       valores: [45, 63.43, 225, 243.43]
       trampas:
         - valores: [45, 63.43]
-          explicacion: 'Te faltan dos: la tangente se repite cada $180^\circ$, así que cada valor tiene otra solución sumando $180^\circ$.'
+          explicacion: 'Te’n falten dues: la tangent es repeteix cada $180^\circ$, així que cada valor té una altra solució sumant-hi $180^\circ$.'
     pistas:
-      - 'Llama $t = \tan x$.'
+      - 'Anomena $t = \tan x$.'
       - '$t^2 - 3t + 2 = (t - 1)(t - 2)$.'
-      - 'Cada valor de la tangente da dos ángulos en una vuelta, separados $180^\circ$.'
+      - 'Cada valor de la tangent dona dos angles en una volta, separats $180^\circ$.'
     pasos:
-      - titulo: Cambio de variable
+      - titulo: Canvi de variable
         desarrollo: '$$t^2 - 3t + 2 = 0 \;\Rightarrow\; t = \frac{3 \pm \sqrt{9 - 8}}{2} = \frac{3 \pm 1}{2} \;\Rightarrow\; t = 2 \ \text{ o } \ t = 1$$'
-        porque: 'La tangente puede valer cualquier número real, así que no se descarta ninguna.'
-      - titulo: Deshacer el cambio
+        porque: 'La tangent pot valer qualsevol nombre real, així que no se’n descarta cap.'
+      - titulo: Desfer el canvi
         desarrollo: |
-          - $\tan x = 1 \Rightarrow x = 45^\circ$ y $45^\circ + 180^\circ = 225^\circ$.
-          - $\tan x = 2 \Rightarrow x = \arctan 2 \approx 63{,}43^\circ$ y $63{,}43^\circ + 180^\circ = 243{,}43^\circ$.
-        porque: 'La tangente es positiva en el primer y el tercer cuadrante.'
+          - $\tan x = 1 \Rightarrow x = 45^\circ$ i $45^\circ + 180^\circ = 225^\circ$.
+          - $\tan x = 2 \Rightarrow x = \arctan 2 \approx 63{,}43^\circ$ i $63{,}43^\circ + 180^\circ = 243{,}43^\circ$.
+        porque: 'La tangent és positiva al primer i al tercer quadrant.'
     resultado: '$x = 45^\circ,\ 63{,}43^\circ,\ 225^\circ,\ 243{,}43^\circ$.'
 errores:
-  - error: 'Dar solo las soluciones de la calculadora'
-    explicacion: 'La tecla $\tan^{-1}$ devuelve un único ángulo, entre $-90^\circ$ y $90^\circ$. El otro hay que buscarlo sumando $180^\circ$.'
+  - error: 'Donar només les solucions de la calculadora'
+    explicacion: 'La tecla $\tan^{-1}$ retorna un únic angle, entre $-90^\circ$ i $90^\circ$. L’altre s’ha de buscar sumant-hi $180^\circ$.'
 laboratorio: { f: tan, n: 1, k: 2 }

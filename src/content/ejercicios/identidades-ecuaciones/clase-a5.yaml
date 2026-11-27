@@ -3,43 +3,43 @@ tema: identidades-ecuaciones
 orden: 105
 procedencia: clase
 fuente: apuntes-trigonometria-2
-referencia: Serie A, apartado h)
+referencia: Sèrie A, apartat h)
 coleccion: clase-serie-a
 dificultad: intermedio
 habilidades: [calculo, conceptual]
-resumen: La tentación es dividir entre sin x. No lo hagas.
+resumen: La temptació és dividir entre sin x. No ho facis.
 enunciado: |
-  Resuelve en $[0^\circ,\ 360^\circ)$:
+  Resol a $[0^\circ,\ 360^\circ)$:
   $$\sin x = \tan x$$
 conceptos:
-  - '$\tan x = \dfrac{\sin x}{\cos x}$, que solo existe si $\cos x \ne 0$.'
-  - 'Sacar factor común en vez de dividir.'
+  - '$\tan x = \dfrac{\sin x}{\cos x}$, que només existeix si $\cos x \ne 0$.'
+  - 'Treure factor comú en lloc de dividir.'
 apartados:
   - id: a
-    enunciado: Escribe todas las soluciones en $[0^\circ,\ 360^\circ)$.
+    enunciado: Escriu totes les solucions a $[0^\circ,\ 360^\circ)$.
     respuesta:
       tipo: conjunto
       valores: [0, 180]
       trampas:
         - valores: [0]
-          explicacion: 'Esto sale si divides entre $\sin x$: te queda $\cos x = 1$ y pierdes $x = 180^\circ$, donde $\sin x = 0$. Saca factor común en lugar de dividir.'
+          explicacion: 'Això surt si divideixes entre $\sin x$: et queda $\cos x = 1$ i perds $x = 180^\circ$, on $\sin x = 0$. Treu factor comú en lloc de dividir.'
     pistas:
-      - 'Escribe la tangente como cociente.'
-      - 'Pasa todo a un lado y saca $\sin x$ factor común.'
+      - 'Escriu la tangent com a quocient.'
+      - 'Passa-ho tot a un costat i treu $\sin x$ factor comú.'
     pasos:
-      - titulo: Escribir la tangente como cociente
+      - titulo: Escriure la tangent com a quocient
         desarrollo: '$$\sin x = \frac{\sin x}{\cos x}, \qquad \cos x \ne 0$$'
-        porque: 'Así solo aparecen seno y coseno. La condición $\cos x \ne 0$ excluye $90^\circ$ y $270^\circ$, donde la tangente no existe.'
-      - titulo: Factor común (sin dividir)
-        piensa: ¿Por qué no se puede simplificar el $\sin x$ de los dos lados?
+        porque: 'Així només hi apareixen sinus i cosinus. La condició $\cos x \ne 0$ exclou $90^\circ$ i $270^\circ$, on la tangent no existeix.'
+      - titulo: Factor comú (sense dividir)
+        piensa: 'Per què no es pot simplificar el $\sin x$ dels dos costats?'
         desarrollo: '$$\sin x - \frac{\sin x}{\cos x} = 0 \;\Rightarrow\; \sin x\left(1 - \frac{1}{\cos x}\right) = 0$$'
-        porque: 'Dividir entre $\sin x$ solo es válido si $\sin x \ne 0$, y justamente $\sin x = 0$ da soluciones.'
-      - titulo: Cada factor igual a cero
+        porque: 'Dividir entre $\sin x$ només és vàlid si $\sin x \ne 0$, i justament $\sin x = 0$ dona solucions.'
+      - titulo: Cada factor igual a zero
         desarrollo: |
           - $\sin x = 0 \Rightarrow x = 0^\circ,\ 180^\circ$.
-          - $1 - \dfrac{1}{\cos x} = 0 \Rightarrow \cos x = 1 \Rightarrow x = 0^\circ$ (ya la teníamos).
-        porque: 'Ninguna anula el coseno, así que todas son válidas.'
+          - $1 - \dfrac{1}{\cos x} = 0 \Rightarrow \cos x = 1 \Rightarrow x = 0^\circ$ (ja la teníem).
+        porque: 'Cap no anul·la el cosinus, així que totes són vàlides.'
     resultado: '$x = 0^\circ,\ 180^\circ$.'
 errores:
   - error: 'Dividir entre $\sin x$'
-    explicacion: 'Se pierde $x = 180^\circ$. Dividir entre una expresión que puede valer cero hace desaparecer soluciones: saca factor común.'
+    explicacion: 'Es perd $x = 180^\circ$. Dividir entre una expressió que pot valer zero fa desaparèixer solucions: treu factor comú.'

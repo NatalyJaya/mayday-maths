@@ -1,12 +1,12 @@
-titulo: La anchura de un río
+titulo: L’amplada d’un riu
 tema: resolucion-triangulos
 orden: 10
 procedencia: original
 dificultad: intermedio
 habilidades: [planteamiento, modelizacion, multipaso]
-resumen: Teorema del seno para una distancia y seno para la anchura.
+resumen: Teorema del sinus per a una distància i sinus per a l’amplada.
 enunciado: |
-  Para medir la anchura de un río se marcan dos puntos $A$ y $B$ en una orilla, separados $60\un{m}$. Un árbol $T$ de la otra orilla se ve desde $A$ con un ángulo $\widehat{TAB} = 50^\circ$ y desde $B$ con un ángulo $\widehat{TBA} = 70^\circ$. ¿Cuál es la anchura del río (la distancia de $T$ a la orilla $AB$)?
+  Per mesurar l’amplada d’un riu es marquen dos punts $A$ i $B$ en una riba, separats $60\un{m}$. Un arbre $T$ de l’altra riba es veu des d’$A$ amb un angle $\widehat{TAB} = 50^\circ$ i des de $B$ amb un angle $\widehat{TBA} = 70^\circ$. Quina és l’amplada del riu (la distància de $T$ a la riba $AB$)?
 figura:
   tipo: geometria
   puntos:
@@ -18,37 +18,37 @@ figura:
     - { de: A, a: B, etiqueta: '60 m', lado: derecha }
     - { de: A, a: T }
     - { de: B, a: T }
-    - { de: T, a: H, etiqueta: 'anchura = ?', color: g, discontinuo: true }
+    - { de: T, a: H, etiqueta: 'amplada = ?', color: g, discontinuo: true }
   angulos:
     - { vertice: A, desde: B, hasta: T, etiqueta: '50°', radio: 30 }
     - { vertice: B, desde: T, hasta: A, etiqueta: '70°', radio: 26 }
     - { vertice: H, desde: B, hasta: T, recto: true }
   textos:
-    - { x: 20, y: 56, texto: 'otra orilla' }
+    - { x: 20, y: 56, texto: 'altra riba' }
 apartados:
   - id: a
-    enunciado: Calcula la distancia $AT$ y la anchura del río.
+    enunciado: Calcula la distància $AT$ i l’amplada del riu.
     respuesta:
       tipo: numerica
       campos:
-        - { simbolo: 'AT', etiqueta: distancia de A al árbol, unidad: m, valor: 65.10 }
+        - { simbolo: 'AT', etiqueta: distància d’A a l’arbre, unidad: m, valor: 65.10 }
         - simbolo: 'h'
-          etiqueta: anchura del río
+          etiqueta: amplada del riu
           unidad: m
           valor: 49.87
           trampas:
-            - { valor: 65.10, explicacion: 'Esa es la distancia $AT$, que va en diagonal. La anchura es la distancia **perpendicular** a la orilla.' }
+            - { valor: 65.10, explicacion: 'Aquesta és la distància $AT$, que va en diagonal. L’amplada és la distància **perpendicular** a la riba.' }
     pistas:
-      - 'El ángulo en $T$ es $180^\circ - 50^\circ - 70^\circ = 60^\circ$, y está enfrente del lado de 60 m.'
-      - 'Con el teorema del seno, $AT = \dfrac{60\sin 70^\circ}{\sin 60^\circ}$.'
-      - 'La anchura es el cateto opuesto a $50^\circ$ en el triángulo rectángulo de hipotenusa $AT$.'
+      - 'L’angle a $T$ és $180^\circ - 50^\circ - 70^\circ = 60^\circ$, i és davant del costat de 60 m.'
+      - 'Amb el teorema del sinus, $AT = \dfrac{60\sin 70^\circ}{\sin 60^\circ}$.'
+      - 'L’amplada és el catet oposat a $50^\circ$ en el triangle rectangle d’hipotenusa $AT$.'
     pasos:
-      - titulo: Ángulo en T
+      - titulo: Angle a T
         desarrollo: '$$T = 180^\circ - 50^\circ - 70^\circ = 60^\circ$$'
-      - titulo: Teorema del seno
+      - titulo: Teorema del sinus
         desarrollo: '$$\frac{AT}{\sin 70^\circ} = \frac{60}{\sin 60^\circ} \;\Rightarrow\; AT \approx 65{,}10\un{m}$$'
-        porque: '$AT$ es opuesto al ángulo en $B$ ($70^\circ$) y los 60 m, al ángulo en $T$ ($60^\circ$).'
-      - titulo: Anchura
+        porque: '$AT$ és oposat a l’angle a $B$ ($70^\circ$) i els 60 m, a l’angle a $T$ ($60^\circ$).'
+      - titulo: Amplada
         desarrollo: '$$h = AT\cdot\sin 50^\circ \approx 65{,}10\cdot 0{,}7660 \approx 49{,}87\un{m}$$'
-        porque: 'En el triángulo rectángulo $ATH$, la anchura es el cateto opuesto al ángulo de $50^\circ$.'
-    resultado: 'El río mide unos $49{,}9\un{m}$ de ancho.'
+        porque: 'Al triangle rectangle $ATH$, l’amplada és el catet oposat a l’angle de $50^\circ$.'
+    resultado: 'El riu fa uns $49{,}9\un{m}$ d’amplada.'

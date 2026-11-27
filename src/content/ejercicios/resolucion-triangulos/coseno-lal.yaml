@@ -1,11 +1,11 @@
-titulo: Dos lados y el ángulo que forman
+titulo: Dos costats i l’angle que formen
 tema: resolucion-triangulos
 orden: 5
 procedencia: original
 dificultad: basico
 habilidades: [calculo, metodo]
-resumen: Teorema del coseno con un resultado exacto.
-enunciado: En un triángulo, $b = 8$, $c = 5$ y $A = 60^\circ$. Calcula el lado $a$.
+resumen: Teorema del cosinus amb un resultat exacte.
+enunciado: En un triangle, $b = 8$, $c = 5$ i $A = 60^\circ$. Calcula el costat $a$.
 figura:
   tipo: triangulo
   a: 7
@@ -20,17 +20,17 @@ apartados:
       tipo: numerica
       campos:
         - simbolo: 'a'
-          etiqueta: lado
+          etiqueta: costat
           unidad: ''
           valor: 7
           trampas:
-            - { valor: 9.43, explicacion: 'Has usado Pitágoras: $\sqrt{8^2 + 5^2}$. El ángulo es de $60^\circ$, no de $90^\circ$.' }
-            - { valor: 11.36, explicacion: 'El término es $-2bc\cos A$, con signo menos. Lo has sumado.' }
+            - { valor: 9.43, explicacion: 'Has fet servir Pitàgores: $\sqrt{8^2 + 5^2}$. L’angle és de $60^\circ$, no de $90^\circ$.' }
+            - { valor: 11.36, explicacion: 'El terme és $-2bc\cos A$, amb signe menys. L’has sumat.' }
     pistas:
-      - '¿El ángulo conocido está entre los dos lados?'
+      - 'L’angle conegut és entre els dos costats?'
       - '$\cos 60^\circ = \frac12$.'
     pasos:
-      - titulo: Teorema del coseno
+      - titulo: Teorema del cosinus
         desarrollo: '$$a^2 = 8^2 + 5^2 - 2\cdot 8\cdot 5\cdot\cos 60^\circ = 64 + 25 - 40 = 49 \;\Rightarrow\; a = 7$$'
-        porque: 'El ángulo $A$ está entre los lados $b$ y $c$ (caso LAL).'
+        porque: 'L’angle $A$ és entre els costats $b$ i $c$ (cas CAC).'
     resultado: '$a = 7$.'

@@ -18,23 +18,23 @@ const extra = blocks.filter((b) => b.data.nivel === 'ampliacion');
 	<section class="hero">
 		<div class="container hero-grid">
 			<div class="copy">
-				<p class="eyebrow">Matemáticas I · 1.º de Bachillerato</p>
-				<h1>Las matemáticas se entienden antes de memorizarse.</h1>
+				<p class="eyebrow">Matemàtiques I · 1r de Batxillerat</p>
+				<h1>Les matemàtiques s’entenen abans de memoritzar-se.</h1>
 				<p class="lead">
-					Aquí ninguna fórmula aparece de la nada. Primero ves la idea en un dibujo, luego entiendes de dónde sale y
-					cuándo sirve, y al final la usas en problemas con pistas y corrección paso a paso.
+					Aquí cap fórmula no surt del no-res. Primer veus la idea en un dibuix, després entens d’on surt i
+					quan serveix, i al final la fas servir en problemes amb pistes i correcció pas a pas.
 				</p>
 				<div class="actions">
 					<a class="btn btn-primary" href={withBase('/trigonometria/')}>
-						Empieza por la trigonometría <Icon name="arrow-right" />
+						Comença per la trigonometria <Icon name="arrow-right" />
 					</a>
-					<a class="btn" href="#temario">Ver el temario</a>
+					<a class="btn" href="#temario">Mostra el temari</a>
 				</div>
 			</div>
 			<div class="instrument card">
 				<div class="instrument-head">
 					<span class="dot-live" aria-hidden="true"></span>
-					<span>La gráfica del seno es la <strong>altura de un punto que gira</strong></span>
+					<span>La gràfica del sinus és l’<strong>altura d’un punt que gira</strong></span>
 				</div>
 				<CircleWave bare />
 			</div>
@@ -44,11 +44,11 @@ const extra = blocks.filter((b) => b.data.nivel === 'ampliacion');
 	<section class="section method-section">
 		<div class="container">
 			<div class="section-head">
-				<p class="eyebrow">Cómo se aprende aquí</p>
-				<h2>Seis pasos, siempre en el mismo orden</h2>
+				<p class="eyebrow">Com s’aprèn aquí</p>
+				<h2>Sis passos, sempre en el mateix ordre</h2>
 				<p class="lead">
-					Primero, la intuición. Después, la formalización. Por último, los problemas. Todos los temas siguen el
-					mismo recorrido, para que siempre sepas en qué punto estás.
+					Primer, la intuïció. Després, la formalització. Finalment, els problemes. Tots els temes segueixen el
+					mateix recorregut, perquè sempre sàpigues en quin punt ets.
 				</p>
 			</div>
 			<MethodStrip />
@@ -58,10 +58,10 @@ const extra = blocks.filter((b) => b.data.nivel === 'ampliacion');
 	<section class="section syllabus" id="temario">
 		<div class="container">
 			<div class="section-head">
-				<p class="eyebrow">Temario</p>
-				<h2>El curso de 1.º</h2>
+				<p class="eyebrow">Temari</p>
+				<h2>El curs de 1r</h2>
 				<p class="lead">
-					Los seis bloques de Matemáticas I. Empezamos por la trigonometría; el resto de bloques se irán abriendo.
+					Els sis blocs de Matemàtiques I. Comencem per la trigonometria; la resta de blocs s’aniran obrint.
 				</p>
 			</div>
 			<div class="blocks-core">
@@ -69,10 +69,10 @@ const extra = blocks.filter((b) => b.data.nivel === 'ampliacion');
 			</div>
 
 			{extra.length > 0 && (<><div class="section-head extra-head">
-				<h3>Ampliación según tu centro</h3>
+				<h3>Ampliació segons el teu centre</h3>
 				<p class="muted">
-					Con el currículo actual estos bloques son de 2.º, pero hay centros que adelantan parte a 1.º. Si tu temario
-					los incluye, también los tendrás aquí.
+					Amb el currículum actual aquests blocs són de 2n, però hi ha centres que n’avancen una part a 1r. Si el teu temari
+					els inclou, també els tindràs aquí.
 				</p>
 			</div>
 			<div class="blocks-extra">

@@ -1,56 +1,56 @@
-# Bloques de Matemáticas I (1.º de Bachillerato). El orden es orientativo:
-# cada centro elige el suyo. Solo tiene página un bloque con algún tema disponible.
+# Blocs de Matemàtiques I (1r de Batxillerat). L’ordre és orientatiu:
+# cada centre tria el seu. Només té pàgina un bloc amb algun tema disponible.
 
 - id: numeros
-  titulo: Números
-  lema: Con qué contamos
-  descripcion: Los números reales, sus aproximaciones y errores, las potencias, los radicales y los logaritmos, y una primera mirada a los números complejos.
+  titulo: Nombres
+  lema: Amb què comptem
+  descripcion: Els nombres reals, les seves aproximacions i errors, les potències, els radicals i els logaritmes, i una primera mirada als nombres complexos.
   nivel: nucleo
   orden: 1
   icono: numeros
-  curriculo: Sentido numérico (RD 243/2022 y Decret 171/2022).
+  curriculo: Sentit numèric (Decret 171/2022 i RD 243/2022).
 
 - id: algebra
-  titulo: Álgebra
-  lema: Lo desconocido, con letras
-  descripcion: Polinomios y fracciones algebraicas, ecuaciones e inecuaciones de todo tipo y sistemas de ecuaciones resueltos por el método de Gauss.
+  titulo: Àlgebra
+  lema: El desconegut, amb lletres
+  descripcion: Polinomis i fraccions algebraiques, equacions i inequacions de tota mena i sistemes d’equacions resolts pel mètode de Gauss.
   nivel: nucleo
   orden: 2
   icono: algebra
-  curriculo: Sentido algebraico (RD 243/2022 y Decret 171/2022).
+  curriculo: Sentit algebraic (Decret 171/2022 i RD 243/2022).
 
 - id: trigonometria
-  titulo: Trigonometría
-  lema: Medir lo que no se puede medir
-  descripcion: Los ángulos y sus razones, la resolución de cualquier triángulo y las identidades y ecuaciones trigonométricas. Con la trigonometría se calculan alturas, distancias y ángulos sin necesidad de recorrerlos.
+  titulo: Trigonometria
+  lema: Mesurar el que no es pot mesurar
+  descripcion: Els angles i les seves raons, la resolució de qualsevol triangle i les identitats i equacions trigonomètriques. Amb la trigonometria es calculen altures, distàncies i angles sense haver de recórrer-los.
   nivel: nucleo
   orden: 3
   icono: trigonometria
-  curriculo: Sentido de la medida y sentido espacial (RD 243/2022 y Decret 171/2022).
+  curriculo: Sentit de la mesura i sentit espacial (Decret 171/2022 i RD 243/2022).
 
 - id: geometria
-  titulo: Geometría analítica
-  lema: El plano con coordenadas
-  descripcion: Vectores en el plano, ecuaciones de la recta, posiciones relativas, distancias y ángulos, lugares geométricos y cónicas.
+  titulo: Geometria analítica
+  lema: El pla amb coordenades
+  descripcion: Vectors en el pla, equacions de la recta, posicions relatives, distàncies i angles, llocs geomètrics i còniques.
   nivel: nucleo
   orden: 4
   icono: geometria
-  curriculo: Sentido espacial (RD 243/2022 y Decret 171/2022).
+  curriculo: Sentit espacial (Decret 171/2022 i RD 243/2022).
 
 - id: analisis
-  titulo: Análisis
-  lema: Cómo cambian las cosas
-  descripcion: Funciones elementales, límites y continuidad, la derivada y su interpretación, y la representación gráfica de funciones.
+  titulo: Anàlisi
+  lema: Com canvien les coses
+  descripcion: Funcions elementals, límits i continuïtat, la derivada i la seva interpretació, i la representació gràfica de funcions.
   nivel: nucleo
   orden: 5
   icono: analisis
-  curriculo: Sentido algebraico y sentido de la medida (RD 243/2022 y Decret 171/2022).
+  curriculo: Sentit algebraic i sentit de la mesura (Decret 171/2022 i RD 243/2022).
 
 - id: estadistica
-  titulo: Estadística y probabilidad
-  lema: Lo que dicen los datos
-  descripcion: Estadística bidimensional (correlación y regresión), cálculo de probabilidades y distribuciones binomial y normal.
+  titulo: Estadística i probabilitat
+  lema: El que diuen les dades
+  descripcion: Estadística bidimensional (correlació i regressió), càlcul de probabilitats i distribucions binomial i normal.
   nivel: nucleo
   orden: 6
   icono: estadistica
-  curriculo: Sentido estocástico (RD 243/2022 y Decret 171/2022).
+  curriculo: Sentit estocàstic (Decret 171/2022 i RD 243/2022).

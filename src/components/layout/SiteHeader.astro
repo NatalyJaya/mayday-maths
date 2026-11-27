@@ -6,9 +6,9 @@ import { stripBase, withBase } from '../../lib/url';
 
 const path = stripBase(Astro.url.pathname);
 const links = [
-	{ href: withBase('/#temario'), label: 'Temario', active: path === '/' },
-	{ href: withBase('/trigonometria/'), label: 'Trigonometría', active: path.startsWith('/trigonometria') },
-	{ href: withBase('/fuentes/'), label: 'Fuentes', active: path.startsWith('/fuentes') },
+	{ href: withBase('/#temario'), label: 'Temari', active: path === '/' },
+	{ href: withBase('/trigonometria/'), label: 'Trigonometria', active: path.startsWith('/trigonometria') },
+	{ href: withBase('/fuentes/'), label: 'Fonts', active: path.startsWith('/fuentes') },
 ];
 ---
 
@@ -31,7 +31,7 @@ const links = [
 				}
 			</ul>
 		</nav>
-		<button class="theme-toggle btn btn-ghost btn-sm" type="button" aria-label="Cambiar entre tema claro y oscuro">
+		<button class="theme-toggle btn btn-ghost btn-sm" type="button" aria-label="Canvia entre el tema clar i el fosc">
 			<span class="sun"><Icon name="sun" /></span>
 			<span class="moon"><Icon name="moon" /></span>
 		</button>

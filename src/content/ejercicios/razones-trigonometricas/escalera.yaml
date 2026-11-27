@@ -1,16 +1,16 @@
-titulo: La escalera apoyada en la pared
+titulo: L’escala recolzada a la paret
 tema: razones-trigonometricas
 orden: 8
 procedencia: original
 dificultad: basico
 habilidades: [planteamiento, modelizacion, geometria]
-resumen: Hipotenusa y ángulo conocidos; los dos catetos.
+resumen: Hipotenusa i angle coneguts; els dos catets.
 enunciado: |
-  Una escalera de $6\un{m}$ está apoyada en una pared vertical y forma un ángulo de $70^\circ$ con el suelo. ¿A qué altura toca la pared? ¿A qué distancia de la pared está el pie de la escalera?
+  Una escala de $6\un{m}$ està recolzada en una paret vertical i forma un angle de $70^\circ$ amb el terra. A quina altura toca la paret? A quina distància de la paret és el peu de l’escala?
 figura:
   tipo: geometria
   puntos:
-    - { id: A, x: 2.052, y: 0, etiqueta: 'pie', lado: s }
+    - { id: A, x: 2.052, y: 0, etiqueta: 'peu', lado: s }
     - { id: O, x: 0, y: 0, etiqueta: '', marca: false }
     - { id: T, x: 0, y: 5.638, etiqueta: '', marca: false }
   segmentos:
@@ -23,28 +23,28 @@ figura:
   suelo: { y: 0, desde: -0.3, hasta: 3 }
 apartados:
   - id: a
-    enunciado: Calcula la altura $h$ y la distancia $d$.
+    enunciado: Calcula l’altura $h$ i la distància $d$.
     respuesta:
       tipo: numerica
       campos:
         - simbolo: 'h'
-          etiqueta: altura en la pared
+          etiqueta: altura a la paret
           unidad: m
           valor: 5.64
           trampas:
-            - { valor: 2.05, explicacion: 'Has intercambiado seno y coseno. La altura es el cateto opuesto al ángulo de $70^\circ$: $h = 6\sin 70^\circ$.' }
+            - { valor: 2.05, explicacion: 'Has intercanviat sinus i cosinus. L’altura és el catet oposat a l’angle de $70^\circ$: $h = 6\sin 70^\circ$.' }
         - simbolo: 'd'
-          etiqueta: distancia del pie a la pared
+          etiqueta: distància del peu a la paret
           unidad: m
           valor: 2.05
           trampas:
-            - { valor: 5.64, explicacion: 'Has intercambiado seno y coseno. La distancia al pie es el cateto contiguo: $d = 6\cos 70^\circ$.' }
+            - { valor: 5.64, explicacion: 'Has intercanviat sinus i cosinus. La distància al peu és el catet contigu: $d = 6\cos 70^\circ$.' }
     pistas:
-      - 'La escalera es la hipotenusa. ¿Qué cateto es opuesto al ángulo de $70^\circ$?'
+      - 'L’escala és la hipotenusa. Quin catet és oposat a l’angle de $70^\circ$?'
     pasos:
-      - titulo: Altura (cateto opuesto)
+      - titulo: Altura (catet oposat)
         desarrollo: '$$h = 6\cdot\sin 70^\circ \approx 6\cdot 0{,}9397 \approx 5{,}64\un{m}$$'
-      - titulo: Distancia (cateto contiguo)
+      - titulo: Distància (catet contigu)
         desarrollo: '$$d = 6\cdot\cos 70^\circ \approx 6\cdot 0{,}3420 \approx 2{,}05\un{m}$$'
-        porque: 'Comprobación con Pitágoras: $5{,}64^2 + 2{,}05^2 \approx 36$ ✔.'
-    resultado: 'Toca la pared a unos $5{,}64\un{m}$ y el pie está a unos $2{,}05\un{m}$ de la pared.'
+        porque: 'Comprovació amb Pitàgores: $5{,}64^2 + 2{,}05^2 \approx 36$ ✔.'
+    resultado: 'Toca la paret a uns $5{,}64\un{m}$ i el peu és a uns $2{,}05\un{m}$ de la paret.'
